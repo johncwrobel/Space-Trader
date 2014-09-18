@@ -23,6 +23,12 @@ public class SpaceTrader extends Application {
     private static Scene characterCreation;
     private static Character myCharacter;
     
+    /**
+     * starts the main application by loading the scenes and the primary stage
+     * 
+     * @param stage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage stage) throws Exception {
         
@@ -36,14 +42,27 @@ public class SpaceTrader extends Application {
         PrimaryStage.show();
     }
     
+    /**
+     * sets the scene to the characterCreation scene
+     */
     public static void setCreationScene() {
         PrimaryStage.setScene(characterCreation);
     }
     
+    /**
+     * sets myCharacter to the parameter passed in
+     * 
+     * @param character 
+     */
     public static void createCharacter(Character character) {
         myCharacter = character;
     }
     
+    /**
+     * Returns the character
+     * 
+     * @return 
+     */
     public static Character getMainCharacter() {
         return myCharacter;
     }

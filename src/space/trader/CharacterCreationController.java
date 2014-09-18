@@ -35,6 +35,11 @@ public class CharacterCreationController implements Initializable {
     @FXML
     private Button confirm;
     
+    /**
+     * Takes the data from the text area, validates it and creates a Character object if valid
+     * 
+     * @param event ActionEvent for the listener
+     */
     @FXML
     private void confirm(ActionEvent event) {
         String pilotString = pilotTextArea.getText().trim();
@@ -70,6 +75,12 @@ public class CharacterCreationController implements Initializable {
         // TODO
     }
     
+    /**
+     * Checks if s is an integer
+     * 
+     * @param String s
+     * @return true if s is an integer, false otherwise
+     */
     private static boolean isInteger(String s) {
         try { 
             Integer.parseInt(s); 

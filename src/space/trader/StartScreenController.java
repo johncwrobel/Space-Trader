@@ -25,6 +25,11 @@ public class StartScreenController implements Initializable {
     @FXML
     private Button newGameButton;
     
+    /**
+     * sets the creation scene as the main scene when the button is clicked
+     * 
+     * @param event 
+     */
     @FXML
     private void handleButtonAction(ActionEvent event) {
         SpaceTrader.setCreationScene();
