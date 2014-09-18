@@ -21,6 +21,7 @@ public class SpaceTrader extends Application {
     private static Stage PrimaryStage;
     private static Scene main;
     private static Scene characterCreation;
+    private static Character myCharacter;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -37,6 +38,14 @@ public class SpaceTrader extends Application {
     
     public static void setCreationScene() {
         PrimaryStage.setScene(characterCreation);
+    }
+    
+    public static void createCharacter(Character character) {
+        myCharacter = character;
+    }
+    
+    public static Character getMainCharacter() {
+        return myCharacter;
     }
 
     /**

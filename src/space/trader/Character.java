@@ -1,13 +1,15 @@
 package space.trader;
 
 public class Character {
+        private String name;
 	private int pilot;
 	private int fighter;
 	private int trader;
 	private int engineer;
 	private int investor;
         
-        public Character(int pilot, int fighter, int trader, int engineer, int investor) {
+        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor) {
+            this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
             this.trader = trader;
@@ -33,6 +35,12 @@ public class Character {
         
         public int getInvestor() {
             return this.investor;
+        }
+        
+        public String toString() {
+            return name + ": " + pilot + " pilot points, " + fighter +
+                    " fighter points, " + trader + " trader points, " +
+                    engineer + " engineer points, " + investor + " investor points";
         }
 }
  

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,15 +22,61 @@ public class CharacterCreationController implements Initializable {
     
     @FXML
     private TextArea nameTextArea;
+    @FXML
     private TextArea pilotTextArea;
+    @FXML
     private TextArea fighterTextArea;
+    @FXML
     private TextArea traderTextArea;
+    @FXML
     private TextArea engineerTextArea;
+    @FXML
     private TextArea investorTextArea;
+    @FXML
+    private Button confirm;
+    
+    @FXML
+    private void confirm(ActionEvent event) {
+        String pilotString = pilotTextArea.getText();
+        String fighterString = fighterTextArea.getText();
+        String traderString = traderTextArea.getText();
+        String engineerString = engineerTextArea.getText();
+        String investorString = investorTextArea.getText();
+        String name = nameTextArea.getText();
+        
+        if (!isInteger(pilotString) || !isInteger(fighterString) || !isInteger(traderString) || !isInteger(engineerString) || !isInteger(investorString)) {
+            JOptionPane.showMessageDialog(null, "One of your inputs is not an integer", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        } else {
+            int pilot = Integer.parseInt(pilotString);
+            int fighter = Integer.parseInt(fighterString);
+            int trader = Integer.parseInt(traderString);
+            int engineer = Integer.parseInt(engineerString);
+            int investor = Integer.parseInt(investorString);
+            
+            if (pilot + fighter + trader + engineer + investor > 20) {
+                JOptionPane.showMessageDialog(null, "You have used too many skill points", "Alert!" , JOptionPane.ERROR_MESSAGE);
+            } else if (pilot + fighter + trader + engineer + investor < 20) {
+                JOptionPane.showMessageDialog(null, "You have not used all of your skill points, rearrange the skill points", "Alert!" , JOptionPane.ERROR_MESSAGE);
+            } else {
+                Character myCharacter = new Character(name, pilot, fighter, trader, engineer, investor);
+                SpaceTrader.createCharacter(myCharacter);
+                JOptionPane.showMessageDialog(null, SpaceTrader.getMainCharacter(), "Your Character" , JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
+    public static boolean isInteger(String s) {
+        try { 
+            Integer.parseInt(s); 
+        } catch(NumberFormatException e) { 
+            return false; 
+        }
+        return true;
+    }
     
 }
