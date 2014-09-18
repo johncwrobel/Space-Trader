@@ -17,7 +17,7 @@ import javafx.scene.control.*;
  *
  * @author John
  */
-public class FXMLDocumentController implements Initializable {
+public class StartScreenController implements Initializable {
     
     @FXML
     private Label Title;

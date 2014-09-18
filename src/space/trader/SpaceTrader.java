@@ -26,7 +26,7 @@ public class SpaceTrader extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         Parent character = FXMLLoader.load(getClass().getResource("CharacterCreation.fxml"));
         
         main = new Scene(root);
