@@ -37,12 +37,12 @@ public class CharacterCreationController implements Initializable {
     
     @FXML
     private void confirm(ActionEvent event) {
-        String pilotString = pilotTextArea.getText();
-        String fighterString = fighterTextArea.getText();
-        String traderString = traderTextArea.getText();
-        String engineerString = engineerTextArea.getText();
-        String investorString = investorTextArea.getText();
-        String name = nameTextArea.getText();
+        String pilotString = pilotTextArea.getText().trim();
+        String fighterString = fighterTextArea.getText().trim();
+        String traderString = traderTextArea.getText().trim();
+        String engineerString = engineerTextArea.getText().trim();
+        String investorString = investorTextArea.getText().trim();
+        String name = nameTextArea.getText().trim();
         
         if (!isInteger(pilotString) || !isInteger(fighterString) || !isInteger(traderString) || !isInteger(engineerString) || !isInteger(investorString)) {
             JOptionPane.showMessageDialog(null, "One of your inputs is not an integer", "Alert!" , JOptionPane.ERROR_MESSAGE);
