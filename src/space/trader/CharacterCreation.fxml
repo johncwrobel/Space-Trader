@@ -1,34 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="341.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.CharacterCreationController">
    <children>
-      <ImageView fitHeight="342.0" fitWidth="600.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="342.0" fitWidth="611.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Desktop/Ga%20Tech/Fall%202014/CS%202340/CharCreationImage.jpg" />
+            <Image url="@background.png" />
          </image>
       </ImageView>
-      <TextArea layoutX="14.0" layoutY="45.0" opacity="0.5" prefHeight="30.0" prefWidth="150.0" text="Enter Name:" />
-      <TextArea layoutX="89.0" layoutY="188.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
-      <TextArea layoutX="89.0" layoutY="225.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
-      <TextArea layoutX="89.0" layoutY="261.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
-      <TextArea layoutX="89.0" layoutY="297.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
-      <Label layoutX="14.0" layoutY="24.0" text="Character Name:" textFill="#04ff04" />
-      <Label layoutX="14.0" layoutY="96.0" text="Select Skill Points:" textFill="#04ff04" />
-      <Label layoutX="14.0" layoutY="161.0" text="Pilot" textFill="#04ff04" />
-      <Label layoutX="14.0" layoutY="193.0" text="Fighter" textFill="#04ff04" />
-      <Label layoutX="16.0" layoutY="230.0" text="Trader" textFill="#04ff04" />
-      <Label layoutX="15.0" layoutY="266.0" text="Engineer" textFill="#04ff04" />
-      <Label layoutX="17.0" layoutY="302.0" text="Investor" textFill="#04ff04" />
-      <Button layoutX="416.0" layoutY="252.0" mnemonicParsing="false" opacity="0.5" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
+      <TextArea fx:id="nameTextArea" layoutX="14.0" layoutY="45.0" opacity="0.5" prefHeight="30.0" prefWidth="150.0" text="Enter Name:" />
+      <TextArea fx:id="fighterTextArea" layoutX="89.0" layoutY="188.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
+      <TextArea fx:id="traderTextArea" layoutX="89.0" layoutY="225.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
+      <TextArea fx:id="engineerTextArea" layoutX="89.0" layoutY="261.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
+      <TextArea fx:id="investorTextArea" layoutX="89.0" layoutY="297.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
+      <Label fx:id="NameLabel" layoutX="14.0" layoutY="24.0" text="Character Name:" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="96.0" text="Select Skill Points:" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="161.0" text="Pilot" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="14.0" layoutY="193.0" text="Fighter" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="16.0" layoutY="230.0" text="Trader" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="15.0" layoutY="266.0" text="Engineer" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label layoutX="17.0" layoutY="302.0" text="Investor" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Button layoutX="338.0" layoutY="259.0" mnemonicParsing="false" opacity="0.5" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
       <Separator prefWidth="200.0" />
-      <TextArea layoutX="89.0" layoutY="153.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
-      <Label layoutX="22.0" layoutY="117.0" text="20 Skill Points Available" textFill="#04ff04" />
+      <TextArea fx:id="pilotTextArea" layoutX="89.0" layoutY="153.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" text="0" />
+      <Label layoutX="338.0" layoutY="34.0" text="20 Total Skill Points" textFill="#eeff05">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
    </children>
 </Pane>

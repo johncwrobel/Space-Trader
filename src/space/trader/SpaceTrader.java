@@ -18,15 +18,25 @@ import javafx.stage.Stage;
  */
 public class SpaceTrader extends Application {
     
+    private static Stage PrimaryStage;
+    private static Scene main;
+    private static Scene characterCreation;
+    
     @Override
     public void start(Stage stage) throws Exception {
         
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent character = FXMLLoader.load(getClass().getResource("CharacterCreation.fxml"));
         
-        Scene scene = new Scene(root);
-        
-        stage.setScene(scene);
-        stage.show();
+        main = new Scene(root);
+        characterCreation = new Scene(character);
+        PrimaryStage = stage;
+        PrimaryStage.setScene(main);
+        PrimaryStage.show();
+    }
+    
+    public static void setCreationScene() {
+        PrimaryStage.setScene(characterCreation);
     }
 
     /**
