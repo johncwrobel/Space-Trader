@@ -70,7 +70,7 @@ public class CharacterCreationController implements Initializable {
         // TODO
     }
     
-    public static boolean isInteger(String s) {
+    private static boolean isInteger(String s) {
         try { 
             Integer.parseInt(s); 
         } catch(NumberFormatException e) { 
