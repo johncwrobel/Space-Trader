@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author John
+ * @author Tanmay/Ben
  */
 public class CharacterCreationController implements Initializable {
     

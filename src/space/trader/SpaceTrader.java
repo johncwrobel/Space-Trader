@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author John
+ * @author Tanmay
  */
 public class SpaceTrader extends Application {
     
