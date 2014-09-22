@@ -70,6 +70,11 @@ public class CharacterCreationController implements Initializable {
         }
     }
     
+    @FXML
+    private void cancel(ActionEvent event) {
+        SpaceTrader.setTitleScene();
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

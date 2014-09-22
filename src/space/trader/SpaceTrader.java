@@ -50,6 +50,13 @@ public class SpaceTrader extends Application {
     }
     
     /**
+     * sets the scene to the characterCreation scene
+     */
+    public static void setTitleScene() {
+        PrimaryStage.setScene(main);
+    }
+    
+    /**
      * sets myCharacter to the parameter passed in
      * 
      * @param character 

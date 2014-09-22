@@ -14,11 +14,11 @@
             <Image url="@background.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="nameTextArea" layoutX="14.0" layoutY="45.0" opacity="0.5" prefHeight="30.0" prefWidth="150.0" promptText="Enter Name" />
-      <TextArea fx:id="fighterTextArea" layoutX="89.0" layoutY="188.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" promptText="0" />
-      <TextArea fx:id="traderTextArea" layoutX="89.0" layoutY="225.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" promptText="0" />
-      <TextArea fx:id="engineerTextArea" layoutX="89.0" layoutY="261.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" promptText="0" />
-      <TextArea fx:id="investorTextArea" layoutX="89.0" layoutY="297.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" promptText="0" />
+      <TextArea fx:id="nameTextArea" layoutX="14.0" layoutY="45.0" prefHeight="30.0" prefWidth="150.0" promptText="Enter Name" />
+      <TextArea fx:id="fighterTextArea" layoutX="89.0" layoutY="188.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
+      <TextArea fx:id="traderTextArea" layoutX="89.0" layoutY="225.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
+      <TextArea fx:id="engineerTextArea" layoutX="89.0" layoutY="261.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
+      <TextArea fx:id="investorTextArea" layoutX="89.0" layoutY="297.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
       <Label fx:id="NameLabel" layoutX="14.0" layoutY="24.0" text="Character Name:" textFill="#eeff05">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -47,12 +47,13 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="confirm" layoutX="338.0" layoutY="259.0" mnemonicParsing="false" onAction="#confirm" opacity="0.5" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
+      <Button fx:id="confirm" layoutX="359.0" layoutY="297.0" mnemonicParsing="false" onAction="#confirm" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
       <Separator prefWidth="200.0" />
-      <TextArea fx:id="pilotTextArea" layoutX="89.0" layoutY="153.0" opacity="0.5" prefHeight="30.0" prefWidth="70.0" promptText="0" />
+      <TextArea fx:id="pilotTextArea" layoutX="89.0" layoutY="153.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
       <Label layoutX="338.0" layoutY="34.0" text="20 Total Skill Points" textFill="#eeff05">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
+      <Button fx:id="cancel" layoutX="286.0" layoutY="300.0" mnemonicParsing="false" text="Cancel" />
    </children>
 </Pane>
