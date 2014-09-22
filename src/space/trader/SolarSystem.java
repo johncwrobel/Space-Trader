@@ -45,4 +45,25 @@ public class SolarSystem {
     public int getResources() {
         return this.resources;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setxLocation(int xLocation) {
+        this.xLocation = xLocation;
+    }
+
+    public void setyLocation(int yLocation) {
+        this.yLocation = yLocation;
+    }
+
+    public void setTechLevel(int techLevel) {
+        this.techLevel = techLevel;
+    }
+
+    public void setResources(int resources) {
+        this.resources = resources;
+    }
+
 }
