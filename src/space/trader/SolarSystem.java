@@ -11,17 +11,26 @@ public class SolarSystem {
     private int xLocation;
     private int yLocation;
     private int numberOfPlanets;
-
-    public SolarSystem(String name, int xLocation, int yLocation, int numberOfPlanets) {
-        this.name = name;
-        this.xLocation = xLocation;
-        this.yLocation = yLocation;
-        this.numberOfPlanets = numberOfPlanets;
-        
+    private static ArrayList<String> systemNames = new ArrayList<String>();
+   
+    static {
+    systemNames.add("name1");
+    systemNames.add("name2");
+    systemNames.add("name3");
+    systemNames.add("name4");
+    systemNames.add("name5");
+    
     }
     
+    
     public SolarSystem() {
-        
+        Random r1 = new Random();
+        int random = r1.nextInt(systemNames.size());
+        name = systemNames.get(random);
+        systemNames.remove(random);
+        xLocation = (int)(Math.random() * 100) + 1;
+        yLocation = (int)(Math.random() * 100) + 1;
+        numberOfPlanets = (int)(Math.random() * 3) + 1;
     }
 
     public String getName() {
@@ -35,34 +44,9 @@ public class SolarSystem {
     public int getYLocation() {
         return this.yLocation;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setxLocation(int xLocation) {
-        this.xLocation = xLocation;
-    }
-
-    public void setyLocation(int yLocation) {
-        this.yLocation = yLocation;
-    }
     
     public int getNumberOfPlanets() {
         return this.numberOfPlanets;
-    }
-    
-    public void setNumberOfPlanets(int numberOfPlanets) {
-        this.numberOfPlanets = numberOfPlanets;
-    }
-    
-    public static void main(String args[]) {
-        ArrayList al = new ArrayList();
-        al.add("Solar System 1");
-        al.add("Solar System 2");
-        al.add("Solar System 3");
-        al.add("Solar System 4");
-        al.add("Solar System 5");
     }
 
 }
