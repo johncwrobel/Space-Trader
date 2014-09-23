@@ -35,7 +35,7 @@ public class SolarSystem {
     }
     
     
-    public SolarSystem() {
+    public SolarSystem(int x, int y) {
         Random r1 = new Random();
         int random = r1.nextInt(systemNames.size());
         name = systemNames.get(random);
