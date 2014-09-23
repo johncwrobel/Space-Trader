@@ -5,7 +5,7 @@ import java.util.Random;
 
 /**
  *
- * @author Benjamin Cervantes
+ * @author Benjamin Cervantes and John Wrobel
  */
 public class Planet {
     private String name;
