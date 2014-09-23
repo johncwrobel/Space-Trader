@@ -40,8 +40,8 @@ public class SolarSystem {
         int random = r1.nextInt(systemNames.size());
         name = systemNames.get(random);
         systemNames.remove(random);
-        xLocation = (int)(Math.random() * 100) + 1;
-        yLocation = (int)(Math.random() * 100) + 1;
+        xLocation = x;
+        yLocation = y;
         numberOfPlanets = (int)(Math.random() * 3) + 1;
         for (int i = 0; i < numberOfPlanets; i++) {
             planets.add(new Planet(this, this.name+" "+i));
