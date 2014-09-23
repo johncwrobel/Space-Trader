@@ -20,7 +20,7 @@ public class SolarSystem {
     private static ArrayList<String> systemNames = new ArrayList<String>();
    
     static {
-        try(BufferedReader br = new BufferedReader(new FileReader("SolarSystemNames.dat"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader("ass.dat"))) {
             StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
