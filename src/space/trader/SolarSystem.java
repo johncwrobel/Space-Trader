@@ -21,7 +21,6 @@ public class SolarSystem {
    
     static {
         try(BufferedReader br = new BufferedReader(new FileReader("ass.dat"))) {
-            StringBuilder sb = new StringBuilder();
             String line = br.readLine();
 
             while (line != null) {
@@ -29,7 +28,6 @@ public class SolarSystem {
                 line = br.readLine();
             }
             
-            String everything = sb.toString();
             
         }   catch (Exception ex) {
             Logger.getLogger(SolarSystem.class.getName()).log(Level.SEVERE, null, ex);
