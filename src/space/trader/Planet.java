@@ -37,6 +37,7 @@ public class Planet {
     
     
     public String toString() {
-        return ("Planet name: " + name + " Tech Level: " + techLevel + " Resource Type:" + resources); 
+        // (Planet name: name, Tech Level: x, Resource Type: x)
+        return ("(Planet name: " + name + ", Tech Level: " + techLevel + ", Resource Type: " + resources + ")"); 
     }
 }
