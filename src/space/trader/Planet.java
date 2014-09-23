@@ -9,28 +9,14 @@ import java.util.Random;
  */
 public class Planet {
     private String name;
-    private int xLocation;
-    private int yLocation;
     private int techLevel;
     private int resources;
+    private SolarSystem parentSystem;
     private static ArrayList<String> planetNames = new ArrayList<String>();
     
-    static {
-    planetNames.add("planetName1");
-    planetNames.add("planetName2");
-    planetNames.add("planetName3");
-    planetNames.add("planetName4");
-    planetNames.add("planetName5");
-    
-    }
-    
-    public Planet() {
-        Random r1 = new Random();
-        int random = r1.nextInt(planetNames.size());
-        name = planetNames.get(random);
-        planetNames.remove(random);
-        xLocation = (int)(Math.random() * 100) + 1;
-        yLocation = (int)(Math.random() * 100) + 1;
+    public Planet(SolarSystem parent) {
+        parentSystem = parent;
+        name = parentSystem.getName() + " " + (parentSystem.getNumberOfPlanets() + 1);
         techLevel = (int)(Math.random() * 8);
         resources = (int)(Math.random() * 13);
         
@@ -38,16 +24,6 @@ public class Planet {
 
     public String getName() {
         return name;
-    }
-
-
-    public int getxLocation() {
-        return xLocation;
-    }
-
-
-    public int getyLocation() {
-        return yLocation;
     }
 
 
