@@ -39,7 +39,7 @@ public class Universe {
     public String toString() {
         String returnString = "";
         for (SolarSystem ss: solarSystems) {
-            returnString = returnString + "\n" + ss.toString();
+            returnString = returnString + ss.toString() + "\n";
         }
         return returnString;
     }
