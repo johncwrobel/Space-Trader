@@ -35,4 +35,8 @@ public class Planet {
         return resources;
     }
     
+    
+    public String toString() {
+        return ("Planet name: " + name + " Tech Level: " + techLevel + " Resource Type:" + resources); 
+    }
 }
