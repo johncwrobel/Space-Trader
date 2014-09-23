@@ -12,7 +12,6 @@ public class Planet {
     private int techLevel;
     private int resources;
     private SolarSystem parentSystem;
-    private static ArrayList<String> planetNames = new ArrayList<String>();
     
     public Planet(SolarSystem parent, String name) {
         parentSystem = parent;
