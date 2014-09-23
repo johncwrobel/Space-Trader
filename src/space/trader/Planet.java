@@ -14,9 +14,9 @@ public class Planet {
     private SolarSystem parentSystem;
     private static ArrayList<String> planetNames = new ArrayList<String>();
     
-    public Planet(SolarSystem parent) {
+    public Planet(SolarSystem parent, String name) {
         parentSystem = parent;
-        name = parentSystem.getName() + " " + (parentSystem.getNumberOfPlanets() + 1);
+        this.name = name;
         techLevel = (int)(Math.random() * 8);
         resources = (int)(Math.random() * 13);
         
