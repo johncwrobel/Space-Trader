@@ -41,7 +41,6 @@ public class Universe {
         for (SolarSystem ss: solarSystems) {
             returnString = returnString + "\n" + ss.toString();
         }
-        
         return returnString;
     }
         
