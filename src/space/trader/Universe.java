@@ -35,6 +35,15 @@ public class Universe {
             booleanArray[x][y] = true;
         }
     }
+    
+    public String toString() {
+        String returnString = "";
+        for (SolarSystem ss: solarSystems) {
+            returnString = returnString + "\n" + ss.toString();
+        }
+        
+        return returnString;
+    }
         
 }
 
