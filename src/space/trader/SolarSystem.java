@@ -34,6 +34,16 @@ public class SolarSystem {
         }
     }
     
+    @Override
+    // toString format:    name(x,y): planet1 planet2 planet3
+    public String toString() {
+        String returnVal = "";
+        returnVal += name + "(" + xLocation + ","+"):";
+        for (int i = 0; i < numberOfPlanets; i++) {
+            returnVal += " " + planets.get(i);
+        }
+        return returnVal;
+    }
     
     public SolarSystem(int x, int y) {
         Random r1 = new Random();
