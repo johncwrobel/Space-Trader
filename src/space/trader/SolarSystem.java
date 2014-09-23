@@ -1,5 +1,10 @@
 package space.trader;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -11,15 +16,24 @@ public class SolarSystem {
     private int xLocation;
     private int yLocation;
     private int numberOfPlanets;
+    private ArrayList<Planet> planets = new ArrayList<Planet>();
     private static ArrayList<String> systemNames = new ArrayList<String>();
    
     static {
-    systemNames.add("name1");
-    systemNames.add("name2");
-    systemNames.add("name3");
-    systemNames.add("name4");
-    systemNames.add("name5");
-    
+        try(BufferedReader br = new BufferedReader(new FileReader("SolarSystemNames.dat"))) {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                systemNames.add(line);
+                line = br.readLine();
+            }
+            
+            String everything = sb.toString();
+            
+        }   catch (Exception ex) {
+            Logger.getLogger(SolarSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     
@@ -31,6 +45,9 @@ public class SolarSystem {
         xLocation = (int)(Math.random() * 100) + 1;
         yLocation = (int)(Math.random() * 100) + 1;
         numberOfPlanets = (int)(Math.random() * 3) + 1;
+        for (int i = 0; i < numberOfPlanets; i++) {
+            planets.add(new Planet(this, this.name+" "+i));
+        }
     }
 
     public String getName() {
