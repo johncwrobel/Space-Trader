@@ -45,6 +45,11 @@ public class SolarSystem {
         return returnVal;
     }
     
+    /**
+     * Constructor for SolarSystem
+     * @param x
+     * @param y 
+     */
     public SolarSystem(int x, int y) {
         Random r1 = new Random();
         int random = r1.nextInt(systemNames.size());
@@ -57,19 +62,35 @@ public class SolarSystem {
             planets.add(new Planet(this, this.name+" "+i));
         }
     }
-
+    
+    /**
+     * Getter methode for getName
+     * @return name
+     */
     public String getName() {
         return this.name;
     }
     
+    /**
+     * Getter method for X-Location
+     * @return xLocation
+     */
     public int getXLocation() {
         return this.xLocation;
     }
     
+    /**
+     * Getter method for Y-Location
+     * @return yLocation
+     */
     public int getYLocation() {
         return this.yLocation;
     }
     
+    /**
+     * Getter method for Number of Planets
+     * @return numbeerOfPlanets
+     */
     public int getNumberOfPlanets() {
         return this.numberOfPlanets;
     }

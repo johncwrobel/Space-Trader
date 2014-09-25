@@ -12,6 +12,9 @@ public class Universe {
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private boolean[][] booleanArray;
     
+    /**
+     * Constructor for Universe class
+     */
     public Universe() {
         booleanArray = new boolean[20][20];
         for (int x = 0; x < 20; x++) {
@@ -36,6 +39,7 @@ public class Universe {
         }
     }
     
+    @Override
     public String toString() {
         String returnString = "";
         for (SolarSystem ss: solarSystems) {

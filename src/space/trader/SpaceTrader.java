@@ -60,10 +60,16 @@ public class SpaceTrader extends Application {
         PrimaryStage.setScene(gameScreen);
     }
     
+    /**
+     * creates a new Universe
+     */
     public static void createNewUniverse() {
         universe = new Universe();
     }
     
+    /**
+     * prints the Universe
+     */
     public static void printUniverse() {
         System.out.println(universe);
     }

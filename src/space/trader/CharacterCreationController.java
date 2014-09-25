@@ -72,6 +72,10 @@ public class CharacterCreationController implements Initializable {
         }
     }
     
+    /**
+     * Goes back to title screen
+     * @param event 
+     */
     @FXML
     private void cancel(ActionEvent event) {
         SpaceTrader.setTitleScene();
