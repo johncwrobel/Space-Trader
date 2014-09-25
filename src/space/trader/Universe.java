@@ -45,6 +45,7 @@ public class Universe {
         for (SolarSystem ss: solarSystems) {
             returnString = returnString + ss.toString() + "\n";
         }
+        returnString += "\nNumber of Solar Systems in Universe:" + numberOfSolarSystems + "\n";
         return returnString;
     }
         

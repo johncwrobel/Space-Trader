@@ -68,6 +68,7 @@ public class CharacterCreationController implements Initializable {
                 SpaceTrader.setGameScene();
                 SpaceTrader.createNewUniverse();
                 SpaceTrader.printUniverse();
+                System.out.println(SpaceTrader.getMainCharacter());
             }
         }
     }
