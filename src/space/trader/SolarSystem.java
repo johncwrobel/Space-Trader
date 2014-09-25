@@ -59,7 +59,7 @@ public class SolarSystem {
         yLocation = y;
         numberOfPlanets = (int)(Math.random() * 3) + 1;
         for (int i = 0; i < numberOfPlanets; i++) {
-            planets.add(new Planet(this, this.name+" "+i));
+            planets.add(new Planet(this, this.name+" "+(i + 1)));
         }
     }
     
