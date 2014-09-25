@@ -65,7 +65,9 @@ public class CharacterCreationController implements Initializable {
             } else {
                 Character myCharacter = new Character(name, pilot, fighter, trader, engineer, investor);
                 SpaceTrader.createCharacter(myCharacter);
-                JOptionPane.showMessageDialog(null, SpaceTrader.getMainCharacter(), "Your Character" , JOptionPane.ERROR_MESSAGE);
+                SpaceTrader.setGameScene();
+                SpaceTrader.createNewUniverse();
+                SpaceTrader.printUniverse();
             }
         }
     }

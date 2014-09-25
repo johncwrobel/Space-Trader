@@ -38,7 +38,7 @@ public class SolarSystem {
     // toString format:    name(x,y): planet1 planet2 planet3
     public String toString() {
         String returnVal = "";
-        returnVal += name + "(" + xLocation + ","+"):";
+        returnVal += name + "(" + xLocation + ","+yLocation+"):";
         for (int i = 0; i < numberOfPlanets; i++) {
             returnVal += " " + planets.get(i);
         }
