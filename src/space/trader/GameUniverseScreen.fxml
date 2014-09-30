@@ -9,18 +9,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="gameUniverseScreen" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
    <children>
-      <Canvas height="400.0" width="600.0" />
-      <Label layoutX="158.0" layoutY="183.0" text="GAME SCREEN GOES HERE">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="201.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@seductive-cat.jpg" />
-         </image>
-      </ImageView>
+      <Pane id="controlPanel" fx:id="controlPanel" layoutY="527.0" prefHeight="73.0" prefWidth="800.0">
+         <children>
+            <Label fx:id="playerCredits" layoutX="605.0" prefHeight="73.0" prefWidth="195.0" text="Player Credits" />
+         </children>
+      </Pane>
+      <Pane layoutX="605.0" prefHeight="520.0" prefWidth="195.0">
+         <children>
+            <ListView fx:id="goodsListView" layoutX="-2.0" prefHeight="278.0" prefWidth="195.0" />
+            <ListView fx:id="inventoryListView" layoutX="-2.0" layoutY="278.0" prefHeight="249.0" prefWidth="195.0" />
+            <ScrollBar fx:id="goodsScrollBar" layoutX="181.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="278.0" prefWidth="14.0" />
+            <ScrollBar layoutX="181.0" layoutY="280.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="14.0" />
+         </children>
+      </Pane>
    </children>
-</AnchorPane>
+</Pane>
