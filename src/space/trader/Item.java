@@ -12,23 +12,43 @@ package space.trader;
  */
 public class Item {
     private final String name;
+    private final int basePrice;
     private final int mtlp;
     private final int mtlu;
+    private final int ipl;
     private final int ttp;
     private final int var;
-    private final int mtl;
-    private final int mth;
     
-    public Item(String name, int mtlp, int  mtlu, int ttp, int var, int mtl, int mth) {
+    public Item(String name, int mtlp, int  mtlu, int ttp, int var, int ipl, int basePrice) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
         this.ttp = ttp;
         this.var = var;
-        this.mtl = mtl;
-        this.mth = mth;
+        this.basePrice = basePrice;
+        this.ipl = ipl;
     }
     
+    public int getPrice(int techLevel) {
+        return basePrice + (ipl * (techLevel - mtlp)) + (var * var());
+    }
+    
+    private int var() {
+        int temp = (int) (Math.random() * 8);
+        if (temp < 4) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    
+    public int getMLTP() {
+        return mtlp;
+    }
+    
+    public int getMTLU() {
+        return mtlu;
+    }
     
     
 }
