@@ -2,6 +2,7 @@ package space.trader;
 
 public class Character {
         private String name;
+        private int credits;
 	private int pilot;
 	private int fighter;
 	private int trader;
@@ -24,6 +25,19 @@ public class Character {
             this.trader = trader;
             this.engineer = engineer;
             this.investor = investor;
+            this.credits = 2000;
+        }
+        
+        public int getCredits() {
+            return this.credits;
+        }
+        
+        public void buy(int price) {
+            credits -= price;
+        }
+        
+        public void sell(int price) {
+            credits += price;
         }
         
         /**

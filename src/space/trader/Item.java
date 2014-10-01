@@ -10,7 +10,7 @@ package space.trader;
  *
  * @author tanmay
  */
-public class Item {
+public class Item implements Comparable{
     public final String name;
     private final int basePrice;
     private final int mtlp;
@@ -48,6 +48,12 @@ public class Item {
     
     public int getMTLU() {
         return mtlu;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Item i = (Item) o;
+        return this.name.compareTo(i.name);
     }
     
     

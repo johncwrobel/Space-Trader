@@ -7,8 +7,11 @@ import java.util.ArrayList;
  * @author Tommy Lee
  */
 public class MarketPlace {
-    private final ArrayList<Item> items = new ArrayList<Item>();
-    private final ArrayList<Item> canSell = new ArrayList<Item>();
+    private final ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<Integer> prices = new ArrayList<>();
+    private final ArrayList<Integer> amount = new ArrayList<>();
+    private final ArrayList<Item> canSell = new ArrayList<>();
+    private final ArrayList<Integer> sellingPrices = new ArrayList<>();
     private int techLevel;
     
     public MarketPlace(int planetTechLevel) {
@@ -37,6 +40,7 @@ public class MarketPlace {
                 }
             }
         }
+        
         if (techLevel >= 0) {
             items.add(new Item("Water", 0, 0, 2, 30, 3, 4));
             items.add(new Item("Furs", 0, 0, 0, 250, 10, 10));
@@ -58,7 +62,14 @@ public class MarketPlace {
             }
         }
         
+        for (Item i: items) {
+            prices.add(i.getPrice(techLevel));
+            amount.add((int) (Math.random() * 10));
+        }
         
+        for (Item i: canSell) {
+            sellingPrices.add(i.getPrice(techLevel));
+        }
     }
     
     public ArrayList<Item> getItems(){
