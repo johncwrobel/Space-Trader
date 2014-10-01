@@ -12,6 +12,7 @@ public class Planet {
     private int techLevel;
     private int resources;
     private SolarSystem parentSystem;
+    public MarketPlace marketplace;
     
     /**
      * Constructor for Planet class
@@ -23,7 +24,7 @@ public class Planet {
         this.name = name;
         techLevel = (int)(Math.random() * 8);
         resources = (int)(Math.random() * 13);
-        
+        marketplace = new MarketPlace(techLevel);
     }
     
     /**
