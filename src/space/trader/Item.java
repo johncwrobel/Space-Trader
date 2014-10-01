@@ -11,7 +11,7 @@ package space.trader;
  * @author tanmay
  */
 public class Item {
-    private final String name;
+    public final String name;
     private final int basePrice;
     private final int mtlp;
     private final int mtlu;
@@ -19,7 +19,7 @@ public class Item {
     private final int ttp;
     private final int var;
     
-    public Item(String name, int mtlp, int  mtlu, int ttp, int var, int ipl, int basePrice) {
+    public Item(String name, int mtlp, int  mtlu, int ttp, int basePrice, int ipl, int var) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
