@@ -11,22 +11,27 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
    <children>
-      <ListView fx:id="cargo" layoutX="600.0" layoutY="313.0" prefHeight="208.0" prefWidth="200.0" />
-      <Button layoutX="680.0" layoutY="527.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Access Marketplace" />
-      <Label fx:id="playerCredits" layoutX="605.0" layoutY="527.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
-      <ListView fx:id="goods" layoutX="600.0" layoutY="40.0" prefHeight="240.0" prefWidth="200.0" />
-      <Label layoutX="644.0" layoutY="14.0" text="MARKETPLACE">
+      <ListView fx:id="selling" layoutX="600.0" layoutY="214.0" prefHeight="134.0" prefWidth="200.0" />
+      <Button layoutX="677.0" layoutY="561.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Access Marketplace" />
+      <Label fx:id="playerCredits" layoutX="602.0" layoutY="561.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
+      <ListView fx:id="goods" layoutX="600.0" layoutY="40.0" prefHeight="134.0" prefWidth="200.0" />
+      <Label layoutX="673.0" layoutY="14.0" text="BUY">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="672.0" layoutY="287.0" text="CARGO">
+      <Label layoutX="672.0" layoutY="182.0" text="SELL">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="buy" layoutX="710.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
-      <Button fx:id="sell" layoutX="755.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
-      <TextField fx:id="buyText" layoutX="647.0" layoutY="561.0" prefHeight="25.0" prefWidth="50.0" />
+      <Button fx:id="buy" layoutX="520.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+      <Button fx:id="sell" layoutX="565.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
+      <ListView fx:id="cargo" layoutX="600.0" layoutY="398.0" prefHeight="134.0" prefWidth="200.0" />
+      <Label layoutX="660.0" layoutY="363.0" text="CARGO">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

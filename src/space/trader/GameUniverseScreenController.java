@@ -32,7 +32,7 @@ public class GameUniverseScreenController implements Initializable {
     private ListView<String> goods;
     
     @FXML
-    private ListView<String> cargo;
+    private ListView<String> selling;
     
     @FXML
     private Button buy;
@@ -41,7 +41,8 @@ public class GameUniverseScreenController implements Initializable {
     private Button sell;
     
     @FXML
-    private TextField buyText;
+    private ListView<Item> cargo;
+    
     
     /**
      * Initializes the controller class.
@@ -83,8 +84,13 @@ public class GameUniverseScreenController implements Initializable {
         
         ArrayList<String> list2 = SpaceTrader.getCargo();
         ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        selling.setItems(null);
+        selling.setItems(observable2);
+        
+        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
+        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
-        cargo.setItems(observable2);
+        cargo.setItems(observable3);
         
         for (int x = 0; x < SpaceTrader.ship.cargoHold.size(); x++) {
             System.out.println(SpaceTrader.ship.cargoHold.get(x).toString());
@@ -93,7 +99,7 @@ public class GameUniverseScreenController implements Initializable {
     
     @FXML
     public void sell (ActionEvent event) {
-        ObservableList<String> selectedItem = cargo.getSelectionModel().getSelectedItems();
+        ObservableList<String> selectedItem = selling.getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             String[] temp = selectedItem.get(i).split(" ");
             SpaceTrader.ship.removeItem(temp[0]);
@@ -109,8 +115,13 @@ public class GameUniverseScreenController implements Initializable {
         
         ArrayList<String> list2 = SpaceTrader.getCargo();
         ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        selling.setItems(null);
+        selling.setItems(observable2);
+        
+        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
+        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
-        cargo.setItems(observable2);
+        cargo.setItems(observable3);
     };
     
     @FXML
@@ -122,9 +133,13 @@ public class GameUniverseScreenController implements Initializable {
         
         ArrayList<String> list2 = SpaceTrader.getCargo();
         ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
-        cargo.setItems(null);
-        cargo.setItems(observable2);
+        selling.setItems(null);
+        selling.setItems(observable2);
         
+        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
+        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
+        cargo.setItems(null);
+        cargo.setItems(observable3);
         
     }
     
