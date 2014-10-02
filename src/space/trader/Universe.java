@@ -11,6 +11,8 @@ public class Universe {
     private int numberOfSolarSystems;
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private boolean[][] booleanArray;
+    private final SolarSystem homeSolarSystem;
+    private final Planet homePlanet;
     
     /**
      * Constructor for Universe class
@@ -37,6 +39,8 @@ public class Universe {
             solarSystems.add(new SolarSystem(x, y));
             booleanArray[x][y] = true;
         }
+        
+        homeSolarSystem = solarSystems.get(0);
     }
     
     @Override
