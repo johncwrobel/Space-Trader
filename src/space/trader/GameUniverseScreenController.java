@@ -38,6 +38,9 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private Button sell;
     
+    @FXML
+    private TextField buyText;
+    
     /**
      * Initializes the controller class.
      */
@@ -46,7 +49,7 @@ public class GameUniverseScreenController implements Initializable {
         // TODO
     }    
     
-    private void updateText(ActionEvent event) {
+    private void updateText() {
         String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
         playerCredits.setText(credits);
     }

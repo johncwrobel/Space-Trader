@@ -27,6 +27,6 @@
       </Label>
       <Button fx:id="buy" layoutX="710.0" layoutY="561.0" mnemonicParsing="false" text="Buy" />
       <Button fx:id="sell" layoutX="755.0" layoutY="561.0" mnemonicParsing="false" text="Sell" />
-      <TextField layoutX="647.0" layoutY="561.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="buyText" layoutX="647.0" layoutY="561.0" prefHeight="25.0" prefWidth="50.0" />
    </children>
 </Pane>
