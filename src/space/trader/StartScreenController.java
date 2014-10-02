@@ -35,6 +35,11 @@ public class StartScreenController implements Initializable {
         SpaceTrader.setCreationScene();
     }
     
+    /**
+     * Inializes
+     * @param url
+     * @param rb 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

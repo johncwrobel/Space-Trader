@@ -52,7 +52,7 @@ public class Planet {
     }
     
     /**
-     * Stringin' it up, bro
+     * toString method for the class Planet
      * @return string representation of the planet
      */
     @Override

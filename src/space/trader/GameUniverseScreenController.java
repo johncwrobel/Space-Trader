@@ -56,11 +56,18 @@ public class GameUniverseScreenController implements Initializable {
         // TODO
     }    
     
+    /**
+     * updates the text
+     */
     private void updateText() {
         String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
         playerCredits.setText(credits);
     }
     
+    /**
+     * function to buy an item
+     * @param event 
+     */
     @FXML
     public void buy (ActionEvent event) {
         ObservableList<String> selectedItem = goods.getSelectionModel().getSelectedItems();
@@ -97,6 +104,10 @@ public class GameUniverseScreenController implements Initializable {
         }
     }
     
+    /**
+     * Function to sell an Item
+     * @param event 
+     */
     @FXML
     public void sell (ActionEvent event) {
         ObservableList<String> selectedItem = selling.getSelectionModel().getSelectedItems();
@@ -124,6 +135,10 @@ public class GameUniverseScreenController implements Initializable {
         cargo.setItems(observable3);
     };
     
+    /**
+     * Function to accessMarketPlace
+     * @param event 
+     */
     @FXML
     public void accessMarketPlace(ActionEvent event) {
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();

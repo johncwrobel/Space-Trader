@@ -105,6 +105,10 @@ public class SpaceTrader extends Application {
         return myCharacter;
     }
     
+    /**
+     * getter Method for the Cargo
+     * @return an ArrayList of String Item names
+     */
     public static ArrayList<String> getCargo() {
         ArrayList<Item> cargo = ship.cargoHold;
         ArrayList<String> cargoDisplay = new ArrayList<>();

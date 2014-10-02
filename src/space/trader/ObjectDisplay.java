@@ -15,12 +15,22 @@ public class ObjectDisplay {
     private int price;
     private int amount;
     
+    /**
+     * Constructor for class ObjectDisplay
+     * @param item
+     * @param price
+     * @param amount 
+     */
     public ObjectDisplay(Item item, int price, int amount) {
         this.item = item;
         this.price = price;
         this.amount = amount;
     }
     
+    /**
+     * toString method for the class ObjectDisplay
+     * @return 
+     */
     @Override
     public String toString() {
         return item + ": " + price + " credits (" + amount + ")";

@@ -44,6 +44,10 @@ public class Universe {
         homePlanet = homeSolarSystem.getPlanet(0);
     }
     
+    /**
+     * toString method for the class
+     * @return toString
+     */
     @Override
     public String toString() {
         String returnString = "";
