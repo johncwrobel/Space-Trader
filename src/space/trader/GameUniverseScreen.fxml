@@ -9,12 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
    <children>
       <Pane id="controlPanel" fx:id="controlPanel" layoutY="527.0" prefHeight="73.0" prefWidth="800.0">
          <children>
-            <Label fx:id="playerCredits" layoutX="605.0" prefHeight="73.0" prefWidth="195.0" text="Player Credits" />
+            <Label fx:id="playerCredits" layoutX="662.0" prefHeight="73.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
          </children>
       </Pane>
       <Pane layoutX="605.0" prefHeight="520.0" prefWidth="195.0">
