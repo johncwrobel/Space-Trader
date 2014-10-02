@@ -72,12 +72,32 @@ public class MarketPlace {
         }
     }
     
-    public ArrayList<ObjectDisplay> getDisplay() {
-        ArrayList<ObjectDisplay> display = new ArrayList<>();
+    public ArrayList<String> getDisplay() {
+        ArrayList<String> display = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
-            display.add(new ObjectDisplay(items.get(i), prices.get(i), amount.get(i)));
+            display.add(items.get(i).toString() +": " +prices.get(i)+" credits (" + amount.get(i)+")");
+        }
+        
+        for (int i = 0; i < canSell.size(); i++) {
+            display.add(canSell.get(i).toString() + ": " + prices.get(i) + " credits (" + amount.get(i));
         }
         
         return display;
+    }
+    
+    public boolean canSell(Item i) {
+        for (Item s: canSell) {
+            if (s.compareTo(i) == 0) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public int getSellingPrice(Item i) {
+        int itemIndex = 0;
+        //for (int )
+        return 0;
     }
 }

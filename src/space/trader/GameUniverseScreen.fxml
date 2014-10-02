@@ -11,18 +11,9 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
    <children>
-      <Pane id="controlPanel" fx:id="controlPanel" layoutY="527.0" prefHeight="73.0" prefWidth="800.0">
-         <children>
-            <Label fx:id="playerCredits" layoutX="662.0" prefHeight="73.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
-         </children>
-      </Pane>
-      <Pane layoutX="605.0" prefHeight="520.0" prefWidth="195.0">
-         <children>
-            <ListView fx:id="goodsListView" layoutX="-2.0" prefHeight="278.0" prefWidth="195.0" />
-            <ListView fx:id="inventoryListView" layoutX="-2.0" layoutY="278.0" prefHeight="249.0" prefWidth="195.0" />
-            <ScrollBar fx:id="goodsScrollBar" layoutX="181.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="278.0" prefWidth="14.0" />
-            <ScrollBar layoutX="181.0" layoutY="280.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="14.0" />
-         </children>
-      </Pane>
+      <ListView fx:id="inventoryListView" layoutX="605.0" layoutY="278.0" prefHeight="249.0" prefWidth="195.0" />
+      <Button layoutX="680.0" layoutY="527.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Access Marketplace" />
+      <Label fx:id="playerCredits" layoutX="605.0" layoutY="527.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
+      <ListView fx:id="goods" layoutX="603.0" prefHeight="279.0" prefWidth="200.0" />
    </children>
 </Pane>

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class Ship {
     
-    private ArrayList<Item> cargoHold;
+    public ArrayList<Item> cargoHold;
     private int maxCargo;
     
     public Ship() {

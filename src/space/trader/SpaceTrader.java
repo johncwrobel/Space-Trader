@@ -6,6 +6,7 @@
 
 package space.trader;
 
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -26,6 +27,7 @@ public class SpaceTrader extends Application {
     public static Universe universe;
     public static SolarSystem currentSolarSystem;
     public static Planet currentPlanet;
+    public static Ship ship = new  Ship();
     
     /**
      * starts the main application by loading the scenes and the primary stage
@@ -101,6 +103,14 @@ public class SpaceTrader extends Application {
      */
     public static Character getMainCharacter() {
         return myCharacter;
+    }
+    
+    public static ArrayList<String> getCargo() {
+        ArrayList<Item> cargo = ship.cargoHold;
+        for (int i = 0; i < cargo.size(); i++) {
+            
+        }
+        return null;
     }
 
     /**
