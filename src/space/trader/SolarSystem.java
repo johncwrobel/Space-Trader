@@ -94,5 +94,8 @@ public class SolarSystem {
     public int getNumberOfPlanets() {
         return this.numberOfPlanets;
     }
-
+    
+    public Planet getPlanet(int n) {
+        return planets.get(n);
+    }
 }
