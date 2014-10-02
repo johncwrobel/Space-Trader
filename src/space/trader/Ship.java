@@ -6,6 +6,7 @@
 package space.trader;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 
 
@@ -33,5 +34,26 @@ public class Ship {
             }
         }
         return false;
+    }
+    
+    public void addItem(String itemName) {
+        ArrayList<Item> itemList = SpaceTrader.currentPlanet.marketplace.items;
+        for (int i = 0; i < itemList.size(); i++) {
+            String compareString = itemList.get(i).name + ":";
+            if (compareString.equals(itemName)) {
+                cargoHold.add(itemList.get(i));
+                System.out.println("Item Added");
+                break;
+            }
+        }
+        //cargoHold.add(itemList.get(index))
+    }
+    public boolean canAdd() {
+        if (cargoHold.size() < maxCargo) {
+            return true;
+        } else {
+            JOptionPane.showMessageDialog(null, "Not enough storage in the ship", "Alert" , JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
     }
 }

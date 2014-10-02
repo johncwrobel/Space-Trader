@@ -63,8 +63,31 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     public void buy (ActionEvent event) {
         ObservableList<String> selectedItem = goods.getSelectionModel().getSelectedItems();
+        
         for (int i = 0; i < selectedItem.size(); i++) {
+            String[] split = selectedItem.get(i).split(" ");
+            if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
+                    SpaceTrader.currentPlanet.marketplace.canBuy(split[0])) {
+                SpaceTrader.currentPlanet.marketplace.buy(split[0]);
+                SpaceTrader.ship.addItem(split[0]);
+                SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
+            }
             
+        }
+        
+        updateText();
+        ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
+        ObservableList<String> observable = FXCollections.observableArrayList(list);
+        goods.setItems(null);
+        goods.setItems(observable);
+        
+        ArrayList<String> list2 = SpaceTrader.getCargo();
+        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        cargo.setItems(null);
+        cargo.setItems(observable2);
+        
+        for (int x = 0; x < SpaceTrader.ship.cargoHold.size(); x++) {
+            System.out.println(SpaceTrader.ship.cargoHold.get(x).toString());
         }
     }
     
@@ -88,8 +111,6 @@ public class GameUniverseScreenController implements Initializable {
         ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
         cargo.setItems(null);
         cargo.setItems(observable2);
-        
-        System.out.println("sell method works on click");
     };
     
     @FXML

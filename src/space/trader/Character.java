@@ -1,5 +1,7 @@
 package space.trader;
 
+import javax.swing.JOptionPane;
+
 public class Character {
         private String name;
         private int credits;
@@ -36,6 +38,14 @@ public class Character {
             credits -= price;
         }
         
+        public boolean canBuy(int price) {
+            if ((credits - price) >= 0) {
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Not enough credits", "Alert" , JOptionPane.ERROR_MESSAGE);
+                return false;
+            }
+        }
         public void sell(int price) {
             credits += price;
         }

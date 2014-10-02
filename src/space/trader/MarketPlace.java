@@ -1,15 +1,16 @@
 package space.trader;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Tommy Lee
  */
 public class MarketPlace {
-    private final ArrayList<Item> items = new ArrayList<>();
+    public final ArrayList<Item> items = new ArrayList<>();
     private final ArrayList<Integer> prices = new ArrayList<>();
-    private final ArrayList<Integer> amount = new ArrayList<>();
+    private ArrayList<Integer> amount = new ArrayList<>();
     private final ArrayList<Item> canSell = new ArrayList<>();
     private final ArrayList<Integer> sellingPrices = new ArrayList<>();
     private int techLevel;
@@ -75,7 +76,7 @@ public class MarketPlace {
     public ArrayList<String> getDisplay() {
         ArrayList<String> display = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
-            display.add(items.get(i).toString() +": " +prices.get(i)+" credits (" + amount.get(i)+")");
+            display.add(items.get(i).toString() +": " +prices.get(i)+" credits ( " + amount.get(i)+" )");
         }
         
         return display;
@@ -89,6 +90,35 @@ public class MarketPlace {
         }
         
         return false;
+    }
+    
+    public void buy(String name) {
+        int index = 0;
+        for (int i = 0; i < items.size(); i++) {
+            String compareString = items.get(i).name + ":";
+            if (compareString.equals(name)) {
+                index = i;
+                break;
+            }
+        }
+        amount.set(index, amount.get(index) - 1);
+    }
+    
+    public boolean canBuy(String name) {
+        int index = 0;
+        for (int i = 0; i < items.size(); i++) {
+            String compareString = items.get(i).name + ":";
+            if (compareString.equals(name)) {
+                index = i;
+                break;
+            }
+        }
+        if (amount.get(index) == 0) {
+            JOptionPane.showMessageDialog(null, "Not enough supply", "Alert" , JOptionPane.ERROR_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
     }
     
     public int getSellingPrice(Item i) {
