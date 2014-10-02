@@ -83,25 +83,7 @@ public class GameUniverseScreenController implements Initializable {
             
         }
         
-        updateText();
-        ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
-        ObservableList<String> observable = FXCollections.observableArrayList(list);
-        goods.setItems(null);
-        goods.setItems(observable);
-        
-        ArrayList<String> list2 = SpaceTrader.getCargo();
-        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
-        selling.setItems(null);
-        selling.setItems(observable2);
-        
-        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
-        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
-        cargo.setItems(null);
-        cargo.setItems(observable3);
-        
-        for (int x = 0; x < SpaceTrader.ship.cargoHold.size(); x++) {
-            System.out.println(SpaceTrader.ship.cargoHold.get(x).toString());
-        }
+        updateScreen();
     }
     
     /**
@@ -118,6 +100,22 @@ public class GameUniverseScreenController implements Initializable {
             SpaceTrader.getMainCharacter().sell(add);
         }
         
+        updateScreen();
+    };
+    
+    /**
+     * Function to accessMarketPlace
+     * @param event 
+     */
+    @FXML
+    public void accessMarketPlace(ActionEvent event) {
+        updateScreen();
+    }
+    
+    /**
+     * Helper method to update the view
+     */
+    private void updateScreen() {
         updateText();
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
@@ -133,29 +131,6 @@ public class GameUniverseScreenController implements Initializable {
         ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
         cargo.setItems(observable3);
-    };
-    
-    /**
-     * Function to accessMarketPlace
-     * @param event 
-     */
-    @FXML
-    public void accessMarketPlace(ActionEvent event) {
-        ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
-        ObservableList<String> observable = FXCollections.observableArrayList(list);
-        goods.setItems(null);
-        goods.setItems(observable);
-        
-        ArrayList<String> list2 = SpaceTrader.getCargo();
-        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
-        selling.setItems(null);
-        selling.setItems(observable2);
-        
-        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
-        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
-        cargo.setItems(null);
-        cargo.setItems(observable3);
-        
     }
     
 }
