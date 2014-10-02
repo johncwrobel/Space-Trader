@@ -55,6 +55,9 @@ public class Item implements Comparable{
         Item i = (Item) o;
         return this.name.compareTo(i.name);
     }
-    
+    @Override
+    public String toString() {
+        return name;
+    }
     
 }

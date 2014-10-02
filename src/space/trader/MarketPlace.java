@@ -72,7 +72,12 @@ public class MarketPlace {
         }
     }
     
-    public ArrayList<Item> getItems(){
-        return items;
+    public ArrayList<ObjectDisplay> getDisplay() {
+        ArrayList<ObjectDisplay> display = new ArrayList<>();
+        for (int i = 0; i < items.size(); i++) {
+            display.add(new ObjectDisplay(items.get(i), prices.get(i), amount.get(i)));
+        }
+        
+        return display;
     }
 }
