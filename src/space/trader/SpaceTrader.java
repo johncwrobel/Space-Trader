@@ -23,7 +23,9 @@ public class SpaceTrader extends Application {
     private static Scene characterCreation;
     private static Scene gameScreen;
     private static Character myCharacter;
-    private static Universe universe;
+    public static Universe universe;
+    public static SolarSystem currentSolarSystem;
+    public static Planet currentPlanet;
     
     /**
      * starts the main application by loading the scenes and the primary stage
@@ -65,6 +67,8 @@ public class SpaceTrader extends Application {
      */
     public static void createNewUniverse() {
         universe = new Universe();
+        currentPlanet = universe.homePlanet;
+        currentSolarSystem = universe.homeSolarSystem;
     }
     
     /**
