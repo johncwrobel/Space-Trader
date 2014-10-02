@@ -96,6 +96,9 @@ public class SolarSystem {
     }
     
     public Planet getPlanet(int n) {
+        if (n >= planets.size()) {
+            return planets.get(planets.size() - 1);
+        }
         return planets.get(n);
     }
 }
