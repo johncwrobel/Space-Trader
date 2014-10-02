@@ -78,10 +78,6 @@ public class MarketPlace {
             display.add(items.get(i).toString() +": " +prices.get(i)+" credits (" + amount.get(i)+")");
         }
         
-        for (int i = 0; i < canSell.size(); i++) {
-            display.add(canSell.get(i).toString() + ": " + prices.get(i) + " credits (" + amount.get(i));
-        }
-        
         return display;
     }
     
@@ -97,7 +93,11 @@ public class MarketPlace {
     
     public int getSellingPrice(Item i) {
         int itemIndex = 0;
-        //for (int )
-        return 0;
+        for (int j = 0; j < canSell.size(); j++) {
+            if (canSell.get(j).compareTo(i) == 0) {
+                itemIndex = j;
+            }
+        }
+        return sellingPrices.get(itemIndex);
     }
 }

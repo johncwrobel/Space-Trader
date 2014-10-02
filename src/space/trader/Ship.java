@@ -21,5 +21,6 @@ public class Ship {
     public Ship() {
         maxCargo = 10;
         cargoHold = new ArrayList(maxCargo);
+        cargoHold.add(new Item("Water", 0, 0, 2, 30, 3, 4));
     }
 }

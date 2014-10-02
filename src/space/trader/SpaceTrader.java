@@ -107,10 +107,14 @@ public class SpaceTrader extends Application {
     
     public static ArrayList<String> getCargo() {
         ArrayList<Item> cargo = ship.cargoHold;
+        ArrayList<String> cargoDisplay = new ArrayList<>();
+        MarketPlace market = currentPlanet.marketplace;
         for (int i = 0; i < cargo.size(); i++) {
-            
+            if (market.canSell(cargo.get(i))) {
+                cargoDisplay.add(cargo.get(i).toString() + ": " + market.getSellingPrice(cargo.get(i)) + " credits");
+            }
         }
-        return null;
+        return cargoDisplay;
     }
 
     /**

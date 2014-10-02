@@ -29,6 +29,15 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private ListView<String> goods;
     
+    @FXML
+    private ListView<String> cargo;
+    
+    @FXML
+    private Button buy;
+    
+    @FXML
+    private Button sell;
+    
     /**
      * Initializes the controller class.
      */
@@ -44,14 +53,15 @@ public class GameUniverseScreenController implements Initializable {
     
     @FXML
     public void accessMarketPlace(ActionEvent event) {
-        System.out.println("Button press");
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
-        for (String s: list) {
-            System.out.println(s);
-        }
         ObservableList<String> observable = FXCollections.observableArrayList(list);
         goods.setItems(null);
         goods.setItems(observable);
+        
+        ArrayList<String> list2 = SpaceTrader.getCargo();
+        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        cargo.setItems(null);
+        cargo.setItems(observable2);
     }
     
 }
