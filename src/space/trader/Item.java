@@ -8,7 +8,7 @@ package space.trader;
 
 /**
  *
- * @author tanmay
+ * @author tanmay (Seantannah)
  */
 public class Item implements Comparable{
     public final String name;
@@ -19,6 +19,16 @@ public class Item implements Comparable{
     private final int ttp;
     private final int var;
     
+    /**
+     * Constructor for an Item
+     * @param name
+     * @param mtlp
+     * @param mtlu
+     * @param ttp
+     * @param basePrice
+     * @param ipl
+     * @param var 
+     */
     public Item(String name, int mtlp, int  mtlu, int ttp, int basePrice, int ipl, int var) {
         this.name = name;
         this.mtlp = mtlp;
@@ -29,10 +39,19 @@ public class Item implements Comparable{
         this.ipl = ipl;
     }
     
+    /**
+     * Calculates the price of an item
+     * @param techLevel
+     * @return the price
+     */
     public int getPrice(int techLevel) {
         return basePrice + (ipl * (techLevel - mtlp)) + (var * var());
     }
     
+    /**
+     * Helps decide the item's price
+     * @return 
+     */
     private int var() {
         int temp = (int) (Math.random() * 8);
         if (temp < 4) {
@@ -42,19 +61,37 @@ public class Item implements Comparable{
         }
     }
     
+    /**
+     * Getter for MTLP
+     * @return MTLP value
+     */
     public int getMLTP() {
         return mtlp;
     }
     
+    /**
+     * Getter for MTLU
+     * @return MTLU value
+     */
     public int getMTLU() {
         return mtlu;
     }
-
+    
+    /**
+     * Method for comparing items
+     * @param o
+     * @return if they are the same or not
+     */
     @Override
     public int compareTo(Object o) {
         Item i = (Item) o;
         return this.name.compareTo(i.name);
     }
+    
+    /**
+     * Makes a string from an item
+     * @return the string representation of the item
+     */
     @Override
     public String toString() {
         return name;

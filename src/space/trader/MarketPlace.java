@@ -15,6 +15,10 @@ public class MarketPlace {
     private final ArrayList<Integer> sellingPrices = new ArrayList<>();
     private int techLevel;
     
+    /**
+     * Constructs the MarketPlace based on a bunch of variables
+     * @param planetTechLevel 
+     */
     public MarketPlace(int planetTechLevel) {
         this.techLevel = planetTechLevel;
         if (planetTechLevel >= 0) {
@@ -73,6 +77,10 @@ public class MarketPlace {
         }
     }
     
+    /**
+     * Creates the MarketPlace display
+     * @return the display for the MarketPlace
+     */
     public ArrayList<String> getDisplay() {
         ArrayList<String> display = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
@@ -82,6 +90,11 @@ public class MarketPlace {
         return display;
     }
     
+    /**
+     * Checks if the item can be sold
+     * @param i
+     * @return if it can be sold or not
+     */
     public boolean canSell(Item i) {
         for (Item s: canSell) {
             if (s.compareTo(i) == 0) {
@@ -92,6 +105,10 @@ public class MarketPlace {
         return false;
     }
     
+    /**
+     * Facilitates the buying process
+     * @param name 
+     */
     public void buy(String name) {
         int index = 0;
         for (int i = 0; i < items.size(); i++) {
@@ -104,6 +121,11 @@ public class MarketPlace {
         amount.set(index, amount.get(index) - 1);
     }
     
+    /**
+     * Checks if the item can be bought
+     * @param name
+     * @return if it can be bought or not
+     */
     public boolean canBuy(String name) {
         int index = 0;
         for (int i = 0; i < items.size(); i++) {
@@ -121,6 +143,11 @@ public class MarketPlace {
         }
     }
     
+    /**
+     * Determines the selling price of an item
+     * @param i
+     * @return the price
+     */
     public int getSellingPrice(Item i) {
         int itemIndex = 0;
         for (int j = 0; j < canSell.size(); j++) {

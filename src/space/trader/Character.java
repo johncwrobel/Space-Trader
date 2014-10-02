@@ -30,14 +30,27 @@ public class Character {
             this.credits = 2000;
         }
         
+        /**
+         * Getter method for character's credits
+         * @return how many credits the character has
+         */
         public int getCredits() {
             return this.credits;
         }
         
+        /**
+         * Facilitates the buying process
+         * @param price 
+         */
         public void buy(int price) {
             credits -= price;
         }
         
+        /**
+         * Checker method to make sure the character can buy something
+         * @param price
+         * @return if the character can buy it
+         */
         public boolean canBuy(int price) {
             if ((credits - price) >= 0) {
                 return true;
@@ -46,6 +59,11 @@ public class Character {
                 return false;
             }
         }
+        
+        /**
+         * Facilitates the selling process
+         * @param price 
+         */
         public void sell(int price) {
             credits += price;
         }
@@ -83,13 +101,17 @@ public class Character {
         }
         
         /**
-         * Gettr method for Investor
+         * Getter method for Investor
          * @return 
          */
         public int getInvestor() {
             return this.investor;
         }
         
+        /**
+         * toString for the character
+         * @return String representation for the character
+         */
         @Override
         public String toString() {
             return name + ": " + pilot + " pilot points, " + fighter +

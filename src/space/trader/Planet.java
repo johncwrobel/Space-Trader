@@ -51,6 +51,10 @@ public class Planet {
         return resources;
     }
     
+    /**
+     * Stringin' it up, bro
+     * @return string representation of the planet
+     */
     @Override
     public String toString() {
         // (Planet name: name, Tech Level: x, Resource Type: x)

@@ -12,19 +12,27 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author John
+ * @author Johnnycakes
  */
 public class Ship {
     
     public ArrayList<Item> cargoHold;
     private int maxCargo;
     
+    /**
+     * Constructor for the Ship
+     */
     public Ship() {
         maxCargo = 10;
         cargoHold = new ArrayList(maxCargo);
         cargoHold.add(new Item("Water", 0, 0, 2, 30, 3, 4));
     }
     
+    /**
+     * Removes an item from the ship's cargo hold
+     * @param name
+     * @return if it was removed
+     */
     public boolean removeItem(String name) {
         for (int i = 0; i < cargoHold.size(); i++) {
             String compareString = cargoHold.get(i).name + ":";
@@ -36,6 +44,10 @@ public class Ship {
         return false;
     }
     
+    /**
+     * Adds an item to the ship's cargo hold
+     * @param itemName 
+     */
     public void addItem(String itemName) {
         ArrayList<Item> itemList = SpaceTrader.currentPlanet.marketplace.items;
         for (int i = 0; i < itemList.size(); i++) {
@@ -48,6 +60,11 @@ public class Ship {
         }
         //cargoHold.add(itemList.get(index))
     }
+    
+    /**
+     * Checks if there is space in the cargo hold or not
+     * @return if there's room
+     */
     public boolean canAdd() {
         if (cargoHold.size() < maxCargo) {
             return true;
