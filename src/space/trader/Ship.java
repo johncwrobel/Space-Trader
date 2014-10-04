@@ -18,6 +18,10 @@ public class Ship {
     
     public ArrayList<Item> cargoHold;
     private int maxCargo;
+    private int fuel;
+    private int maxFuel;
+    private int xLocation;
+    private int yLocation;
     
     /**
      * Constructor for the Ship
@@ -26,6 +30,8 @@ public class Ship {
         maxCargo = 10;
         cargoHold = new ArrayList(maxCargo);
         cargoHold.add(new Item("Water", 0, 0, 2, 30, 3, 4));
+        fuel = 10;
+        maxFuel = 20;
     }
     
     /**
@@ -42,6 +48,73 @@ public class Ship {
             }
         }
         return false;
+    }
+    
+    /**
+     * Returns the current fuel for the ship
+     * @return Fuel
+     */
+    
+    public int getFuel(){
+        return this.fuel;
+    }
+    
+    /**
+     * Returns the maximum amount of fuel the ship can hold
+     * @return maxFuel
+     */
+    
+    public int getMaxFuel(){
+        return this.maxFuel;
+    }
+    
+    /**
+     * Adds fuel to the ship
+     * @param amount the amount of fuel to add
+     */
+    
+    public void addFuel(int amount){
+        this.fuel += amount;
+    }
+    
+    /**
+     * Whether nor not the ship has enough fuel to travel to a system
+     * @param system the system to travel to
+     * @return true or false
+     */
+    
+    public boolean canTravelTo(SolarSystem system){
+        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation();
+        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation();
+        
+        //uses distance formula to calculate if the distance is too far
+        return Math.sqrt((xLocation-system.getXLocation())*(xLocation-system.getXLocation()) + (yLocation-system.getYLocation())*(yLocation-system.getYLocation())) <= fuel;
+    }
+    
+       /**
+     * Whether nor not the ship has enough fuel to travel to a planet
+     * @param planet the system to travel to
+     * @return true or false
+     */
+    
+    public boolean canTravelTo(Planet planet){
+        return canTravelTo(planet.getSolarSystem());
+    }
+    
+    /**
+     * Moves the ship from current planet to decided planet
+     * Sets currentplanet
+     * Sets currentsolarysystem
+     * Sets X and Y locations
+     * @param planet the planet to travel to
+     */
+    
+    public void travel(Planet planet){
+        fuel = (int) (fuel - Math.sqrt((xLocation-planet.getSolarSystem().getXLocation())*(xLocation-planet.getSolarSystem().getXLocation()) + (yLocation-planet.getSolarSystem().getYLocation())*(yLocation-planet.getSolarSystem().getYLocation())));
+        SpaceTrader.currentPlanet = planet;
+        SpaceTrader.currentSolarSystem = planet.getSolarSystem();
+        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation();
+        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation();
     }
     
     /**

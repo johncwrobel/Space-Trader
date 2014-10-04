@@ -36,6 +36,14 @@ public class Planet {
     }
 
     /**
+     * Getter method for ParentSystem
+     * @return parentSystem
+     */
+    public SolarSystem getSolarSystem(){
+        return this.parentSystem;
+    }
+    
+    /**
      * Getter method for Tech Level
      * @return techLevel
      */
