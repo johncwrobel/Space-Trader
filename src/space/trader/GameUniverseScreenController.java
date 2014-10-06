@@ -59,6 +59,9 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private Button travelButton;
     
+    @FXML
+    private Button myShipButton;
+    
     
     /**
      * Initializes the controller class.

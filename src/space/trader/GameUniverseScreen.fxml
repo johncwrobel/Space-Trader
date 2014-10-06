@@ -20,12 +20,12 @@
       <Button layoutX="677.0" layoutY="561.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Access Marketplace" />
       <Label fx:id="playerCredits" layoutX="602.0" layoutY="561.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" textFill="WHITE" />
       <ListView fx:id="goods" layoutX="600.0" layoutY="40.0" prefHeight="134.0" prefWidth="200.0" />
-      <Label layoutX="673.0" layoutY="14.0" text="BUY" textFill="WHITE">
+      <Label layoutX="684.0" layoutY="14.0" text="BUY" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="672.0" layoutY="182.0" text="SELL" textFill="WHITE">
+      <Label layoutX="683.0" layoutY="182.0" text="SELL" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -33,7 +33,7 @@
       <Button fx:id="buy" layoutX="520.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
       <Button fx:id="sell" layoutX="565.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
       <ListView fx:id="cargo" layoutX="600.0" layoutY="398.0" prefHeight="134.0" prefWidth="200.0" />
-      <Label layoutX="660.0" layoutY="363.0" text="CARGO" textFill="WHITE">
+      <Label layoutX="671.0" layoutY="363.0" text="CARGO" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -46,7 +46,8 @@
       <Canvas fx:id="universeDisplayCanvas" height="400.0" layoutX="50.0" layoutY="40.0" width="400.0" />
       <ChoiceBox fx:id="planetChoiceDropdown" layoutX="24.0" layoutY="561.0" prefWidth="150.0" />
       <Label fx:id="currentSolarSystemLabel" layoutX="44.0" layoutY="538.0" text="Current Solar System" textFill="WHITE" />
-      <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="565.0" text="Selected Solar System: " textFill="WHITE" />
-      <Button fx:id="travelbutton" layoutX="426.0" layoutY="561.0" mnemonicParsing="false" text="Travel" />
+      <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="538.0" text="Selected Solar System: " textFill="WHITE" />
+      <Button fx:id="travelbutton" layoutX="256.0" layoutY="561.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" text="Travel" />
+      <Button fx:id="myShipButton" layoutX="377.0" layoutY="561.0" mnemonicParsing="false" text="My Ship" />
    </children>
 </Pane>
