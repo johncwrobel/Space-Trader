@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
 
@@ -42,6 +43,21 @@ public class GameUniverseScreenController implements Initializable {
     
     @FXML
     private ListView<Item> cargo;
+    
+    @FXML 
+    private Label currentSolarSystemLabel;
+    
+    @FXML
+    private ChoiceBox planetChoiceDropdown;
+    
+    @FXML
+    private Canvas universeDisplayCanvas;
+    
+    @FXML
+    private Label selectedSystemLabel;
+    
+    @FXML
+    private Button travelButton;
     
     
     /**
