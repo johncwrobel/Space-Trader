@@ -57,6 +57,19 @@ public class Universe {
         returnString += "\nNumber of Solar Systems in Universe:" + numberOfSolarSystems + "\n";
         return returnString;
     }
+    
+    public SolarSystem getSystem(int x, int y) {
+        for (SolarSystem s: solarSystems) {
+            int systemX = s.getXLocation();
+            int systemY = s.getYLocation();
+            
+            if (x == systemX && y == systemY) {
+                return s;
+            }
+        }
+        
+        return null;
+    }
         
 }
 

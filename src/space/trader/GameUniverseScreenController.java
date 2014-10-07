@@ -69,6 +69,8 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private Button myShipButton;
     
+    private SolarSystem selectedSystem = null;
+    
     
     /**
      * Initializes the controller class.
@@ -87,7 +89,14 @@ public class GameUniverseScreenController implements Initializable {
      */
     private void updateText() {
         String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
+        String selected = "Selected Solar System: ";
+        if (selectedSystem == null) {
+            selected += "none";
+        } else {
+            selected += selectedSystem.getName();
+        }
         playerCredits.setText(credits);
+        selectedSystemLabel.setText(selected);
     }
     
     /**
@@ -166,6 +175,8 @@ public class GameUniverseScreenController implements Initializable {
         double yPos = e.getY();
         xPos = (int) xPos/20;
         yPos = (int) yPos/20;
+        selectedSystem = SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos);
+        updateScreen();
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
     

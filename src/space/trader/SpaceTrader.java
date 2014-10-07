@@ -58,6 +58,10 @@ public class SpaceTrader extends Application {
         PrimaryStage.setScene(characterCreation);
     }
     
+    public static SolarSystem getSystemFromCoordinate(int x, int y) {
+        return universe.getSystem(x, y);
+    }
+    
     /**
      * sets the scene to the characterCreation scene
      */
