@@ -63,7 +63,7 @@ public class SpaceTrader extends Application {
      */
     public static void setGameScene() throws Exception {
         PrimaryStage.setScene(gameScreen);
-        GameUniverseScreenController.initializeScreen();
+        //GameUniverseScreenController.initializeScreen();
     }
     
     /**

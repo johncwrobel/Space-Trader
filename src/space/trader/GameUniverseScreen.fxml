@@ -43,7 +43,7 @@
             <Image url="@universe-wallpaper-20.jpg" />
          </image>
       </ImageView>
-      <Canvas fx:id="universeDisplayCanvas" height="400.0" layoutX="50.0" layoutY="40.0" width="400.0" />
+      <Canvas fx:id="universeDisplayCanvas" height="400.0" layoutX="50.0" layoutY="40.0" onMouseClicked="#chooseSystem" width="400.0" />
       <ChoiceBox fx:id="planetChoiceDropdown" layoutX="24.0" layoutY="561.0" prefWidth="150.0" />
       <Label fx:id="currentSolarSystemLabel" layoutX="44.0" layoutY="538.0" text="Current Solar System" textFill="WHITE" />
       <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="538.0" text="Selected Solar System: " textFill="WHITE" />

@@ -23,6 +23,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 
 
 /**
@@ -160,6 +161,13 @@ public class GameUniverseScreenController implements Initializable {
         cargo.setItems(observable3);
     }
     
+    public void chooseSystem(MouseEvent e) {
+        double xPos = e.getX();
+        double yPos = e.getY();
+        xPos = (int) xPos/20;
+        yPos = (int) yPos/20;
+        System.out.println("Click: " + xPos + " x, " + yPos + "y");
+    }
     
     private void drawShapes(GraphicsContext gc){
         gc.setStroke(Color.GREEN);
