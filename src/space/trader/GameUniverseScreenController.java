@@ -18,6 +18,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
+import javafx.stage.Stage;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+
 
 /**
  * FXML Controller class
@@ -128,6 +134,8 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public void accessMarketPlace(ActionEvent event) {
+        GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
+        drawShapes(gc);
         updateScreen();
     }
     
@@ -150,6 +158,56 @@ public class GameUniverseScreenController implements Initializable {
         ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
         cargo.setItems(observable3);
+    }
+    
+    
+    private void drawShapes(GraphicsContext gc){
+        gc.setStroke(Color.GREEN);
+        gc.setLineWidth(1);
+        gc.strokeLine(0,0,0,400);
+        gc.strokeLine(0,0,400,0);
+        gc.strokeLine(400,0,400,400);
+        gc.strokeLine(0,400,400,400);
+        gc.strokeLine(20,0,20,400);
+        gc.strokeLine(40,0,40,400);
+        gc.strokeLine(60,0,60,400);
+        gc.strokeLine(80,0,80,400);
+        gc.strokeLine(100,0,100,400);
+        gc.strokeLine(120,0,120,400);
+        gc.strokeLine(140,0,140,400);
+        gc.strokeLine(160,0,160,400);
+        gc.strokeLine(180,0,180,400);
+        gc.strokeLine(200,0,200,400);
+        gc.strokeLine(220,0,220,400);
+        gc.strokeLine(240,0,240,400);
+        gc.strokeLine(260,0,260,400);
+        gc.strokeLine(280,0,280,400);
+        gc.strokeLine(300,0,300,400);
+        gc.strokeLine(320,0,320,400);
+        gc.strokeLine(340,0,340,400);
+        gc.strokeLine(360,0,360,400);
+        gc.strokeLine(380,0,380,400);
+        gc.strokeLine(0,20,400,20);
+        gc.strokeLine(0,40,400,40);
+        gc.strokeLine(0,60,400,60);
+        gc.strokeLine(0,80,400,80);
+        gc.strokeLine(0,100,400,100);
+        gc.strokeLine(0,120,400,120);
+        gc.strokeLine(0,140,400,140);
+        gc.strokeLine(0,160,400,160);
+        gc.strokeLine(0,180,400,180);
+        gc.strokeLine(0,200,400,200);
+        gc.strokeLine(0,220,400,220);
+        gc.strokeLine(0,240,400,240);
+        gc.strokeLine(0,260,400,260);
+        gc.strokeLine(0,280,400,280);
+        gc.strokeLine(0,300,400,300);
+        gc.strokeLine(0,320,400,320);
+        gc.strokeLine(0,340,400,340);
+        gc.strokeLine(0,360,400,360);
+        gc.strokeLine(0,380,400,380);
+        
+        
     }
     
 }

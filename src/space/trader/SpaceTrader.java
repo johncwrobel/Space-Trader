@@ -40,11 +40,12 @@ public class SpaceTrader extends Application {
         
         Parent root = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         Parent character = FXMLLoader.load(getClass().getResource("CharacterCreation.fxml"));
+        createNewUniverse();
         Parent game = FXMLLoader.load(getClass().getResource("GameUniverseScreen.fxml"));
         
         main = new Scene(root);
-        characterCreation = new Scene(character);
         gameScreen = new Scene(game);
+        characterCreation = new Scene(character);
         PrimaryStage = stage;
         PrimaryStage.setScene(main);
         PrimaryStage.show();
@@ -60,8 +61,9 @@ public class SpaceTrader extends Application {
     /**
      * sets the scene to the characterCreation scene
      */
-    public static void setGameScene() {
+    public static void setGameScene() throws Exception {
         PrimaryStage.setScene(gameScreen);
+        GameUniverseScreenController.initializeScreen();
     }
     
     /**
