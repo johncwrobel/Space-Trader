@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Universe {
     
     private int numberOfSolarSystems;
-    private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
+    public ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private boolean[][] booleanArray;
     public final SolarSystem homeSolarSystem;
     public final Planet homePlanet;

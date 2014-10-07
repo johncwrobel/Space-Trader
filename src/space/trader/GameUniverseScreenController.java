@@ -170,6 +170,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     private void drawShapes(GraphicsContext gc){
+        gc.setFill(Color.RED);
         gc.setStroke(Color.GREEN);
         gc.setLineWidth(1);
         gc.strokeLine(0,0,0,400);
@@ -214,6 +215,13 @@ public class GameUniverseScreenController implements Initializable {
         gc.strokeLine(0,340,400,340);
         gc.strokeLine(0,360,400,360);
         gc.strokeLine(0,380,400,380);
+        for(SolarSystem s: SpaceTrader.universe.solarSystems){
+            int x = (s.getXLocation() * 20);
+            int y = (s.getYLocation() * 20);
+            int w = 20;
+            gc.fillOval(x,y,w,w);
+            
+        }
         
         
     }
