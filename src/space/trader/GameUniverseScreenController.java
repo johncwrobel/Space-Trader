@@ -233,6 +233,11 @@ public class GameUniverseScreenController implements Initializable {
             gc.fillOval(x,y,w,w);
             
         }
+        int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
+        int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
+        int w = 20;
+        gc.setFill(Color.BLUE);
+        gc.fillOval(x,y,w,w);
         
         
     }
