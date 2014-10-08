@@ -221,51 +221,20 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     private void drawShapes(GraphicsContext gc){
+        gc.setLineWidth(1);
         gc.setFill(Color.RED);
         gc.setStroke(Color.GREEN);
-        gc.setLineWidth(1);
-        gc.strokeLine(0,0,0,400);
-        gc.strokeLine(0,0,400,0);
-        gc.strokeLine(400,0,400,400);
-        gc.strokeLine(0,400,400,400);
-        gc.strokeLine(20,0,20,400);
-        gc.strokeLine(40,0,40,400);
-        gc.strokeLine(60,0,60,400);
-        gc.strokeLine(80,0,80,400);
-        gc.strokeLine(100,0,100,400);
-        gc.strokeLine(120,0,120,400);
-        gc.strokeLine(140,0,140,400);
-        gc.strokeLine(160,0,160,400);
-        gc.strokeLine(180,0,180,400);
-        gc.strokeLine(200,0,200,400);
-        gc.strokeLine(220,0,220,400);
-        gc.strokeLine(240,0,240,400);
-        gc.strokeLine(260,0,260,400);
-        gc.strokeLine(280,0,280,400);
-        gc.strokeLine(300,0,300,400);
-        gc.strokeLine(320,0,320,400);
-        gc.strokeLine(340,0,340,400);
-        gc.strokeLine(360,0,360,400);
-        gc.strokeLine(380,0,380,400);
-        gc.strokeLine(0,20,400,20);
-        gc.strokeLine(0,40,400,40);
-        gc.strokeLine(0,60,400,60);
-        gc.strokeLine(0,80,400,80);
-        gc.strokeLine(0,100,400,100);
-        gc.strokeLine(0,120,400,120);
-        gc.strokeLine(0,140,400,140);
-        gc.strokeLine(0,160,400,160);
-        gc.strokeLine(0,180,400,180);
-        gc.strokeLine(0,200,400,200);
-        gc.strokeLine(0,220,400,220);
-        gc.strokeLine(0,240,400,240);
-        gc.strokeLine(0,260,400,260);
-        gc.strokeLine(0,280,400,280);
-        gc.strokeLine(0,300,400,300);
-        gc.strokeLine(0,320,400,320);
-        gc.strokeLine(0,340,400,340);
-        gc.strokeLine(0,360,400,360);
-        gc.strokeLine(0,380,400,380);
+        int sX = 0;
+        int sY = 0;
+        for(int x=0; x<=20; x++){
+            sX = x * 20;
+            gc.strokeLine(sX, 0, sX, 400);
+        }
+        for(int y=0; y<=20; y++){
+            sY = y * 20;               
+            gc.strokeLine(0, sY, 400, sY);
+        }
+        
         for(SolarSystem s: SpaceTrader.universe.solarSystems){
             int x = (s.getXLocation() * 20);
             int y = (s.getYLocation() * 20);
