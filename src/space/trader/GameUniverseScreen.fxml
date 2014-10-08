@@ -48,6 +48,6 @@
       <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="538.0" text="Selected Solar System: " textFill="WHITE" />
       <Button fx:id="travelbutton" layoutX="256.0" layoutY="561.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="56.0" text="Travel" />
       <Button fx:id="myShipButton" layoutX="377.0" layoutY="561.0" mnemonicParsing="false" text="My Ship" />
-      <ComboBox fx:id="planetComboBox" layoutX="38.0" layoutY="561.0" prefWidth="150.0" />
+      <ComboBox fx:id="planetComboBox" layoutX="6.0" layoutY="561.0" prefHeight="25.0" prefWidth="188.0" promptText="Select Planet" />
    </children>
 </Pane>
