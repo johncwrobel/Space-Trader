@@ -63,11 +63,19 @@ public class SpaceTrader extends Application {
         return universe.getSystem(x, y);
     }
     
-    public static void travel(SolarSystem system) {
+    public static void travelSolarSystem(SolarSystem system) {
         if (ship.canTravelTo(system)) {
             ship.travel(system.getPlanet(0));
         } else {
              JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void travelPlanet(Planet planet) {
+        if (ship.canTravelTo(planet)) {
+            ship.travel(planet);
+        } else {
+            JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
         }
     }
     

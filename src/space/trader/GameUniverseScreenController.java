@@ -73,6 +73,9 @@ public class GameUniverseScreenController implements Initializable {
     private Button travelButton;
     
     @FXML
+    private Button jumpButton;
+    
+    @FXML
     private Button myShipButton;
     
     private SolarSystem selectedSystem = null;
@@ -94,12 +97,13 @@ public class GameUniverseScreenController implements Initializable {
     
     public void travel(ActionEvent event) {
         if (selectedSystem != null) {
-            SpaceTrader.travel(selectedSystem);
+            SpaceTrader.travelSolarSystem(selectedSystem);
         } else {
             JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
         }
         updateScreen();
     }
+    
     
     /**
      * updates the text
@@ -141,6 +145,23 @@ public class GameUniverseScreenController implements Initializable {
             
         }
         
+        updateScreen();
+    }
+    
+    @FXML
+    public void jump (ActionEvent event) {
+        String planetString = planetComboBox.getValue();
+        Planet toPlanet = null;
+        for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) {
+            if (planetString.equals(SpaceTrader.currentSolarSystem.planets.get(x).getName())) {
+                toPlanet = SpaceTrader.currentSolarSystem.planets.get(x);
+            }
+        }
+        if (toPlanet != null) {
+            SpaceTrader.travelPlanet(toPlanet);
+        } else {
+            JOptionPane.showMessageDialog(null, "You have not selected a Planet", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
         updateScreen();
     }
     
@@ -207,7 +228,8 @@ public class GameUniverseScreenController implements Initializable {
         cargo.setItems(null);
         cargo.setItems(observable3);
         
-        planetComboBox = new ComboBox(observable);
+        planetComboBox.setItems(null);
+        planetComboBox.setItems(getPlanets());
     }
     
     public void chooseSystem(MouseEvent e) {
