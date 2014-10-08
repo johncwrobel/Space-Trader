@@ -88,8 +88,8 @@ public class CharacterCreationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try{
-            final URL resource = getClass().getResource("backgroundMusic.mp3");
+        try{ //all of this sets up and plays the music
+            final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
             Media music = new Media(resource.toString());
             MediaPlayer mediaPlayer = new MediaPlayer(music);
             mediaPlayer.play();
