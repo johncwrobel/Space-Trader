@@ -20,7 +20,7 @@ import javafx.application.Application;
 
 /**
  *
- * @author Tanmay/Ben
+ * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
     
@@ -92,6 +92,7 @@ public class CharacterCreationController implements Initializable {
             final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
             Media music = new Media(resource.toString());
             MediaPlayer mediaPlayer = new MediaPlayer(music);
+            mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE); //this is the line that loops the mp3 indefinitely
             mediaPlayer.play();
         }catch(Exception e){
         }
