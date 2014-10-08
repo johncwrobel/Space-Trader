@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -60,6 +61,14 @@ public class SpaceTrader extends Application {
     
     public static SolarSystem getSystemFromCoordinate(int x, int y) {
         return universe.getSystem(x, y);
+    }
+    
+    public static void travel(SolarSystem system) {
+        if (ship.canTravelTo(system)) {
+            ship.travel(system.getPlanet(0));
+        } else {
+             JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     /**

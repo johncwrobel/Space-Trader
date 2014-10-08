@@ -90,7 +90,16 @@ public class GameUniverseScreenController implements Initializable {
         
         
         // TODO
-    }    
+    }
+    
+    public void travel(ActionEvent event) {
+        if (selectedSystem != null) {
+            SpaceTrader.travel(selectedSystem);
+        } else {
+            JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
+        updateScreen();
+    }
     
     /**
      * updates the text
@@ -158,8 +167,6 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public void accessMarketPlace(ActionEvent event) {
-        GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
-        drawShapes(gc);
         ObservableList<String> observable = getPlanets();
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());
@@ -182,6 +189,8 @@ public class GameUniverseScreenController implements Initializable {
      * Helper method to update the view
      */
     private void updateScreen() {
+        GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
+        drawShapes(gc);
         updateText();
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
