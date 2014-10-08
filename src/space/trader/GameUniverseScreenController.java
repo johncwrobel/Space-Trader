@@ -55,6 +55,12 @@ public class GameUniverseScreenController implements Initializable {
     private Label currentSolarSystemLabel;
     
     @FXML
+    private Label currentPlanetLabel;
+    
+    @FXML
+    private Label fuelLabel;
+    
+    @FXML
     private ComboBox<String> planetComboBox;
     
     @FXML
@@ -92,6 +98,9 @@ public class GameUniverseScreenController implements Initializable {
     private void updateText() {
         String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
         String selected = "Selected Solar System: ";
+        String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
+        String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
+        String fuel = "fuel: " + SpaceTrader.ship.getFuel();
         if (selectedSystem == null) {
             selected += "none";
         } else {
@@ -99,6 +108,9 @@ public class GameUniverseScreenController implements Initializable {
         }
         playerCredits.setText(credits);
         selectedSystemLabel.setText(selected);
+        currentSolarSystemLabel.setText(currentSystem);
+        currentPlanetLabel.setText(planet);
+        fuelLabel.setText(fuel);
     }
     
     /**
