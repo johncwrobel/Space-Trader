@@ -55,7 +55,7 @@ public class GameUniverseScreenController implements Initializable {
     private Label currentSolarSystemLabel;
     
     @FXML
-    private ChoiceBox planetChoiceDropdown;
+    private ComboBox<String> planetComboBox;
     
     @FXML
     private Canvas universeDisplayCanvas;
@@ -81,6 +81,8 @@ public class GameUniverseScreenController implements Initializable {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
         });
+        
+        
         // TODO
     }    
     
@@ -146,7 +148,22 @@ public class GameUniverseScreenController implements Initializable {
     public void accessMarketPlace(ActionEvent event) {
         GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
         drawShapes(gc);
+        ObservableList<String> observable = getPlanets();
+        for (int x = 0; x < observable.size(); x++) {
+            System.out.println(observable.get(x).toString());
+        }
+        
         updateScreen();
+    }
+    
+    public ObservableList<String> getPlanets() {
+        ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
+        ArrayList<String> planetString = new ArrayList();
+        for (int x = 0; x < planetList.size(); x++) {
+            planetString.add(planetList.get(x).getName());
+        }
+        ObservableList<String> observable = FXCollections.observableArrayList(planetString);
+        return observable;
     }
     
     /**
@@ -168,6 +185,8 @@ public class GameUniverseScreenController implements Initializable {
         ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
         cargo.setItems(observable3);
+        
+        planetComboBox = new ComboBox(observable);
     }
     
     public void chooseSystem(MouseEvent e) {

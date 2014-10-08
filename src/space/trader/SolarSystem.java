@@ -16,7 +16,7 @@ public class SolarSystem {
     private int xLocation;
     private int yLocation;
     private int numberOfPlanets;
-    private ArrayList<Planet> planets = new ArrayList<Planet>();
+    public ArrayList<Planet> planets = new ArrayList<Planet>();
     private static ArrayList<String> systemNames = new ArrayList<String>();
    
     static {
