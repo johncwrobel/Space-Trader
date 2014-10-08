@@ -192,10 +192,12 @@ public class GameUniverseScreenController implements Initializable {
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());
         }
-        
         updateScreen();
     }
     
+    /**
+     * Helper method to update the list of planets
+     */
     public ObservableList<String> getPlanets() {
         ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
         ArrayList<String> planetString = new ArrayList();

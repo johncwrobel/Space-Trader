@@ -14,6 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.application.Application;
+
 /**
  *
  * @author Tanmay/Ben
@@ -84,7 +88,13 @@ public class CharacterCreationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try{
+            final URL resource = getClass().getResource("backgroundMusic.mp3");
+            Media music = new Media(resource.toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(music);
+            mediaPlayer.play();
+        }catch(Exception e){
+        }
     }
     
     /**
