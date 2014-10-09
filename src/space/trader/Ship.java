@@ -56,7 +56,7 @@ public class Ship {
      */
     
     public int getFuel(){
-        return this.fuel;
+        return this.fuel; //returns the ship's current Fuel
     }
     
     /**
@@ -65,7 +65,7 @@ public class Ship {
      */
     
     public int getMaxFuel(){
-        return this.maxFuel;
+        return this.maxFuel; //returns the ship's maximum allowed fuel
     }
     
     /**
@@ -74,7 +74,7 @@ public class Ship {
      */
     
     public void addFuel(int amount){
-        this.fuel += amount;
+        this.fuel += amount; //add a certain amount of fuel to the ship
     }
     
     /**
@@ -84,8 +84,8 @@ public class Ship {
      */
     
     public boolean canTravelTo(SolarSystem system){
-        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation();
-        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation();
+        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation(); //updates the xLocation of the ship to use later
+        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates the yLocation of the ship to use later
         
         //uses distance formula to calculate if the distance is too far
         return Math.sqrt((xLocation-system.getXLocation())*(xLocation-system.getXLocation()) + (yLocation-system.getYLocation())*(yLocation-system.getYLocation())) <= fuel;
@@ -98,7 +98,7 @@ public class Ship {
      */
     
     public boolean canTravelTo(Planet planet){
-        return canTravelTo(planet.getSolarSystem());
+        return canTravelTo(planet.getSolarSystem()); //calls above method, but with planet instead
     }
     
     /**
@@ -110,11 +110,12 @@ public class Ship {
      */
     
     public void travel(Planet planet){
+        //subtracts fuel based on how far we travelled
         fuel = (int) (fuel - Math.sqrt((xLocation-planet.getSolarSystem().getXLocation())*(xLocation-planet.getSolarSystem().getXLocation()) + (yLocation-planet.getSolarSystem().getYLocation())*(yLocation-planet.getSolarSystem().getYLocation())));
-        SpaceTrader.currentPlanet = planet;
-        SpaceTrader.currentSolarSystem = planet.getSolarSystem();
-        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation();
-        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation();
+        SpaceTrader.currentPlanet = planet; //sets currentPlanet
+        SpaceTrader.currentSolarSystem = planet.getSolarSystem(); //sets currentSolarSystem
+        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation(); //updates xLocation of ship
+        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates yLocation of ship
     }
     
     /**
