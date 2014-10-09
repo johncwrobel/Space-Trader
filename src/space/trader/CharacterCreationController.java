@@ -14,9 +14,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.application.Application;
+
 /**
  *
- * @author Tanmay/Ben
+ * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
     
@@ -41,7 +45,7 @@ public class CharacterCreationController implements Initializable {
      * @param event ActionEvent for the listener
      */
     @FXML
-    private void confirm(ActionEvent event) {
+    private void confirm(ActionEvent event) throws Exception {
         String pilotString = pilotTextArea.getText().trim();
         String fighterString = fighterTextArea.getText().trim();
         String traderString = traderTextArea.getText().trim();
@@ -65,8 +69,8 @@ public class CharacterCreationController implements Initializable {
             } else {
                 Character myCharacter = new Character(name, pilot, fighter, trader, engineer, investor);
                 SpaceTrader.createCharacter(myCharacter);
+          //      SpaceTrader.createNewUniverse();
                 SpaceTrader.setGameScene();
-                SpaceTrader.createNewUniverse();
                 SpaceTrader.printUniverse();
                 System.out.println(SpaceTrader.getMainCharacter());
             }
@@ -84,7 +88,14 @@ public class CharacterCreationController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try{ //all of this sets up and plays the music
+            final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
+            Media music = new Media(resource.toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(music);
+            mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE); //this is the line that loops the mp3 indefinitely
+            mediaPlayer.play();
+        }catch(Exception e){
+        }
     }
     
     /**

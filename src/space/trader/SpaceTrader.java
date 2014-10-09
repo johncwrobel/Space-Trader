@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,11 +41,12 @@ public class SpaceTrader extends Application {
         
         Parent root = FXMLLoader.load(getClass().getResource("StartScreen.fxml"));
         Parent character = FXMLLoader.load(getClass().getResource("CharacterCreation.fxml"));
+        createNewUniverse();
         Parent game = FXMLLoader.load(getClass().getResource("GameUniverseScreen.fxml"));
         
         main = new Scene(root);
-        characterCreation = new Scene(character);
         gameScreen = new Scene(game);
+        characterCreation = new Scene(character);
         PrimaryStage = stage;
         PrimaryStage.setScene(main);
         PrimaryStage.show();
@@ -57,11 +59,32 @@ public class SpaceTrader extends Application {
         PrimaryStage.setScene(characterCreation);
     }
     
+    public static SolarSystem getSystemFromCoordinate(int x, int y) {
+        return universe.getSystem(x, y);
+    }
+    
+    public static void travelSolarSystem(SolarSystem system) {
+        if (ship.canTravelTo(system)) {
+            ship.travel(system.getPlanet(0));
+        } else {
+             JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public static void travelPlanet(Planet planet) {
+        if (ship.canTravelTo(planet)) {
+            ship.travel(planet);
+        } else {
+            JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     /**
      * sets the scene to the characterCreation scene
      */
-    public static void setGameScene() {
+    public static void setGameScene() throws Exception {
         PrimaryStage.setScene(gameScreen);
+        //GameUniverseScreenController.initializeScreen();
     }
     
     /**

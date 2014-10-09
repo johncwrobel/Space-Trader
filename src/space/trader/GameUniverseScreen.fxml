@@ -11,27 +11,46 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.GameUniverseScreenController">
    <children>
+      <ImageView fitHeight="606.0" fitWidth="808.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@universe-wallpaper-20.jpg" />
+         </image>
+      </ImageView>
       <ListView fx:id="selling" layoutX="600.0" layoutY="214.0" prefHeight="134.0" prefWidth="200.0" />
-      <Button layoutX="677.0" layoutY="561.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Access Marketplace" />
-      <Label fx:id="playerCredits" layoutX="602.0" layoutY="561.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" />
+      <Button layoutX="710.0" layoutY="561.0" mnemonicParsing="false" onAction="#accessMarketPlace" text="Start Game" />
+      <Label fx:id="playerCredits" layoutX="629.0" layoutY="561.0" prefHeight="25.0" prefWidth="75.0" text="Credits: 2000" textAlignment="CENTER" textFill="WHITE" />
       <ListView fx:id="goods" layoutX="600.0" layoutY="40.0" prefHeight="134.0" prefWidth="200.0" />
-      <Label layoutX="673.0" layoutY="14.0" text="BUY">
+      <Label layoutX="684.0" layoutY="14.0" text="BUY" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="672.0" layoutY="182.0" text="SELL">
+      <Label layoutX="683.0" layoutY="182.0" text="SELL" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="buy" layoutX="520.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
-      <Button fx:id="sell" layoutX="565.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
+      <Button fx:id="buy" layoutX="547.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+      <Button fx:id="sell" layoutX="592.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
       <ListView fx:id="cargo" layoutX="600.0" layoutY="398.0" prefHeight="134.0" prefWidth="200.0" />
-      <Label layoutX="660.0" layoutY="363.0" text="CARGO">
+      <Label layoutX="671.0" layoutY="363.0" text="CARGO" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
+      <ImageView fitHeight="532.0" fitWidth="601.0" layoutX="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@universe-wallpaper-20.jpg" />
+         </image>
+      </ImageView>
+      <Canvas fx:id="universeDisplayCanvas" height="400.0" layoutX="100.0" layoutY="100.0" onMouseClicked="#chooseSystem" width="400.0" />
+      <Label fx:id="currentSolarSystemLabel" layoutX="20.0" layoutY="19.0" prefHeight="17.0" prefWidth="228.0" text="Current Solar System" textFill="WHITE" />
+      <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="538.0" text="Selected Solar System: " textFill="WHITE" />
+      <Button fx:id="travelbutton" layoutX="375.0" layoutY="561.0" mnemonicParsing="false" onAction="#travel" prefHeight="25.0" prefWidth="56.0" text="Travel" />
+      <Button fx:id="myShipButton" layoutX="471.0" layoutY="561.0" mnemonicParsing="false" text="My Ship" />
+      <ComboBox fx:id="planetComboBox" layoutX="13.0" layoutY="561.0" prefHeight="25.0" prefWidth="150.0" promptText="Select Planet" />
+      <Button fx:id="jumpButton" layoutX="190.0" layoutY="561.0" mnemonicParsing="false" onAction="#jump" prefHeight="25.0" prefWidth="130.0" text="Jump to New Planet" />
+      <Label fx:id="currentPlanetLabel" layoutX="286.0" layoutY="19.0" prefHeight="17.0" prefWidth="228.0" text="Current Planet:" textFill="WHITE" />
+      <Label fx:id="fuelLabel" layoutX="20.0" layoutY="48.0" prefHeight="17.0" prefWidth="122.0" text="Fuel: " textFill="WHITE" />
    </children>
 </Pane>

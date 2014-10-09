@@ -15,8 +15,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
+import javafx.stage.Stage;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+
 
 /**
  * FXML Controller class
@@ -43,6 +51,35 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private ListView<Item> cargo;
     
+    @FXML 
+    private Label currentSolarSystemLabel;
+    
+    @FXML
+    private Label currentPlanetLabel;
+    
+    @FXML
+    private Label fuelLabel;
+    
+    @FXML
+    private ComboBox<String> planetComboBox;
+    
+    @FXML
+    private Canvas universeDisplayCanvas;
+    
+    @FXML
+    private Label selectedSystemLabel;
+    
+    @FXML
+    private Button travelButton;
+    
+    @FXML
+    private Button jumpButton;
+    
+    @FXML
+    private Button myShipButton;
+    
+    private SolarSystem selectedSystem = null;
+    
     
     /**
      * Initializes the controller class.
@@ -53,15 +90,40 @@ public class GameUniverseScreenController implements Initializable {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
         });
+        
+        
         // TODO
-    }    
+    }
+    
+    public void travel(ActionEvent event) {
+        if (selectedSystem != null) {
+            SpaceTrader.travelSolarSystem(selectedSystem);
+        } else {
+            JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
+        updateScreen();
+    }
+    
     
     /**
      * updates the text
      */
     private void updateText() {
         String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
+        String selected = "Selected Solar System: ";
+        String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
+        String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
+        String fuel = "fuel: " + SpaceTrader.ship.getFuel();
+        if (selectedSystem == null) {
+            selected += "none";
+        } else {
+            selected += selectedSystem.getName();
+        }
         playerCredits.setText(credits);
+        selectedSystemLabel.setText(selected);
+        currentSolarSystemLabel.setText(currentSystem);
+        currentPlanetLabel.setText(planet);
+        fuelLabel.setText(fuel);
     }
     
     /**
@@ -83,6 +145,23 @@ public class GameUniverseScreenController implements Initializable {
             
         }
         
+        updateScreen();
+    }
+    
+    @FXML
+    public void jump (ActionEvent event) {
+        String planetString = planetComboBox.getValue();
+        Planet toPlanet = null;
+        for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) {
+            if (planetString.equals(SpaceTrader.currentSolarSystem.planets.get(x).getName())) {
+                toPlanet = SpaceTrader.currentSolarSystem.planets.get(x);
+            }
+        }
+        if (toPlanet != null) {
+            SpaceTrader.travelPlanet(toPlanet);
+        } else {
+            JOptionPane.showMessageDialog(null, "You have not selected a Planet", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        }
         updateScreen();
     }
     
@@ -109,13 +188,32 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public void accessMarketPlace(ActionEvent event) {
+        ObservableList<String> observable = getPlanets();
+        for (int x = 0; x < observable.size(); x++) {
+            System.out.println(observable.get(x).toString());
+        }
         updateScreen();
+    }
+    
+    /**
+     * Helper method to update the list of planets
+     */
+    public ObservableList<String> getPlanets() {
+        ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
+        ArrayList<String> planetString = new ArrayList();
+        for (int x = 0; x < planetList.size(); x++) {
+            planetString.add(planetList.get(x).getName());
+        }
+        ObservableList<String> observable = FXCollections.observableArrayList(planetString);
+        return observable;
     }
     
     /**
      * Helper method to update the view
      */
     private void updateScreen() {
+        GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
+        drawShapes(gc);
         updateText();
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
@@ -131,6 +229,50 @@ public class GameUniverseScreenController implements Initializable {
         ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
         cargo.setItems(null);
         cargo.setItems(observable3);
+        
+        planetComboBox.setItems(null);
+        planetComboBox.setItems(getPlanets());
+    }
+    
+    public void chooseSystem(MouseEvent e) {
+        double xPos = e.getX();
+        double yPos = e.getY();
+        xPos = (int) xPos/20;
+        yPos = (int) yPos/20;
+        selectedSystem = SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos);
+        updateScreen();
+        System.out.println("Click: " + xPos + " x, " + yPos + "y");
+    }
+    
+    private void drawShapes(GraphicsContext gc){
+        gc.setLineWidth(1);
+        gc.setFill(Color.RED);
+        gc.setStroke(Color.GREEN);
+        int sX = 0;
+        int sY = 0;
+        for(int x=0; x<=20; x++){
+            sX = x * 20;
+            gc.strokeLine(sX, 0, sX, 400);
+        }
+        for(int y=0; y<=20; y++){
+            sY = y * 20;               
+            gc.strokeLine(0, sY, 400, sY);
+        }
+        
+        for(SolarSystem s: SpaceTrader.universe.solarSystems){
+            int x = (s.getXLocation() * 20);
+            int y = (s.getYLocation() * 20);
+            int w = 20;
+            gc.fillOval(x,y,w,w);
+            
+        }
+        int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
+        int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
+        int w = 20;
+        gc.setFill(Color.BLUE);
+        gc.fillOval(x,y,w,w);
+        
+        
     }
     
 }
