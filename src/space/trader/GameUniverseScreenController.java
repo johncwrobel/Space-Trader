@@ -96,20 +96,20 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     public void travel(ActionEvent event) {
-        if (selectedSystem != null) {
+        if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
         } else {
             JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
         }
-        updateScreen();
+        updateScreen(); //update the screen after they've traveled
     }
     
     
     /**
      * updates the text
      */
-    private void updateText() {
-        String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
+    private void updateText() { 
+        String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits(); //build everything into strings
         String selected = "Selected Solar System: ";
         String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
         String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
@@ -119,7 +119,7 @@ public class GameUniverseScreenController implements Initializable {
         } else {
             selected += selectedSystem.getName();
         }
-        playerCredits.setText(credits);
+        playerCredits.setText(credits); //then use those strings to update the labels
         selectedSystemLabel.setText(selected);
         currentSolarSystemLabel.setText(currentSystem);
         currentPlanetLabel.setText(planet);
@@ -134,11 +134,11 @@ public class GameUniverseScreenController implements Initializable {
     public void buy (ActionEvent event) {
         ObservableList<String> selectedItem = goods.getSelectionModel().getSelectedItems();
         
-        for (int i = 0; i < selectedItem.size(); i++) {
+        for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
             String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
-                    SpaceTrader.currentPlanet.marketplace.canBuy(split[0])) {
-                SpaceTrader.currentPlanet.marketplace.buy(split[0]);
+                    SpaceTrader.currentPlanet.marketplace.canBuy(split[0])) { //check if valid purchase
+                SpaceTrader.currentPlanet.marketplace.buy(split[0]); //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
             }
@@ -147,17 +147,20 @@ public class GameUniverseScreenController implements Initializable {
         
         updateScreen();
     }
-    
+    /**
+     * Moves player between planets in a solar system
+     * @param event 
+     */
     @FXML
     public void jump (ActionEvent event) {
         String planetString = planetComboBox.getValue();
         Planet toPlanet = null;
-        for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) {
+        for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) { //find the planet they want to travel to
             if (planetString.equals(SpaceTrader.currentSolarSystem.planets.get(x).getName())) {
                 toPlanet = SpaceTrader.currentSolarSystem.planets.get(x);
             }
         }
-        if (toPlanet != null) {
+        if (toPlanet != null) { //if it's a real selection, put them there
             SpaceTrader.travelPlanet(toPlanet);
         } else {
             JOptionPane.showMessageDialog(null, "You have not selected a Planet", "Alert!" , JOptionPane.ERROR_MESSAGE);
@@ -234,6 +237,10 @@ public class GameUniverseScreenController implements Initializable {
         planetComboBox.setItems(getPlanets());
     }
     
+    /**
+     * Handles the user clicking on new systems
+     * @param e 
+     */
     public void chooseSystem(MouseEvent e) {
         double xPos = e.getX();
         double yPos = e.getY();
@@ -244,6 +251,10 @@ public class GameUniverseScreenController implements Initializable {
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
     
+    /**
+     * Draws the planets
+     * @param gc 
+     */
     private void drawShapes(GraphicsContext gc){
         gc.setLineWidth(1);
         gc.setFill(Color.RED);
