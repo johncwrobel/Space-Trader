@@ -12,6 +12,6 @@ package pong;
  */
 public abstract class NPC {
     
-    public abstract boolean move(Shape ball, Shape paddle);
+    public abstract void move(Shape ball, Shape paddle);
     
 }

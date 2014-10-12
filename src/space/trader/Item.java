@@ -97,4 +97,10 @@ public class Item implements Comparable{
         return name;
     }
     
+    public boolean isIllegal() {
+        if ((name == "Narcotics") | (name == "Firearms")) {
+            return true;
+        }
+        return false;
+    }
 }
