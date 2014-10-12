@@ -91,7 +91,7 @@ public class SpaceTrader extends Application {
     /**
      * sets the scene to the characterCreation scene
      */
-    public static void setGameScene() throws Exception {
+    public static void setGameScene() {
         PrimaryStage.setScene(gameScreen);
         //GameUniverseScreenController.initializeScreen();
     }

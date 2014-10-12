@@ -53,7 +53,7 @@ public class Character {
          * @return 
          */
         public int policeBribe() {
-            int bribeAmount = ((int)Math.random() * 400) + 100;
+            int bribeAmount = 500;
             return bribeAmount;
         }
         
@@ -61,8 +61,8 @@ public class Character {
          * deducts bribe amount from player credits
          * @param amount 
          */
-        public void payBribe(int amount) {
-            credits -= amount;
+        public void payBribe() {
+            credits -= 500;
         }
              
         /**
