@@ -6,6 +6,8 @@
 
 package pong;
 
+import javafx.scene.canvas.GraphicsContext;
+
 /**
  *
  * @author tanmay
@@ -17,7 +19,7 @@ public abstract class Shape {
     private int xdir;
     private int ydir;
     
-    public abstract void draw();
+    public abstract void draw(GraphicsContext gc);
     
     public abstract void animate();
     
