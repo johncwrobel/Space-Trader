@@ -10,6 +10,5 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.PirateEncounterScreenController">
    <children>
       <Canvas fx:id="canvas" height="400.0" layoutX="100.0" layoutY="100.0" onMouseClicked="#handle" onMouseEntered="#handle" onMouseExited="#handle" onMouseMoved="#handle" width="600.0" />
-      <Button layoutX="74.0" layoutY="548.0" mnemonicParsing="false" text="Button" />
    </children>
 </Pane>
