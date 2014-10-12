@@ -21,7 +21,7 @@ public class Character {
          * @param engineer
          * @param investor 
          */
-        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor, boolean criminal) {
+        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor) {
             this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
