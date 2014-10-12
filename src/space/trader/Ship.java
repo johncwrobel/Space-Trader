@@ -147,4 +147,12 @@ public class Ship {
             return false;
         }
     }
+    
+    /**
+     * Getter for the ship's cargo
+     * @return 
+     */
+    public ArrayList getCargo() {
+        return cargoHold;
+    }
 }

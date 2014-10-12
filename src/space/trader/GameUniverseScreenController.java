@@ -87,9 +87,6 @@ public class GameUniverseScreenController implements Initializable {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
         });
-        
-        
-        // TODO
     }
     
     public void travel(ActionEvent event) {
