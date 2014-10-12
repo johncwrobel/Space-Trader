@@ -96,9 +96,12 @@ public class GameUniverseScreenController implements Initializable {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
             int encounterChance = (int)(Math.random() * 12);
-            if (encounterChance == 0) {
+            if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().getReputation())) {
                 JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
                 SpaceTrader.setPoliceEncounterScene();
+            } else if ((encounterChance == 0) && (SpaceTrader.getMainCharacter().getReputation())) {
+                JOptionPane.showMessageDialog(null, "You have encountered the police and are wanted!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                SpaceTrader.setPirateEncounterScene();
             } else if (encounterChance == 1) {
                 JOptionPane.showMessageDialog(null, "You have encountered a pirate!", "Alert!" , JOptionPane.WARNING_MESSAGE);
                 SpaceTrader.setPirateEncounterScene();
