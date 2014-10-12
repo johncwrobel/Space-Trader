@@ -10,6 +10,7 @@ public class Character {
 	private int trader;
 	private int engineer;
 	private int investor;
+        private boolean criminal;
         
         /**
          * Constructor for Character Class
@@ -20,7 +21,7 @@ public class Character {
          * @param engineer
          * @param investor 
          */
-        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor) {
+        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor, boolean criminal) {
             this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
@@ -28,6 +29,7 @@ public class Character {
             this.engineer = engineer;
             this.investor = investor;
             this.credits = 2000;
+            this.criminal = criminal;
         }
         
         /**
@@ -38,6 +40,31 @@ public class Character {
             return this.credits;
         }
         
+        /**
+         * Getter method for character reputation
+         * @return if the character is a criminal or not
+         */
+        public boolean getReputation() {
+            return this.criminal;
+        }
+        
+        /**
+         * create bribe amount (100-500 credits) and reduce from credits
+         * @return 
+         */
+        public int policeBribe() {
+            int bribeAmount = ((int)Math.random() * 400) + 100;
+            return bribeAmount;
+        }
+        
+        /**
+         * deducts bribe amount from player credits
+         * @param amount 
+         */
+        public void payBribe(int amount) {
+            credits -= amount;
+        }
+             
         /**
          * Facilitates the buying process
          * @param price 
