@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,4 +8,15 @@
 <?import javafx.scene.layout.*?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@police_cat_wonderful_photo-1(1).png" />
+         </image>
+      </ImageView>
+      <Button fx:id="bribeButton" layoutX="496.0" layoutY="338.0" mnemonicParsing="false" text="Pay Bribe" />
+      <Button fx:id="fightButton" layoutX="79.0" layoutY="329.0" mnemonicParsing="false" text="FIGHT!" />
+      <Button fx:id="searchButton" layoutX="267.0" layoutY="338.0" mnemonicParsing="false" text="Allow Search" />
+   </children>
+</Pane>
