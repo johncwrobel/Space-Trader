@@ -113,7 +113,7 @@ public class SpaceTrader extends Application {
     }
     
     /**
-     * sets the scene to the characterCreation scene
+     * sets the scene to the title scene
      */
     public static void setTitleScene() {
         PrimaryStage.setScene(main);
@@ -151,6 +151,27 @@ public class SpaceTrader extends Application {
             }
         }
         return cargoDisplay;
+    }
+    
+    /**
+     * Set Scene to police encounter screen
+     */
+    public static void setPoliceEncounterScene() {
+        PrimaryStage.setScene(policeEncounterScreen);
+    }
+    
+    /**
+     * Set Scene to trader encounter screen
+     */
+    public static void setTraderEncounterScene() {
+        PrimaryStage.setScene(traderEncounterScreen);
+    }
+    
+    /**
+     * Set Scene to pirate encounter screen
+     */
+    public static void setPirateEncounterScene() {
+        PrimaryStage.setScene(pirateEncounterScreen);
     }
 
     /**
