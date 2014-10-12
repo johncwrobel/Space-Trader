@@ -18,11 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javax.swing.JOptionPane;
-import javafx.stage.Stage;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 
 
@@ -98,6 +95,17 @@ public class GameUniverseScreenController implements Initializable {
     public void travel(ActionEvent event) {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
+            int encounterChance = (int)(Math.random() * 12);
+            if (encounterChance == 0) {
+                JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                SpaceTrader.setPoliceEncounterScene();
+            } else if (encounterChance == 1) {
+                JOptionPane.showMessageDialog(null, "You have encountered a pirate!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                SpaceTrader.setPirateEncounterScene();
+            } else if (encounterChance == 2) {
+                JOptionPane.showMessageDialog(null, "You have encountered a trader!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                SpaceTrader.setTraderEncounterScene();
+            }
         } else {
             JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
         }
