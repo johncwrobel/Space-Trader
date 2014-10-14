@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
+import static space.trader.SpaceTrader.ship;
 
 
 /**
@@ -92,19 +93,21 @@ public class GameUniverseScreenController implements Initializable {
     public void travel(ActionEvent event) {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
-            int encounterChance = (int)(Math.random() * 12); //create int to check for an encounter
-            if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().getReputation())) { //check for all types of encounters
-                JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
-                SpaceTrader.setPoliceEncounterScene();
-            } else if ((encounterChance == 0) && (SpaceTrader.getMainCharacter().getReputation())) {
-                JOptionPane.showMessageDialog(null, "You have encountered the police and are wanted!", "Alert!" , JOptionPane.WARNING_MESSAGE);
-                SpaceTrader.setPirateEncounterScene();
-            } else if (encounterChance == 1) {
-                JOptionPane.showMessageDialog(null, "You have encountered a pirate!", "Alert!" , JOptionPane.WARNING_MESSAGE);
-                SpaceTrader.setPirateEncounterScene();
-            } else if (encounterChance == 2) {
-                JOptionPane.showMessageDialog(null, "You have encountered a trader!", "Alert!" , JOptionPane.WARNING_MESSAGE);
-                SpaceTrader.setTraderEncounterScene();
+            if (SpaceTrader.ship.canTravelTo(selectedSystem)) { //fixes bug where encounters occour even when you don't have enough fuel to travel to selected system
+                int encounterChance = (int)(Math.random() * 12); //create int to check for an encounter
+                if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().getReputation())) { //check for all types of encounters
+                    JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    SpaceTrader.setPoliceEncounterScene();
+                } else if ((encounterChance == 0) && (SpaceTrader.getMainCharacter().getReputation())) {
+                    JOptionPane.showMessageDialog(null, "You have encountered the police and are wanted!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    SpaceTrader.setPirateEncounterScene();
+                } else if (encounterChance == 1) {
+                    JOptionPane.showMessageDialog(null, "You have encountered a pirate!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    SpaceTrader.setPirateEncounterScene();
+                } else if (encounterChance == 2) {
+                    JOptionPane.showMessageDialog(null, "You have encountered a trader!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    SpaceTrader.setTraderEncounterScene();
+                }
             }
         } else {
             JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
