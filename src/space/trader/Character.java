@@ -57,6 +57,18 @@ public class Character {
             return bribeAmount;
         }
         
+        public void consentSearch(){
+            for(int i=0; i < SpaceTrader.ship.cargoHold.size(); i++){
+                if(SpaceTrader.ship.cargoHold.get(i).isIllegal()){
+                    if(getCredits() < 1000){
+                        // send to fight scene
+                    }else{
+                        credits -= 1000;
+                    }
+                }
+            }
+        }
+        
         /**
          * deducts bribe amount from player credits
          * @param amount 
@@ -64,7 +76,7 @@ public class Character {
         public void payBribe() {
             credits -= 500;
         }
-             
+           
         /**
          * Facilitates the buying process
          * @param price 
