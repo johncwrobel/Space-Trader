@@ -94,7 +94,7 @@ public class GameUniverseScreenController implements Initializable {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
             if (SpaceTrader.ship.canTravelTo(selectedSystem)) { //fixes bug where encounters occour even when you don't have enough fuel to travel to selected system
-                int encounterChance = (int)(Math.random() * 12); //create int to check for an encounter
+                int encounterChance = (int)(Math.random() * 12);
                 if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().getReputation())) { //check for all types of encounters
                     JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPoliceEncounterScene();

@@ -7,7 +7,10 @@ package space.trader;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -15,13 +18,21 @@ import javafx.fxml.Initializable;
  * @author John
  */
 public class TraderEncounterScreenController implements Initializable {
-
+    
+    @FXML
+    private Button tradeButton;
+    
+    @FXML
+    private Button ignoreButton;
+    
+    @FXML
+    private Button fightButton;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
 }
