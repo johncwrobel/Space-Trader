@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -14,9 +15,14 @@
             <Image url="@police_cat_wonderful_photo-1(1).png" />
          </image>
       </ImageView>
-      <Button fx:id="bribeButton" layoutX="455.0" layoutY="338.0" mnemonicParsing="false" text="Pay Bribe" />
-      <Button fx:id="fightButton" layoutX="82.0" layoutY="338.0" mnemonicParsing="false" text="FIGHT!" />
-      <Button fx:id="searchButton" layoutX="229.0" layoutY="338.0" mnemonicParsing="false" text="Allow Search" />
-      <Label fx:id="bribeAmountLabel" layoutX="410.0" layoutY="308.0" text="Bribe Amount: 500 credits" textFill="WHITE" />
+      <Button fx:id="bribeButton" layoutX="105.0" layoutY="324.0" mnemonicParsing="false" text="Pay Bribe" />
+      <Button fx:id="fightButton" layoutX="53.0" layoutY="219.0" mnemonicParsing="false" text="FIGHT!" />
+      <Button fx:id="searchButton" layoutX="149.0" layoutY="219.0" mnemonicParsing="false" text="Allow Search" />
+      <Label fx:id="bribeAmountLabel" layoutX="69.0" layoutY="296.0" text="Bribe Amount: 500 credits" textFill="WHITE" />
+      <Label fx:id="dialogueLabel" layoutX="14.0" prefHeight="231.0" prefWidth="354.0" text="Greetings trader! Welcome to our system. This is just a routine check we carry out on all incoming craft. If you arn't carrying any narcotics or firearms, we shouldn't have any trouble. However, if you are, you will be subject to hefty fines! Or, we could always look the other way for a small fee..." textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

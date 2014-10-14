@@ -21,6 +21,9 @@ import javafx.scene.control.Label;
 public class PoliceEncounterScreenController implements Initializable {
 
     @FXML
+    private Label dialogueLabel;
+    
+    @FXML
     private Button bribeButton;
     
     @FXML
