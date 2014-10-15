@@ -8,14 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.PoliceEncounterScreenController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
          <image>
             <Image url="@police_cat_wonderful_photo-1(1).png" />
          </image>
       </ImageView>
-      <Button fx:id="bribeButton" layoutX="105.0" layoutY="324.0" mnemonicParsing="false" text="Pay Bribe" />
+      <Button fx:id="bribeButton" layoutX="105.0" layoutY="324.0" mnemonicParsing="false" onAction="#bribe" text="Pay Bribe" />
       <Button fx:id="fightButton" layoutX="53.0" layoutY="219.0" mnemonicParsing="false" text="FIGHT!" />
       <Button fx:id="searchButton" layoutX="149.0" layoutY="219.0" mnemonicParsing="false" text="Allow Search" />
       <Label fx:id="bribeAmountLabel" layoutX="69.0" layoutY="296.0" text="Bribe Amount: 500 credits" textFill="WHITE" />

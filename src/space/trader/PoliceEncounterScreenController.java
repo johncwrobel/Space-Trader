@@ -42,13 +42,9 @@ public class PoliceEncounterScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }    
-    /**
-     * causing an error
-
     public void bribe(ActionEvent event) {
         SpaceTrader.getMainCharacter().payBribe();
         SpaceTrader.setGameScene();
     }
-    */
     
 }
