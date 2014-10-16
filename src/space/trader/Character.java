@@ -61,6 +61,7 @@ public class Character {
             for(int i=0; i < SpaceTrader.ship.cargoHold.size(); i++){
                 if(SpaceTrader.ship.cargoHold.get(i).isIllegal()){
                     if(getCredits() < 1000){
+                        criminal = true;
                         // send to fight scene
                     }else{
                         credits -= 1000;
@@ -157,5 +158,12 @@ public class Character {
                     " fighter points, " + trader + " trader points, " +
                     engineer + " engineer points, " + investor + " investor points";
         }
+
+    /**
+     * @param criminal the criminal to set
+     */
+    public void setCriminal(boolean criminal) {
+        this.criminal = criminal;
+    }
 }
  
