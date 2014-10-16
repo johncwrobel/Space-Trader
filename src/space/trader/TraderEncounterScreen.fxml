@@ -17,6 +17,6 @@
       </ImageView>
       <Button fx:id="ignoreButton" layoutX="517.0" layoutY="262.0" mnemonicParsing="false" text="Ignore" />
       <Button fx:id="fightButton" layoutX="517.0" layoutY="306.0" mnemonicParsing="false" text="Fight" />
-      <Button fx:id="tradeButton" layoutX="516.0" layoutY="219.0" mnemonicParsing="false" text="Trade" />
+      <Button fx:id="tradeButton" layoutX="516.0" layoutY="219.0" mnemonicParsing="false" onAction="#trade" text="Trade" />
    </children>
 </Pane>

@@ -35,4 +35,9 @@ public class TraderEncounterScreenController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
+    
+    @FXML
+    public void trade(ActionEvent event) {
+        System.out.println("Trade");
+    }
 }
