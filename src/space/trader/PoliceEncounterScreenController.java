@@ -41,10 +41,24 @@ public class PoliceEncounterScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    }    
+    } 
+    
+    @FXML
     public void bribe(ActionEvent event) {
         SpaceTrader.getMainCharacter().payBribe();
         SpaceTrader.setGameScene();
+    }
+    
+    @FXML
+    public void search(ActionEvent event) {
+        SpaceTrader.getMainCharacter().consentSearch();
+        SpaceTrader.setGameScene();
+    }
+    
+    @FXML
+    public void fight(ActionEvent event) {
+        SpaceTrader.getMainCharacter().setCriminal(true);
+        // send to fight screen
     }
     
 }
