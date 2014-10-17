@@ -155,7 +155,6 @@ public class GameUniverseScreenController implements Initializable {
             }
             
         }
-        
         updateScreen();
     }
     /**

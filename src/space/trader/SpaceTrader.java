@@ -173,6 +173,13 @@ public class SpaceTrader extends Application {
     public static void setPirateEncounterScene() {
         PrimaryStage.setScene(pirateEncounterScreen);
     }
+    
+    /**
+     * Set Scene back to the game scene
+     */
+    public static void backToMain() {
+        PrimaryStage.setScene(gameScreen);
+    }
 
     /**
      * @param args the command line arguments

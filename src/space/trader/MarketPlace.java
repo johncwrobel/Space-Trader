@@ -122,6 +122,21 @@ public class MarketPlace {
     }
     
     /**
+     * Removes items from traders
+     */
+    public void sell(String name) {
+        int index = 0;
+        for (int i = 0; i < items.size(); i++) {
+            String compareString = items.get(i).name + ":";
+            if (compareString.equals(name)) {
+                index = i;
+                break;
+            }
+        }
+        amount.set(index, amount.get(index) + 1);
+    }
+    
+    /**
      * Checks if the item can be bought
      * @param name
      * @return if it can be bought or not
