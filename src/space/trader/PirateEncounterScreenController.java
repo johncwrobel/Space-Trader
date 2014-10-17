@@ -86,9 +86,22 @@ public class PirateEncounterScreenController implements Initializable {
             } else {
                 clock.stop();
                 time.setText("GAME OVER");
+                if (hasWon()) {
+                    time.setText("You Win");
+                }
                 playing = false;
+                SpaceTrader.getMainCharacter().buy(300);
+                SpaceTrader.setGameScene();
             }
             counter--;
+        }
+    }
+    
+    public void clearRect() {
+        for (int i = 0; i < target.length; i++) {
+            for (int j = 0; j < target[0].length; j++) {
+                target[i][j] = false;
+            }
         }
     }
     
@@ -120,7 +133,33 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
+    public boolean hasWon() {
+        for (int i = 0; i < target.length; i++) {
+            for (int j = 0; j < target[0].length; j++) {
+                if (target[i][j]) {
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
     
+    public void shoot(MouseEvent e) {
+        int x = (int) (e.getX() / 20);
+        int y = (int) (e.getY() / 20);
+        
+        if (target[x][y] && playing) {
+            target[x][y] = false;
+            if(hasWon()) {
+                playing = false;
+                SpaceTrader.getMainCharacter().sell(300);
+                SpaceTrader.setGameScene();
+            }
+        }
+        
+        handle(e);
+    }
     
     public void handle(MouseEvent e) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
