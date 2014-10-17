@@ -54,6 +54,9 @@ public class TraderEncounterScreenController implements Initializable {
     @FXML
     private Text credits;
     
+    @FXML
+    private Planet newPlanet;
+    
     /**
      * Initializes the controller class.
      */
@@ -63,17 +66,28 @@ public class TraderEncounterScreenController implements Initializable {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
         });
-        
         buyButton.setDisable(true);
         sellButton.setDisable(true);
+        tradeButton.setDisable(false);
+        ignoreButton.setDisable(false);
+        fightButton.setDisable(false);
     }
     
     @FXML
     public void trade (ActionEvent event) {
+        playerItems.setDisable(false);
+        traderItems.setDisable(false);
+        ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.solarSystems;
+        int randomNumber = (int)(Math.random() * (solarSystems.size()));
+        SolarSystem newSolarSystem = solarSystems.get(randomNumber);
+        this.newPlanet = newSolarSystem.getPlanet(0);
         String dialogString = "Space Sloth: You tryna trade dare mite?";
         dialog.setText(dialogString);
+        tradeButton.setDisable(true);
         fightButton.setDisable(true);
+        ignoreButton.setDisable(false);
         buyButton.setDisable(false);
+        sellButton.setDisable(false);
         ignoreButton.setText("Go Back");
         updateScreen();
     }
@@ -89,15 +103,14 @@ public class TraderEncounterScreenController implements Initializable {
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
             String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
-                    SpaceTrader.currentPlanet.marketplace.canBuy(split[0])) { //check if valid purchase
-                SpaceTrader.currentPlanet.marketplace.buy(split[0]); //then actually give them the items
+                    newPlanet.marketplace.canBuy(split[0])) { //check if valid purchase
+                newPlanet.marketplace.buy(split[0]); //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
                 String dialogString = "Space Sloth: Thats a good trade there mite";
                 dialog.setText(dialogString);
             }
         }
-        
         updateScreen();
     }
     
@@ -113,7 +126,7 @@ public class TraderEncounterScreenController implements Initializable {
             SpaceTrader.ship.removeItem(temp[0]);
             int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
-            SpaceTrader.currentPlanet.marketplace.sell(temp[0]);
+            newPlanet.marketplace.sell(temp[0]);
             String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
             dialog.setText(dialogString);
         }
@@ -122,6 +135,13 @@ public class TraderEncounterScreenController implements Initializable {
     
     @FXML
     public void ignore (ActionEvent event) {
+        tradeButton.setDisable(false);
+        ignoreButton.setDisable(false);
+        fightButton.setDisable(false);
+        buyButton.setDisable(true);
+        sellButton.setDisable(true);
+        playerItems.setDisable(true);
+        traderItems.setDisable(true);
         SpaceTrader.backToMain();
     }
     
@@ -129,10 +149,17 @@ public class TraderEncounterScreenController implements Initializable {
     public void fight (ActionEvent even) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
         dialog.setText(dialogString);
+        System.out.println("Fight");
+        tradeButton.setDisable(false);
+        ignoreButton.setDisable(false);
+        fightButton.setDisable(false);
+        buyButton.setDisable(true);
+        sellButton.setDisable(true);
+        SpaceTrader.backToMain();
     }
     
     public void updateScreen() {
-        ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
+        ArrayList<String> list = newPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
         traderItems.setItems(null);
         traderItems.setItems(observable);
