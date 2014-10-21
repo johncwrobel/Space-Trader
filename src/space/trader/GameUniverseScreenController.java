@@ -86,7 +86,7 @@ public class GameUniverseScreenController implements Initializable {
     
     public void save(ActionEvent event) {
         SpaceTrader.save();
-        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous sav data", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous save data", "Alert!" , JOptionPane.WARNING_MESSAGE);
     }
     
     public void load(ActionEvent event) {

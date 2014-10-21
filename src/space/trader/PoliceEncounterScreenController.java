@@ -58,7 +58,7 @@ public class PoliceEncounterScreenController implements Initializable {
     @FXML
     public void fight(ActionEvent event) {
         SpaceTrader.getMainCharacter().setCriminal(true);
-        // send to fight screen
+        SpaceTrader.setPirateEncounterScene();
     }
     
 }
