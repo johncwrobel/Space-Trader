@@ -5,6 +5,7 @@
  */
 package space.trader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Johnnycakes
  */
-public class Ship {
+public class Ship implements Serializable{
     
     public ArrayList<Item> cargoHold;
     private int maxCargo;

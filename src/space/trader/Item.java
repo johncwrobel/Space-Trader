@@ -6,11 +6,13 @@
 
 package space.trader;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tanmay (Seantannah)
  */
-public class Item implements Comparable{
+public class Item implements Comparable, Serializable{
     public final String name;
     private final int basePrice;
     private final int mtlp;

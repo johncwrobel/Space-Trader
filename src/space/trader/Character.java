@@ -1,8 +1,9 @@
 package space.trader;
 
+import java.io.Serializable;
 import javax.swing.JOptionPane;
 
-public class Character {
+public class Character implements Serializable {
         private String name;
         private int credits;
 	private int pilot;

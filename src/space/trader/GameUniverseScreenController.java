@@ -32,6 +32,12 @@ import static space.trader.SpaceTrader.ship;
 public class GameUniverseScreenController implements Initializable {
 
     @FXML
+    private Button saveButton;
+    
+    @FXML
+    private Button loadButton;
+    
+    @FXML
     private Label playerCredits;
     
     @FXML
@@ -78,6 +84,15 @@ public class GameUniverseScreenController implements Initializable {
     
     private SolarSystem selectedSystem = null;
     
+    public void save(ActionEvent event) {
+        SpaceTrader.save();
+        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous sav data", "Alert!" , JOptionPane.WARNING_MESSAGE);
+    }
+    
+    public void load(ActionEvent event) {
+        SpaceTrader.load();
+        updateScreen();
+    }
     
     /**
      * Initializes the controller class.
@@ -226,6 +241,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     private void updateScreen() {
         GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, 400, 400);
         drawShapes(gc);
         updateText();
         ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();

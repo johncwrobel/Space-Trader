@@ -1,5 +1,6 @@
 package space.trader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -7,7 +8,7 @@ import java.util.Random;
  *
  * @author Benjamin Cervantes and John Wrobel
  */
-public class Planet {
+public class Planet implements Serializable{
     private String name;
     private int techLevel;
     private int resources;

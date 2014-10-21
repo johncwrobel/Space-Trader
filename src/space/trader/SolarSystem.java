@@ -2,6 +2,7 @@ package space.trader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,7 +11,7 @@ import java.util.logging.Logger;
  *
  * @author Benjamin Cervantes
  */
-public class SolarSystem {
+public class SolarSystem implements Serializable{
 
     private String name;
     private int xLocation;

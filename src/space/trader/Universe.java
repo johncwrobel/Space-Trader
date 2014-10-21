@@ -1,12 +1,13 @@
 package space.trader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Benjamin Cervantes
  */
-public class Universe {
+public class Universe implements Serializable{
     
     private int numberOfSolarSystems;
     public ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();

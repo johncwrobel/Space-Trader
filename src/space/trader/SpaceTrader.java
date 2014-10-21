@@ -6,6 +6,16 @@
 
 package space.trader;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -86,6 +96,79 @@ public class SpaceTrader extends Application {
         } else {
             JOptionPane.showMessageDialog(null, "You do not have enough fuel", "Alert!" , JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public static void save() {
+        try {
+            OutputStream fChar = new FileOutputStream("char.ser");
+            OutputStream fUniverse = new FileOutputStream("uni.ser");
+            OutputStream fSolar = new FileOutputStream("sol.ser");
+            OutputStream fPlanet = new FileOutputStream("plan.ser");
+            OutputStream fShip = new FileOutputStream("ship.ser");
+            
+            OutputStream bChar = new BufferedOutputStream(fChar);
+            OutputStream bUniverse = new BufferedOutputStream(fUniverse);
+            OutputStream bSolar = new BufferedOutputStream(fSolar);
+            OutputStream bPlanet = new BufferedOutputStream(fPlanet);
+            OutputStream bShip = new BufferedOutputStream(fShip);
+            
+            ObjectOutput oChar = new ObjectOutputStream(bChar);
+            ObjectOutput oUniverse = new ObjectOutputStream(bUniverse);
+            ObjectOutput oSolar = new ObjectOutputStream(bSolar);
+            ObjectOutput oPlanet = new ObjectOutputStream(bPlanet);
+            ObjectOutput oShip = new ObjectOutputStream(bShip);
+            
+            oChar.writeObject(myCharacter);
+            oUniverse.writeObject(universe);
+            oSolar.writeObject(currentSolarSystem);
+            oPlanet.writeObject(currentPlanet);
+            oShip.writeObject(ship);
+            
+            oChar.close();
+            oUniverse.close();
+            oSolar.close();
+            oPlanet.close();
+            oShip.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public static void load() {
+        try {
+            InputStream fChar = new FileInputStream("char.ser");
+            InputStream fUniverse = new FileInputStream("uni.ser");
+            InputStream fSolar = new FileInputStream("sol.ser");
+            InputStream fPlanet = new FileInputStream("plan.ser");
+            InputStream fShip = new FileInputStream("ship.ser");
+            
+            InputStream bChar = new BufferedInputStream(fChar);
+            InputStream bUniverse = new BufferedInputStream(fUniverse);
+            InputStream bSolar = new BufferedInputStream(fSolar);
+            InputStream bPlanet = new BufferedInputStream(fPlanet);
+            InputStream bShip = new BufferedInputStream(fShip);
+            
+            ObjectInput oChar = new ObjectInputStream(bChar);
+            ObjectInput oUniverse = new ObjectInputStream(bUniverse);
+            ObjectInput oSolar = new ObjectInputStream(bSolar);
+            ObjectInput oPlanet = new ObjectInputStream(bPlanet);
+            ObjectInput oShip = new ObjectInputStream(bShip);
+            
+            myCharacter = (Character) oChar.readObject();
+            universe = (Universe) oUniverse.readObject();
+            currentSolarSystem = (SolarSystem) oSolar.readObject();
+            currentPlanet = (Planet) oPlanet.readObject();
+            ship = (Ship) oShip.readObject();
+            
+            oChar.close();
+            oUniverse.close();
+            oSolar.close();
+            oPlanet.close();
+            oShip.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
     
     /**

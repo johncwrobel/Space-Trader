@@ -1,5 +1,6 @@
 package space.trader;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
  *
  * @author Tommy Lee
  */
-public class MarketPlace {
+public class MarketPlace implements Serializable{
     public final ArrayList<Item> items = new ArrayList<>();
     private final ArrayList<Integer> prices = new ArrayList<>();
     private ArrayList<Integer> amount = new ArrayList<>();
