@@ -82,6 +82,9 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private Button myShipButton;
     
+    @FXML
+    private Button buyFuelButton;
+    
     private SolarSystem selectedSystem = null;
     
     public void save(ActionEvent event) {
@@ -209,6 +212,20 @@ public class GameUniverseScreenController implements Initializable {
         
         updateScreen();
     };
+    
+    /**
+     * Function to buy Fuel
+     * @param event
+     */
+    @FXML
+    public void buyFuel (ActionEvent event){
+        if (SpaceTrader.getMainCharacter().canBuy(100)){ //if we can actually afford to buy fuel
+            ship.addFuel(5);                             //then add 5 fuel
+            SpaceTrader.getMainCharacter().buy(100);     //and subtract 100 credits
+        }
+        updateScreen();
+    }
+    
     
     /**
      * Function to accessMarketPlace

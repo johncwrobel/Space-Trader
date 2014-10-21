@@ -52,6 +52,7 @@
       <Button fx:id="jumpButton" layoutX="190.0" layoutY="561.0" mnemonicParsing="false" onAction="#jump" prefHeight="25.0" prefWidth="130.0" text="Jump to New Planet" />
       <Label fx:id="currentPlanetLabel" layoutX="286.0" layoutY="19.0" prefHeight="17.0" prefWidth="228.0" text="Current Planet:" textFill="WHITE" />
       <Label fx:id="fuelLabel" layoutX="20.0" layoutY="48.0" prefHeight="17.0" prefWidth="122.0" text="Fuel: " textFill="WHITE" />
+      <Button fx:id="buyFuelLabel" layoutX="160.0" layoutY="44.0" mnemonicParsing="false" onAction="#buyFuel" text="Buy Fuel" />
       <Button fx:id="saveButton" layoutX="222.0" layoutY="44.0" mnemonicParsing="false" onAction="#save" text="save" />
       <Button fx:id="loadButton" layoutX="291.0" layoutY="44.0" mnemonicParsing="false" onAction="#load" text="load" />
    </children>
