@@ -89,8 +89,6 @@ public class GameUniverseScreenController implements Initializable {
     
     @FXML
     private Button start;
-
-    private Button buyFuelButton;
     
     private SolarSystem selectedSystem = null;
     
@@ -111,7 +109,7 @@ public class GameUniverseScreenController implements Initializable {
     
     public void save(ActionEvent event) {
         SpaceTrader.save();
-        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous save data", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous sav data", "Alert!" , JOptionPane.WARNING_MESSAGE);
     }
     
     public void load(ActionEvent event) {
@@ -234,20 +232,6 @@ public class GameUniverseScreenController implements Initializable {
         
         updateScreen();
     };
-    
-    /**
-     * Function to buy Fuel
-     * @param event
-     */
-    @FXML
-    public void buyFuel (ActionEvent event){
-        if (SpaceTrader.getMainCharacter().canBuy(100)){ //if we can actually afford to buy fuel
-            ship.addFuel(5);                             //then add 5 fuel
-            SpaceTrader.getMainCharacter().buy(100);     //and subtract 100 credits
-        }
-        updateScreen();
-    }
-    
     
     /**
      * Function to accessMarketPlace
