@@ -8,11 +8,15 @@ package space.trader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -21,6 +25,7 @@ import javax.swing.JOptionPane;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 import static space.trader.SpaceTrader.ship;
 
 
@@ -82,7 +87,25 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     private Button myShipButton;
     
+    @FXML
+    private Button start;
+    
     private SolarSystem selectedSystem = null;
+    
+    private Timeline clock;
+    
+    public class TimeClass implements EventHandler {
+
+        
+        public TimeClass() {
+        }
+
+        @Override
+        public void handle(Event event) {
+            
+            updateScreen();
+        }
+    }
     
     public void save(ActionEvent event) {
         SpaceTrader.save();
@@ -220,7 +243,14 @@ public class GameUniverseScreenController implements Initializable {
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());
         }
+        
         updateScreen();
+        
+        TimeClass tc = new TimeClass();
+        clock = new Timeline(new KeyFrame(Duration.seconds(1), tc));
+        clock.setCycleCount(Timeline.INDEFINITE);
+        clock.play();
+        start.setVisible(false);
     }
     
     /**
