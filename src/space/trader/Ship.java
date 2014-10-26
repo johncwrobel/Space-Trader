@@ -23,7 +23,16 @@ public class Ship implements Serializable{
     private int maxFuel;
     private int xLocation;
     private int yLocation;
-    
+    private int weaponslots;
+    private int shieldslots;
+    private int gadgetslots;
+    private int maxCrew;
+    private int techLevel;
+    private int fuelCost;
+    private int bounty;
+    private int size;
+    private int hull;
+    private ShipTypes ShipType = ShipTypes.SERENITY;
     /**
      * Constructor for the Ship
      */
@@ -32,7 +41,90 @@ public class Ship implements Serializable{
         cargoHold = new ArrayList(maxCargo);
         cargoHold.add(new Item("Water", 0, 0, 2, 30, 3, 4));
         fuel = 10;
-        maxFuel = 20;
+        maxFuel = 10;
+        weaponslots = 0;
+        shieldslots=0;
+        gadgetslots=0;
+        techLevel=4;
+        fuelCost=1;
+        bounty=5;
+        size=0;
+        hull=25;
+    }
+    
+    /**
+     * Enum for the ship types
+     */
+    public enum ShipTypes{//enum for the ship types
+        SERENITY, FALCON, ENTERPRISE, GALACTICA, DAEDALUS
+    }
+    
+/**
+ * Sets the ship type, and changed any associated private vars
+ * @param aShipType 
+ */
+    public void setShip(ShipTypes aShipType){
+        if (ShipType==ShipTypes.SERENITY){
+            maxCargo = 10;
+            maxFuel = 10;
+            weaponslots = 0;
+            shieldslots=0;
+            gadgetslots=0;
+            techLevel=4;
+            fuelCost=1;
+            bounty=5;
+            size=0;
+            hull=25;
+        }
+        if (ShipType==ShipTypes.FALCON){
+            maxCargo = 15;
+            maxFuel = 14;
+            weaponslots = 1;
+            shieldslots=0;
+            gadgetslots=1;
+            techLevel=5;
+            fuelCost=2;
+            bounty=50;
+            size=1; 
+            hull=100;
+        }       
+        if (ShipType==ShipTypes.ENTERPRISE){
+            maxCargo = 20;
+            maxFuel = 17;
+            weaponslots = 1;
+            shieldslots=1;
+            gadgetslots=1;
+            techLevel=5;
+            fuelCost=3;
+            bounty=75;
+            size=1; 
+            hull=100;
+        }
+        if (ShipType==ShipTypes.GALACTICA){
+            maxCargo = 15;
+            maxFuel = 13;
+            weaponslots = 2;
+            shieldslots=1;
+            gadgetslots=1;
+            techLevel=5;
+            fuelCost=5;
+            bounty=100;
+            size=1; 
+            hull=100;
+        }        
+        if (ShipType==ShipTypes.DAEDALUS){
+            maxCargo = 25;
+            maxFuel = 15;
+            weaponslots = 1;
+            shieldslots=2;
+            gadgetslots=2;
+            techLevel=5;
+            fuelCost=7;
+            bounty=125;
+            size=2; 
+            hull=100;
+        }        
+        
     }
     
     /**
@@ -89,7 +181,7 @@ public class Ship implements Serializable{
         yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates the yLocation of the ship to use later
         
         //uses distance formula to calculate if the distance is too far
-        return Math.sqrt((xLocation-system.getXLocation())*(xLocation-system.getXLocation()) + (yLocation-system.getYLocation())*(yLocation-system.getYLocation())) <= fuel;
+        return this.fuelCost*Math.sqrt((xLocation-system.getXLocation())*(xLocation-system.getXLocation()) + (yLocation-system.getYLocation())*(yLocation-system.getYLocation())) <= fuel;
     }
     
        /**
