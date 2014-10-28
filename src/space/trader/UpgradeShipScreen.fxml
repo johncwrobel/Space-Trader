@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.UpgradeShipScreenController">
+   <children>
+      <Button fx:id="returnButton" layoutX="255.0" layoutY="333.0" mnemonicParsing="false" onAction="#returnToGame" text="Back to Game" />
+      <Button fx:id="buyFalcon" layoutX="59.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseFalcon" text="Buy Ship" />
+      <Label layoutX="73.0" layoutY="23.0" text="Falcon" />
+      <Label layoutX="50.0" layoutY="40.0" text="Cargo Slots: 15" />
+      <Label layoutX="57.0" layoutY="57.0" text="Max Fuel: 25" />
+      <Button fx:id="buyEnterprise" layoutX="195.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseEnterprise" text="Buy Ship" />
+      <Label layoutX="42.0" layoutY="78.0" text="Cost: 1000 Credits" />
+      <Label layoutX="199.0" layoutY="23.0" text="Enterprise" />
+      <Label layoutX="186.0" layoutY="40.0" text="Cargo Slots: 20" />
+      <Label layoutX="192.0" layoutY="57.0" text="Max Fuel: 30" />
+      <Label layoutX="185.0" layoutY="78.0" text="Cost: 2000 Credits" />
+      <Label layoutX="344.0" layoutY="23.0" text="Galactica" />
+      <Label layoutX="322.0" layoutY="40.0" text="Cargo Slots: 25" />
+      <Label layoutX="329.0" layoutY="57.0" text="Max Fuel: 35" />
+      <Label layoutX="320.0" layoutY="78.0" text="Cost: 3000 Credits" />
+      <Button fx:id="buyGalactica" layoutX="337.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseGalactica" text="Buy Ship" />
+      <Label layoutX="489.0" layoutY="23.0" text="Daedalus" />
+      <Label layoutX="473.0" layoutY="40.0" text="Cargo Slots: 30" />
+      <Label layoutX="480.0" layoutY="57.0" text="Max Fuel: 40" />
+      <Label layoutX="465.0" layoutY="78.0" text="Cost: 4000 Credits" />
+      <Button fx:id="buyDaedalus" layoutX="482.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseDaedalus" text="Buy Ship" />
+      <ImageView fitHeight="99.0" fitWidth="134.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Falcon.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="99.0" fitWidth="131.0" layoutX="155.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Enterprise.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="147.0" layoutX="290.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Galactica.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="81.0" fitWidth="152.0" layoutX="437.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Daedalus.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="successLabel" layoutX="221.0" layoutY="304.0" text="Choose a Ship to Upgrade to!" textAlignment="CENTER" />
+   </children>
+</Pane>

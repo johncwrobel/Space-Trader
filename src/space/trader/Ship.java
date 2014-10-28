@@ -18,21 +18,21 @@ import javax.swing.JOptionPane;
 public class Ship implements Serializable{
     
     public ArrayList<Item> cargoHold;
-    private int maxCargo;
+    public int maxCargo;
     private int fuel;
-    private int maxFuel;
+    public int maxFuel;
     private int xLocation;
     private int yLocation;
-    private int weaponslots;
-    private int shieldslots;
-    private int gadgetslots;
-    private int maxCrew;
-    private int techLevel;
-    private int fuelCost;
-    private int bounty;
-    private int size;
-    private int hull;
-    private ShipTypes ShipType = ShipTypes.SERENITY;
+    public int weaponslots;
+    public int shieldslots;
+    public int gadgetslots;
+    public int maxCrew;
+    public int techLevel;
+    public int fuelCost;
+    public int bounty;
+    public int size;
+    public int hull;
+    private ShipTypes shipType = ShipTypes.SERENITY;
     /**
      * Constructor for the Ship
      */
@@ -64,67 +64,67 @@ public class Ship implements Serializable{
  * @param aShipType 
  */
     public void setShip(ShipTypes aShipType){
-        if (ShipType==ShipTypes.SERENITY){
-            maxCargo = 10;
-            maxFuel = 10;
-            weaponslots = 0;
-            shieldslots=0;
-            gadgetslots=0;
-            techLevel=4;
-            fuelCost=1;
-            bounty=5;
-            size=0;
-            hull=25;
+        if (aShipType==ShipTypes.SERENITY){
+            SpaceTrader.ship.maxCargo = 10;
+            SpaceTrader.ship.maxFuel = 20;
+            SpaceTrader.ship.weaponslots = 0;
+            SpaceTrader.ship.shieldslots=0;
+            SpaceTrader.ship.gadgetslots=0;
+            SpaceTrader.ship.techLevel=4;
+            SpaceTrader.ship.fuelCost=1;
+            SpaceTrader.ship.bounty=5;
+            SpaceTrader.ship.size=0;
+            SpaceTrader.ship.hull=25;
         }
-        if (ShipType==ShipTypes.FALCON){
-            maxCargo = 15;
-            maxFuel = 14;
-            weaponslots = 1;
-            shieldslots=0;
-            gadgetslots=1;
-            techLevel=5;
-            fuelCost=2;
-            bounty=50;
-            size=1; 
-            hull=100;
+        if (aShipType==ShipTypes.FALCON){
+            SpaceTrader.ship.maxCargo = 15;
+            SpaceTrader.ship.maxFuel = 25;
+            SpaceTrader.ship.weaponslots = 1;
+            SpaceTrader.ship.shieldslots=0;
+            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.techLevel=5;
+            SpaceTrader.ship.fuelCost=2;
+            SpaceTrader.ship.bounty=50;
+            SpaceTrader.ship.size=1; 
+            SpaceTrader.ship.hull=100;
         }       
-        if (ShipType==ShipTypes.ENTERPRISE){
-            maxCargo = 20;
-            maxFuel = 17;
-            weaponslots = 1;
-            shieldslots=1;
-            gadgetslots=1;
-            techLevel=5;
-            fuelCost=3;
-            bounty=75;
-            size=1; 
-            hull=100;
+        if (aShipType==ShipTypes.ENTERPRISE){
+            SpaceTrader.ship.maxCargo = 20;
+            SpaceTrader.ship.maxFuel = 30;
+            SpaceTrader.ship.weaponslots = 1;
+            SpaceTrader.ship.shieldslots=1;
+            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.techLevel=5;
+            SpaceTrader.ship.fuelCost=3;
+            SpaceTrader.ship.bounty=75;
+            SpaceTrader.ship.size=1; 
+            SpaceTrader.ship.hull=100;
         }
-        if (ShipType==ShipTypes.GALACTICA){
-            maxCargo = 15;
-            maxFuel = 13;
-            weaponslots = 2;
-            shieldslots=1;
-            gadgetslots=1;
-            techLevel=5;
-            fuelCost=5;
-            bounty=100;
-            size=1; 
-            hull=100;
+        if (aShipType==ShipTypes.GALACTICA){
+            SpaceTrader.ship.maxCargo = 25;
+            SpaceTrader.ship.maxFuel = 35;
+            SpaceTrader.ship.weaponslots = 2;
+            SpaceTrader.ship.shieldslots=1;
+            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.techLevel=5;
+            SpaceTrader.ship.fuelCost=5;
+            SpaceTrader.ship.bounty=100;
+            SpaceTrader.ship.size=1; 
+            SpaceTrader.ship.hull=100;
         }        
-        if (ShipType==ShipTypes.DAEDALUS){
-            maxCargo = 25;
-            maxFuel = 15;
-            weaponslots = 1;
-            shieldslots=2;
-            gadgetslots=2;
-            techLevel=5;
-            fuelCost=7;
-            bounty=125;
-            size=2; 
-            hull=100;
+        if (aShipType==ShipTypes.DAEDALUS){
+            SpaceTrader.ship.maxCargo = 30;
+            SpaceTrader.ship.maxFuel = 40;
+            SpaceTrader.ship.weaponslots = 1;
+            SpaceTrader.ship.shieldslots=2;
+            SpaceTrader.ship.gadgetslots=2;
+            SpaceTrader.ship.techLevel=5;
+            SpaceTrader.ship.fuelCost=7;
+            SpaceTrader.ship.bounty=125;
+            SpaceTrader.ship.size=2; 
+            SpaceTrader.ship.hull=100;
         }        
-        
+        shipType = aShipType;
     }
     
     /**

@@ -37,6 +37,7 @@ public class SpaceTrader extends Application {
     private static Scene policeEncounterScreen;
     private static Scene traderEncounterScreen;
     private static Scene pirateEncounterScreen;
+    private static Scene upgradeShipScreen;
     private static Character myCharacter;
     public static Universe universe;
     public static SolarSystem currentSolarSystem;
@@ -59,6 +60,7 @@ public class SpaceTrader extends Application {
         Parent policeEncounter = FXMLLoader.load(getClass().getResource("PoliceEncounterScreen.fxml"));//make the Parents to load
         Parent traderEncounter = FXMLLoader.load(getClass().getResource("TraderEncounterScreen.fxml"));//encounters
         Parent pirateEncounter = FXMLLoader.load(getClass().getResource("PirateEncounterScreen.fxml"));
+        Parent upgradeShipStore = FXMLLoader.load(getClass().getResource("UpgradeShipScreen.fxml"));
         
         main = new Scene(root);
         gameScreen = new Scene(game);
@@ -66,6 +68,7 @@ public class SpaceTrader extends Application {
         policeEncounterScreen = new Scene(policeEncounter); //making the Scenes for encounters
         traderEncounterScreen = new Scene(traderEncounter);
         pirateEncounterScreen = new Scene(pirateEncounter);
+        upgradeShipScreen = new Scene(upgradeShipStore);
         PrimaryStage = stage;
         PrimaryStage.setScene(main);
         PrimaryStage.show();
@@ -262,6 +265,10 @@ public class SpaceTrader extends Application {
      */
     public static void backToMain() {
         PrimaryStage.setScene(gameScreen);
+    }
+    
+    public static void setUpgradeShipScene() {
+        PrimaryStage.setScene(upgradeShipScreen);
     }
 
     /**

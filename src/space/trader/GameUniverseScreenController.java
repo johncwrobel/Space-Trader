@@ -85,7 +85,7 @@ public class GameUniverseScreenController implements Initializable {
     private Button jumpButton;
     
     @FXML
-    private Button myShipButton;
+    private Button upgradeShipButton;
     
     @FXML
     private Button start;
@@ -93,6 +93,17 @@ public class GameUniverseScreenController implements Initializable {
     private SolarSystem selectedSystem = null;
     
     private Timeline clock;
+    
+    public void buyFuel(ActionEvent e) {
+        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.maxFuel) && (SpaceTrader.getMainCharacter().canBuy(100))) {
+            SpaceTrader.ship.addFuel(5);
+            SpaceTrader.getMainCharacter().buy(100);
+        } else if ((SpaceTrader.ship.getFuel() + 5) > SpaceTrader.ship.maxFuel) {
+            JOptionPane.showMessageDialog(null, "You do not have enough fuel capacity.", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "You do not have enough credits.", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        }
+    }
     
     public class TimeClass implements EventHandler {
 
@@ -173,6 +184,11 @@ public class GameUniverseScreenController implements Initializable {
         currentSolarSystemLabel.setText(currentSystem);
         currentPlanetLabel.setText(planet);
         fuelLabel.setText(fuel);
+        if(SpaceTrader.currentPlanet.getTechLevel() < 4){
+            upgradeShipButton.setDisable(true);
+        } else {
+            upgradeShipButton.setDisable(false);
+        }
     }
     
     /**
@@ -305,6 +321,10 @@ public class GameUniverseScreenController implements Initializable {
         selectedSystem = SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos);
         updateScreen();
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
+    }
+    
+    public void upgradeShip(ActionEvent e) {
+        SpaceTrader.setUpgradeShipScene();
     }
     
     /**

@@ -47,7 +47,7 @@
       <Label fx:id="currentSolarSystemLabel" layoutX="20.0" layoutY="19.0" prefHeight="17.0" prefWidth="228.0" text="Current Solar System" textFill="WHITE" />
       <Label fx:id="selectedSystemLabel" layoutX="195.0" layoutY="538.0" text="Selected Solar System: " textFill="WHITE" />
       <Button fx:id="travelbutton" layoutX="375.0" layoutY="561.0" mnemonicParsing="false" onAction="#travel" prefHeight="25.0" prefWidth="56.0" text="Travel" />
-      <Button fx:id="myShipButton" layoutX="471.0" layoutY="561.0" mnemonicParsing="false" text="My Ship" />
+      <Button fx:id="upgradeShipButton" layoutX="448.0" layoutY="561.0" mnemonicParsing="false" onAction="#upgradeShip" text="Upgrade Ship" />
       <ComboBox fx:id="planetComboBox" layoutX="13.0" layoutY="561.0" prefHeight="25.0" prefWidth="150.0" promptText="Select Planet" />
       <Button fx:id="jumpButton" layoutX="190.0" layoutY="561.0" mnemonicParsing="false" onAction="#jump" prefHeight="25.0" prefWidth="130.0" text="Jump to New Planet" />
       <Label fx:id="currentPlanetLabel" layoutX="286.0" layoutY="19.0" prefHeight="17.0" prefWidth="228.0" text="Current Planet:" textFill="WHITE" />
