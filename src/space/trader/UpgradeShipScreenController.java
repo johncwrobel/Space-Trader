@@ -43,20 +43,33 @@ public class UpgradeShipScreenController implements Initializable {
         // TODO
     }    
     
+    /**
+     * Handler to let the player get back to the game
+     * @param e 
+     */
     public void returnToGame(ActionEvent e) {
         SpaceTrader.backToMain();
     }
     
+    /**
+     * Handler to purchase a new ship
+     * all of these follow the same structure
+     * @param e 
+     */
     public void purchaseFalcon(ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(1000)) {
-            SpaceTrader.getMainCharacter().buy(1000);
-            SpaceTrader.ship.setShip(Ship.ShipTypes.FALCON);
-            successLabel.setText("Upgrade successful!");
+        if(SpaceTrader.getMainCharacter().canBuy(1000)) { //see if they have enough money
+            SpaceTrader.getMainCharacter().buy(1000); //deduct the money
+            SpaceTrader.ship.setShip(Ship.ShipTypes.FALCON); //set their new ship type
+            successLabel.setText("Upgrade successful!"); //let them know about it
         } else {
-            successLabel.setText("Not enough credits!");
+            successLabel.setText("Not enough credits!"); //let them know they're poor
         }
     }
     
+    /**
+     * Handler to purchase a new ship
+     * @param e 
+     */
     public void purchaseEnterprise(ActionEvent e) {
         if(SpaceTrader.getMainCharacter().canBuy(2000)) {
             SpaceTrader.getMainCharacter().buy(2000);
@@ -67,6 +80,10 @@ public class UpgradeShipScreenController implements Initializable {
         }
     }
     
+    /**
+     * Handler to purchase a new ship
+     * @param e 
+     */
     public void purchaseGalactica(ActionEvent e) {
         if(SpaceTrader.getMainCharacter().canBuy(3000)) {
             SpaceTrader.getMainCharacter().buy(3000);
@@ -77,6 +94,10 @@ public class UpgradeShipScreenController implements Initializable {
         }
     }
     
+    /**
+     * Handler to purchase a new ship
+     * @param e 
+     */
     public void purchaseDaedalus(ActionEvent e) {
         if(SpaceTrader.getMainCharacter().canBuy(4000)) {
             SpaceTrader.getMainCharacter().buy(4000);

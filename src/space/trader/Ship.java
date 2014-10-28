@@ -64,7 +64,7 @@ public class Ship implements Serializable{
  * @param aShipType 
  */
     public void setShip(ShipTypes aShipType){
-        if (aShipType==ShipTypes.SERENITY){
+        if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
             SpaceTrader.ship.maxCargo = 10;
             SpaceTrader.ship.maxFuel = 20;
             SpaceTrader.ship.weaponslots = 0;
