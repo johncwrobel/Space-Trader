@@ -32,7 +32,7 @@ public class Ship implements Serializable{
     public int bounty;
     public int size;
     public int hull;
-    private ShipTypes shipType = ShipTypes.SERENITY;
+    public ShipTypes shipType = ShipTypes.SERENITY;
     /**
      * Constructor for the Ship
      */

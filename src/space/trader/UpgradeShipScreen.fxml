@@ -9,12 +9,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.UpgradeShipScreenController">
    <children>
-      <Button fx:id="returnButton" layoutX="255.0" layoutY="333.0" mnemonicParsing="false" onAction="#returnToGame" text="Back to Game" />
-      <Button fx:id="buyFalcon" layoutX="59.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseFalcon" text="Buy Ship" />
+      <Button fx:id="returnButton" layoutX="499.0" layoutY="271.0" mnemonicParsing="false" onAction="#returnToGame" text="Back to Game" />
+      <Button fx:id="buyFalcon" disable="true" layoutX="59.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseFalcon" text="Buy Ship" />
       <Label layoutX="73.0" layoutY="23.0" text="Falcon" />
       <Label layoutX="50.0" layoutY="40.0" text="Cargo Slots: 15" />
       <Label layoutX="57.0" layoutY="57.0" text="Max Fuel: 25" />
-      <Button fx:id="buyEnterprise" layoutX="195.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseEnterprise" text="Buy Ship" />
+      <Button fx:id="buyEnterprise" disable="true" layoutX="195.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseEnterprise" text="Buy Ship" />
       <Label layoutX="42.0" layoutY="78.0" text="Cost: 1000 Credits" />
       <Label layoutX="199.0" layoutY="23.0" text="Enterprise" />
       <Label layoutX="186.0" layoutY="40.0" text="Cargo Slots: 20" />
@@ -24,12 +24,12 @@
       <Label layoutX="322.0" layoutY="40.0" text="Cargo Slots: 25" />
       <Label layoutX="329.0" layoutY="57.0" text="Max Fuel: 35" />
       <Label layoutX="320.0" layoutY="78.0" text="Cost: 3000 Credits" />
-      <Button fx:id="buyGalactica" layoutX="337.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseGalactica" text="Buy Ship" />
+      <Button fx:id="buyGalactica" disable="true" layoutX="337.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseGalactica" text="Buy Ship" />
       <Label layoutX="489.0" layoutY="23.0" text="Daedalus" />
       <Label layoutX="473.0" layoutY="40.0" text="Cargo Slots: 30" />
       <Label layoutX="480.0" layoutY="57.0" text="Max Fuel: 40" />
       <Label layoutX="465.0" layoutY="78.0" text="Cost: 4000 Credits" />
-      <Button fx:id="buyDaedalus" layoutX="482.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseDaedalus" text="Buy Ship" />
+      <Button fx:id="buyDaedalus" disable="true" layoutX="482.0" layoutY="99.0" mnemonicParsing="false" onAction="#purchaseDaedalus" text="Buy Ship" />
       <ImageView fitHeight="99.0" fitWidth="134.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Falcon.jpg" />
@@ -50,6 +50,21 @@
             <Image url="@Daedalus.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="successLabel" layoutX="221.0" layoutY="304.0" text="Choose a Ship to Upgrade to!" textAlignment="CENTER" />
+      <Label fx:id="successLabel" layoutX="292.0" layoutY="275.0" prefHeight="17.0" prefWidth="6.0" textAlignment="CENTER" />
+      <Label fx:id="creditLabel" layoutX="22.0" layoutY="245.0" text="Credits:" />
+      <Label layoutX="455.0" layoutY="311.0" text="Increase Gadget Slot" />
+      <Label layoutX="245.0" layoutY="311.0" text="Increast Weapon Slot" />
+      <Label layoutX="36.0" layoutY="311.0" text="Increase Shield Slot" textAlignment="CENTER" />
+      <Button fx:id="shieldUpgradeButton" disable="true" layoutX="53.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeShield" text="Upgrade" />
+      <Button fx:id="weaponUpgradeButton" disable="true" layoutX="271.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeWeapon" text="Upgrade" />
+      <Button fx:id="gadgetUpgradeButton" disable="true" layoutX="484.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeGadget" text="Upgrade" />
+      <Label fx:id="currentSlotLabel" layoutX="28.0" layoutY="266.0" />
+      <Label fx:id="currentSlotsLabel" layoutX="22.0" layoutY="266.0" text="Current" />
+      <Button fx:id="showShipUpgradesButton" layoutX="405.0" layoutY="241.0" mnemonicParsing="false" onAction="#showShipUpgrade" text="Upgrade Shield/Weapon/Gadet" textAlignment="CENTER" />
+      <Button fx:id="newShipButton" layoutX="295.0" layoutY="241.0" mnemonicParsing="false" onAction="#buyNewShip" text="Buy a New Ship" />
+      <Label layoutX="43.0" layoutY="336.0" text="Cost: 500  Credits" />
+      <Label layoutX="257.0" layoutY="336.0" text="Cost: 500 Credits" />
+      <Label layoutX="465.0" layoutY="336.0" text="Cost: 500 Credits" />
+      <Label fx:id="currentShipLabel" layoutX="23.0" layoutY="288.0" text="Current Ship: " />
    </children>
 </Pane>

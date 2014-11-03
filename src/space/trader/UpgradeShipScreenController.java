@@ -34,6 +34,30 @@ public class UpgradeShipScreenController implements Initializable {
     
     @FXML
     private Label successLabel;
+    
+    @FXML
+    private Label creditLabel;
+    
+    @FXML
+    private Label currentSlotsLabel;
+            
+    @FXML
+    private Button shieldUpgradeButton;
+    
+    @FXML
+    private Button gadgetUpgradeButton;
+    
+    @FXML
+    private Button weaponUpgradeButton;
+    
+    @FXML
+    private Button showShipUpgradesButton;
+    
+    @FXML
+    private Button newShipButton;
+    
+    @FXML
+    private Label currentShipLabel;
 
     /**
      * Initializes the controller class.
@@ -41,7 +65,8 @@ public class UpgradeShipScreenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+    
     
     /**
      * Handler to let the player get back to the game
@@ -61,6 +86,7 @@ public class UpgradeShipScreenController implements Initializable {
             SpaceTrader.getMainCharacter().buy(1000); //deduct the money
             SpaceTrader.ship.setShip(Ship.ShipTypes.FALCON); //set their new ship type
             successLabel.setText("Upgrade successful!"); //let them know about it
+            updateText();
         } else {
             successLabel.setText("Not enough credits!"); //let them know they're poor
         }
@@ -75,6 +101,7 @@ public class UpgradeShipScreenController implements Initializable {
             SpaceTrader.getMainCharacter().buy(2000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.ENTERPRISE);
             successLabel.setText("Upgrade successful!");
+            updateText();
         } else {
             successLabel.setText("Not enough credits!");
         }
@@ -89,6 +116,7 @@ public class UpgradeShipScreenController implements Initializable {
             SpaceTrader.getMainCharacter().buy(3000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.GALACTICA);
             successLabel.setText("Upgrade successful!");
+            updateText();
         } else {
             successLabel.setText("Not enough credits!");
         }
@@ -103,8 +131,81 @@ public class UpgradeShipScreenController implements Initializable {
             SpaceTrader.getMainCharacter().buy(4000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.DAEDALUS);
             successLabel.setText("Upgrade successful!");
+            updateText();
         } else {
             successLabel.setText("Not enough credits!");
         }
     }
+    
+    public void showShipUpgrade(ActionEvent e) {
+        shieldUpgradeButton.setDisable(false);
+        gadgetUpgradeButton.setDisable(false);
+        weaponUpgradeButton.setDisable(false);
+        
+        buyFalcon.setDisable(true);
+        buyEnterprise.setDisable(true);
+        buyGalactica.setDisable(true);
+        buyDaedalus.setDisable(true);
+        
+        updateText();
+    }
+    
+    public void buyNewShip(ActionEvent e) {
+        shieldUpgradeButton.setDisable(true);
+        gadgetUpgradeButton.setDisable(true);
+        weaponUpgradeButton.setDisable(true);
+        
+        buyFalcon.setDisable(false);
+        buyEnterprise.setDisable(false);
+        buyGalactica.setDisable(false);
+        buyDaedalus.setDisable(false);
+        
+        updateText();
+    }
+    
+    public void upgradeShield(ActionEvent e) {
+        if(SpaceTrader.getMainCharacter().canBuy(500)) {
+            SpaceTrader.getMainCharacter().buy(500);
+            SpaceTrader.ship.shieldslots++;
+            successLabel.setText("Upgrade successful!");
+            updateText();
+        } else {
+            successLabel.setText("Not enough credits!");
+        }
+    }
+    
+    public void upgradeGadget(ActionEvent e) {
+        if(SpaceTrader.getMainCharacter().canBuy(500)) {
+            SpaceTrader.getMainCharacter().buy(500);
+            successLabel.setText("Upgrade successful!");
+            SpaceTrader.ship.gadgetslots++;
+            updateText();
+        } else {
+            successLabel.setText("Not enough credits!");
+        }
+    }
+    
+    public void upgradeWeapon(ActionEvent e) {
+        if(SpaceTrader.getMainCharacter().canBuy(500)) {
+            SpaceTrader.getMainCharacter().buy(500);
+            successLabel.setText("Upgrade successful!");
+            SpaceTrader.ship.weaponslots++;
+            updateText();
+        } else {
+            successLabel.setText("Not enough credits!");
+        }
+    }
+    
+    
+    
+    /**
+     * Updates the credit amount when called
+     */
+    public void updateText() {
+        int creditsINT = SpaceTrader.getMainCharacter().getCredits();
+        creditLabel.setText("Credit: " + creditsINT);
+        currentSlotsLabel.setText("Current Slot Size: " + " Shield: " + SpaceTrader.ship.shieldslots + " Weapon: " + SpaceTrader.ship.weaponslots + " Gadet: " + SpaceTrader.ship.gadgetslots);
+        currentShipLabel.setText("Current Ship: " + SpaceTrader.ship.shipType);
+    }
+
 }
