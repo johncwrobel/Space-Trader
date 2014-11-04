@@ -32,13 +32,13 @@ public class SpaceTrader extends Application {
     
     private static Stage PrimaryStage;
     private static Scene main;
-    private static Scene characterCreation;
+    private static Scene characterCreationScene;
     private static Scene gameScreen;
-    private static Scene policeEncounterScreen;
-    private static Scene traderEncounterScreen;
-    private static Scene pirateEncounterScreen;
-    private static Scene upgradeShipScreen;
-    private static Character myCharacter;
+    private static Scene policeEncounterScene;
+    private static Scene traderEncounterScene;
+    private static Scene pirateEncounterScene;
+    private static Scene upgradeShipScene;
+    private static CharacterInterface myCharacter;
     public static Universe universe;
     public static SolarSystem currentSolarSystem;
     public static Planet currentPlanet;
@@ -64,11 +64,11 @@ public class SpaceTrader extends Application {
         
         main = new Scene(root);
         gameScreen = new Scene(game);
-        characterCreation = new Scene(character);
-        policeEncounterScreen = new Scene(policeEncounter); //making the Scenes for encounters
-        traderEncounterScreen = new Scene(traderEncounter);
-        pirateEncounterScreen = new Scene(pirateEncounter);
-        upgradeShipScreen = new Scene(upgradeShipStore);
+        characterCreationScene = new Scene(character);
+        policeEncounterScene = new Scene(policeEncounter); //making the Scenes for encounters
+        traderEncounterScene = new Scene(traderEncounter);
+        pirateEncounterScene = new Scene(pirateEncounter);
+        upgradeShipScene = new Scene(upgradeShipStore);
         PrimaryStage = stage;
         PrimaryStage.setScene(main);
         PrimaryStage.show();
@@ -78,7 +78,7 @@ public class SpaceTrader extends Application {
      * sets the scene to the characterCreation scene
      */
     public static void setCreationScene() {
-        PrimaryStage.setScene(characterCreation);
+        PrimaryStage.setScene(characterCreationScene);
     }
     
     public static SolarSystem getSystemFromCoordinate(int x, int y) {
@@ -185,7 +185,7 @@ public class SpaceTrader extends Application {
     /**
      * creates a new Universe
      */
-    public static void createNewUniverse() {
+    private static void createNewUniverse() {
         universe = new Universe();
         currentPlanet = universe.homePlanet;
         currentSolarSystem = universe.homeSolarSystem;
@@ -219,7 +219,7 @@ public class SpaceTrader extends Application {
      * 
      * @return 
      */
-    public static Character getMainCharacter() {
+    public static CharacterInterface getMainCharacter() {
         return myCharacter;
     }
     
@@ -243,21 +243,21 @@ public class SpaceTrader extends Application {
      * Set Scene to police encounter screen
      */
     public static void setPoliceEncounterScene() {
-        PrimaryStage.setScene(policeEncounterScreen);
+        PrimaryStage.setScene(policeEncounterScene);
     }
     
     /**
      * Set Scene to trader encounter screen
      */
     public static void setTraderEncounterScene() {
-        PrimaryStage.setScene(traderEncounterScreen);
+        PrimaryStage.setScene(traderEncounterScene);
     }
     
     /**
      * Set Scene to pirate encounter screen
      */
     public static void setPirateEncounterScene() {
-        PrimaryStage.setScene(pirateEncounterScreen);
+        PrimaryStage.setScene(pirateEncounterScene);
     }
     
     /**
@@ -268,7 +268,7 @@ public class SpaceTrader extends Application {
     }
     
     public static void setUpgradeShipScene() {
-        PrimaryStage.setScene(upgradeShipScreen);
+        PrimaryStage.setScene(upgradeShipScene);
     }
 
     /**

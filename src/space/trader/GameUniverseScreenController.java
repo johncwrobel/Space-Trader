@@ -250,11 +250,11 @@ public class GameUniverseScreenController implements Initializable {
     };
     
     /**
-     * Function to accessMarketPlace
+     * Function to start the game
      * @param event 
      */
     @FXML
-    public void accessMarketPlace(ActionEvent event) {
+    public void startGame(ActionEvent event) {
         ObservableList<String> observable = getPlanets();
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());

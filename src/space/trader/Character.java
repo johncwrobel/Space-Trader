@@ -3,7 +3,7 @@ package space.trader;
 import java.io.Serializable;
 import javax.swing.JOptionPane;
 
-public class Character implements Serializable {
+public class Character implements Serializable, CharacterInterface {
         private String name;
         private int credits;
 	private int pilot;
@@ -160,11 +160,11 @@ public class Character implements Serializable {
                     engineer + " engineer points, " + investor + " investor points";
         }
 
-    /**
-     * @param criminal the criminal to set
-     */
-    public void setCriminal(boolean criminal) {
-        this.criminal = criminal;
-    }
+        /**
+         * @param criminal the criminal to set
+         */
+        public void setCriminal(boolean criminal) {
+            this.criminal = criminal;
+        }
 }
  
