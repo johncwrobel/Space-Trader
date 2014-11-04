@@ -323,7 +323,7 @@ public class UpgradeShipScreenController implements Initializable {
         isShieldButtonPressed = true;
         isWeaponButtonPressed = false;
         
-        techLevel = SpaceTrader.currentPlanet.getTechLevel();
+        techLevel = SpaceTrader.currentPlanet.getTechLevel() - 1;
         shields = new ArrayList();
         ArrayList<String> shieldListString = new ArrayList();
         for (int x = 0; x <= techLevel; x++) {
@@ -345,7 +345,7 @@ public class UpgradeShipScreenController implements Initializable {
         isWeaponButtonPressed = true;
         isShieldButtonPressed = false;
         
-        techLevel = SpaceTrader.currentPlanet.getTechLevel();
+        techLevel = SpaceTrader.currentPlanet.getTechLevel() - 1;
         weapons = new ArrayList();
         ArrayList<String> weaponListString = new ArrayList();
         for (int x = 0; x <= techLevel; x++) {
