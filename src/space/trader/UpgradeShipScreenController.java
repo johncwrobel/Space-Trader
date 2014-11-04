@@ -6,12 +6,24 @@
 package space.trader;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -59,12 +71,47 @@ public class UpgradeShipScreenController implements Initializable {
     @FXML
     private Label currentShipLabel;
 
+    @FXML
+    private Label currentShipPowerLabel;
+    
+    @FXML
+    private ImageView imageViewMane;
+    
+    @FXML
+    private ListView gadgetListView;
+    
+    @FXML
+    private Button viewGadgetButton;
+    
+    @FXML
+    private Button weaponButton;
+    
+    @FXML
+    private Button shieldButton;
+    
+    @FXML
+    private Label shieldPriceLabel;
+    
+    @FXML
+    private Label weaponPriceLabel;
+    
+    private int techLevel;
+    
+    private boolean isShieldButtonPressed = false;
+    private boolean isWeaponButtonPressed = false;
+    
+    private ArrayList<Shield> shields = new ArrayList();
+    
+    private ArrayList<Weapon> weapons = new ArrayList();
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        gadgetListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+          }
+        });
     }
     
     
@@ -137,63 +184,251 @@ public class UpgradeShipScreenController implements Initializable {
         }
     }
     
+    /**
+     * Enables the buttons to purchase ship upgrades
+     * @param e 
+     */
     public void showShipUpgrade(ActionEvent e) {
-        shieldUpgradeButton.setDisable(false);
+        weaponButton.setDisable(false);
+        shieldButton.setDisable(false);
+        gadgetListView.setDisable(false);
+        imageViewMane.setDisable(false);
         gadgetUpgradeButton.setDisable(false);
-        weaponUpgradeButton.setDisable(false);
         
         buyFalcon.setDisable(true);
         buyEnterprise.setDisable(true);
         buyGalactica.setDisable(true);
         buyDaedalus.setDisable(true);
         
+        successLabel.setText("Upgrade your ship!");
         updateText();
     }
     
+    /**
+     * Enables the buttons to purchase new ship
+     * @param e 
+     */
     public void buyNewShip(ActionEvent e) {
         shieldUpgradeButton.setDisable(true);
         gadgetUpgradeButton.setDisable(true);
         weaponUpgradeButton.setDisable(true);
+        weaponButton.setDisable(true);
+        shieldButton.setDisable(true);
+        viewGadgetButton.setDisable(true);
+        gadgetListView.setDisable(true);
+        imageViewMane.setDisable(true);
         
         buyFalcon.setDisable(false);
         buyEnterprise.setDisable(false);
         buyGalactica.setDisable(false);
         buyDaedalus.setDisable(false);
         
+        successLabel.setText("Upgrade your ship!");
+        
         updateText();
     }
     
+    /**
+     * Handler to upgrade Shield
+     * @param e 
+     */
     public void upgradeShield(ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(500)) {
-            SpaceTrader.getMainCharacter().buy(500);
-            SpaceTrader.ship.shieldslots++;
+        ObservableList<String> selectedItem = gadgetListView.getSelectionModel().getSelectedItems();
+        int powerLevel = 1;
+        String type = "";
+        int gadgetIndex = 0;
+        for (int i = 0; i < selectedItem.size(); i++) {
+            String[] temp = selectedItem.get(i).split(" ");
+            powerLevel = Integer.parseInt(temp[2]);
+            type = temp[0];
+        }
+        
+        for (int x = 0; x < shields.size(); x++) {
+            if (shields.get(x).shieldLevel == (2*powerLevel)) {
+                gadgetIndex = x;
+                break;
+            }
+        }
+        int shieldPrice = shields.get(gadgetIndex).price;
+        if(SpaceTrader.getMainCharacter().canBuy(shieldPrice) && SpaceTrader.ship.checkGadget()) {
+            SpaceTrader.getMainCharacter().buy(shieldPrice);
+            SpaceTrader.ship.increaseShieldLevel(shields.get(gadgetIndex).shieldLevel);
             successLabel.setText("Upgrade successful!");
+            SpaceTrader.ship.gadgets++;
             updateText();
-        } else {
+        } else if(!SpaceTrader.getMainCharacter().canBuy(shieldPrice)) {
             successLabel.setText("Not enough credits!");
+        } else {
+            successLabel.setText("Not enough gadget space!");
         }
     }
     
+    /**
+     * handler to upgrade Gadge
+     * @param e 
+     */
     public void upgradeGadget(ActionEvent e) {
         if(SpaceTrader.getMainCharacter().canBuy(500)) {
             SpaceTrader.getMainCharacter().buy(500);
             successLabel.setText("Upgrade successful!");
             SpaceTrader.ship.gadgetslots++;
-            updateText();
+            updateTextGadget();
         } else {
             successLabel.setText("Not enough credits!");
+        }
+    
+    }
+    
+    /**
+     * Handler to upgrade Weapons
+     * @param e
+     */
+    public void upgradeWeapon(ActionEvent e) {
+        ObservableList<String> selectedItem = gadgetListView.getSelectionModel().getSelectedItems();
+        int powerLevel = 1;
+        String type = "";
+        int gadgetIndex = 0;
+        for (int i = 0; i < selectedItem.size(); i++) {
+            String[] temp = selectedItem.get(i).split(" ");
+            powerLevel = Integer.parseInt(temp[2]);
+            type = temp[0];
+        }
+        
+        for (int x = 0; x < weapons.size(); x++) {
+            if (weapons.get(x).weaponLevel == (2*powerLevel)) {
+                gadgetIndex = x;
+                break;
+            }
+        }
+        int weaponPrice = weapons.get(gadgetIndex).price;
+        if(SpaceTrader.getMainCharacter().canBuy(weaponPrice) && SpaceTrader.ship.checkGadget()) {
+            SpaceTrader.getMainCharacter().buy(weaponPrice);
+            successLabel.setText("Upgrade successful!");
+            SpaceTrader.ship.increaseWeaponLevel(weapons.get(gadgetIndex).weaponLevel);
+            SpaceTrader.ship.gadgets++;
+            updateText();
+        } else if(!SpaceTrader.getMainCharacter().canBuy(weaponPrice)) {
+            successLabel.setText("Not enough credits!");
+        } else {
+            successLabel.setText("Not enough gadget space!");
         }
     }
     
-    public void upgradeWeapon(ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(500)) {
-            SpaceTrader.getMainCharacter().buy(500);
-            successLabel.setText("Upgrade successful!");
-            SpaceTrader.ship.weaponslots++;
-            updateText();
-        } else {
-            successLabel.setText("Not enough credits!");
+    /**
+     * Displays the list of shield upgrades
+     * @param e 
+     */
+    public void shieldButton(ActionEvent e) {
+        viewGadgetButton.setDisable(false);
+        isShieldButtonPressed = true;
+        isWeaponButtonPressed = false;
+        
+        techLevel = SpaceTrader.currentPlanet.getTechLevel();
+        shields = new ArrayList();
+        ArrayList<String> shieldListString = new ArrayList();
+        for (int x = 0; x <= techLevel; x++) {
+            shields.add(new Shield(("Shield Level " + (x+1)), (2*(x+1)), x, (100*(x+1))));
+            shieldListString.add(shields.get(x).name);
         }
+        ObservableList<String> observable = FXCollections.observableArrayList(shieldListString);
+        gadgetListView.setItems(null);
+        gadgetListView.setItems(observable);
+        
+    }
+    
+    /**
+     * Displays the list of weapon upgrades
+     * @param e 
+     */
+    public void weaponButton(ActionEvent e) {
+        viewGadgetButton.setDisable(false);
+        isWeaponButtonPressed = true;
+        isShieldButtonPressed = false;
+        
+        techLevel = SpaceTrader.currentPlanet.getTechLevel();
+        weapons = new ArrayList();
+        ArrayList<String> weaponListString = new ArrayList();
+        for (int x = 0; x <= techLevel; x++) {
+            weapons.add(new Weapon(("Weapon Level " + (x+1)), (2*(x+1)), x , (100*(x+1))));
+            weaponListString.add(weapons.get(x).name);
+        }
+        ObservableList<String> observable = FXCollections.observableArrayList(weaponListString);
+        gadgetListView.setItems(null);
+        gadgetListView.setItems(observable);
+        
+    }
+    
+    /**
+     * Displays the gadget information and previews
+     * @param e 
+     */
+    public void viewGadget(ActionEvent e) {
+        if (isShieldButtonPressed) {
+            shieldUpgradeButton.setDisable(false);
+        } else {
+            shieldUpgradeButton.setDisable(true);
+        }
+        if (isWeaponButtonPressed) {
+            weaponUpgradeButton.setDisable(false);
+        } else {
+            weaponUpgradeButton.setDisable(true);
+        }
+        
+        ObservableList<String> selectedItem = gadgetListView.getSelectionModel().getSelectedItems();
+        int powerLevel = 1;
+        String type = "";
+        int shieldPrice = 0;
+        int weaponPrice = 0;
+        int gadgetIndex = 0;
+        int weaponPreview = 0;
+        int shieldPreview = 0;
+        
+        for (int i = 0; i < selectedItem.size(); i++) {
+            String[] temp = selectedItem.get(i).split(" ");
+            powerLevel = Integer.parseInt(temp[2]);
+            type = temp[0];
+        }
+                
+        if (type.equals("Weapon") &&(powerLevel == 1 || powerLevel == 5)) {
+            String img = "weapon" + (powerLevel) + ".jpg";
+            imageViewMane.setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
+            for (int x = 0; x < weapons.size(); x++) {
+                if (weapons.get(x).weaponLevel == (2*powerLevel)) {
+                    gadgetIndex = x;
+                    weaponPreview = weapons.get(x).weaponLevel;
+                    break;
+                }
+            }
+            weaponPrice = weapons.get(gadgetIndex).price;
+        } else if (type.equals("Weapon")) {
+            String img = "weapon" + (powerLevel) + ".png";
+            imageViewMane.setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
+            for (int x = 0; x < weapons.size(); x++) {
+                if (weapons.get(x).weaponLevel == (2*powerLevel)) {
+                    gadgetIndex = x;
+                    weaponPreview = weapons.get(x).weaponLevel;
+                    break;
+                }
+            }
+            weaponPrice = weapons.get(gadgetIndex).price;
+        }
+        
+        if (type.equals("Shield")) {
+            String img = "shield" + (powerLevel) + ".png";
+            imageViewMane.setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
+            for (int x = 0; x < shields.size(); x++) {
+                if (shields.get(x).shieldLevel == (2*powerLevel)) {
+                    gadgetIndex = x;
+                    shieldPreview = shields.get(x).shieldLevel;
+                    break;
+                }
+            }
+            shieldPrice = shields.get(gadgetIndex).price;
+        }
+        
+        updateText();
+        updatePreview(weaponPreview, shieldPreview);
+        updatePrice(weaponPrice, shieldPrice);
     }
     
     
@@ -204,8 +439,44 @@ public class UpgradeShipScreenController implements Initializable {
     public void updateText() {
         int creditsINT = SpaceTrader.getMainCharacter().getCredits();
         creditLabel.setText("Credit: " + creditsINT);
-        currentSlotsLabel.setText("Current Slot Size: " + " Shield: " + SpaceTrader.ship.shieldslots + " Weapon: " + SpaceTrader.ship.weaponslots + " Gadet: " + SpaceTrader.ship.gadgetslots);
-        currentShipLabel.setText("Current Ship: " + SpaceTrader.ship.shipType);
+        currentSlotsLabel.setText("Current Gadget Slots: " + SpaceTrader.ship.gadgetslots);
+        currentShipLabel.setText("Current Ship: " + SpaceTrader.ship.shipType + " | Available Gadget Slots: " + (SpaceTrader.ship.gadgetslots - SpaceTrader.ship.gadgets));
+        currentShipPowerLabel.setText("Current Levels: " + "Weapon: " + SpaceTrader.ship.weaponLevel + " Shield: " + SpaceTrader.ship.shieldLevel);
+        
+    }
+    
+    /**
+     * Specific text updater just for previews of the upgrades
+     * @param weaponLevel
+     * @param shieldLevel 
+     */
+    public void updatePreview(int weaponLevel, int shieldLevel) {
+        if (weaponLevel != 0) {
+            currentShipPowerLabel.setText("Current Levels: " + "Weapon: " + SpaceTrader.ship.weaponLevel + "(+" + weaponLevel + ")" + " Shield: " + SpaceTrader.ship.shieldLevel);
+        } else {
+            currentShipPowerLabel.setText("Current Levels: " + "Weapon: " + SpaceTrader.ship.weaponLevel + " Shield: " + SpaceTrader.ship.shieldLevel + "(+" + shieldLevel + ")");
+        }
+        
+    }
+    
+    /**
+     * specific text updater just when upgrading a gadget
+     */
+    public void updateTextGadget() {
+        int creditsINT = SpaceTrader.getMainCharacter().getCredits();
+        creditLabel.setText("Credit: " + creditsINT);
+        currentSlotsLabel.setText("Current Gadget Slots: " + SpaceTrader.ship.gadgetslots);
+        currentShipLabel.setText("Current Ship: " + SpaceTrader.ship.shipType + " | Available Gadget Slots: " + (SpaceTrader.ship.gadgetslots - SpaceTrader.ship.gadgets));
+    }
+    
+    /**
+     * Specific text updater for prices
+     * @param weaponPrice
+     * @param shieldPrice 
+     */
+    public void updatePrice(int weaponPrice, int shieldPrice) {
+        shieldPriceLabel.setText("" + shieldPrice + " Credits");
+        weaponPriceLabel.setText("" + weaponPrice + " Credits");
     }
 
 }

@@ -23,15 +23,16 @@ public class Ship implements Serializable{
     public int maxFuel;
     private int xLocation;
     private int yLocation;
-    public int weaponslots;
-    public int shieldslots;
     public int gadgetslots;
+    public int gadgets;
     public int maxCrew;
     public int techLevel;
     public int fuelCost;
     public int bounty;
     public int size;
     public int hull;
+    public int weaponLevel;
+    public int shieldLevel;
     public ShipTypes shipType = ShipTypes.SERENITY;
     /**
      * Constructor for the Ship
@@ -42,14 +43,15 @@ public class Ship implements Serializable{
         cargoHold.add(new Item("Water", 0, 0, 2, 30, 3, 4));
         fuel = 10;
         maxFuel = 10;
-        weaponslots = 0;
-        shieldslots=0;
-        gadgetslots=0;
+        gadgetslots = 0;
+        gadgets = 0;
         techLevel=4;
         fuelCost=1;
         bounty=5;
         size=0;
         hull=25;
+        weaponLevel = 0;
+        shieldLevel = 0;
     }
     
     /**
@@ -67,62 +69,62 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
             SpaceTrader.ship.maxCargo = 10;
             SpaceTrader.ship.maxFuel = 20;
-            SpaceTrader.ship.weaponslots = 0;
-            SpaceTrader.ship.shieldslots=0;
-            SpaceTrader.ship.gadgetslots=0;
+            SpaceTrader.ship.gadgetslots++;
             SpaceTrader.ship.techLevel=4;
             SpaceTrader.ship.fuelCost=1;
             SpaceTrader.ship.bounty=5;
             SpaceTrader.ship.size=0;
             SpaceTrader.ship.hull=25;
+            SpaceTrader.ship.weaponLevel = 0;
+            SpaceTrader.ship.shieldLevel = 0;
         }
         if (aShipType==ShipTypes.FALCON){
             SpaceTrader.ship.maxCargo = 15;
             SpaceTrader.ship.maxFuel = 25;
-            SpaceTrader.ship.weaponslots = 1;
-            SpaceTrader.ship.shieldslots=0;
-            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.gadgetslots++;
             SpaceTrader.ship.techLevel=5;
             SpaceTrader.ship.fuelCost=2;
             SpaceTrader.ship.bounty=50;
             SpaceTrader.ship.size=1; 
             SpaceTrader.ship.hull=100;
+            SpaceTrader.ship.weaponLevel = 1;
+            SpaceTrader.ship.shieldLevel = 1;
         }       
         if (aShipType==ShipTypes.ENTERPRISE){
             SpaceTrader.ship.maxCargo = 20;
             SpaceTrader.ship.maxFuel = 30;
-            SpaceTrader.ship.weaponslots = 1;
-            SpaceTrader.ship.shieldslots=1;
-            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.gadgetslots++;
             SpaceTrader.ship.techLevel=5;
             SpaceTrader.ship.fuelCost=3;
             SpaceTrader.ship.bounty=75;
             SpaceTrader.ship.size=1; 
             SpaceTrader.ship.hull=100;
+            SpaceTrader.ship.weaponLevel = 3;
+            SpaceTrader.ship.shieldLevel = 3;
         }
         if (aShipType==ShipTypes.GALACTICA){
             SpaceTrader.ship.maxCargo = 25;
             SpaceTrader.ship.maxFuel = 35;
-            SpaceTrader.ship.weaponslots = 2;
-            SpaceTrader.ship.shieldslots=1;
-            SpaceTrader.ship.gadgetslots=1;
+            SpaceTrader.ship.gadgetslots++;
             SpaceTrader.ship.techLevel=5;
             SpaceTrader.ship.fuelCost=5;
             SpaceTrader.ship.bounty=100;
             SpaceTrader.ship.size=1; 
             SpaceTrader.ship.hull=100;
+            SpaceTrader.ship.weaponLevel = 5;
+            SpaceTrader.ship.shieldLevel = 5;
         }        
         if (aShipType==ShipTypes.DAEDALUS){
             SpaceTrader.ship.maxCargo = 30;
             SpaceTrader.ship.maxFuel = 40;
-            SpaceTrader.ship.weaponslots = 1;
-            SpaceTrader.ship.shieldslots=2;
-            SpaceTrader.ship.gadgetslots=2;
+            SpaceTrader.ship.gadgetslots++;
             SpaceTrader.ship.techLevel=5;
             SpaceTrader.ship.fuelCost=7;
             SpaceTrader.ship.bounty=125;
             SpaceTrader.ship.size=2; 
             SpaceTrader.ship.hull=100;
+            SpaceTrader.ship.weaponLevel = 7;
+            SpaceTrader.ship.shieldLevel = 7;
         }        
         shipType = aShipType;
     }
@@ -247,5 +249,28 @@ public class Ship implements Serializable{
      */
     public ArrayList getCargo() {
         return cargoHold;
+    }
+    
+    /**
+     * Check if Ship's cargo is big enough
+     */
+    public boolean checkGadget() {
+        return gadgetslots > gadgets;
+    }
+    
+    /**
+     * Increases the ship's Weapon Level
+     * @param add 
+     */
+    public void increaseWeaponLevel(int add) {
+        weaponLevel = weaponLevel + add;
+    }
+    
+    /**
+     * Increase the ship's Shield Level
+     * @param add 
+     */
+    public void increaseShieldLevel(int add) {
+        shieldLevel = shieldLevel + add;
     }
 }

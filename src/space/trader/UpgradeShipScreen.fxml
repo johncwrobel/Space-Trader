@@ -50,21 +50,24 @@
             <Image url="@Daedalus.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="successLabel" layoutX="292.0" layoutY="275.0" prefHeight="17.0" prefWidth="6.0" textAlignment="CENTER" />
+      <Label fx:id="successLabel" layoutX="323.0" layoutY="275.0" prefHeight="17.0" prefWidth="152.0" text="Upgrading your ship!" textAlignment="CENTER" />
       <Label fx:id="creditLabel" layoutX="22.0" layoutY="245.0" text="Credits:" />
-      <Label layoutX="455.0" layoutY="311.0" text="Increase Gadget Slot" />
-      <Label layoutX="245.0" layoutY="311.0" text="Increast Weapon Slot" />
-      <Label layoutX="36.0" layoutY="311.0" text="Increase Shield Slot" textAlignment="CENTER" />
-      <Button fx:id="shieldUpgradeButton" disable="true" layoutX="53.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeShield" text="Upgrade" />
-      <Button fx:id="weaponUpgradeButton" disable="true" layoutX="271.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeWeapon" text="Upgrade" />
-      <Button fx:id="gadgetUpgradeButton" disable="true" layoutX="484.0" layoutY="361.0" mnemonicParsing="false" onAction="#upgradeGadget" text="Upgrade" />
-      <Label fx:id="currentSlotLabel" layoutX="28.0" layoutY="266.0" />
-      <Label fx:id="currentSlotsLabel" layoutX="22.0" layoutY="266.0" text="Current" />
+      <Button fx:id="shieldUpgradeButton" disable="true" layoutX="355.0" layoutY="374.0" mnemonicParsing="false" onAction="#upgradeShield" text="Upgrade" />
+      <Button fx:id="weaponUpgradeButton" disable="true" layoutX="444.0" layoutY="374.0" mnemonicParsing="false" onAction="#upgradeWeapon" text="Upgrade" />
+      <Button fx:id="gadgetUpgradeButton" disable="true" layoutX="530.0" layoutY="375.0" mnemonicParsing="false" onAction="#upgradeGadget" text="Upgrade" />
+      <Label fx:id="currentSlotsLabel" layoutX="22.0" layoutY="266.0" text="Current Gadget Slots: " />
       <Button fx:id="showShipUpgradesButton" layoutX="405.0" layoutY="241.0" mnemonicParsing="false" onAction="#showShipUpgrade" text="Upgrade Shield/Weapon/Gadet" textAlignment="CENTER" />
       <Button fx:id="newShipButton" layoutX="295.0" layoutY="241.0" mnemonicParsing="false" onAction="#buyNewShip" text="Buy a New Ship" />
-      <Label layoutX="43.0" layoutY="336.0" text="Cost: 500  Credits" />
-      <Label layoutX="257.0" layoutY="336.0" text="Cost: 500 Credits" />
-      <Label layoutX="465.0" layoutY="336.0" text="Cost: 500 Credits" />
-      <Label fx:id="currentShipLabel" layoutX="23.0" layoutY="288.0" text="Current Ship: " />
+      <Label fx:id="shieldPriceLabel" layoutX="356.0" layoutY="356.0" text="--" />
+      <Label fx:id="currentShipLabel" layoutX="21.0" layoutY="288.0" text="Current Ship: " />
+      <Label fx:id="currentShipPowerLabel" layoutX="21.0" layoutY="311.0" text="Current: Power Levels: " />
+      <Button fx:id="shieldButton" disable="true" layoutX="344.0" layoutY="331.0" mnemonicParsing="false" onAction="#shieldButton" text="View Shields" />
+      <Button fx:id="weaponButton" disable="true" layoutX="433.0" layoutY="331.0" mnemonicParsing="false" onAction="#weaponButton" text="View Weapons" />
+      <ImageView fx:id="imageViewMane" fitHeight="63.0" fitWidth="89.0" layoutX="13.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true" />
+      <ListView fx:id="gadgetListView" layoutX="109.0" layoutY="331.0" prefHeight="63.0" prefWidth="152.0" />
+      <Label layoutX="531.0" layoutY="356.0" text="500 Credits" />
+      <Label fx:id="weaponPriceLabel" layoutX="445.0" layoutY="356.0" text="--" />
+      <Button fx:id="viewGadgetButton" disable="true" layoutX="269.0" layoutY="374.0" mnemonicParsing="false" onAction="#viewGadget" text="View Gadget" />
+      <Label layoutX="541.0" layoutY="335.0" text="Gadget" />
    </children>
 </Pane>
