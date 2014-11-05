@@ -65,7 +65,7 @@ public class Character implements Serializable, CharacterInterface {
                         criminal = true;
                         // send to fight scene
                     }else{
-                        credits -= 1000;
+                        setCredits(credits - 1000);
                     }
                 }
             }
@@ -76,7 +76,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param amount 
          */
         public void payBribe() {
-            credits -= 500;
+            setCredits(credits - 500);
         }
            
         /**
@@ -84,7 +84,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param price 
          */
         public void buy(int price) {
-            credits -= price;
+            setCredits(credits - price);
         }
         
         /**
@@ -106,7 +106,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param price 
          */
         public void sell(int price) {
-            credits += price;
+            setCredits(credits + price);
         }
         
         /**
@@ -166,5 +166,12 @@ public class Character implements Serializable, CharacterInterface {
         public void setCriminal(boolean criminal) {
             this.criminal = criminal;
         }
+
+    /**
+     * @param credits the credits to set
+     */
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
 }
  
