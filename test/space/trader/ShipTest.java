@@ -9,6 +9,7 @@ package space.trader;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -44,10 +45,6 @@ public class ShipTest {
      */
     @Test
     public void testSetShip() {
-        System.out.println("setShip");
-        Ship.ShipTypes aShipType = null;
-        Ship instance = new Ship();
-        instance.setShip(aShipType);
     }
 
     /**
@@ -55,12 +52,6 @@ public class ShipTest {
      */
     @Test
     public void testRemoveItem() {
-        System.out.println("removeItem");
-        String name = "";
-        Ship instance = new Ship();
-        boolean expResult = false;
-        boolean result = instance.removeItem(name);
-        assertEquals(expResult, result);
     }
 
     /**
@@ -68,11 +59,6 @@ public class ShipTest {
      */
     @Test
     public void testGetFuel() {
-        System.out.println("getFuel");
-        Ship instance = new Ship();
-        int expResult = 10;
-        int result = instance.getFuel();
-        assertEquals(expResult, result);
     }
 
     /**
@@ -80,11 +66,6 @@ public class ShipTest {
      */
     @Test
     public void testGetMaxFuel() {
-        System.out.println("getMaxFuel");
-        Ship instance = new Ship();
-        int expResult = 10;
-        int result = instance.getMaxFuel();
-        assertEquals(expResult, result);
     }
 
     /**
@@ -96,6 +77,13 @@ public class ShipTest {
         int amount = 0;
         Ship instance = new Ship();
         instance.addFuel(amount);
+        Assert.assertEquals(10, instance.getFuel());
+        
+        instance.addFuel(100);
+        Assert.assertEquals(110, instance.getFuel());
+        
+        instance.addFuel(1000);
+        Assert.assertEquals(1110, instance.getFuel());
     }
 
 
@@ -105,11 +93,6 @@ public class ShipTest {
      */
     @Test
     public void testCanAdd() {
-        System.out.println("canAdd");
-        Ship instance = new Ship();
-        boolean expResult = true;
-        boolean result = instance.canAdd();
-        assertEquals(expResult, result);
     }
 
     /**
@@ -117,11 +100,6 @@ public class ShipTest {
      */
     @Test
     public void testCheckGadget() {
-        System.out.println("checkGadget");
-        Ship instance = new Ship();
-        boolean expResult = false;
-        boolean result = instance.checkGadget();
-        assertEquals(expResult, result);
     }
 
     /**
@@ -129,10 +107,6 @@ public class ShipTest {
      */
     @Test
     public void testIncreaseWeaponLevel() {
-        System.out.println("increaseWeaponLevel");
-        int add = 0;
-        Ship instance = new Ship();
-        instance.increaseWeaponLevel(add);
     }
 
     /**
@@ -140,10 +114,6 @@ public class ShipTest {
      */
     @Test
     public void testIncreaseShieldLevel() {
-        System.out.println("increaseShieldLevel");
-        int add = 0;
-        Ship instance = new Ship();
-        instance.increaseShieldLevel(add);
     }
     
 }
