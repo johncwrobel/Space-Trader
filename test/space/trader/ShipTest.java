@@ -50,23 +50,29 @@ public class ShipTest {
         instance.setShip(Ship.ShipTypes.SERENITY);
         
         Assert.assertEquals(instance.shipType, Ship.ShipTypes.SERENITY);
+        Assert.assertEquals(10, instance.maxCargo);
         
         instance.setShip(Ship.ShipTypes.ENTERPRISE);
         
         Assert.assertEquals(instance.shipType, Ship.ShipTypes.ENTERPRISE);
+        Assert.assertEquals(15, instance.maxCargo);
         
-         instance.setShip(Ship.ShipTypes.DAEDALUS);
+        instance.setShip(Ship.ShipTypes.DAEDALUS);
         
         Assert.assertEquals(instance.shipType, Ship.ShipTypes.DAEDALUS);
-        
-         instance.setShip(Ship.ShipTypes.FALCON);
+        Assert.assertEquals(20, instance.maxCargo);
+          
+        instance.setShip(Ship.ShipTypes.FALCON);
         
         Assert.assertEquals(instance.shipType, Ship.ShipTypes.FALCON);
+        Assert.assertEquals(25, instance.maxCargo);
         
-         instance.setShip(Ship.ShipTypes.GALACTICA);
+        instance.setShip(Ship.ShipTypes.GALACTICA);
         
         Assert.assertEquals(instance.shipType, Ship.ShipTypes.GALACTICA);
+        Assert.assertEquals(30, instance.maxCargo);
     }
+    
         
     
 
