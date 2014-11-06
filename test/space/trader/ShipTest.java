@@ -45,7 +45,30 @@ public class ShipTest {
      */
     @Test
     public void testSetShip() {
+        System.out.println("setShip");
+        Ship instance = new Ship();
+        instance.setShip(Ship.ShipTypes.SERENITY);
+        
+        Assert.assertEquals(instance.shipType, Ship.ShipTypes.SERENITY);
+        
+        instance.setShip(Ship.ShipTypes.ENTERPRISE);
+        
+        Assert.assertEquals(instance.shipType, Ship.ShipTypes.ENTERPRISE);
+        
+         instance.setShip(Ship.ShipTypes.DAEDALUS);
+        
+        Assert.assertEquals(instance.shipType, Ship.ShipTypes.DAEDALUS);
+        
+         instance.setShip(Ship.ShipTypes.FALCON);
+        
+        Assert.assertEquals(instance.shipType, Ship.ShipTypes.FALCON);
+        
+         instance.setShip(Ship.ShipTypes.GALACTICA);
+        
+        Assert.assertEquals(instance.shipType, Ship.ShipTypes.GALACTICA);
     }
+        
+    
 
     /**
      * Test of removeItem method, of class Ship.
