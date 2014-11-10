@@ -20,41 +20,7 @@ import static org.junit.Assert.assertEquals;
  * @author Caleb
  */
 public class ShipTest {
-    
-    /**
-     * The constructor
-     */
-    public ShipTest() {
-    }
-    
-    /**
-     * the set up
-     */
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    /**
-     * the tear down
-     */
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    /**
-     * the set up
-     */
-    @Before
-    public void setUp() {
-    }
-    
-    /**
-     * the tear down
-     */
-    @After
-    public void tearDown() {
-    }
-
+   
     /**
      * Test of setShip method, of class Ship.
      */
@@ -92,8 +58,8 @@ public class ShipTest {
      */
     @Test
     public final void testAddFuel() {
-        final int amount = 0;
-        final Ship instance = new Ship();
+        int amount = 0;
+        Ship instance = new Ship();
         instance.addFuel(amount);
         Assert.assertEquals(10, instance.getFuel());
         

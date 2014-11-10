@@ -61,9 +61,8 @@ public class Character implements Serializable, CharacterInterface {
          * create bribe amount (100-500 credits) and reduce from credits
          * @return cost of the bribe
          */
-        public final int policeBribe() {
-            final int bribeAmount = 500;
-            return bribeAmount;
+        public final int policeBribe() {            
+            return 500;
         }
         
         /**

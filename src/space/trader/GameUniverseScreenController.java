@@ -411,12 +411,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     public class TimeClass implements EventHandler {
 
-        /**
-         * Constructor for a TimeClass
-         */
-        public TimeClass() {
-        }
-
+ 
         /**
          * Handles the passing of the counter
          * @param event 
@@ -453,7 +448,7 @@ public class GameUniverseScreenController implements Initializable {
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
         getGoods().getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {//does nothing
           }
         });
     }
@@ -601,8 +596,9 @@ public class GameUniverseScreenController implements Initializable {
         for (int x = 0; x < planetList.size(); x++) {
             planetString.add(planetList.get(x).getName());
         }
-        final ObservableList<String> observable = FXCollections.observableArrayList(planetString);
-        return observable;
+        //final ObservableList<String> observable =
+        return FXCollections.observableArrayList(planetString);
+        //return observable;
     }
     
     /**
@@ -673,15 +669,15 @@ public class GameUniverseScreenController implements Initializable {
         }
         
         for(SolarSystem s: SpaceTrader.universe.getSolarSystems()){
-            final int x = (s.getXLocation() * 20);
-            final int y = (s.getYLocation() * 20);
-            final int w = 20;
+            int x = (s.getXLocation() * 20);
+            int y = (s.getYLocation() * 20);
+            int w = 20;
             gc.fillOval(x,y,w,w);
             
         }
-        final int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
-        final int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
-        final int w = 20;
+        int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
+        int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
+        int w = 20;
         gc.setFill(Color.BLUE);
         gc.fillOval(x,y,w,w);
         

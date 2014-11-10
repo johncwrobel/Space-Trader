@@ -56,7 +56,7 @@ public class PirateEncounterScreenController implements Initializable {
      */
     @Override
     public void initialize(final URL url, final ResourceBundle rb) {
-        
+        //does nothing
         
     }
     

@@ -107,7 +107,7 @@ public class Item implements Comparable, Serializable{
      */
     public final boolean isIllegal() {
         boolean toReturn = false;
-        if ((getName() == "Narcotics") | (getName() == "Firearms")) {
+        if ((getName().equals("Narcotics")) | (getName().equals("Firearms"))) {
             toReturn = true;
         }
         return toReturn;

@@ -65,7 +65,7 @@ public class TraderEncounterScreenController implements Initializable {
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
         getTraderItems().getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {//does nothing
           }
         });
         getBuyButton().setDisable(true);
@@ -83,11 +83,11 @@ public class TraderEncounterScreenController implements Initializable {
     public final void trade (final ActionEvent event) {
         getPlayerItems().setDisable(false);
         getTraderItems().setDisable(false);
-        final ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.getSolarSystems();
-        final int randomNumber = (int)(Math.random() * (solarSystems.size()));
-        final SolarSystem newSolarSystem = solarSystems.get(randomNumber);
+        ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.getSolarSystems();
+        int randomNumber = (int)(Math.random() * (solarSystems.size()));
+        SolarSystem newSolarSystem = solarSystems.get(randomNumber);
         this.setNewPlanet(newSolarSystem.getPlanet(0));
-        final String dialogString = "Space Sloth: You tryna trade dare mite?";
+        String dialogString = "Space Sloth: You tryna trade dare mite?";
         getDialog().setText(dialogString);
         getTradeButton().setDisable(true);
         getFightButton().setDisable(true);
@@ -112,7 +112,7 @@ public class TraderEncounterScreenController implements Initializable {
                 getNewPlanet().getMarketplace().buy(split[0]); //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
-                final String dialogString = "Space Sloth: Thats a good trade there mite";
+                String dialogString = "Space Sloth: Thats a good trade there mite";
                 getDialog().setText(dialogString);
             }
         }
@@ -132,7 +132,7 @@ public class TraderEncounterScreenController implements Initializable {
             final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
             getNewPlanet().getMarketplace().sell(temp[0]);
-            final String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
+            String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
             getDialog().setText(dialogString);
         }
         updateScreen();
@@ -160,7 +160,7 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void fight (final ActionEvent even) {
-        final String dialogString = "Space Sloth: You tryna start a fight mite?";
+        String dialogString = "Space Sloth: You tryna start a fight mite?";
         getDialog().setText(dialogString);
         getTradeButton().setDisable(false);
         getIgnoreButton().setDisable(false);
