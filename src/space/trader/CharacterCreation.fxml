@@ -47,7 +47,7 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <Button fx:id="confirm" layoutX="359.0" layoutY="297.0" mnemonicParsing="false" onAction="#confirm" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
+      <Button fx:id="confirmButton" layoutX="359.0" layoutY="297.0" mnemonicParsing="false" onAction="#confirm" prefHeight="31.0" prefWidth="150.0" text="Confirm Selections" />
       <Separator prefWidth="200.0" />
       <TextArea fx:id="pilotTextArea" layoutX="89.0" layoutY="153.0" prefHeight="30.0" prefWidth="70.0" promptText="0" />
       <Label layoutX="338.0" layoutY="34.0" text="20 Total Skill Points" textFill="#eeff05">

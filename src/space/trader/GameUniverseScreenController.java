@@ -52,10 +52,10 @@ public class GameUniverseScreenController implements Initializable {
     private ListView<String> selling;
     
     @FXML
-    private Button buy;
+    private Button buyButton;
     
     @FXML
-    private Button sell;
+    private Button sellButton;
     
     @FXML
     private ListView<Item> cargo;
@@ -94,19 +94,315 @@ public class GameUniverseScreenController implements Initializable {
     
     private Timeline clock;
     
+    private String alertString = "Alert!";
+    
     /**
      * Method that handles buying fuel
-     * @param e actionevent parameter
+     * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
-        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.maxFuel) && (SpaceTrader.getMainCharacter().canBuy(100))) {
+        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel()) && (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
             SpaceTrader.getMainCharacter().buy(100);
-        } else if ((SpaceTrader.ship.getFuel() + 5) > SpaceTrader.ship.maxFuel) {
-            JOptionPane.showMessageDialog(null, "You do not have enough fuel capacity.", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        } else if ((SpaceTrader.ship.getFuel() + 5) > SpaceTrader.ship.getMaxFuel()) {
+            JOptionPane.showMessageDialog(null, "You do not have enough fuel capacity.", getAlertString(), JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "You do not have enough credits.", "Alert!" , JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "You do not have enough credits.", getAlertString(), JOptionPane.WARNING_MESSAGE);
         }
+    }
+
+    /**
+     * @return the saveButton
+     */
+    public Button getSaveButton() {
+        return saveButton;
+    }
+
+    /**
+     * @param saveButton the saveButton to set
+     */
+    public void setSaveButton(final Button saveButton) {
+        this.saveButton = saveButton;
+    }
+
+    /**
+     * @return the loadButton
+     */
+    public Button getLoadButton() {
+        return loadButton;
+    }
+
+    /**
+     * @param loadButton the loadButton to set
+     */
+    public void setLoadButton(final Button loadButton) {
+        this.loadButton = loadButton;
+    }
+
+    /**
+     * @return the playerCredits
+     */
+    public Label getPlayerCredits() {
+        return playerCredits;
+    }
+
+    /**
+     * @param playerCredits the playerCredits to set
+     */
+    public void setPlayerCredits(final Label playerCredits) {
+        this.playerCredits = playerCredits;
+    }
+
+    /**
+     * @return the goods
+     */
+    public ListView<String> getGoods() {
+        return goods;
+    }
+
+    /**
+     * @param goods the goods to set
+     */
+    public void setGoods(final ListView<String> goods) {
+        this.goods = goods;
+    }
+
+    /**
+     * @return the selling
+     */
+    public ListView<String> getSelling() {
+        return selling;
+    }
+
+    /**
+     * @param selling the selling to set
+     */
+    public void setSelling(final ListView<String> selling) {
+        this.selling = selling;
+    }
+
+    /**
+     * @return the buyButton
+     */
+    public Button getBuyButton() {
+        return buyButton;
+    }
+
+    /**
+     * @param buyButton the buyButton to set
+     */
+    public void setBuyButton(final Button buyButton) {
+        this.buyButton = buyButton;
+    }
+
+    /**
+     * @return the sellButton
+     */
+    public Button getSellButton() {
+        return sellButton;
+    }
+
+    /**
+     * @param sellButton the sellButton to set
+     */
+    public void setSellButton(final Button sellButton) {
+        this.sellButton = sellButton;
+    }
+
+    /**
+     * @return the cargo
+     */
+    public ListView<Item> getCargo() {
+        return cargo;
+    }
+
+    /**
+     * @param cargo the cargo to set
+     */
+    public void setCargo(final ListView<Item> cargo) {
+        this.cargo = cargo;
+    }
+
+    /**
+     * @return the currentSolarSystemLabel
+     */
+    public Label getCurrentSolarSystemLabel() {
+        return currentSolarSystemLabel;
+    }
+
+    /**
+     * @param currentSolarSystemLabel the currentSolarSystemLabel to set
+     */
+    public void setCurrentSolarSystemLabel(final Label currentSolarSystemLabel) {
+        this.currentSolarSystemLabel = currentSolarSystemLabel;
+    }
+
+    /**
+     * @return the currentPlanetLabel
+     */
+    public Label getCurrentPlanetLabel() {
+        return currentPlanetLabel;
+    }
+
+    /**
+     * @param currentPlanetLabel the currentPlanetLabel to set
+     */
+    public void setCurrentPlanetLabel(final Label currentPlanetLabel) {
+        this.currentPlanetLabel = currentPlanetLabel;
+    }
+
+    /**
+     * @return the fuelLabel
+     */
+    public Label getFuelLabel() {
+        return fuelLabel;
+    }
+
+    /**
+     * @param fuelLabel the fuelLabel to set
+     */
+    public void setFuelLabel(final Label fuelLabel) {
+        this.fuelLabel = fuelLabel;
+    }
+
+    /**
+     * @return the planetComboBox
+     */
+    public ComboBox<String> getPlanetComboBox() {
+        return planetComboBox;
+    }
+
+    /**
+     * @param planetComboBox the planetComboBox to set
+     */
+    public void setPlanetComboBox(final ComboBox<String> planetComboBox) {
+        this.planetComboBox = planetComboBox;
+    }
+
+    /**
+     * @return the universeDisplayCanvas
+     */
+    public Canvas getUniverseDisplayCanvas() {
+        return universeDisplayCanvas;
+    }
+
+    /**
+     * @param universeDisplayCanvas the universeDisplayCanvas to set
+     */
+    public void setUniverseDisplayCanvas(final Canvas universeDisplayCanvas) {
+        this.universeDisplayCanvas = universeDisplayCanvas;
+    }
+
+    /**
+     * @return the selectedSystemLabel
+     */
+    public Label getSelectedSystemLabel() {
+        return selectedSystemLabel;
+    }
+
+    /**
+     * @param selectedSystemLabel the selectedSystemLabel to set
+     */
+    public void setSelectedSystemLabel(final Label selectedSystemLabel) {
+        this.selectedSystemLabel = selectedSystemLabel;
+    }
+
+    /**
+     * @return the travelButton
+     */
+    public Button getTravelButton() {
+        return travelButton;
+    }
+
+    /**
+     * @param travelButton the travelButton to set
+     */
+    public void setTravelButton(final Button travelButton) {
+        this.travelButton = travelButton;
+    }
+
+    /**
+     * @return the jumpButton
+     */
+    public Button getJumpButton() {
+        return jumpButton;
+    }
+
+    /**
+     * @param jumpButton the jumpButton to set
+     */
+    public void setJumpButton(final Button jumpButton) {
+        this.jumpButton = jumpButton;
+    }
+
+    /**
+     * @return the upgradeShipButton
+     */
+    public Button getUpgradeShipButton() {
+        return upgradeShipButton;
+    }
+
+    /**
+     * @param upgradeShipButton the upgradeShipButton to set
+     */
+    public void setUpgradeShipButton(final Button upgradeShipButton) {
+        this.upgradeShipButton = upgradeShipButton;
+    }
+
+    /**
+     * @return the start
+     */
+    public Button getStart() {
+        return start;
+    }
+
+    /**
+     * @param start the start to set
+     */
+    public void setStart(final Button start) {
+        this.start = start;
+    }
+
+    /**
+     * @return the selectedSystem
+     */
+    public SolarSystem getSelectedSystem() {
+        return selectedSystem;
+    }
+
+    /**
+     * @param selectedSystem the selectedSystem to set
+     */
+    public void setSelectedSystem(final SolarSystem selectedSystem) {
+        this.selectedSystem = selectedSystem;
+    }
+
+    /**
+     * @return the clock
+     */
+    public Timeline getClock() {
+        return clock;
+    }
+
+    /**
+     * @param clock the clock to set
+     */
+    public void setClock(final Timeline clock) {
+        this.clock = clock;
+    }
+
+    /**
+     * @return the alertString
+     */
+    public String getAlertString() {
+        return alertString;
+    }
+
+    /**
+     * @param alertString the alertString to set
+     */
+    public void setAlertString(final String alertString) {
+        this.alertString = alertString;
     }
     
     /**
@@ -137,7 +433,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     public final void save(final ActionEvent event) {
         SpaceTrader.save();
-        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous save data", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous save data", getAlertString(), JOptionPane.WARNING_MESSAGE);
     }
     
     /**
@@ -156,7 +452,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        goods.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        getGoods().getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
           }
         });
@@ -167,26 +463,26 @@ public class GameUniverseScreenController implements Initializable {
      * @param event the event
      */
     public final void travel(final ActionEvent event) {
-        if (selectedSystem != null) { //make sure they actually selected a planet
-            SpaceTrader.travelSolarSystem(selectedSystem);
-            if (SpaceTrader.ship.canTravelTo(selectedSystem)) { //fixes bug where encounters occour even when you don't have enough fuel to travel to selected system
-                int encounterChance = (int)(Math.random() * 12);
-                if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().getReputation())) { //check for all types of encounters
-                    JOptionPane.showMessageDialog(null, "You have encountered the police!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        if (getSelectedSystem() != null) { //make sure they actually selected a planet
+            SpaceTrader.travelSolarSystem(getSelectedSystem());
+            if (SpaceTrader.ship.canTravelTo(getSelectedSystem())) { //fixes bug where encounters occour even when you don't have enough fuel to travel to selected system
+                final int encounterChance = (int)(Math.random() * 12);
+                if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter().isCriminal())) { //check for all types of encounters
+                    JOptionPane.showMessageDialog(null, "You have encountered the police!", getAlertString(), JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPoliceEncounterScene();
-                } else if ((encounterChance == 0) && (SpaceTrader.getMainCharacter().getReputation())) {
-                    JOptionPane.showMessageDialog(null, "You have encountered the police and are wanted!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                } else if ((encounterChance == 0) && (SpaceTrader.getMainCharacter().isCriminal())) {
+                    JOptionPane.showMessageDialog(null, "You have encountered the police and are wanted!", getAlertString(), JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPirateEncounterScene();
                 } else if (encounterChance == 1) {
-                    JOptionPane.showMessageDialog(null, "You have encountered a pirate!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "You have encountered a pirate!", getAlertString(), JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPirateEncounterScene();
                 } else if (encounterChance == 2) {
-                    JOptionPane.showMessageDialog(null, "You have encountered a trader!", "Alert!" , JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "You have encountered a trader!", getAlertString(), JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setTraderEncounterScene();
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "You have not selected a system", "Alert!" , JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "You have not selected a system", getAlertString(), JOptionPane.ERROR_MESSAGE);
         }
         updateScreen(); //update the screen after they've traveled
     }
@@ -196,25 +492,25 @@ public class GameUniverseScreenController implements Initializable {
      * updates the text
      */
     private void updateText() { 
-        String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits(); //build everything into strings
+        final String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits(); //build everything into strings
         String selected = "Selected Solar System: ";
-        String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
-        String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
-        String fuel = "fuel: " + SpaceTrader.ship.getFuel();
-        if (selectedSystem == null) {
+        final String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
+        final String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
+        final String fuel = "fuel: " + SpaceTrader.ship.getFuel();
+        if (getSelectedSystem() == null) {
             selected += "none";
         } else {
-            selected += selectedSystem.getName();
+            selected += getSelectedSystem().getName();
         }
-        playerCredits.setText(credits); //then use those strings to update the labels
-        selectedSystemLabel.setText(selected);
-        currentSolarSystemLabel.setText(currentSystem);
-        currentPlanetLabel.setText(planet);
-        fuelLabel.setText(fuel);
+        getPlayerCredits().setText(credits); //then use those strings to update the labels
+        getSelectedSystemLabel().setText(selected);
+        getCurrentSolarSystemLabel().setText(currentSystem);
+        getCurrentPlanetLabel().setText(planet);
+        getFuelLabel().setText(fuel);
         if(SpaceTrader.currentPlanet.getTechLevel() < 4){
-            upgradeShipButton.setDisable(true);
+            getUpgradeShipButton().setDisable(true);
         } else {
-            upgradeShipButton.setDisable(false);
+            getUpgradeShipButton().setDisable(false);
         }
     }
     
@@ -224,13 +520,13 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public final void buy (final ActionEvent event) {
-        ObservableList<String> selectedItem = goods.getSelectionModel().getSelectedItems();
+        final ObservableList<String> selectedItem = getGoods().getSelectionModel().getSelectedItems();
         
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
-            String[] split = selectedItem.get(i).split(" ");
+            final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
-                    SpaceTrader.currentPlanet.marketplace.canBuy(split[0])) { //check if valid purchase
-                SpaceTrader.currentPlanet.marketplace.buy(split[0]); //then actually give them the items
+                    SpaceTrader.currentPlanet.getMarketplace().canBuy(split[0])) { //check if valid purchase
+                SpaceTrader.currentPlanet.getMarketplace().buy(split[0]); //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
             }
@@ -244,7 +540,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public final void jump (final ActionEvent event) {
-        String planetString = planetComboBox.getValue();
+        final String planetString = getPlanetComboBox().getValue();
         Planet toPlanet = null;
         for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) { //find the planet they want to travel to
             if (planetString.equals(SpaceTrader.currentSolarSystem.planets.get(x).getName())) {
@@ -254,7 +550,7 @@ public class GameUniverseScreenController implements Initializable {
         if (toPlanet != null) { //if it's a real selection, put them there
             SpaceTrader.travelPlanet(toPlanet);
         } else {
-            JOptionPane.showMessageDialog(null, "You have not selected a Planet", "Alert!" , JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "You have not selected a Planet", getAlertString(), JOptionPane.ERROR_MESSAGE);
         }
         updateScreen();
     }
@@ -265,11 +561,11 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public final void sell (final ActionEvent event) {
-        ObservableList<String> selectedItem = selling.getSelectionModel().getSelectedItems();
+        final ObservableList<String> selectedItem = getSelling().getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
-            String[] temp = selectedItem.get(i).split(" ");
+            final String[] temp = selectedItem.get(i).split(" ");
             SpaceTrader.ship.removeItem(temp[0]);
-            int add = Integer.parseInt(temp[1]);
+            final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
         }
         
@@ -282,18 +578,18 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     public final void startGame(final ActionEvent event) {
-        ObservableList<String> observable = getPlanets();
+        final ObservableList<String> observable = getPlanets();
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());
         }
         
         updateScreen();
         
-        TimeClass tc = new TimeClass();
-        clock = new Timeline(new KeyFrame(Duration.seconds(1), tc));
-        clock.setCycleCount(Timeline.INDEFINITE);
-        clock.play();
-        start.setVisible(false);
+        final TimeClass tc = new TimeClass();
+        setClock(new Timeline(new KeyFrame(Duration.seconds(1), tc)));
+        getClock().setCycleCount(Timeline.INDEFINITE);
+        getClock().play();
+        getStart().setVisible(false);
     }
     
     /**
@@ -301,12 +597,12 @@ public class GameUniverseScreenController implements Initializable {
      * @return the list of planets
      */
     public final ObservableList<String> getPlanets() {
-        ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
-        ArrayList<String> planetString = new ArrayList();
+        final ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
+        final ArrayList<String> planetString = new ArrayList();
         for (int x = 0; x < planetList.size(); x++) {
             planetString.add(planetList.get(x).getName());
         }
-        ObservableList<String> observable = FXCollections.observableArrayList(planetString);
+        final ObservableList<String> observable = FXCollections.observableArrayList(planetString);
         return observable;
     }
     
@@ -314,27 +610,27 @@ public class GameUniverseScreenController implements Initializable {
      * Helper method to update the view
      */
     private void updateScreen() {
-        GraphicsContext gc = universeDisplayCanvas.getGraphicsContext2D();
+        final GraphicsContext gc = getUniverseDisplayCanvas().getGraphicsContext2D();
         gc.clearRect(0, 0, 400, 400);
         drawShapes(gc);
         updateText();
-        ArrayList<String> list = SpaceTrader.currentPlanet.marketplace.getDisplay();
-        ObservableList<String> observable = FXCollections.observableArrayList(list);
-        goods.setItems(null);
-        goods.setItems(observable);
+        final ArrayList<String> list = SpaceTrader.currentPlanet.getMarketplace().getDisplay();
+        final ObservableList<String> observable = FXCollections.observableArrayList(list);
+        getGoods().setItems(null);
+        getGoods().setItems(observable);
         
-        ArrayList<String> list2 = SpaceTrader.getCargo();
-        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
-        selling.setItems(null);
-        selling.setItems(observable2);
+        final ArrayList<String> list2 = SpaceTrader.getCargo();
+        final ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        getSelling().setItems(null);
+        getSelling().setItems(observable2);
         
-        ArrayList<Item> list3 = SpaceTrader.ship.cargoHold;
-        ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
-        cargo.setItems(null);
-        cargo.setItems(observable3);
+        final ArrayList<Item> list3 = SpaceTrader.ship.getCargoHold();
+        final ObservableList<Item> observable3 = FXCollections.observableArrayList(list3);
+        getCargo().setItems(null);
+        getCargo().setItems(observable3);
         
-        planetComboBox.setItems(null);
-        planetComboBox.setItems(getPlanets());
+        getPlanetComboBox().setItems(null);
+        getPlanetComboBox().setItems(getPlanets());
     }
     
     /**
@@ -346,7 +642,7 @@ public class GameUniverseScreenController implements Initializable {
         double yPos = e.getY();
         xPos = (int) xPos/20;
         yPos = (int) yPos/20;
-        selectedSystem = SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos);
+        setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos));
         updateScreen();
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
@@ -378,16 +674,16 @@ public class GameUniverseScreenController implements Initializable {
             gc.strokeLine(0, sY, 400, sY);
         }
         
-        for(SolarSystem s: SpaceTrader.universe.solarSystems){
-            int x = (s.getXLocation() * 20);
-            int y = (s.getYLocation() * 20);
-            int w = 20;
+        for(SolarSystem s: SpaceTrader.universe.getSolarSystems()){
+            final int x = (s.getXLocation() * 20);
+            final int y = (s.getYLocation() * 20);
+            final int w = 20;
             gc.fillOval(x,y,w,w);
             
         }
-        int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
-        int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
-        int w = 20;
+        final int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
+        final int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
+        final int w = 20;
         gc.setFill(Color.BLUE);
         gc.fillOval(x,y,w,w);
         

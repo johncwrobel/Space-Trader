@@ -9,11 +9,11 @@ import java.util.ArrayList;
  */
 public class Universe implements Serializable{
     
-    private int numberOfSolarSystems;
-    public ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
+    private int numberOfSS;
+    private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private boolean[][] booleanArray;
-    public final SolarSystem homeSolarSystem;
-    public final Planet homePlanet;
+    private SolarSystem homeSolarSystem;
+    private Planet homePlanet;
     
     /**
      * Constructor for Universe class
@@ -25,8 +25,8 @@ public class Universe implements Serializable{
                 booleanArray[x][y] = false;
             }
         }
-        numberOfSolarSystems = (int)(Math.random() * 50) + 50;
-        for (int i = 0; i < numberOfSolarSystems; i ++) {
+        numberOfSS = (int)(Math.random() * 50) + 50;
+        for (int i = 0; i < numberOfSS; i ++) {
             int x = (int)(Math.random() * 20);
             int y = (int)(Math.random() * 20);
             while (true) {
@@ -52,10 +52,10 @@ public class Universe implements Serializable{
     @Override
     public final String toString() {
         String returnString = "";
-        for (SolarSystem ss: solarSystems) {
+        for (SolarSystem ss: getSolarSystems()) {
             returnString = returnString + ss.toString() + "\n";
         }
-        returnString += "\nNumber of Solar Systems in Universe:" + numberOfSolarSystems + "\n";
+        returnString += "\nNumber of Solar Systems in Universe:" + getNumberOfSolarSystems() + "\n";
         return returnString;
     }
     
@@ -66,9 +66,9 @@ public class Universe implements Serializable{
      * @return the solar system at the coordinates
      */
     public final SolarSystem getSystem(final int x, final int y) {
-        for (SolarSystem s: solarSystems) {
-            int systemX = s.getXLocation();
-            int systemY = s.getYLocation();
+        for (SolarSystem s: getSolarSystems()) {
+            final int systemX = s.getXLocation();
+            final int systemY = s.getYLocation();
             
             if (x == systemX && y == systemY) {
                 return s;
@@ -76,6 +76,77 @@ public class Universe implements Serializable{
         }
         
         return null;
+    }
+
+    /**
+     * @return the numberOfSolarSystems
+     */
+    public int getNumberOfSolarSystems() {
+        return numberOfSS;
+    }
+
+    /**
+     * @param numberOfSS the numberOfSolarSystems to set
+     */
+    public void setNumberOfSolarSystems(final int numberOfSS) {
+        this.numberOfSS = numberOfSS;
+    }
+
+    /**
+     * @return the solarSystems
+     */
+    public ArrayList<SolarSystem> getSolarSystems() {
+        return solarSystems;
+    }
+
+    /**
+     * @param solarSystems the solarSystems to set
+     */
+    public void setSolarSystems(final ArrayList<SolarSystem> solarSystems) {
+        this.solarSystems = solarSystems;
+    }
+
+    /**
+     * @return the booleanArray
+     */
+    public boolean[][] getBooleanArray() {
+        return booleanArray;
+    }
+
+    /**
+     * @param booleanArray the booleanArray to set
+     */
+    public void setBooleanArray(final boolean[][] booleanArray) {
+        final boolean[][] copy = booleanArray;
+        this.booleanArray = copy;
+    }
+
+    /**
+     * @return the homeSolarSystem
+     */
+    public SolarSystem getHomeSolarSystem() {
+        return homeSolarSystem;
+    }
+
+    /**
+     * @param homeSolarSystem the homeSolarSystem to set
+     */
+    public void setHomeSolarSystem(final SolarSystem homeSolarSystem) {
+        this.homeSolarSystem = homeSolarSystem;
+    }
+
+    /**
+     * @return the homePlanet
+     */
+    public Planet getHomePlanet() {
+        return homePlanet;
+    }
+
+    /**
+     * @param homePlanet the homePlanet to set
+     */
+    public void setHomePlanet(final Planet homePlanet) {
+        this.homePlanet = homePlanet;
     }
         
 }

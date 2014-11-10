@@ -30,8 +30,8 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="buy" layoutX="547.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
-      <Button fx:id="sell" layoutX="592.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
+      <Button fx:id="buyButton" layoutX="547.0" layoutY="561.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+      <Button fx:id="sellButton" layoutX="592.0" layoutY="561.0" mnemonicParsing="false" onAction="#sell" text="Sell" />
       <ListView fx:id="cargo" layoutX="600.0" layoutY="398.0" prefHeight="134.0" prefWidth="200.0" />
       <Label layoutX="671.0" layoutY="363.0" text="CARGO" textFill="WHITE">
          <font>

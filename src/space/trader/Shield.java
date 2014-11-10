@@ -12,10 +12,10 @@ package space.trader;
 
 public class Shield {
     
-    public String name;
-    public int shieldLevel;
-    public int techLevel;
-    public int price;
+    private String name;
+    private int shieldLevel;
+    private int techLevel;
+    private int price;
     /**
      * Constructor for the Shield
      * @param name shield name
@@ -27,6 +27,62 @@ public class Shield {
         this.name = name;
         this.shieldLevel = shieldLevel;
         this.techLevel = techLevel;
+        this.price = price;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the shieldLevel
+     */
+    public int getShieldLevel() {
+        return shieldLevel;
+    }
+
+    /**
+     * @param shieldLevel the shieldLevel to set
+     */
+    public void setShieldLevel(final int shieldLevel) {
+        this.shieldLevel = shieldLevel;
+    }
+
+    /**
+     * @return the techLevel
+     */
+    public int getTechLevel() {
+        return techLevel;
+    }
+
+    /**
+     * @param techLevel the techLevel to set
+     */
+    public void setTechLevel(final int techLevel) {
+        this.techLevel = techLevel;
+    }
+
+    /**
+     * @return the price
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(final int price) {
         this.price = price;
     }
 }

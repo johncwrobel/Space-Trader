@@ -60,7 +60,7 @@ public class CharacterTest {
      */
     @Test
     public final void testCanBuy() {
-        Character char1 = new Character(null, 0, 0, 0, 0, 0);
+        final Character char1 = new Character(null, 0, 0, 0, 0, 0);
         char1.setCredits(1000);
         Assert.assertTrue(char1.canBuy(50));
         Assert.assertTrue(char1.canBuy(1000));

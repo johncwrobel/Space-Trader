@@ -113,7 +113,7 @@ public class MarketPlace implements Serializable{
     public void buy(String name) {
         int index = 0;
         for (int i = 0; i < items.size(); i++) {
-            String compareString = items.get(i).name + ":";
+            String compareString = items.get(i).getName() + ":";
             if (compareString.equals(name)) {
                 index = i;
                 break;
@@ -128,7 +128,7 @@ public class MarketPlace implements Serializable{
     public void sell(String name) {
         int index = 0;
         for (int i = 0; i < items.size(); i++) {
-            String compareString = items.get(i).name + ":";
+            String compareString = items.get(i).getName() + ":";
             if (compareString.equals(name)) {
                 index = i;
                 break;
@@ -145,7 +145,7 @@ public class MarketPlace implements Serializable{
     public boolean canBuy(String name) {
         int index = 0;
         for (int i = 0; i < items.size(); i++) {
-            String compareString = items.get(i).name + ":";
+            String compareString = items.get(i).getName() + ":";
             if (compareString.equals(name)) {
                 index = i;
                 break;

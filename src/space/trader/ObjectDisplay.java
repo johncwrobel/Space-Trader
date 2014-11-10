@@ -33,6 +33,48 @@ public class ObjectDisplay {
      */
     @Override
     public final String toString() {
-        return item + ": " + price + " credits (" + amount + ")";
+        return getItem() + ": " + getPrice() + " credits (" + getAmount() + ")";
+    }
+
+    /**
+     * @return the item
+     */
+    public Item getItem() {
+        return item;
+    }
+
+    /**
+     * @param item the item to set
+     */
+    public void setItem(final Item item) {
+        this.item = item;
+    }
+
+    /**
+     * @return the price
+     */
+    public int getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(final int price) {
+        this.price = price;
+    }
+
+    /**
+     * @return the amount
+     */
+    public int getAmount() {
+        return amount;
+    }
+
+    /**
+     * @param amount the amount to set
+     */
+    public void setAmount(final int amount) {
+        this.amount = amount;
     }
 }

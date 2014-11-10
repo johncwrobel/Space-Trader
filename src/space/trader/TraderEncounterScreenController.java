@@ -64,15 +64,15 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        traderItems.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+        getTraderItems().getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
           }
         });
-        buyButton.setDisable(true);
-        sellButton.setDisable(true);
-        tradeButton.setDisable(false);
-        ignoreButton.setDisable(false);
-        fightButton.setDisable(false);
+        getBuyButton().setDisable(true);
+        getSellButton().setDisable(true);
+        getTradeButton().setDisable(false);
+        getIgnoreButton().setDisable(false);
+        getFightButton().setDisable(false);
     }
     
     /**
@@ -81,20 +81,20 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void trade (final ActionEvent event) {
-        playerItems.setDisable(false);
-        traderItems.setDisable(false);
-        ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.solarSystems;
-        int randomNumber = (int)(Math.random() * (solarSystems.size()));
-        SolarSystem newSolarSystem = solarSystems.get(randomNumber);
-        this.newPlanet = newSolarSystem.getPlanet(0);
-        String dialogString = "Space Sloth: You tryna trade dare mite?";
-        dialog.setText(dialogString);
-        tradeButton.setDisable(true);
-        fightButton.setDisable(true);
-        ignoreButton.setDisable(false);
-        buyButton.setDisable(false);
-        sellButton.setDisable(false);
-        ignoreButton.setText("Go Back");
+        getPlayerItems().setDisable(false);
+        getTraderItems().setDisable(false);
+        final ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.getSolarSystems();
+        final int randomNumber = (int)(Math.random() * (solarSystems.size()));
+        final SolarSystem newSolarSystem = solarSystems.get(randomNumber);
+        this.setNewPlanet(newSolarSystem.getPlanet(0));
+        final String dialogString = "Space Sloth: You tryna trade dare mite?";
+        getDialog().setText(dialogString);
+        getTradeButton().setDisable(true);
+        getFightButton().setDisable(true);
+        getIgnoreButton().setDisable(false);
+        getBuyButton().setDisable(false);
+        getSellButton().setDisable(false);
+        getIgnoreButton().setText("Go Back");
         updateScreen();
     }
     
@@ -104,17 +104,17 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void buy (final ActionEvent event) {
-        ObservableList<String> selectedItem = traderItems.getSelectionModel().getSelectedItems();
+        final ObservableList<String> selectedItem = getTraderItems().getSelectionModel().getSelectedItems();
         System.out.println("buy: " + selectedItem);
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
-            String[] split = selectedItem.get(i).split(" ");
+            final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
-                    newPlanet.marketplace.canBuy(split[0])) { //check if valid purchase
-                newPlanet.marketplace.buy(split[0]); //then actually give them the items
+                    getNewPlanet().getMarketplace().canBuy(split[0])) { //check if valid purchase
+                getNewPlanet().getMarketplace().buy(split[0]); //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
-                String dialogString = "Space Sloth: Thats a good trade there mite";
-                dialog.setText(dialogString);
+                final String dialogString = "Space Sloth: Thats a good trade there mite";
+                getDialog().setText(dialogString);
             }
         }
         updateScreen();
@@ -126,15 +126,15 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void sell (final ActionEvent event) {
-        ObservableList<String> selectedItem = playerItems.getSelectionModel().getSelectedItems();
+        final ObservableList<String> selectedItem = getPlayerItems().getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
-            String[] temp = selectedItem.get(i).split(" ");
+            final String[] temp = selectedItem.get(i).split(" ");
             SpaceTrader.ship.removeItem(temp[0]);
-            int add = Integer.parseInt(temp[1]);
+            final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
-            newPlanet.marketplace.sell(temp[0]);
-            String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
-            dialog.setText(dialogString);
+            getNewPlanet().getMarketplace().sell(temp[0]);
+            final String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
+            getDialog().setText(dialogString);
         }
         updateScreen();
     }
@@ -145,13 +145,13 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void ignore (final ActionEvent event) {
-        tradeButton.setDisable(false);
-        ignoreButton.setDisable(false);
-        fightButton.setDisable(false);
-        buyButton.setDisable(true);
-        sellButton.setDisable(true);
-        playerItems.setDisable(true);
-        traderItems.setDisable(true);
+        getTradeButton().setDisable(false);
+        getIgnoreButton().setDisable(false);
+        getFightButton().setDisable(false);
+        getBuyButton().setDisable(true);
+        getSellButton().setDisable(true);
+        getPlayerItems().setDisable(true);
+        getTraderItems().setDisable(true);
         SpaceTrader.backToMain();
     }
     
@@ -161,14 +161,14 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void fight (final ActionEvent even) {
-        String dialogString = "Space Sloth: You tryna start a fight mite?";
-        dialog.setText(dialogString);
+        final String dialogString = "Space Sloth: You tryna start a fight mite?";
+        getDialog().setText(dialogString);
         System.out.println("Fight");
-        tradeButton.setDisable(false);
-        ignoreButton.setDisable(false);
-        fightButton.setDisable(false);
-        buyButton.setDisable(true);
-        sellButton.setDisable(true);
+        getTradeButton().setDisable(false);
+        getIgnoreButton().setDisable(false);
+        getFightButton().setDisable(false);
+        getBuyButton().setDisable(true);
+        getSellButton().setDisable(true);
         SpaceTrader.backToMain();
     }
     
@@ -176,15 +176,15 @@ public class TraderEncounterScreenController implements Initializable {
      * Method to help update the screen
      */
     public final void updateScreen() {
-        ArrayList<String> list = newPlanet.marketplace.getDisplay();
-        ObservableList<String> observable = FXCollections.observableArrayList(list);
-        traderItems.setItems(null);
-        traderItems.setItems(observable);
+        final ArrayList<String> list = getNewPlanet().getMarketplace().getDisplay();
+        final ObservableList<String> observable = FXCollections.observableArrayList(list);
+        getTraderItems().setItems(null);
+        getTraderItems().setItems(observable);
         
-        ArrayList<String> list2 = SpaceTrader.getCargo();
-        ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
-        playerItems.setItems(null);
-        playerItems.setItems(observable2);
+        final ArrayList<String> list2 = SpaceTrader.getCargo();
+        final ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        getPlayerItems().setItems(null);
+        getPlayerItems().setItems(observable2);
         
         updateText();
     }
@@ -193,7 +193,147 @@ public class TraderEncounterScreenController implements Initializable {
      * Method to update the text on the screen
      */
     public final void updateText() {
-        String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
-        credits.setText(creditString);
+        final String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
+        getCredits().setText(creditString);
+    }
+
+    /**
+     * @return the tradeButton
+     */
+    public Button getTradeButton() {
+        return tradeButton;
+    }
+
+    /**
+     * @param tradeButton the tradeButton to set
+     */
+    public void setTradeButton(final Button tradeButton) {
+        this.tradeButton = tradeButton;
+    }
+
+    /**
+     * @return the ignoreButton
+     */
+    public Button getIgnoreButton() {
+        return ignoreButton;
+    }
+
+    /**
+     * @param ignoreButton the ignoreButton to set
+     */
+    public void setIgnoreButton(final Button ignoreButton) {
+        this.ignoreButton = ignoreButton;
+    }
+
+    /**
+     * @return the fightButton
+     */
+    public Button getFightButton() {
+        return fightButton;
+    }
+
+    /**
+     * @param fightButton the fightButton to set
+     */
+    public void setFightButton(final Button fightButton) {
+        this.fightButton = fightButton;
+    }
+
+    /**
+     * @return the buyButton
+     */
+    public Button getBuyButton() {
+        return buyButton;
+    }
+
+    /**
+     * @param buyButton the buyButton to set
+     */
+    public void setBuyButton(final Button buyButton) {
+        this.buyButton = buyButton;
+    }
+
+    /**
+     * @return the sellButton
+     */
+    public Button getSellButton() {
+        return sellButton;
+    }
+
+    /**
+     * @param sellButton the sellButton to set
+     */
+    public void setSellButton(final Button sellButton) {
+        this.sellButton = sellButton;
+    }
+
+    /**
+     * @return the playerItems
+     */
+    public ListView<String> getPlayerItems() {
+        return playerItems;
+    }
+
+    /**
+     * @param playerItems the playerItems to set
+     */
+    public void setPlayerItems(final ListView<String> playerItems) {
+        this.playerItems = playerItems;
+    }
+
+    /**
+     * @return the traderItems
+     */
+    public ListView<String> getTraderItems() {
+        return traderItems;
+    }
+
+    /**
+     * @param traderItems the traderItems to set
+     */
+    public void setTraderItems(final ListView<String> traderItems) {
+        this.traderItems = traderItems;
+    }
+
+    /**
+     * @return the dialog
+     */
+    public TextField getDialog() {
+        return dialog;
+    }
+
+    /**
+     * @param dialog the dialog to set
+     */
+    public void setDialog(final TextField dialog) {
+        this.dialog = dialog;
+    }
+
+    /**
+     * @return the credits
+     */
+    public Text getCredits() {
+        return credits;
+    }
+
+    /**
+     * @param credits the credits to set
+     */
+    public void setCredits(final Text credits) {
+        this.credits = credits;
+    }
+
+    /**
+     * @return the newPlanet
+     */
+    public Planet getNewPlanet() {
+        return newPlanet;
+    }
+
+    /**
+     * @param newPlanet the newPlanet to set
+     */
+    public void setNewPlanet(final Planet newPlanet) {
+        this.newPlanet = newPlanet;
     }
 }

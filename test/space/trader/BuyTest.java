@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class BuyTest {
     
-    Character tester;
+    private transient Character tester;
     
     /**
      * The set up

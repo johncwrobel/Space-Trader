@@ -64,20 +64,119 @@ public class PirateEncounterScreenController implements Initializable {
      * Draws all of the planets on the canvas
      */
     public final void updateCanvas() {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        final GraphicsContext gc = getCanvas().getGraphicsContext2D();
         gc.clearRect(0, 0, 400, 400);
-        for (int i = 0; i < target.length; i++) {
-            for (int j = 0; j < target[0].length; j++) {
-                if (target[i][j]) {
+        for (int i = 0; i < getTarget().length; i++) {
+            for (int j = 0; j < getTarget()[0].length; j++) {
+                if (getTarget()[i][j]) {
                     gc.fillRect(i * 20, j * 20, 20, 20);
                 }
             }
         }
     }
+
+    /**
+     * @return the canvas
+     */
+    public Canvas getCanvas() {
+        return canvas;
+    }
+
+    /**
+     * @param canvas the canvas to set
+     */
+    public void setCanvas(final Canvas canvas) {
+        this.canvas = canvas;
+    }
+
+    /**
+     * @return the time
+     */
+    public Label getTime() {
+        return time;
+    }
+
+    /**
+     * @param time the time to set
+     */
+    public void setTime(final Label time) {
+        this.time = time;
+    }
+
+    /**
+     * @return the start
+     */
+    public Button getStart() {
+        return start;
+    }
+
+    /**
+     * @param start the start to set
+     */
+    public void setStart(final Button start) {
+        this.start = start;
+    }
+
+    /**
+     * @return the timer
+     */
+    public int getTimer() {
+        return timer;
+    }
+
+    /**
+     * @param timer the timer to set
+     */
+    public void setTimer(final int timer) {
+        this.timer = timer;
+    }
+
+    /**
+     * @return the clock
+     */
+    public Timeline getClock() {
+        return clock;
+    }
+
+    /**
+     * @param clock the clock to set
+     */
+    public void setClock(final Timeline clock) {
+        this.clock = clock;
+    }
+
+    /**
+     * @return the target
+     */
+    public boolean[][] getTarget() {
+        return target;
+    }
+
+    /**
+     * @param target the target to set
+     */
+    public void setTarget(final boolean[][] target) {
+        final boolean[][] assignArray = target;
+        this.target = assignArray;
+    }
+
+    /**
+     * @return the playing
+     */
+    public boolean isPlaying() {
+        return playing;
+    }
+
+    /**
+     * @param playing the playing to set
+     */
+    public void setPlaying(final boolean playing) {
+        this.playing = playing;
+    }
     
     public class TimeClass implements EventHandler {
 
-        int counter;
+        private int counter;
         
         /**
          * Constructor for the TimeClass
@@ -90,19 +189,33 @@ public class PirateEncounterScreenController implements Initializable {
         @Override
         public final void handle(final Event event) {
             
-            if(counter >= 1) {
-                time.setText("TIMER: " + counter + " seconds");
+            if(getCounter() >= 1) {
+                getTime().setText("TIMER: " + getCounter() + " seconds");
             } else {
-                clock.stop();
-                time.setText("GAME OVER");
+                getClock().stop();
+                getTime().setText("GAME OVER");
                 if (hasWon()) {
-                    time.setText("You Win");
+                    getTime().setText("You Win");
                 }
-                playing = false;
+                setPlaying(false);
                 SpaceTrader.getMainCharacter().buy(300);
                 SpaceTrader.setGameScene();
             }
-            counter--;
+            setCounter(getCounter() - 1);
+        }
+
+        /**
+         * @return the counter
+         */
+        public int getCounter() {
+            return counter;
+        }
+
+        /**
+         * @param counter the counter to set
+         */
+        public void setCounter(final int counter) {
+            this.counter = counter;
         }
     }
     
@@ -110,9 +223,9 @@ public class PirateEncounterScreenController implements Initializable {
      * Clears the rectangle
      */
     public final void clearRect() {
-        for (int i = 0; i < target.length; i++) {
-            for (int j = 0; j < target[0].length; j++) {
-                target[i][j] = false;
+        for (int i = 0; i < getTarget().length; i++) {
+            for (int j = 0; j < getTarget()[0].length; j++) {
+                getTarget()[i][j] = false;
             }
         }
     }
@@ -122,19 +235,19 @@ public class PirateEncounterScreenController implements Initializable {
      * @param e the event
      */
     public final void startGame(final ActionEvent e) {
-        if (!playing) {
-            playing = true;
-            int count = timer;
-            time.setText("TIMER: " + count + " seconds");
+        if (!isPlaying()) {
+            setPlaying(true);
+            int count = getTimer();
+            getTime().setText("TIMER: " + count + " seconds");
             count--;
 
-            target = new boolean[20][20];
+            setTarget(new boolean[20][20]);
 
             for (int i = 0; i < 3; i++) {
-                int x = (int)(Math.random() * 20);
-                int y = (int)(Math.random() * 20);
-                if (!target[x][y]) {
-                    target[x][y] = true;
+                final int x = (int)(Math.random() * 20);
+                final int y = (int)(Math.random() * 20);
+                if (!getTarget()[x][y]) {
+                    getTarget()[x][y] = true;
                 } else {
                     i--;
                 }
@@ -142,10 +255,10 @@ public class PirateEncounterScreenController implements Initializable {
 
             updateCanvas();
 
-            TimeClass tc = new TimeClass(count);
-            clock = new Timeline(new KeyFrame(Duration.seconds(1), tc));
-            clock.setCycleCount(4);
-            clock.play();
+            final TimeClass tc = new TimeClass(count);
+            setClock(new Timeline(new KeyFrame(Duration.seconds(1), tc)));
+            getClock().setCycleCount(4);
+            getClock().play();
         }
     }
     
@@ -154,9 +267,9 @@ public class PirateEncounterScreenController implements Initializable {
      * @return if they've won
      */
     public final boolean hasWon() {
-        for (int i = 0; i < target.length; i++) {
-            for (int j = 0; j < target[0].length; j++) {
-                if (target[i][j]) {
+        for (int i = 0; i < getTarget().length; i++) {
+            for (int j = 0; j < getTarget()[0].length; j++) {
+                if (getTarget()[i][j]) {
                     return false;
                 }
             }
@@ -170,13 +283,13 @@ public class PirateEncounterScreenController implements Initializable {
      * @param e the event
      */
     public final void shoot(final MouseEvent e) {
-        int x = (int) (e.getX() / 20);
-        int y = (int) (e.getY() / 20);
+        final int x = (int) (e.getX() / 20);
+        final int y = (int) (e.getY() / 20);
         
-        if (target[x][y] && playing) {
-            target[x][y] = false;
+        if (getTarget()[x][y] && isPlaying()) {
+            getTarget()[x][y] = false;
             if(hasWon()) {
-                playing = false;
+                setPlaying(false);
                 SpaceTrader.getMainCharacter().sell(300);
                 SpaceTrader.setGameScene();
             }
@@ -190,7 +303,7 @@ public class PirateEncounterScreenController implements Initializable {
      * @param e 
      */
     public final void handle(final MouseEvent e) {
-        GraphicsContext gc = canvas.getGraphicsContext2D();
+        final GraphicsContext gc = getCanvas().getGraphicsContext2D();
         updateCanvas();
         drawMouse(e, gc);
         
@@ -202,8 +315,8 @@ public class PirateEncounterScreenController implements Initializable {
      * @param gc the graphics context
      */
     public final void drawMouse(final MouseEvent e, final GraphicsContext gc) {
-        double x = e.getX();
-        double y = e.getY();
+        final double x = e.getX();
+        final double y = e.getY();
         gc.setStroke(Color.GREEN);
         gc.strokeLine(x - 10, y, x + 10, y);
         gc.strokeLine(x, y - 10, x, y + 10);

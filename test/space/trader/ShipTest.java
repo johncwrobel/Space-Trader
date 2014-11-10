@@ -61,55 +61,31 @@ public class ShipTest {
     @Test
     public final void testSetShip() {
         System.out.println("setShip");
-        Ship instance = new Ship();
+        final Ship instance = new Ship();
         instance.setShip(Ship.ShipTypes.SERENITY);
         
-        Assert.assertEquals(instance.shipType, Ship.ShipTypes.SERENITY);
-        Assert.assertEquals(10, instance.maxCargo);
+        Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.SERENITY);
+        Assert.assertEquals(10, instance.getMaxCargo());
         
         instance.setShip(Ship.ShipTypes.ENTERPRISE);
         
-        Assert.assertEquals(instance.shipType, Ship.ShipTypes.ENTERPRISE);
-        Assert.assertEquals(15, instance.maxCargo);
+        Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.ENTERPRISE);
+        Assert.assertEquals(15, instance.getMaxCargo());
         
         instance.setShip(Ship.ShipTypes.DAEDALUS);
         
-        Assert.assertEquals(instance.shipType, Ship.ShipTypes.DAEDALUS);
-        Assert.assertEquals(20, instance.maxCargo);
+        Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.DAEDALUS);
+        Assert.assertEquals(20, instance.getMaxCargo());
           
         instance.setShip(Ship.ShipTypes.FALCON);
         
-        Assert.assertEquals(instance.shipType, Ship.ShipTypes.FALCON);
-        Assert.assertEquals(25, instance.maxCargo);
+        Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.FALCON);
+        Assert.assertEquals(25, instance.getMaxCargo());
         
         instance.setShip(Ship.ShipTypes.GALACTICA);
         
-        Assert.assertEquals(instance.shipType, Ship.ShipTypes.GALACTICA);
-        Assert.assertEquals(30, instance.maxCargo);
-    }
-    
-        
-    
-
-    /**
-     * Test of removeItem method, of class Ship.
-     */
-    @Test
-    public void testRemoveItem() {
-    }
-
-    /**
-     * Test of getFuel method, of class Ship.
-     */
-    @Test
-    public void testGetFuel() {
-    }
-
-    /**
-     * Test of getMaxFuel method, of class Ship.
-     */
-    @Test
-    public void testGetMaxFuel() {
+        Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.GALACTICA);
+        Assert.assertEquals(30, instance.getMaxCargo());
     }
 
     /**
@@ -118,8 +94,8 @@ public class ShipTest {
     @Test
     public final void testAddFuel() {
         System.out.println("addFuel");
-        int amount = 0;
-        Ship instance = new Ship();
+        final int amount = 0;
+        final Ship instance = new Ship();
         instance.addFuel(amount);
         Assert.assertEquals(10, instance.getFuel());
         
@@ -129,35 +105,4 @@ public class ShipTest {
         instance.addFuel(1000);
         Assert.assertEquals(1110, instance.getFuel());
     }
-
-
-
-    /**
-     * Test of canAdd method, of class Ship.
-     */
-    @Test
-    public void testCanAdd() {
-    }
-
-    /**
-     * Test of checkGadget method, of class Ship.
-     */
-    @Test
-    public void testCheckGadget() {
-    }
-
-    /**
-     * Test of increaseWeaponLevel method, of class Ship.
-     */
-    @Test
-    public void testIncreaseWeaponLevel() {
-    }
-
-    /**
-     * Test of increaseShieldLevel method, of class Ship.
-     */
-    @Test
-    public void testIncreaseShieldLevel() {
-    }
-    
 }

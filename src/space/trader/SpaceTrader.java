@@ -187,8 +187,8 @@ public class SpaceTrader extends Application {
      */
     private static void createNewUniverse() {
         universe = new Universe();
-        currentPlanet = universe.homePlanet;
-        currentSolarSystem = universe.homeSolarSystem;
+        currentPlanet = universe.getHomePlanet();
+        currentSolarSystem = universe.getHomeSolarSystem();
     }
     
     /**
@@ -228,9 +228,9 @@ public class SpaceTrader extends Application {
      * @return an ArrayList of String Item names
      */
     public static ArrayList<String> getCargo() {
-        ArrayList<Item> cargo = ship.cargoHold;
+        ArrayList<Item> cargo = ship.getCargoHold();
         ArrayList<String> cargoDisplay = new ArrayList<>();
-        MarketPlace market = currentPlanet.marketplace;
+        MarketPlace market = currentPlanet.getMarketplace();
         for (int i = 0; i < cargo.size(); i++) {
             if (market.canSell(cargo.get(i))) {
                 cargoDisplay.add(cargo.get(i).toString() + ": " + market.getSellingPrice(cargo.get(i)) + " credits");

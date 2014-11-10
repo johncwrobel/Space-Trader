@@ -23,7 +23,7 @@ public interface CharacterInterface {
      * Getter method for reputation
      * @return if wanted or not
      */
-    public boolean getReputation();
+    public boolean isCriminal();
     
     /**
      * Method to bribe police

@@ -17,23 +17,23 @@ import javax.swing.JOptionPane;
  */
 public class Ship implements Serializable{
     
-    public ArrayList<Item> cargoHold;
-    public int maxCargo;
+    private ArrayList<Item> cargoHold;
+    private int maxCargo;
     private int fuel;
-    public int maxFuel;
+    private int maxFuel;
     private int xLocation;
     private int yLocation;
-    public int gadgetslots;
-    public int gadgets;
-    public int maxCrew;
-    public int techLevel;
-    public int fuelCost;
-    public int bounty;
-    public int size;
-    public int hull;
-    public int weaponLevel;
-    public int shieldLevel;
-    public ShipTypes shipType = ShipTypes.SERENITY;
+    private int gadgetslots;
+    private int gadgets;
+    private int maxCrew;
+    private int techLevel;
+    private int fuelCost;
+    private int bounty;
+    private int size;
+    private int hull;
+    private int weaponLevel;
+    private int shieldLevel;
+    private ShipTypes shipType = ShipTypes.SERENITY;
     /**
      * Constructor for the Ship
      */
@@ -53,6 +53,230 @@ public class Ship implements Serializable{
         weaponLevel = 0;
         shieldLevel = 0;
     }
+
+    /**
+     * @return the cargoHold
+     */
+    public ArrayList<Item> getCargoHold() {
+        return cargoHold;
+    }
+
+    /**
+     * @param cargoHold the cargoHold to set
+     */
+    public void setCargoHold(final ArrayList<Item> cargoHold) {
+        this.cargoHold = cargoHold;
+    }
+
+    /**
+     * @return the maxCargo
+     */
+    public int getMaxCargo() {
+        return maxCargo;
+    }
+
+    /**
+     * @param maxCargo the maxCargo to set
+     */
+    public void setMaxCargo(final int maxCargo) {
+        this.maxCargo = maxCargo;
+    }
+
+    /**
+     * @param fuel the fuel to set
+     */
+    public void setFuel(final int fuel) {
+        this.fuel = fuel;
+    }
+
+    /**
+     * @param maxFuel the maxFuel to set
+     */
+    public void setMaxFuel(final int maxFuel) {
+        this.maxFuel = maxFuel;
+    }
+
+    /**
+     * @return the xLocation
+     */
+    public int getxLocation() {
+        return xLocation;
+    }
+
+    /**
+     * @param xLocation the xLocation to set
+     */
+    public void setxLocation(final int xLocation) {
+        this.xLocation = xLocation;
+    }
+
+    /**
+     * @return the yLocation
+     */
+    public int getyLocation() {
+        return yLocation;
+    }
+
+    /**
+     * @param yLocation the yLocation to set
+     */
+    public void setyLocation(final int yLocation) {
+        this.yLocation = yLocation;
+    }
+
+    /**
+     * @return the gadgetslots
+     */
+    public int getGadgetslots() {
+        return gadgetslots;
+    }
+
+    /**
+     * @param gadgetslots the gadgetslots to set
+     */
+    public void setGadgetslots(final int gadgetslots) {
+        this.gadgetslots = gadgetslots;
+    }
+
+    /**
+     * @return the gadgets
+     */
+    public int getGadgets() {
+        return gadgets;
+    }
+
+    /**
+     * @param gadgets the gadgets to set
+     */
+    public void setGadgets(final int gadgets) {
+        this.gadgets = gadgets;
+    }
+
+    /**
+     * @return the maxCrew
+     */
+    public int getMaxCrew() {
+        return maxCrew;
+    }
+
+    /**
+     * @param maxCrew the maxCrew to set
+     */
+    public void setMaxCrew(final int maxCrew) {
+        this.maxCrew = maxCrew;
+    }
+
+    /**
+     * @return the techLevel
+     */
+    public int getTechLevel() {
+        return techLevel;
+    }
+
+    /**
+     * @param techLevel the techLevel to set
+     */
+    public void setTechLevel(final int techLevel) {
+        this.techLevel = techLevel;
+    }
+
+    /**
+     * @return the fuelCost
+     */
+    public int getFuelCost() {
+        return fuelCost;
+    }
+
+    /**
+     * @param fuelCost the fuelCost to set
+     */
+    public void setFuelCost(final int fuelCost) {
+        this.fuelCost = fuelCost;
+    }
+
+    /**
+     * @return the bounty
+     */
+    public int getBounty() {
+        return bounty;
+    }
+
+    /**
+     * @param bounty the bounty to set
+     */
+    public void setBounty(final int bounty) {
+        this.bounty = bounty;
+    }
+
+    /**
+     * @return the size
+     */
+    public int getSize() {
+        return size;
+    }
+
+    /**
+     * @param size the size to set
+     */
+    public void setSize(final int size) {
+        this.size = size;
+    }
+
+    /**
+     * @return the hull
+     */
+    public int getHull() {
+        return hull;
+    }
+
+    /**
+     * @param hull the hull to set
+     */
+    public void setHull(final int hull) {
+        this.hull = hull;
+    }
+
+    /**
+     * @return the weaponLevel
+     */
+    public int getWeaponLevel() {
+        return weaponLevel;
+    }
+
+    /**
+     * @param weaponLevel the weaponLevel to set
+     */
+    public void setWeaponLevel(final int weaponLevel) {
+        this.weaponLevel = weaponLevel;
+    }
+
+    /**
+     * @return the shieldLevel
+     */
+    public int getShieldLevel() {
+        return shieldLevel;
+    }
+
+    /**
+     * @param shieldLevel the shieldLevel to set
+     */
+    public void setShieldLevel(final int shieldLevel) {
+        this.shieldLevel = shieldLevel;
+    }
+
+    /**
+     * @return the shipType
+     */
+    public ShipTypes getShipType() {
+        return shipType;
+    }
+
+    /**
+     * @param shipType the shipType to set
+     */
+    public void setShipType(final ShipTypes shipType) {
+        this.shipType = shipType;
+    }
     
     /**
      * Enum for the ship types
@@ -67,66 +291,66 @@ public class Ship implements Serializable{
  */
     public final void setShip(final ShipTypes aShipType){
         if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
-            SpaceTrader.ship.maxCargo = 10;
-            SpaceTrader.ship.maxFuel = 20;
-            SpaceTrader.ship.gadgetslots++;
-            SpaceTrader.ship.techLevel=4;
-            SpaceTrader.ship.fuelCost=1;
-            SpaceTrader.ship.bounty=5;
-            SpaceTrader.ship.size=0;
-            SpaceTrader.ship.hull=25;
-            SpaceTrader.ship.weaponLevel = 0;
-            SpaceTrader.ship.shieldLevel = 0;
+            SpaceTrader.ship.setMaxCargo(10);
+            SpaceTrader.ship.setMaxFuel(20);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setTechLevel(4);
+            SpaceTrader.ship.setFuelCost(1);
+            SpaceTrader.ship.setBounty(5);
+            SpaceTrader.ship.setSize(0);
+            SpaceTrader.ship.setHull(25);
+            SpaceTrader.ship.setWeaponLevel(0);
+            SpaceTrader.ship.setShieldLevel(0);
         }
         if (aShipType==ShipTypes.FALCON){
-            SpaceTrader.ship.maxCargo = 15;
-            SpaceTrader.ship.maxFuel = 25;
-            SpaceTrader.ship.gadgetslots++;
-            SpaceTrader.ship.techLevel=5;
-            SpaceTrader.ship.fuelCost=2;
-            SpaceTrader.ship.bounty=50;
-            SpaceTrader.ship.size=1; 
-            SpaceTrader.ship.hull=100;
-            SpaceTrader.ship.weaponLevel = 1;
-            SpaceTrader.ship.shieldLevel = 1;
+            SpaceTrader.ship.setMaxCargo(15);
+            SpaceTrader.ship.setMaxFuel(25);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setTechLevel(5);
+            SpaceTrader.ship.setFuelCost(2);
+            SpaceTrader.ship.setBounty(50);
+            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setHull(100);
+            SpaceTrader.ship.setWeaponLevel(1);
+            SpaceTrader.ship.setShieldLevel(1);
         }       
         if (aShipType==ShipTypes.ENTERPRISE){
-            SpaceTrader.ship.maxCargo = 20;
-            SpaceTrader.ship.maxFuel = 30;
-            SpaceTrader.ship.gadgetslots++;
-            SpaceTrader.ship.techLevel=5;
-            SpaceTrader.ship.fuelCost=3;
-            SpaceTrader.ship.bounty=75;
-            SpaceTrader.ship.size=1; 
-            SpaceTrader.ship.hull=100;
-            SpaceTrader.ship.weaponLevel = 3;
-            SpaceTrader.ship.shieldLevel = 3;
+            SpaceTrader.ship.setMaxCargo(20);
+            SpaceTrader.ship.setMaxFuel(30);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setTechLevel(5);
+            SpaceTrader.ship.setFuelCost(3);
+            SpaceTrader.ship.setBounty(75);
+            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setHull(100);
+            SpaceTrader.ship.setWeaponLevel(3);
+            SpaceTrader.ship.setShieldLevel(3);
         }
         if (aShipType==ShipTypes.GALACTICA){
-            SpaceTrader.ship.maxCargo = 25;
-            SpaceTrader.ship.maxFuel = 35;
-            SpaceTrader.ship.gadgetslots++;
-            SpaceTrader.ship.techLevel=5;
-            SpaceTrader.ship.fuelCost=5;
-            SpaceTrader.ship.bounty=100;
-            SpaceTrader.ship.size=1; 
-            SpaceTrader.ship.hull=100;
-            SpaceTrader.ship.weaponLevel = 5;
-            SpaceTrader.ship.shieldLevel = 5;
+            SpaceTrader.ship.setMaxCargo(25);
+            SpaceTrader.ship.setMaxFuel(35);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setTechLevel(5);
+            SpaceTrader.ship.setFuelCost(5);
+            SpaceTrader.ship.setBounty(100);
+            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setHull(100);
+            SpaceTrader.ship.setWeaponLevel(5);
+            SpaceTrader.ship.setShieldLevel(5);
         }        
         if (aShipType==ShipTypes.DAEDALUS){
-            SpaceTrader.ship.maxCargo = 30;
-            SpaceTrader.ship.maxFuel = 40;
-            SpaceTrader.ship.gadgetslots++;
-            SpaceTrader.ship.techLevel=5;
-            SpaceTrader.ship.fuelCost=7;
-            SpaceTrader.ship.bounty=125;
-            SpaceTrader.ship.size=2; 
-            SpaceTrader.ship.hull=100;
-            SpaceTrader.ship.weaponLevel = 7;
-            SpaceTrader.ship.shieldLevel = 7;
+            SpaceTrader.ship.setMaxCargo(30);
+            SpaceTrader.ship.setMaxFuel(40);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setTechLevel(5);
+            SpaceTrader.ship.setFuelCost(7);
+            SpaceTrader.ship.setBounty(125);
+            SpaceTrader.ship.setSize(2); 
+            SpaceTrader.ship.setHull(100);
+            SpaceTrader.ship.setWeaponLevel(7);
+            SpaceTrader.ship.setShieldLevel(7);
         }        
-        shipType = aShipType;
+        setShipType(aShipType);
     }
     
     /**
@@ -135,10 +359,10 @@ public class Ship implements Serializable{
      * @return if it was removed
      */
     public final boolean removeItem(final String name) {
-        for (int i = 0; i < cargoHold.size(); i++) {
-            String compareString = cargoHold.get(i).name + ":";
+        for (int i = 0; i < getCargoHold().size(); i++) {
+            final String compareString = getCargoHold().get(i).getName() + ":";
             if (compareString.equals(name)) {
-                cargoHold.remove(i);
+                getCargoHold().remove(i);
                 return true;
             }
         }
@@ -169,7 +393,7 @@ public class Ship implements Serializable{
      */
     
     public final void addFuel(final int amount){
-        this.fuel += amount; //add a certain amount of fuel to the ship
+        this.setFuel(this.getFuel() + amount); //add a certain amount of fuel to the ship
     }
     
     /**
@@ -179,11 +403,11 @@ public class Ship implements Serializable{
      */
     
     public final boolean canTravelTo(final SolarSystem system){
-        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation(); //updates the xLocation of the ship to use later
-        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates the yLocation of the ship to use later
+        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation()); //updates the xLocation of the ship to use later
+        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation()); //updates the yLocation of the ship to use later
         
         //uses distance formula to calculate if the distance is too far
-        return this.fuelCost*Math.sqrt((xLocation-system.getXLocation())*(xLocation-system.getXLocation()) + (yLocation-system.getYLocation())*(yLocation-system.getYLocation())) <= fuel;
+        return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation())*(getxLocation()-system.getXLocation()) + (getyLocation()-system.getYLocation())*(getyLocation()-system.getYLocation())) <= getFuel();
     }
     
        /**
@@ -206,11 +430,11 @@ public class Ship implements Serializable{
     
     public final void travel(final Planet planet){
         //subtracts fuel based on how far we travelled
-        fuel = (int) (fuel - Math.sqrt((xLocation-planet.getSolarSystem().getXLocation())*(xLocation-planet.getSolarSystem().getXLocation()) + (yLocation-planet.getSolarSystem().getYLocation())*(yLocation-planet.getSolarSystem().getYLocation())));
+        setFuel((int) (getFuel() - Math.sqrt((getxLocation() - planet.getSolarSystem().getXLocation()) * (getxLocation() - planet.getSolarSystem().getXLocation()) + (getyLocation() - planet.getSolarSystem().getYLocation()) * (getyLocation() - planet.getSolarSystem().getYLocation()))));
         SpaceTrader.currentPlanet = planet; //sets currentPlanet
         SpaceTrader.currentSolarSystem = planet.getSolarSystem(); //sets currentSolarSystem
-        xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation(); //updates xLocation of ship
-        yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates yLocation of ship
+        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation()); //updates xLocation of ship
+        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation()); //updates yLocation of ship
     }
     
     /**
@@ -218,11 +442,11 @@ public class Ship implements Serializable{
      * @param itemName 
      */
     public final void addItem(final String itemName) {
-        ArrayList<Item> itemList = SpaceTrader.currentPlanet.marketplace.items;
+        final ArrayList<Item> itemList = SpaceTrader.currentPlanet.getMarketplace().items;
         for (int i = 0; i < itemList.size(); i++) {
-            String compareString = itemList.get(i).name + ":";
+            final String compareString = itemList.get(i).getName() + ":";
             if (compareString.equals(itemName)) {
-                cargoHold.add(itemList.get(i));
+                getCargoHold().add(itemList.get(i));
                 System.out.println("Item Added");
                 break;
             }
@@ -235,7 +459,7 @@ public class Ship implements Serializable{
      * @return if there's room
      */
     public final boolean canAdd() {
-        if (cargoHold.size() < maxCargo) {
+        if (getCargoHold().size() < getMaxCargo()) {
             return true;
         } else {
             JOptionPane.showMessageDialog(null, "Not enough storage in the ship", "Alert" , JOptionPane.ERROR_MESSAGE);
@@ -248,7 +472,7 @@ public class Ship implements Serializable{
      * @return ship's cargo
      */
     public final ArrayList getCargo() {
-        return cargoHold;
+        return getCargoHold();
     }
     
     /**
@@ -256,7 +480,7 @@ public class Ship implements Serializable{
      * @return if gadgets can be purchased
      */
     public final boolean checkGadget() {
-        return gadgetslots > gadgets;
+        return getGadgetslots() > getGadgets();
     }
     
     /**
@@ -264,7 +488,7 @@ public class Ship implements Serializable{
      * @param add 
      */
     public final void increaseWeaponLevel(final int add) {
-        weaponLevel = weaponLevel + add;
+        setWeaponLevel(getWeaponLevel() + add);
     }
     
     /**
@@ -272,6 +496,6 @@ public class Ship implements Serializable{
      * @param add 
      */
     public final void increaseShieldLevel(final int add) {
-        shieldLevel = shieldLevel + add;
+        setShieldLevel(getShieldLevel() + add);
     }
 }

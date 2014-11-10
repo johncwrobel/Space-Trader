@@ -53,7 +53,7 @@ public class Character implements Serializable, CharacterInterface {
          * Getter method for character reputation
          * @return if the character is a criminal or not
          */
-        public final boolean getReputation() {
+        public final boolean isCriminal() {
             return this.criminal;
         }
         
@@ -62,7 +62,7 @@ public class Character implements Serializable, CharacterInterface {
          * @return cost of the bribe
          */
         public final int policeBribe() {
-            int bribeAmount = 500;
+            final int bribeAmount = 500;
             return bribeAmount;
         }
         
@@ -70,8 +70,8 @@ public class Character implements Serializable, CharacterInterface {
          * Handler for if player consents to the search
          */
         public final void consentSearch(){
-            for(int i=0; i < SpaceTrader.ship.cargoHold.size(); i++){
-                if(SpaceTrader.ship.cargoHold.get(i).isIllegal()){
+            for(int i=0; i < SpaceTrader.ship.getCargoHold().size(); i++){
+                if(SpaceTrader.ship.getCargoHold().get(i).isIllegal()){
                     if(getCredits() < 1000){
                         criminal = true;
                         // send to fight scene
@@ -174,16 +174,67 @@ public class Character implements Serializable, CharacterInterface {
         }
 
         /**
+         * Setter method for criminal
          * @param criminal the criminal to set
          */
         public final void setCriminal(final boolean criminal) {
             this.criminal = criminal;
         }
 
-    /**
-     * @param credits the credits to set
-     */
-    public final void setCredits(final int credits) {
-        this.credits = credits;
-    }
+        /**
+         * Setter method for credits
+         * @param credits the credits to set
+         */
+        public final void setCredits(final int credits) {
+            this.credits = credits;
+        }
+        
+        /**
+         * Setter method for name
+         * @param name to be set
+         */
+        public final void setName(final String name) {
+            this.name = name;
+        }
+        
+        /**
+         * Setter method for pilot
+         * @param level to be set
+         */
+        public final void setPilot(final int level) {
+            this.pilot = level;
+        }
+        
+        /**
+         * Setter method for fighter
+         * @param level to be set
+         */
+        public final void setFighter(final int level) {
+            this.fighter = level;
+        }
+        
+        /**
+         * Setter method for trader
+         * @param level to be set
+         */
+        public final void setTrader(final int level) {
+            this.trader = level;
+        }
+        
+        
+        /**
+         * Setter method for engineer
+         * @param level to be set
+         */
+        public final void setEngineer(final int level) {
+            this.engineer = level;
+        }
+        
+        /**
+         * Setter method for investor
+         * @param level to be set
+         */
+        public final void setInvestor(final int level) {
+            this.investor = level;
+        }
 }
