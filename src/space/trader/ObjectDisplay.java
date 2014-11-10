@@ -32,7 +32,7 @@ public class ObjectDisplay {
      * @return 
      */
     @Override
-    public String toString() {
+    public final String toString() {
         return item + ": " + price + " credits (" + amount + ")";
     }
 }

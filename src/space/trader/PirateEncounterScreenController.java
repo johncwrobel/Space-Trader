@@ -58,7 +58,7 @@ public class PirateEncounterScreenController implements Initializable {
         
     }
     
-    public void updateCanvas() {
+    public final void updateCanvas() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, 400, 400);
         for (int i = 0; i < target.length; i++) {
@@ -79,7 +79,7 @@ public class PirateEncounterScreenController implements Initializable {
         }
 
         @Override
-        public void handle(Event event) {
+        public final void handle(Event event) {
             
             if(counter >= 1) {
                 time.setText("TIMER: " + counter + " seconds");
@@ -97,7 +97,7 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
-    public void clearRect() {
+    public final void clearRect() {
         for (int i = 0; i < target.length; i++) {
             for (int j = 0; j < target[0].length; j++) {
                 target[i][j] = false;
@@ -105,7 +105,7 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
-    public void startGame(ActionEvent e) {
+    public final void startGame(ActionEvent e) {
         if (!playing) {
             playing = true;
             int count = timer;
@@ -133,7 +133,7 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
-    public boolean hasWon() {
+    public final boolean hasWon() {
         for (int i = 0; i < target.length; i++) {
             for (int j = 0; j < target[0].length; j++) {
                 if (target[i][j]) {
@@ -145,7 +145,7 @@ public class PirateEncounterScreenController implements Initializable {
         return true;
     }
     
-    public void shoot(MouseEvent e) {
+    public final void shoot(MouseEvent e) {
         int x = (int) (e.getX() / 20);
         int y = (int) (e.getY() / 20);
         
@@ -161,14 +161,14 @@ public class PirateEncounterScreenController implements Initializable {
         handle(e);
     }
     
-    public void handle(MouseEvent e) {
+    public final void handle(MouseEvent e) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         updateCanvas();
         drawMouse(e, gc);
         
     }
     
-    public void drawMouse(MouseEvent e, GraphicsContext gc) {
+    public final void drawMouse(MouseEvent e, GraphicsContext gc) {
         double x = e.getX();
         double y = e.getY();
         gc.setStroke(Color.GREEN);

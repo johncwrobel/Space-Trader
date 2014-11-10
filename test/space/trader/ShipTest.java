@@ -13,7 +13,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  *
@@ -44,7 +44,7 @@ public class ShipTest {
      * Test of setShip method, of class Ship.
      */
     @Test
-    public void testSetShip() {
+    public final void testSetShip() {
         System.out.println("setShip");
         Ship instance = new Ship();
         instance.setShip(Ship.ShipTypes.SERENITY);
@@ -101,7 +101,7 @@ public class ShipTest {
      * Test of addFuel method, of class Ship.
      */
     @Test
-    public void testAddFuel() {
+    public final void testAddFuel() {
         System.out.println("addFuel");
         int amount = 0;
         Ship instance = new Ship();

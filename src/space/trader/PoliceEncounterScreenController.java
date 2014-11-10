@@ -44,19 +44,19 @@ public class PoliceEncounterScreenController implements Initializable {
     } 
     
     @FXML
-    public void bribe(ActionEvent event) {
+    public final void bribe(ActionEvent event) {
         SpaceTrader.getMainCharacter().payBribe();
         SpaceTrader.setGameScene();
     }
     
     @FXML
-    public void search(ActionEvent event) {
+    public final void search(ActionEvent event) {
         SpaceTrader.getMainCharacter().consentSearch();
         SpaceTrader.setGameScene();
     }
     
     @FXML
-    public void fight(ActionEvent event) {
+    public final void fight(ActionEvent event) {
         SpaceTrader.getMainCharacter().setCriminal(true);
         SpaceTrader.setPirateEncounterScene();
     }

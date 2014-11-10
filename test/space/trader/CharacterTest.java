@@ -10,8 +10,10 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.*;
-import static org.junit.Assert.*;
+import org.junit.Assert;
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 
 /**
  *
@@ -39,7 +41,7 @@ public class CharacterTest {
     }
 
     @Test
-    public void testCanBuy() {
+    public final void testCanBuy() {
         Character char1 = new Character(null, 0, 0, 0, 0, 0);
         char1.setCredits(1000);
         Assert.assertTrue(char1.canBuy(50));

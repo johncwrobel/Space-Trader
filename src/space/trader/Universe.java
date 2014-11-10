@@ -50,7 +50,7 @@ public class Universe implements Serializable{
      * @return toString
      */
     @Override
-    public String toString() {
+    public final String toString() {
         String returnString = "";
         for (SolarSystem ss: solarSystems) {
             returnString = returnString + ss.toString() + "\n";
@@ -59,7 +59,7 @@ public class Universe implements Serializable{
         return returnString;
     }
     
-    public SolarSystem getSystem(int x, int y) {
+    public final SolarSystem getSystem(int x, int y) {
         for (SolarSystem s: solarSystems) {
             int systemX = s.getXLocation();
             int systemY = s.getYLocation();

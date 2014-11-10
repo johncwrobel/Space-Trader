@@ -32,7 +32,7 @@ public class Planet implements Serializable{
      * Getter method for getName
      * @return name
      */
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
@@ -40,7 +40,7 @@ public class Planet implements Serializable{
      * Getter method for ParentSystem
      * @return parentSystem
      */
-    public SolarSystem getSolarSystem(){
+    public final SolarSystem getSolarSystem(){
         return this.parentSystem;
     }
     
@@ -48,7 +48,7 @@ public class Planet implements Serializable{
      * Getter method for Tech Level
      * @return techLevel
      */
-    public int getTechLevel() {
+    public final int getTechLevel() {
         return techLevel;
     }
 
@@ -56,7 +56,7 @@ public class Planet implements Serializable{
      * Getter method for Resources
      * @return resources
      */
-    public int getResources() {
+    public final int getResources() {
         return resources;
     }
     
@@ -65,7 +65,7 @@ public class Planet implements Serializable{
      * @return string representation of the planet
      */
     @Override
-    public String toString() {
+    public final String toString() {
         // (Planet name: name, Tech Level: x, Resource Type: x)
         return ("(Planet name: " + name + ", Tech Level: " + techLevel + ", Resource Type: " + resources + ")"); 
     }

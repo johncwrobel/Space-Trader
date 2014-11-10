@@ -61,7 +61,7 @@ public class TraderEncounterScreenController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         traderItems.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
@@ -74,7 +74,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     @FXML
-    public void trade (ActionEvent event) {
+    public final void trade (ActionEvent event) {
         playerItems.setDisable(false);
         traderItems.setDisable(false);
         ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.solarSystems;
@@ -97,7 +97,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void buy (ActionEvent event) {
+    public final void buy (ActionEvent event) {
         ObservableList<String> selectedItem = traderItems.getSelectionModel().getSelectedItems();
         System.out.println("buy: " + selectedItem);
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
@@ -119,7 +119,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void sell (ActionEvent event) {
+    public final void sell (ActionEvent event) {
         ObservableList<String> selectedItem = playerItems.getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             String[] temp = selectedItem.get(i).split(" ");
@@ -134,7 +134,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     @FXML
-    public void ignore (ActionEvent event) {
+    public final void ignore (ActionEvent event) {
         tradeButton.setDisable(false);
         ignoreButton.setDisable(false);
         fightButton.setDisable(false);
@@ -146,7 +146,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     @FXML
-    public void fight (ActionEvent even) {
+    public final void fight (ActionEvent even) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
         dialog.setText(dialogString);
         System.out.println("Fight");
@@ -158,7 +158,7 @@ public class TraderEncounterScreenController implements Initializable {
         SpaceTrader.backToMain();
     }
     
-    public void updateScreen() {
+    public final void updateScreen() {
         ArrayList<String> list = newPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
         traderItems.setItems(null);
@@ -172,7 +172,7 @@ public class TraderEncounterScreenController implements Initializable {
         updateText();
     }
     
-    public void updateText() {
+    public final void updateText() {
         String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
         credits.setText(creditString);
     }

@@ -87,7 +87,7 @@ public class CharacterCreationController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         try{ //all of this sets up and plays the music
             final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
             Media music = new Media(resource.toString());
@@ -95,6 +95,7 @@ public class CharacterCreationController implements Initializable {
             mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE); //this is the line that loops the mp3 indefinitely
             mediaPlayer.play();
         }catch(Exception e){
+            System.out.println(e);
         }
     }
     

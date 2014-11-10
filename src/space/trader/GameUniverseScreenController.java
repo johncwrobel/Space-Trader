@@ -94,7 +94,7 @@ public class GameUniverseScreenController implements Initializable {
     
     private Timeline clock;
     
-    public void buyFuel(ActionEvent e) {
+    public final void buyFuel(ActionEvent e) {
         if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.maxFuel) && (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
             SpaceTrader.getMainCharacter().buy(100);
@@ -111,19 +111,18 @@ public class GameUniverseScreenController implements Initializable {
         public TimeClass() {
         }
 
-        @Override
-        public void handle(Event event) {
+        public final void handle(Event event) {
             
             updateScreen();
         }
     }
     
-    public void save(ActionEvent event) {
+    public final void save(ActionEvent event) {
         SpaceTrader.save();
         JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous sav data", "Alert!" , JOptionPane.WARNING_MESSAGE);
     }
     
-    public void load(ActionEvent event) {
+    public final void load(ActionEvent event) {
         SpaceTrader.load();
         updateScreen();
     }
@@ -132,14 +131,14 @@ public class GameUniverseScreenController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(URL url, ResourceBundle rb) {
         goods.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
           }
         });
     }
     
-    public void travel(ActionEvent event) {
+    public final void travel(ActionEvent event) {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
             if (SpaceTrader.ship.canTravelTo(selectedSystem)) { //fixes bug where encounters occour even when you don't have enough fuel to travel to selected system
@@ -196,7 +195,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void buy (ActionEvent event) {
+    public final void buy (ActionEvent event) {
         ObservableList<String> selectedItem = goods.getSelectionModel().getSelectedItems();
         
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
@@ -216,7 +215,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void jump (ActionEvent event) {
+    public final void jump (ActionEvent event) {
         String planetString = planetComboBox.getValue();
         Planet toPlanet = null;
         for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) { //find the planet they want to travel to
@@ -237,7 +236,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void sell (ActionEvent event) {
+    public final void sell (ActionEvent event) {
         ObservableList<String> selectedItem = selling.getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             String[] temp = selectedItem.get(i).split(" ");
@@ -254,7 +253,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public void startGame(ActionEvent event) {
+    public final void startGame(ActionEvent event) {
         ObservableList<String> observable = getPlanets();
         for (int x = 0; x < observable.size(); x++) {
             System.out.println(observable.get(x).toString());
@@ -272,7 +271,7 @@ public class GameUniverseScreenController implements Initializable {
     /**
      * Helper method to update the list of planets
      */
-    public ObservableList<String> getPlanets() {
+    public final ObservableList<String> getPlanets() {
         ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
         ArrayList<String> planetString = new ArrayList();
         for (int x = 0; x < planetList.size(); x++) {
@@ -313,7 +312,7 @@ public class GameUniverseScreenController implements Initializable {
      * Handles the user clicking on new systems
      * @param e 
      */
-    public void chooseSystem(MouseEvent e) {
+    public final void chooseSystem(MouseEvent e) {
         double xPos = e.getX();
         double yPos = e.getY();
         xPos = (int) xPos/20;
@@ -323,7 +322,7 @@ public class GameUniverseScreenController implements Initializable {
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
     
-    public void upgradeShip(ActionEvent e) {
+    public final void upgradeShip(ActionEvent e) {
         SpaceTrader.setUpgradeShipScene();
     }
     
