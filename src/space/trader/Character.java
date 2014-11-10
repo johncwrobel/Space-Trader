@@ -42,6 +42,14 @@ public class Character implements Serializable, CharacterInterface {
         }
         
         /**
+         * Getter method for character name
+         * @return the name
+         */
+        public final String getName() {
+            return this.name;
+        }
+        
+        /**
          * Getter method for character reputation
          * @return if the character is a criminal or not
          */
@@ -86,7 +94,10 @@ public class Character implements Serializable, CharacterInterface {
          * @param price amount to be deducted
          */
         public final void buy(final int price) {
-            setCredits(credits - price);
+            if (canBuy(price))
+            {
+               setCredits(credits - price); 
+            }
         }
         
         /**
@@ -176,4 +187,3 @@ public class Character implements Serializable, CharacterInterface {
         this.credits = credits;
     }
 }
- 
