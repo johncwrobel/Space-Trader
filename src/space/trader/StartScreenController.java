@@ -31,7 +31,7 @@ public class StartScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(final ActionEvent event) {
         SpaceTrader.setCreationScene();
     }
     
@@ -41,7 +41,7 @@ public class StartScreenController implements Initializable {
      * @param rb 
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(final URL url, final ResourceBundle rb) {
         // TODO
     }    
     

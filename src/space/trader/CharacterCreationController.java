@@ -45,7 +45,7 @@ public class CharacterCreationController implements Initializable {
      * @param event ActionEvent for the listener
      */
     @FXML
-    private void confirm(ActionEvent event) throws Exception {
+    private void confirm(final ActionEvent event) throws Exception {
         String pilotString = pilotTextArea.getText().trim();
         String fighterString = fighterTextArea.getText().trim();
         String traderString = traderTextArea.getText().trim();
@@ -82,12 +82,12 @@ public class CharacterCreationController implements Initializable {
      * @param event 
      */
     @FXML
-    private void cancel(ActionEvent event) {
+    private void cancel(final ActionEvent event) {
         SpaceTrader.setTitleScene();
     }
     
     @Override
-    public final void initialize(URL url, ResourceBundle rb) {
+    public final void initialize(final URL url, final ResourceBundle rb) {
         try{ //all of this sets up and plays the music
             final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
             Media music = new Media(resource.toString());
@@ -105,7 +105,7 @@ public class CharacterCreationController implements Initializable {
      * @param String s
      * @return true if s is an integer, false otherwise
      */
-    private static boolean isInteger(String s) {
+    private static boolean isInteger(final String s) {
         try { 
             Integer.parseInt(s); 
         } catch(NumberFormatException e) { 

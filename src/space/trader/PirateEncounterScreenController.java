@@ -53,7 +53,7 @@ public class PirateEncounterScreenController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(final URL url, final ResourceBundle rb) {
         
         
     }
@@ -74,12 +74,12 @@ public class PirateEncounterScreenController implements Initializable {
 
         int counter;
         
-        public TimeClass(int count) {
+        public TimeClass(final int count) {
             counter = count;
         }
 
         @Override
-        public final void handle(Event event) {
+        public final void handle(final Event event) {
             
             if(counter >= 1) {
                 time.setText("TIMER: " + counter + " seconds");
@@ -105,7 +105,7 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
-    public final void startGame(ActionEvent e) {
+    public final void startGame(final ActionEvent e) {
         if (!playing) {
             playing = true;
             int count = timer;
@@ -145,7 +145,7 @@ public class PirateEncounterScreenController implements Initializable {
         return true;
     }
     
-    public final void shoot(MouseEvent e) {
+    public final void shoot(final MouseEvent e) {
         int x = (int) (e.getX() / 20);
         int y = (int) (e.getY() / 20);
         
@@ -161,14 +161,14 @@ public class PirateEncounterScreenController implements Initializable {
         handle(e);
     }
     
-    public final void handle(MouseEvent e) {
+    public final void handle(final MouseEvent e) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         updateCanvas();
         drawMouse(e, gc);
         
     }
     
-    public final void drawMouse(MouseEvent e, GraphicsContext gc) {
+    public final void drawMouse(final MouseEvent e, final GraphicsContext gc) {
         double x = e.getX();
         double y = e.getY();
         gc.setStroke(Color.GREEN);

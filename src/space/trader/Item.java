@@ -31,7 +31,7 @@ public class Item implements Comparable, Serializable{
      * @param ipl
      * @param var 
      */
-    public Item(String name, int mtlp, int  mtlu, int ttp, int basePrice, int ipl, int var) {
+    public Item(final String name, final int mtlp, final int  mtlu, final int ttp, final int basePrice, final int ipl, final int var) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
@@ -46,7 +46,7 @@ public class Item implements Comparable, Serializable{
      * @param techLevel
      * @return the price
      */
-    public final int getPrice(int techLevel) {
+    public final int getPrice(final int techLevel) {
         return basePrice + (ipl * (techLevel - mtlp)) + (var * var());
     }
     
@@ -85,7 +85,7 @@ public class Item implements Comparable, Serializable{
      * @return if they are the same or not
      */
     @Override
-    public final int compareTo(Object o) {
+    public final int compareTo(final Object o) {
         Item i = (Item) o;
         return this.name.compareTo(i.name);
     }

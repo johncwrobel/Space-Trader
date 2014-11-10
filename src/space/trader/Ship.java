@@ -65,7 +65,7 @@ public class Ship implements Serializable{
  * Sets the ship type, and changed any associated private vars
  * @param aShipType 
  */
-    public final void setShip(ShipTypes aShipType){
+    public final void setShip(final ShipTypes aShipType){
         if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
             SpaceTrader.ship.maxCargo = 10;
             SpaceTrader.ship.maxFuel = 20;
@@ -134,7 +134,7 @@ public class Ship implements Serializable{
      * @param name
      * @return if it was removed
      */
-    public final boolean removeItem(String name) {
+    public final boolean removeItem(final String name) {
         for (int i = 0; i < cargoHold.size(); i++) {
             String compareString = cargoHold.get(i).name + ":";
             if (compareString.equals(name)) {
@@ -168,7 +168,7 @@ public class Ship implements Serializable{
      * @param amount the amount of fuel to add
      */
     
-    public final void addFuel(int amount){
+    public final void addFuel(final int amount){
         this.fuel += amount; //add a certain amount of fuel to the ship
     }
     
@@ -178,7 +178,7 @@ public class Ship implements Serializable{
      * @return true or false
      */
     
-    public final boolean canTravelTo(SolarSystem system){
+    public final boolean canTravelTo(final SolarSystem system){
         xLocation = SpaceTrader.currentPlanet.getSolarSystem().getXLocation(); //updates the xLocation of the ship to use later
         yLocation = SpaceTrader.currentPlanet.getSolarSystem().getYLocation(); //updates the yLocation of the ship to use later
         
@@ -192,7 +192,7 @@ public class Ship implements Serializable{
      * @return true or false
      */
     
-    public final boolean canTravelTo(Planet planet){
+    public final boolean canTravelTo(final Planet planet){
         return canTravelTo(planet.getSolarSystem()); //calls above method, but with planet instead
     }
     
@@ -204,7 +204,7 @@ public class Ship implements Serializable{
      * @param planet the planet to travel to
      */
     
-    public final void travel(Planet planet){
+    public final void travel(final Planet planet){
         //subtracts fuel based on how far we travelled
         fuel = (int) (fuel - Math.sqrt((xLocation-planet.getSolarSystem().getXLocation())*(xLocation-planet.getSolarSystem().getXLocation()) + (yLocation-planet.getSolarSystem().getYLocation())*(yLocation-planet.getSolarSystem().getYLocation())));
         SpaceTrader.currentPlanet = planet; //sets currentPlanet
@@ -217,7 +217,7 @@ public class Ship implements Serializable{
      * Adds an item to the ship's cargo hold
      * @param itemName 
      */
-    public final void addItem(String itemName) {
+    public final void addItem(final String itemName) {
         ArrayList<Item> itemList = SpaceTrader.currentPlanet.marketplace.items;
         for (int i = 0; i < itemList.size(); i++) {
             String compareString = itemList.get(i).name + ":";
@@ -262,7 +262,7 @@ public class Ship implements Serializable{
      * Increases the ship's Weapon Level
      * @param add 
      */
-    public final void increaseWeaponLevel(int add) {
+    public final void increaseWeaponLevel(final int add) {
         weaponLevel = weaponLevel + add;
     }
     
@@ -270,7 +270,7 @@ public class Ship implements Serializable{
      * Increase the ship's Shield Level
      * @param add 
      */
-    public final void increaseShieldLevel(int add) {
+    public final void increaseShieldLevel(final int add) {
         shieldLevel = shieldLevel + add;
     }
 }

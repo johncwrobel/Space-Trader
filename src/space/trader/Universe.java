@@ -59,7 +59,7 @@ public class Universe implements Serializable{
         return returnString;
     }
     
-    public final SolarSystem getSystem(int x, int y) {
+    public final SolarSystem getSystem(final int x, final int y) {
         for (SolarSystem s: solarSystems) {
             int systemX = s.getXLocation();
             int systemY = s.getYLocation();

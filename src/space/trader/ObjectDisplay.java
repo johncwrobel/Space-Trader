@@ -21,7 +21,7 @@ public class ObjectDisplay {
      * @param price
      * @param amount 
      */
-    public ObjectDisplay(Item item, int price, int amount) {
+    public ObjectDisplay(final Item item, final int price, final int amount) {
         this.item = item;
         this.price = price;
         this.amount = amount;

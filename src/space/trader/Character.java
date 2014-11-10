@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 public class Character implements Serializable, CharacterInterface {
         private String name;
         private int credits;
-	private int pilot;
-	private int fighter;
-	private int trader;
-	private int engineer;
-	private int investor;
+        private int pilot;
+        private int fighter;
+        private int trader;
+        private int engineer;
+        private int investor;
         private boolean criminal;
         
         /**
@@ -22,7 +22,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param engineer
          * @param investor 
          */
-        public Character(String name, int pilot, int fighter, int trader, int engineer, int investor) {
+        public Character(final String name, final int pilot, final int fighter, final int trader, final int engineer, final int investor) {
             this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
@@ -83,7 +83,7 @@ public class Character implements Serializable, CharacterInterface {
          * Facilitates the buying process
          * @param price 
          */
-        public final void buy(int price) {
+        public final void buy(final int price) {
             setCredits(credits - price);
         }
         
@@ -92,7 +92,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param price
          * @return if the character can buy it
          */
-        public final boolean canBuy(int price) {
+        public final boolean canBuy(final int price) {
             if ((credits - price) >= 0) {
                 return true;
             } else {
@@ -105,7 +105,7 @@ public class Character implements Serializable, CharacterInterface {
          * Facilitates the selling process
          * @param price 
          */
-        public final void sell(int price) {
+        public final void sell(final int price) {
             setCredits(credits + price);
         }
         
@@ -163,14 +163,14 @@ public class Character implements Serializable, CharacterInterface {
         /**
          * @param criminal the criminal to set
          */
-        public final void setCriminal(boolean criminal) {
+        public final void setCriminal(final boolean criminal) {
             this.criminal = criminal;
         }
 
     /**
      * @param credits the credits to set
      */
-    public final void setCredits(int credits) {
+    public final void setCredits(final int credits) {
         this.credits = credits;
     }
 }

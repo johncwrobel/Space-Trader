@@ -19,7 +19,7 @@ public class Shield {
     /**
      * Constructor for the Shield
      */
-    public Shield(String name, int shieldLevel, int techLevel, int price) {
+    public Shield(final String name, final int shieldLevel, final int techLevel, final int price) {
         this.name = name;
         this.shieldLevel = shieldLevel;
         this.techLevel = techLevel;

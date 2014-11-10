@@ -20,7 +20,7 @@ public class Planet implements Serializable{
      * @param parent
      * @param name 
      */
-    public Planet(SolarSystem parent, String name) {
+    public Planet(final SolarSystem parent, final String name) {
         parentSystem = parent;
         this.name = name;
         techLevel = (int)(Math.random() * 8);

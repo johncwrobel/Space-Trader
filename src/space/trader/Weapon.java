@@ -21,7 +21,7 @@ public class Weapon {
     /**
      * Constructor for the Weapon
      */
-    public Weapon(String name, int weaponLevel, int techLevel, int price) {
+    public Weapon(final String name, final int weaponLevel, final int techLevel, final int price) {
         this.name = name;
         this.weaponLevel = weaponLevel;
         this.techLevel = techLevel;
