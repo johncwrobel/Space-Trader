@@ -105,7 +105,6 @@ public class TraderEncounterScreenController implements Initializable {
     @FXML
     public final void buy (final ActionEvent event) {
         final ObservableList<String> selectedItem = getTraderItems().getSelectionModel().getSelectedItems();
-        System.out.println("buy: " + selectedItem);
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
@@ -163,7 +162,6 @@ public class TraderEncounterScreenController implements Initializable {
     public final void fight (final ActionEvent even) {
         final String dialogString = "Space Sloth: You tryna start a fight mite?";
         getDialog().setText(dialogString);
-        System.out.println("Fight");
         getTradeButton().setDisable(false);
         getIgnoreButton().setDisable(false);
         getFightButton().setDisable(false);

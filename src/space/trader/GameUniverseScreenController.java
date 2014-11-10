@@ -580,7 +580,6 @@ public class GameUniverseScreenController implements Initializable {
     public final void startGame(final ActionEvent event) {
         final ObservableList<String> observable = getPlanets();
         for (int x = 0; x < observable.size(); x++) {
-            System.out.println(observable.get(x).toString());
         }
         
         updateScreen();
@@ -644,7 +643,6 @@ public class GameUniverseScreenController implements Initializable {
         yPos = (int) yPos/20;
         setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos, (int) yPos));
         updateScreen();
-        System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
     
     /**

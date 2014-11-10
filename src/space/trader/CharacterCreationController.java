@@ -73,7 +73,6 @@ public class CharacterCreationController implements Initializable {
           //      SpaceTrader.createNewUniverse();
                 SpaceTrader.setGameScene();
                 SpaceTrader.printUniverse();
-                System.out.println(SpaceTrader.getMainCharacter());
             }
         }
     }
@@ -89,15 +88,12 @@ public class CharacterCreationController implements Initializable {
     
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        try{ //all of this sets up and plays the music
+//all of this sets up and plays the music
             final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
             final Media music = new Media(resource.toString());
             final MediaPlayer mediaPlayer = new MediaPlayer(music);
             mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE); //this is the line that loops the mp3 indefinitely
             mediaPlayer.play();
-        }catch(Exception e){
-            System.out.println(e);
-        }
     }
     
     /**

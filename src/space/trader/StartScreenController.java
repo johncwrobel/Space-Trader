@@ -20,7 +20,7 @@ import javafx.scene.control.*;
 public class StartScreenController implements Initializable {
     
     @FXML
-    private Label Title;
+    private Label title;
     
     @FXML
     private Button newGameButton;

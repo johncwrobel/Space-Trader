@@ -447,7 +447,6 @@ public class Ship implements Serializable{
             final String compareString = itemList.get(i).getName() + ":";
             if (compareString.equals(itemName)) {
                 getCargoHold().add(itemList.get(i));
-                System.out.println("Item Added");
                 break;
             }
         }

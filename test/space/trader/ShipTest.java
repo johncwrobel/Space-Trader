@@ -60,7 +60,6 @@ public class ShipTest {
      */
     @Test
     public final void testSetShip() {
-        System.out.println("setShip");
         final Ship instance = new Ship();
         instance.setShip(Ship.ShipTypes.SERENITY);
         
@@ -93,7 +92,6 @@ public class ShipTest {
      */
     @Test
     public final void testAddFuel() {
-        System.out.println("addFuel");
         final int amount = 0;
         final Ship instance = new Ship();
         instance.addFuel(amount);

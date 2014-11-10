@@ -19,7 +19,7 @@
          </image>
       </ImageView>
       <Button fx:id="newGameButton" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleButtonAction" text="New Game" />
-      <Label fx:id="Title" layoutX="164.0" layoutY="225.0" text="Space Trader" textFill="WHITE">
+      <Label fx:id="title" layoutX="164.0" layoutY="225.0" text="Space Trader" textFill="WHITE">
          <font>
             <Font size="48.0" />
          </font>

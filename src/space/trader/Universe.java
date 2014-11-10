@@ -30,7 +30,7 @@ public class Universe implements Serializable{
             int x = (int)(Math.random() * 20);
             int y = (int)(Math.random() * 20);
             while (true) {
-                if (booleanArray[x][y] == true) {
+                if (booleanArray[x][y]) {
                     x = (int)(Math.random() * 20);
                     y = (int)(Math.random() * 20);
                 } else {
