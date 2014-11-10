@@ -59,6 +59,8 @@ public class TraderEncounterScreenController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url yessir
+     * @param rb yeah that thing
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
@@ -73,6 +75,10 @@ public class TraderEncounterScreenController implements Initializable {
         fightButton.setDisable(false);
     }
     
+    /**
+     * Method to handle the trade option
+     * @param event 
+     */
     @FXML
     public final void trade (final ActionEvent event) {
         playerItems.setDisable(false);
@@ -133,6 +139,10 @@ public class TraderEncounterScreenController implements Initializable {
         updateScreen();
     }
     
+    /**
+     * Method to handle the ignore option
+     * @param event 
+     */
     @FXML
     public final void ignore (final ActionEvent event) {
         tradeButton.setDisable(false);
@@ -145,6 +155,10 @@ public class TraderEncounterScreenController implements Initializable {
         SpaceTrader.backToMain();
     }
     
+    /**
+     * Method to handle the fight option
+     * @param even 
+     */
     @FXML
     public final void fight (final ActionEvent even) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
@@ -158,6 +172,9 @@ public class TraderEncounterScreenController implements Initializable {
         SpaceTrader.backToMain();
     }
     
+    /**
+     * Method to help update the screen
+     */
     public final void updateScreen() {
         ArrayList<String> list = newPlanet.marketplace.getDisplay();
         ObservableList<String> observable = FXCollections.observableArrayList(list);
@@ -172,6 +189,9 @@ public class TraderEncounterScreenController implements Initializable {
         updateText();
     }
     
+    /**
+     * Method to update the text on the screen
+     */
     public final void updateText() {
         String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
         credits.setText(creditString);

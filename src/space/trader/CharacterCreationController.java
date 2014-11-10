@@ -43,6 +43,7 @@ public class CharacterCreationController implements Initializable {
      * Takes the data from the text area, validates it and creates a Character object if valid
      * 
      * @param event ActionEvent for the listener
+     * @throws Exception exception an exception
      */
     @FXML
     private void confirm(final ActionEvent event) throws Exception {
@@ -102,7 +103,7 @@ public class CharacterCreationController implements Initializable {
     /**
      * Checks if s is an integer
      * 
-     * @param String s
+     * @param s a String
      * @return true if s is an integer, false otherwise
      */
     private static boolean isInteger(final String s) {

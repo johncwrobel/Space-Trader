@@ -20,6 +20,10 @@ public class Weapon {
     
     /**
      * Constructor for the Weapon
+     * @param name weapon name
+     * @param weaponLevel the weapon's level
+     * @param techLevel the current planet's tech level
+     * @param price cost of weapon
      */
     public Weapon(final String name, final int weaponLevel, final int techLevel, final int price) {
         this.name = name;

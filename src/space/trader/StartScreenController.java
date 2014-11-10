@@ -37,7 +37,7 @@ public class StartScreenController implements Initializable {
     
     /**
      * Inializes
-     * @param url
+     * @param url no idea what this does, honestly
      * @param rb 
      */
     @Override

@@ -51,6 +51,8 @@ public class PirateEncounterScreenController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url the url
+     * @param rb the resource bundle
      */
     @Override
     public void initialize(final URL url, final ResourceBundle rb) {
@@ -58,6 +60,9 @@ public class PirateEncounterScreenController implements Initializable {
         
     }
     
+    /**
+     * Draws all of the planets on the canvas
+     */
     public final void updateCanvas() {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, 400, 400);
@@ -74,6 +79,10 @@ public class PirateEncounterScreenController implements Initializable {
 
         int counter;
         
+        /**
+         * Constructor for the TimeClass
+         * @param count the counter
+         */
         public TimeClass(final int count) {
             counter = count;
         }
@@ -97,6 +106,9 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
+    /**
+     * Clears the rectangle
+     */
     public final void clearRect() {
         for (int i = 0; i < target.length; i++) {
             for (int j = 0; j < target[0].length; j++) {
@@ -105,6 +117,10 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
+    /**
+     * Handler to start the game
+     * @param e the event
+     */
     public final void startGame(final ActionEvent e) {
         if (!playing) {
             playing = true;
@@ -133,6 +149,10 @@ public class PirateEncounterScreenController implements Initializable {
         }
     }
     
+    /**
+     * checks if the player has won
+     * @return if they've won
+     */
     public final boolean hasWon() {
         for (int i = 0; i < target.length; i++) {
             for (int j = 0; j < target[0].length; j++) {
@@ -145,6 +165,10 @@ public class PirateEncounterScreenController implements Initializable {
         return true;
     }
     
+    /**
+     * Handler for shooting
+     * @param e the event
+     */
     public final void shoot(final MouseEvent e) {
         int x = (int) (e.getX() / 20);
         int y = (int) (e.getY() / 20);
@@ -161,6 +185,10 @@ public class PirateEncounterScreenController implements Initializable {
         handle(e);
     }
     
+    /**
+     * Handler to update the canvas
+     * @param e 
+     */
     public final void handle(final MouseEvent e) {
         GraphicsContext gc = canvas.getGraphicsContext2D();
         updateCanvas();
@@ -168,6 +196,11 @@ public class PirateEncounterScreenController implements Initializable {
         
     }
     
+    /**
+     * Handler to draw the mouse
+     * @param e the event
+     * @param gc the graphics context
+     */
     public final void drawMouse(final MouseEvent e, final GraphicsContext gc) {
         double x = e.getX();
         double y = e.getY();

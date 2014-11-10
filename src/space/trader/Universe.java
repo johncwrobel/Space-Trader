@@ -59,6 +59,12 @@ public class Universe implements Serializable{
         return returnString;
     }
     
+    /**
+     * Getter method for the solar system
+     * @param x x coordinate
+     * @param y y coordinate
+     * @return the solar system at the coordinates
+     */
     public final SolarSystem getSystem(final int x, final int y) {
         for (SolarSystem s: solarSystems) {
             int systemX = s.getXLocation();

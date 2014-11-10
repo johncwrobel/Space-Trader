@@ -105,6 +105,8 @@ public class UpgradeShipScreenController implements Initializable {
     private ArrayList<Weapon> weapons = new ArrayList();
     /**
      * Initializes the controller class.
+     * @param url the url
+     * @param rb the resource bundle
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
@@ -281,7 +283,7 @@ public class UpgradeShipScreenController implements Initializable {
     
     /**
      * Handler to upgrade Weapons
-     * @param e
+     * @param e the event
      */
     public final void upgradeWeapon(final ActionEvent e) {
         ObservableList<String> selectedItem = gadgetListView.getSelectionModel().getSelectedItems();
@@ -447,8 +449,8 @@ public class UpgradeShipScreenController implements Initializable {
     
     /**
      * Specific text updater just for previews of the upgrades
-     * @param weaponLevel
-     * @param shieldLevel 
+     * @param weaponLevel level of the weapon
+     * @param shieldLevel level of the shield
      */
     public final void updatePreview(final int weaponLevel, final int shieldLevel) {
         if (weaponLevel != 0) {
@@ -471,8 +473,8 @@ public class UpgradeShipScreenController implements Initializable {
     
     /**
      * Specific text updater for prices
-     * @param weaponPrice
-     * @param shieldPrice 
+     * @param weaponPrice the weapon price
+     * @param shieldPrice the shield price
      */
     public final void updatePrice(final int weaponPrice, final int shieldPrice) {
         shieldPriceLabel.setText("" + shieldPrice + " Credits");

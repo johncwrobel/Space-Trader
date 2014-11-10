@@ -17,8 +17,8 @@ public class Planet implements Serializable{
     
     /**
      * Constructor for Planet class
-     * @param parent
-     * @param name 
+     * @param parent parent solar system
+     * @param name name of planet
      */
     public Planet(final SolarSystem parent, final String name) {
         parentSystem = parent;

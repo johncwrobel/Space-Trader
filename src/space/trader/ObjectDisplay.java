@@ -17,9 +17,9 @@ public class ObjectDisplay {
     
     /**
      * Constructor for class ObjectDisplay
-     * @param item
-     * @param price
-     * @param amount 
+     * @param item the item
+     * @param price the price
+     * @param amount the number of the item
      */
     public ObjectDisplay(final Item item, final int price, final int amount) {
         this.item = item;
@@ -29,7 +29,7 @@ public class ObjectDisplay {
     
     /**
      * toString method for the class ObjectDisplay
-     * @return 
+     * @return the string version of the object
      */
     @Override
     public final String toString() {

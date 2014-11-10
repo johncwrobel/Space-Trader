@@ -21,25 +21,43 @@ import static org.junit.Assert.assertFalse;
  */
 public class CharacterTest {
     
+    /**
+     * CharacterTest constructor
+     */
     public CharacterTest() {
     }
     
+    /**
+     * the set up
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     * the tear down
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     * the set up
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     * the tear down
+     */
     @After
     public void tearDown() {
     }
 
+    /**
+     * JUnit test for the canBuy method in Character.java
+     */
     @Test
     public final void testCanBuy() {
         Character char1 = new Character(null, 0, 0, 0, 0, 0);

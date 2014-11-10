@@ -23,13 +23,13 @@ public class Item implements Comparable, Serializable{
     
     /**
      * Constructor for an Item
-     * @param name
-     * @param mtlp
-     * @param mtlu
-     * @param ttp
-     * @param basePrice
-     * @param ipl
-     * @param var 
+     * @param name name
+     * @param mtlp the mtlp
+     * @param mtlu the mtlu
+     * @param ttp the ttp
+     * @param basePrice the base price
+     * @param ipl the ipl
+     * @param var the variance
      */
     public Item(final String name, final int mtlp, final int  mtlu, final int ttp, final int basePrice, final int ipl, final int var) {
         this.name = name;
@@ -43,7 +43,7 @@ public class Item implements Comparable, Serializable{
     
     /**
      * Calculates the price of an item
-     * @param techLevel
+     * @param techLevel of the planet
      * @return the price
      */
     public final int getPrice(final int techLevel) {
@@ -52,7 +52,7 @@ public class Item implements Comparable, Serializable{
     
     /**
      * Helps decide the item's price
-     * @return 
+     * @return the var
      */
     private int var() {
         int temp = (int) (Math.random() * 8);
@@ -81,7 +81,7 @@ public class Item implements Comparable, Serializable{
     
     /**
      * Method for comparing items
-     * @param o
+     * @param o object to compare
      * @return if they are the same or not
      */
     @Override
@@ -99,6 +99,10 @@ public class Item implements Comparable, Serializable{
         return name;
     }
     
+    /**
+     * checks if an item is illegal
+     * @return if it's illegal or not
+     */
     public final boolean isIllegal() {
         if ((name == "Narcotics") | (name == "Firearms")) {
             return true;

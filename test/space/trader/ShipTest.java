@@ -21,21 +21,36 @@ import static org.junit.Assert.assertEquals;
  */
 public class ShipTest {
     
+    /**
+     * The constructor
+     */
     public ShipTest() {
     }
     
+    /**
+     * the set up
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     * the tear down
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     * the set up
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     * the tear down
+     */
     @After
     public void tearDown() {
     }

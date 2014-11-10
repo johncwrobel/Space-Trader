@@ -18,6 +18,10 @@ public class Shield {
     public int price;
     /**
      * Constructor for the Shield
+     * @param name shield name
+     * @param shieldLevel level for the shield
+     * @param techLevel of the current planet
+     * @param price price of the item
      */
     public Shield(final String name, final int shieldLevel, final int techLevel, final int price) {
         this.name = name;

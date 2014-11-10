@@ -94,6 +94,10 @@ public class GameUniverseScreenController implements Initializable {
     
     private Timeline clock;
     
+    /**
+     * Method that handles buying fuel
+     * @param e actionevent parameter
+     */
     public final void buyFuel(final ActionEvent e) {
         if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.maxFuel) && (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
@@ -105,23 +109,41 @@ public class GameUniverseScreenController implements Initializable {
         }
     }
     
+    /**
+     * Class to help handle a timer that should help 
+     * update the screen automatically
+     */
     public class TimeClass implements EventHandler {
 
-        
+        /**
+         * Constructor for a TimeClass
+         */
         public TimeClass() {
         }
 
+        /**
+         * Handles the passing of the counter
+         * @param event 
+         */
         public final void handle(final Event event) {
             
             updateScreen();
         }
     }
     
+    /**
+     * Method to save the game
+     * @param event 
+     */
     public final void save(final ActionEvent event) {
         SpaceTrader.save();
-        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous sav data", "Alert!" , JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(null, "You have saved the game, overriding all previous save data", "Alert!" , JOptionPane.WARNING_MESSAGE);
     }
     
+    /**
+     * Method to load the game
+     * @param event 
+     */
     public final void load(final ActionEvent event) {
         SpaceTrader.load();
         updateScreen();
@@ -129,6 +151,8 @@ public class GameUniverseScreenController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url the url
+     * @param rb the resource bundle
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
@@ -138,6 +162,10 @@ public class GameUniverseScreenController implements Initializable {
         });
     }
     
+    /**
+     * Handler for traveling
+     * @param event the event
+     */
     public final void travel(final ActionEvent event) {
         if (selectedSystem != null) { //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(selectedSystem);
@@ -270,6 +298,7 @@ public class GameUniverseScreenController implements Initializable {
     
     /**
      * Helper method to update the list of planets
+     * @return the list of planets
      */
     public final ObservableList<String> getPlanets() {
         ArrayList<Planet> planetList = SpaceTrader.currentSolarSystem.planets;
@@ -322,6 +351,10 @@ public class GameUniverseScreenController implements Initializable {
         System.out.println("Click: " + xPos + " x, " + yPos + "y");
     }
     
+    /**
+     * Changes the scene to the upgrade ship screen
+     * @param e the event
+     */
     public final void upgradeShip(final ActionEvent e) {
         SpaceTrader.setUpgradeShipScene();
     }

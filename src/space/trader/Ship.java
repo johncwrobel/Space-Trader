@@ -131,7 +131,7 @@ public class Ship implements Serializable{
     
     /**
      * Removes an item from the ship's cargo hold
-     * @param name
+     * @param name item name
      * @return if it was removed
      */
     public final boolean removeItem(final String name) {
@@ -245,7 +245,7 @@ public class Ship implements Serializable{
     
     /**
      * Getter for the ship's cargo
-     * @return 
+     * @return ship's cargo
      */
     public final ArrayList getCargo() {
         return cargoHold;
@@ -253,6 +253,7 @@ public class Ship implements Serializable{
     
     /**
      * Check if Ship's cargo is big enough
+     * @return if gadgets can be purchased
      */
     public final boolean checkGadget() {
         return gadgetslots > gadgets;
