@@ -267,15 +267,16 @@ public class PirateEncounterScreenController implements Initializable {
      * @return if they've won
      */
     public final boolean hasWon() {
+        boolean toReturn = true;
         for (int i = 0; i < getTarget().length; i++) {
             for (int j = 0; j < getTarget()[0].length; j++) {
                 if (getTarget()[i][j]) {
-                    return false;
+                    toReturn = false;
                 }
             }
         }
         
-        return true;
+        return toReturn;
     }
     
     /**

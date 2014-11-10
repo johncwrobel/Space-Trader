@@ -103,12 +103,14 @@ public class CharacterCreationController implements Initializable {
      * @return true if s is an integer, false otherwise
      */
     private static boolean isInteger(final String s) {
+        boolean toReturn;
         try { 
-            Integer.parseInt(s); 
+            Integer.parseInt(s);
+            toReturn = true;
         } catch(NumberFormatException e) { 
-            return false; 
+            toReturn = false; 
         }
-        return true;
+        return toReturn;
     }
 
     /**

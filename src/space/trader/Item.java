@@ -55,12 +55,14 @@ public class Item implements Comparable, Serializable{
      * @return the var
      */
     private int calculateVar() {
+        int toReturn;
         final int temp = (int) (Math.random() * 8);
         if (temp < 4) {
-            return -1;
+            toReturn = -1;
         } else {
-            return 1;
+            toReturn = 1;
         }
+        return toReturn;
     }
     
     /**
@@ -104,10 +106,11 @@ public class Item implements Comparable, Serializable{
      * @return if it's illegal or not
      */
     public final boolean isIllegal() {
+        boolean toReturn = false;
         if ((getName() == "Narcotics") | (getName() == "Firearms")) {
-            return true;
+            toReturn = true;
         }
-        return false;
+        return toReturn;
     }
 
     /**

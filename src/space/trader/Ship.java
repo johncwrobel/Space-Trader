@@ -359,14 +359,15 @@ public class Ship implements Serializable{
      * @return if it was removed
      */
     public final boolean removeItem(final String name) {
+        boolean toReturn = false;
         for (int i = 0; i < getCargoHold().size(); i++) {
             final String compareString = getCargoHold().get(i).getName() + ":";
             if (compareString.equals(name)) {
                 getCargoHold().remove(i);
-                return true;
+                toReturn = true;
             }
         }
-        return false;
+        return toReturn;
     }
     
     /**
@@ -458,12 +459,14 @@ public class Ship implements Serializable{
      * @return if there's room
      */
     public final boolean canAdd() {
+        boolean toReturn;
         if (getCargoHold().size() < getMaxCargo()) {
-            return true;
+            toReturn = true;
         } else {
             JOptionPane.showMessageDialog(null, "Not enough storage in the ship", "Alert" , JOptionPane.ERROR_MESSAGE);
-            return false;
+            toReturn = false;
         }
+        return toReturn;
     }
     
     /**

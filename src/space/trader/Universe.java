@@ -66,16 +66,16 @@ public class Universe implements Serializable{
      * @return the solar system at the coordinates
      */
     public final SolarSystem getSystem(final int x, final int y) {
+        SolarSystem toReturn = null;
         for (SolarSystem s: getSolarSystems()) {
             final int systemX = s.getXLocation();
             final int systemY = s.getYLocation();
             
             if (x == systemX && y == systemY) {
-                return s;
+                toReturn = s;
             }
         }
-        
-        return null;
+        return toReturn;
     }
 
     /**

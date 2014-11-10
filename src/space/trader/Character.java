@@ -106,12 +106,14 @@ public class Character implements Serializable, CharacterInterface {
          * @return if the character can buy it
          */
         public final boolean canBuy(final int price) {
+            boolean toReturn;
             if ((credits - price) >= 0) {
-                return true;
+                toReturn = true;
             } else {
                 JOptionPane.showMessageDialog(null, "Not enough credits", "Alert" , JOptionPane.ERROR_MESSAGE);
-                return false;
+                toReturn = false;
             }
+            return toReturn;
         }
         
         /**
