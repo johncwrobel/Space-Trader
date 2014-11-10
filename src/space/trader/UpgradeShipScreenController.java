@@ -18,12 +18,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollBar;
-import javafx.scene.effect.DropShadow;
+//import javafx.scene.control.ScrollBar;
+//import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
+//import javafx.scene.layout.VBox;
+//import javafx.scene.paint.Color;
 
 /**
  * FXML Controller class
@@ -395,7 +395,7 @@ public class UpgradeShipScreenController implements Initializable {
             type = temp[0];
         }
                 
-        if (type.equals("Weapon") &&(powerLevel == 1 || powerLevel == 5)) {
+        if ("Shield".equals(type) &&(powerLevel == 1 || powerLevel == 5)) {
             final String img = "weapon" + (powerLevel) + ".jpg";
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
             for (int x = 0; x < getWeapons().size(); x++) {
@@ -406,7 +406,7 @@ public class UpgradeShipScreenController implements Initializable {
                 }
             }
             weaponPrice = getWeapons().get(gadgetIndex).getPrice();
-        } else if (type.equals("Weapon")) {
+        } else if ("Weapon".equals(type)) {
             final String img = "weapon" + (powerLevel) + ".png";
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
             for (int x = 0; x < getWeapons().size(); x++) {
@@ -419,7 +419,7 @@ public class UpgradeShipScreenController implements Initializable {
             weaponPrice = getWeapons().get(gadgetIndex).getPrice();
         }
         
-        if (type.equals("Shield")) {
+        if ("Shield".equals(type)) {
             final String img = "shield" + (powerLevel) + ".png";
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.class.getResourceAsStream(img)));
             for (int x = 0; x < getShields().size(); x++) {

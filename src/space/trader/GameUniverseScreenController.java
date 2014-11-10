@@ -26,7 +26,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
-import static space.trader.SpaceTrader.ship;
+//import static space.trader.SpaceTrader.ship;
 
 
 /**
@@ -659,6 +659,7 @@ public class GameUniverseScreenController implements Initializable {
         gc.setStroke(Color.GREEN);
         int sX = 0;
         int sY = 0;
+        
         for(int x=0; x<=20; x++){
             sX = x * 20;
             gc.strokeLine(sX, 0, sX, 400);

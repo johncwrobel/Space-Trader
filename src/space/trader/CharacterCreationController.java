@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.application.Application;
+//import javafx.application.Application;
 
 /**
  *
@@ -46,7 +46,7 @@ public class CharacterCreationController implements Initializable {
      * @throws Exception exception an exception
      */
     @FXML
-    private void confirm(final ActionEvent event) throws Exception {
+    private void confirm(final ActionEvent event){
         final String pilotString = getPilotTextArea().getText().trim();
         final String fighterString = getFighterTextArea().getText().trim();
         final String traderString = getTraderTextArea().getText().trim();
