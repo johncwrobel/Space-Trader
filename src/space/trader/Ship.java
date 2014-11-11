@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
  * @author Johnnycakes
  */
 public class Ship implements Serializable{
+    static final long serialVersionUID = 42L;
     
     private ArrayList<Item> cargoHold;
     private int maxCargo;
@@ -495,7 +496,7 @@ public class Ship implements Serializable{
     
     /**
      * Increase the ship's Shield Level
-     * @param add 
+     * @param add
      */
     public final void increaseShieldLevel(final int add) {
         setShieldLevel(getShieldLevel() + add);

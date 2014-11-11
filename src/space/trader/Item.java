@@ -13,6 +13,7 @@ import java.io.Serializable;
  * @author tanmay (Seantannah)
  */
 public class Item implements Comparable, Serializable{
+    static final long serialVersionUID = 42L;
     private String name;
     private int basePrice;
     private int mtlp;

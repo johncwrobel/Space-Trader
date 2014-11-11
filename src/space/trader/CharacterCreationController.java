@@ -46,7 +46,7 @@ public class CharacterCreationController implements Initializable {
      * @throws Exception exception an exception
      */
     @FXML
-    private void confirm(final ActionEvent event){
+    private void confirm(final ActionEvent event) {
         final String pilotString = getPilotTextArea().getText().trim();
         final String fighterString = getFighterTextArea().getText().trim();
         final String traderString = getTraderTextArea().getText().trim();

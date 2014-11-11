@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * @author Benjamin Cervantes
  */
 public class Universe implements Serializable{
+    static final long serialVersionUID = 42L;
     
     private int numberOfSS;
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();

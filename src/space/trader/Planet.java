@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @author Benjamin Cervantes and John Wrobel
  */
 public class Planet implements Serializable{
+    static final long serialVersionUID = 42L;
     private String name;
     private int techLevel;
     private int resources;
