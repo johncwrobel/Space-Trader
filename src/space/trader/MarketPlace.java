@@ -70,7 +70,7 @@ public class MarketPlace implements Serializable{
         
         for (Item i: items) {
             prices.add(i.getPrice(techLevel));
-            amount.add((int) (Math.random() * 10));
+            amount.add((int) (Math.random() * 10) + 1);
         }
         
         for (Item i: canSell) {
