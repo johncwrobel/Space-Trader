@@ -488,17 +488,17 @@ public class GameUniverseScreenController implements Initializable {
      */
     private void updateText() { 
         final String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits(); //build everything into strings
-        String selected = "Selected Solar System: ";
+        StringBuffer selected = new StringBuffer("Selected Solar System");
         final String currentSystem = "Current Solar System: " + SpaceTrader.currentSolarSystem.getName();
         final String planet = "Current Planet: " + SpaceTrader.currentPlanet.getName() + " Tech level " + SpaceTrader.currentPlanet.getTechLevel();
         final String fuel = "fuel: " + SpaceTrader.ship.getFuel();
         if (getSelectedSystem() == null) {
-            selected += "none";
+            selected.append("none");
         } else {
-            selected += getSelectedSystem().getName();
+            selected.append(getSelectedSystem().getName());
         }
         getPlayerCredits().setText(credits); //then use those strings to update the labels
-        getSelectedSystemLabel().setText(selected);
+        getSelectedSystemLabel().setText(selected.toString());
         getCurrentSolarSystemLabel().setText(currentSystem);
         getCurrentPlanetLabel().setText(planet);
         getFuelLabel().setText(fuel);

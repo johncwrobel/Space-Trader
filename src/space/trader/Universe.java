@@ -51,12 +51,13 @@ public class Universe implements Serializable{
      */
     @Override
     public final String toString() {
-        String returnString = "";
+        StringBuffer returnString = new StringBuffer(60);
         for (SolarSystem ss: getSolarSystems()) {
-            returnString = returnString + ss.toString() + "\n";
+            String toConcatenate = (ss.toString() + "\n");
+            returnString.append(toConcatenate);
         }
-        returnString += "\nNumber of Solar Systems in Universe:" + getNumberOfSolarSystems() + "\n";
-        return returnString;
+        returnString.append("\nNumber of Solar Systems in Universe:" + getNumberOfSolarSystems() + "\n");
+        return returnString.toString();
     }
     
     /**

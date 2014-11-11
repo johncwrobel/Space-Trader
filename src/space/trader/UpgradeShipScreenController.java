@@ -241,12 +241,12 @@ public class UpgradeShipScreenController implements Initializable {
     public final void upgradeShield(final ActionEvent e) {
         final ObservableList<String> selectedItem = getGadgetListView().getSelectionModel().getSelectedItems();
         int powerLevel = 1;
-        String type = "";
+//        String type = "";
         int gadgetIndex = 0;
         for (int i = 0; i < selectedItem.size(); i++) {
             final String[] temp = selectedItem.get(i).split(" ");
             powerLevel = Integer.parseInt(temp[2]);
-            type = temp[0];
+//            type = temp[0];
         }
         
         for (int x = 0; x < getShields().size(); x++) {
@@ -292,12 +292,12 @@ public class UpgradeShipScreenController implements Initializable {
     public final void upgradeWeapon(final ActionEvent e) {
         final ObservableList<String> selectedItem = getGadgetListView().getSelectionModel().getSelectedItems();
         int powerLevel = 1;
-        String type = "";
+//        String type = "";
         int gadgetIndex = 0;
         for (int i = 0; i < selectedItem.size(); i++) {
             final String[] temp = selectedItem.get(i).split(" ");
             powerLevel = Integer.parseInt(temp[2]);
-            type = temp[0];
+//            type = temp[0];
         }
         
         for (int x = 0; x < getWeapons().size(); x++) {
