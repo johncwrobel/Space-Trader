@@ -15,11 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Johnnycakes
  */
-<<<<<<< HEAD
-public class Ship implements Serializable{
-=======
 public class Ship implements Serializable {
->>>>>>> origin/master
 
     /**
      * @variable serialVersionUID still no idea what this does
@@ -359,11 +355,7 @@ public class Ship implements Serializable {
     /**
      * Enum for the ship types.
      */
-<<<<<<< HEAD
-    public enum ShipTypes{//enum for the ship types
-=======
     public enum ShipTypes { //enum for the ship types
->>>>>>> origin/master
 
     /**
      * @variable SERENITY a ship type
