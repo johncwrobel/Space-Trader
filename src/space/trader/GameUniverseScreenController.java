@@ -36,7 +36,7 @@ import javafx.util.Duration;
  */
 public class GameUniverseScreenController implements Initializable {
 
-        
+
     /**
      * @variable saveButton button to save
      */
@@ -48,132 +48,132 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     private Button loadButton;
-    
-        
+
+
     /**
      * @variable playerCredits the player's credits
      */
     @FXML
     private Label playerCredits;
-    
-        
+
+
     /**
      * @variable goods the goods, dawg
      */
     @FXML
     private ListView<String> goods;
-    
-        
+
+
     /**
      * @variable selling what's being sold
      */
     @FXML
     private ListView<String> selling;
-    
-        
+
+
     /**
      * @variable buyButton button to buy
      */
     @FXML
     private Button buyButton;
-    
-        
+
+
     /**
      * @variable sellButton button to sell
      */
     @FXML
     private Button sellButton;
-    
-        
+
+
     /**
      * @variable cargo ship's cargo
      */
     @FXML
     private ListView<Item> cargo;
-    
-        
+
+
     /**
      * @variable currentSolarSystemLabel name says it all
      */
-    @FXML 
+    @FXML
     private Label currentSolarSystemLabel;
-    
-        
+
+
     /**
      * @variable currentPlanetLebel you guessed it!
      */
     @FXML
     private Label currentPlanetLabel;
-    
-        
+
+
     /**
      * @variable fuelLabel displays current fuel
      */
     @FXML
     private Label fuelLabel;
-    
-        
+
+
     /**
      * @variable planetComboBox the dropdown for planets
      */
     @FXML
     private ComboBox<String> planetComboBox;
-    
-        
+
+
     /**
      * @variable universeDisplayCanvas what the universe is displayed on
      */
     @FXML
     private Canvas universeDisplayCanvas;
-    
-        
+
+
     /**
      * @variable selectedSystemLabel displays selected system
      */
     @FXML
     private Label selectedSystemLabel;
-    
-        
+
+
     /**
      * @variable travelButton facilitates traveling
      */
     @FXML
     private Button travelButton;
-    
-        
+
+
     /**
      * @variable jumpButton hop around, hop around
      */
     @FXML
     private Button jumpButton;
-    
-        
+
+
     /**
      * @variable upgradeShipButton button to upgrade ship
      */
     @FXML
     private Button upgradeShipButton;
-    
-        
+
+
     /**
      * @variable start StartGame button
      */
     @FXML
     private Button start;
-    
-        
+
+
     /**
      * @variable selectedSystem currently selected system
      */
     private SolarSystem selectedSystem = null;
-    
-        
+
+
     /**
      * @variable clock tick tock
      */
     private Timeline clock;
-    
-        
+
+
     /**
      * @variable alertString hurray for dumb checkstyle fixes!
      */
@@ -203,126 +203,126 @@ public class GameUniverseScreenController implements Initializable {
     /**
      * @return the saveButton
      */
-    final public Button getSaveButton() {
+    public final Button getSaveButton() {
         return saveButton;
     }
 
     /**
      * @param saveButton the saveButton to set
      */
-    final public void setSaveButton(final Button saveButton) {
+    public final void setSaveButton(final Button saveButton) {
         this.saveButton = saveButton;
     }
 
     /**
      * @return the loadButton
      */
-    final public Button getLoadButton() {
+    public final Button getLoadButton() {
         return loadButton;
     }
 
     /**
      * @param loadButton the loadButton to set
      */
-    final public void setLoadButton(final Button loadButton) {
+    public final void setLoadButton(final Button loadButton) {
         this.loadButton = loadButton;
     }
 
     /**
      * @return the playerCredits
      */
-    final public Label getPlayerCredits() {
+    public final Label getPlayerCredits() {
         return playerCredits;
     }
 
     /**
      * @param playerCredits the playerCredits to set
      */
-    final public void setPlayerCredits(final Label playerCredits) {
+    public final void setPlayerCredits(final Label playerCredits) {
         this.playerCredits = playerCredits;
     }
 
     /**
      * @return the goods
      */
-    final public ListView<String> getGoods() {
+    public final ListView<String> getGoods() {
         return goods;
     }
 
     /**
      * @param goods the goods to set
      */
-    final public void setGoods(final ListView<String> goods) {
+    public final void setGoods(final ListView<String> goods) {
         this.goods = goods;
     }
 
     /**
      * @return the selling
      */
-    final public ListView<String> getSelling() {
+    public final ListView<String> getSelling() {
         return selling;
     }
 
     /**
      * @param selling the selling to set
      */
-    final public void setSelling(final ListView<String> selling) {
+    public final void setSelling(final ListView<String> selling) {
         this.selling = selling;
     }
 
     /**
      * @return the buyButton
      */
-    final public Button getBuyButton() {
+    public final Button getBuyButton() {
         return buyButton;
     }
 
     /**
      * @param buyButton the buyButton to set
      */
-    final public void setBuyButton(final Button buyButton) {
+    public final void setBuyButton(final Button buyButton) {
         this.buyButton = buyButton;
     }
 
     /**
      * @return the sellButton
      */
-    final public Button getSellButton() {
+    public final Button getSellButton() {
         return sellButton;
     }
 
     /**
      * @param sellButton the sellButton to set
      */
-    final public void setSellButton(final Button sellButton) {
+    public final void setSellButton(final Button sellButton) {
         this.sellButton = sellButton;
     }
 
     /**
      * @return the cargo
      */
-    final public ListView<Item> getCargo() {
+    public final ListView<Item> getCargo() {
         return cargo;
     }
 
     /**
      * @param cargo the cargo to set
      */
-    final public void setCargo(final ListView<Item> cargo) {
+    public final void setCargo(final ListView<Item> cargo) {
         this.cargo = cargo;
     }
 
     /**
      * @return the currentSolarSystemLabel
      */
-    final public Label getCurrentSolarSystemLabel() {
+    public final Label getCurrentSolarSystemLabel() {
         return currentSolarSystemLabel;
     }
 
     /**
      * @param currentSolarSystemLabel the currentSolarSystemLabel to set
      */
-    final public void setCurrentSolarSystemLabel(final Label
+    public final void setCurrentSolarSystemLabel(final Label
             currentSolarSystemLabel) {
         this.currentSolarSystemLabel = currentSolarSystemLabel;
     }
@@ -330,56 +330,56 @@ public class GameUniverseScreenController implements Initializable {
     /**
      * @return the currentPlanetLabel
      */
-    final public Label getCurrentPlanetLabel() {
+    public final Label getCurrentPlanetLabel() {
         return currentPlanetLabel;
     }
 
     /**
      * @param currentPlanetLabel the currentPlanetLabel to set
      */
-    final public void setCurrentPlanetLabel(final Label currentPlanetLabel) {
+    public final void setCurrentPlanetLabel(final Label currentPlanetLabel) {
         this.currentPlanetLabel = currentPlanetLabel;
     }
 
     /**
      * @return the fuelLabel
      */
-    final public Label getFuelLabel() {
+    public final Label getFuelLabel() {
         return fuelLabel;
     }
 
     /**
      * @param fuelLabel the fuelLabel to set
      */
-    final public void setFuelLabel(final Label fuelLabel) {
+    public final void setFuelLabel(final Label fuelLabel) {
         this.fuelLabel = fuelLabel;
     }
 
     /**
      * @return the planetComboBox
      */
-    final public ComboBox<String> getPlanetComboBox() {
+    public final ComboBox<String> getPlanetComboBox() {
         return planetComboBox;
     }
 
     /**
      * @param planetComboBox the planetComboBox to set
      */
-    final public void setPlanetComboBox(final ComboBox<String> planetComboBox) {
+    public final void setPlanetComboBox(final ComboBox<String> planetComboBox) {
         this.planetComboBox = planetComboBox;
     }
 
     /**
      * @return the universeDisplayCanvas
      */
-    final public Canvas getUniverseDisplayCanvas() {
+    public final Canvas getUniverseDisplayCanvas() {
         return universeDisplayCanvas;
     }
 
     /**
      * @param universeDisplayCanvas the universeDisplayCanvas to set
      */
-    final public void setUniverseDisplayCanvas(final Canvas
+    public final void setUniverseDisplayCanvas(final Canvas
             universeDisplayCanvas) {
         this.universeDisplayCanvas = universeDisplayCanvas;
     }
@@ -387,112 +387,112 @@ public class GameUniverseScreenController implements Initializable {
     /**
      * @return the selectedSystemLabel
      */
-    final public Label getSelectedSystemLabel() {
+    public final Label getSelectedSystemLabel() {
         return selectedSystemLabel;
     }
 
     /**
      * @param selectedSystemLabel the selectedSystemLabel to set
      */
-    final public void setSelectedSystemLabel(final Label selectedSystemLabel) {
+    public final void setSelectedSystemLabel(final Label selectedSystemLabel) {
         this.selectedSystemLabel = selectedSystemLabel;
     }
 
     /**
      * @return the travelButton
      */
-    final public Button getTravelButton() {
+    public final Button getTravelButton() {
         return travelButton;
     }
 
     /**
      * @param travelButton the travelButton to set
      */
-    final public void setTravelButton(final Button travelButton) {
+    public final void setTravelButton(final Button travelButton) {
         this.travelButton = travelButton;
     }
 
     /**
      * @return the jumpButton
      */
-    final public Button getJumpButton() {
+    public final Button getJumpButton() {
         return jumpButton;
     }
 
     /**
      * @param jumpButton the jumpButton to set
      */
-    final public void setJumpButton(final Button jumpButton) {
+    public final void setJumpButton(final Button jumpButton) {
         this.jumpButton = jumpButton;
     }
 
     /**
      * @return the upgradeShipButton
      */
-    final public Button getUpgradeShipButton() {
+    public final Button getUpgradeShipButton() {
         return upgradeShipButton;
     }
 
     /**
      * @param upgradeShipButton the upgradeShipButton to set
      */
-    final public void setUpgradeShipButton(final Button upgradeShipButton) {
+    public final void setUpgradeShipButton(final Button upgradeShipButton) {
         this.upgradeShipButton = upgradeShipButton;
     }
 
     /**
      * @return the start
      */
-    final public Button getStart() {
+    public final Button getStart() {
         return start;
     }
 
     /**
      * @param start the start to set
      */
-    final public void setStart(final Button start) {
+    public final void setStart(final Button start) {
         this.start = start;
     }
 
     /**
      * @return the selectedSystem
      */
-    final public SolarSystem getSelectedSystem() {
+    public final SolarSystem getSelectedSystem() {
         return selectedSystem;
     }
 
     /**
      * @param selectedSystem the selectedSystem to set
      */
-    final public void setSelectedSystem(final SolarSystem selectedSystem) {
+    public final void setSelectedSystem(final SolarSystem selectedSystem) {
         this.selectedSystem = selectedSystem;
     }
 
     /**
      * @return the clock
      */
-    final public Timeline getClock() {
+    public final Timeline getClock() {
         return clock;
     }
 
     /**
      * @param clock the clock to set
      */
-    final public void setClock(final Timeline clock) {
+    public final void setClock(final Timeline clock) {
         this.clock = clock;
     }
 
     /**
      * @return the alertString
      */
-    final public String getAlertString() {
+    public final String getAlertString() {
         return alertString;
     }
 
     /**
      * @param alertString the alertString to set
      */
-    final public void setAlertString(final String alertString) {
+    public final void setAlertString(final String alertString) {
         this.alertString = alertString;
     }
 

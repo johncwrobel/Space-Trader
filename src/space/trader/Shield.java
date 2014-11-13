@@ -11,22 +11,22 @@ package space.trader;
  */
 
 public class Shield {
-   
+
     /**
      * @variable name shield's name
      */
     private String name;
-        
+
     /**
      * @variable shieldLevel shield's level
      */
     private int shieldLevel;
-        
+
     /**
      * @variable techLevel planet tech level
      */
     private int techLevel;
-        
+
     /**
      * @variable price cost of the shield
      */

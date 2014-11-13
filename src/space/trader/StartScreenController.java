@@ -24,8 +24,8 @@ public class StartScreenController implements Initializable {
      */
     @FXML
     private Label title;
-    
-        
+
+
     /**
      * @variable newGameButton button to start new game
      */
