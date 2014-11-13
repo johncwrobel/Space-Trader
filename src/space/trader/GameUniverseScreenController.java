@@ -101,13 +101,19 @@ public class GameUniverseScreenController implements Initializable {
      * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
-        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel()) && (SpaceTrader.getMainCharacter().canBuy(100))) {
+        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel()) &&
+                (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
             SpaceTrader.getMainCharacter().buy(100);
-        } else if ((SpaceTrader.ship.getFuel() + 5) > SpaceTrader.ship.getMaxFuel()) {
-            JOptionPane.showMessageDialog(null, "You do not have enough fuel capacity.", getAlertString(), JOptionPane.WARNING_MESSAGE);
+        } else if ((SpaceTrader.ship.getFuel() + 5) > 
+                SpaceTrader.ship.getMaxFuel()) {
+            JOptionPane.showMessageDialog(null, 
+                    "You do not have enough fuel capacity.", getAlertString(),
+                    JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "You do not have enough credits.", getAlertString(), JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,
+                    "You do not have enough credits.", getAlertString(),
+                    JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -514,7 +520,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void buy (final ActionEvent event) {
+    public final void buy(final ActionEvent event) {
         final ObservableList<String> selectedItem = getGoods().getSelectionModel().getSelectedItems();
         
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
@@ -534,7 +540,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void jump (final ActionEvent event) {
+    public final void jump(final ActionEvent event) {
         final String planetString = getPlanetComboBox().getValue();
         Planet toPlanet = null;
         for (int x = 0; x < SpaceTrader.currentSolarSystem.planets.size(); x++) { //find the planet they want to travel to
@@ -555,7 +561,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void sell (final ActionEvent event) {
+    public final void sell(final ActionEvent event) {
         final ObservableList<String> selectedItem = getSelling().getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             final String[] temp = selectedItem.get(i).split(" ");
@@ -574,7 +580,7 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     public final void startGame(final ActionEvent event) {
         final ObservableList<String> observable = getPlanets();
-        for (int x = 0; x < observable.size(); x++) {
+        for (int x = 0; x < observable.size(); x++){
         }
         
         updateScreen();

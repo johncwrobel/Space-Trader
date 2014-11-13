@@ -27,7 +27,7 @@ public class Universe implements Serializable{
             }
         }
         numberOfSS = (int)(Math.random() * 50) + 50;
-        for (int i = 0; i < numberOfSS; i ++) {
+        for (int i = 0; i < numberOfSS; i++) {
             int x = (int)(Math.random() * 20);
             int y = (int)(Math.random() * 20);
             while (true) {
