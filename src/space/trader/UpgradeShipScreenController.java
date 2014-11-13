@@ -8,8 +8,6 @@ package space.trader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
