@@ -40,23 +40,28 @@ public class Universe implements Serializable {
     private Planet homePlanet;
 
     /**
+     * @variable universeDimension size of the universe
+     */
+    private int universeDimension = 20;
+
+    /**
      * Constructor for Universe class.
      */
     public Universe() {
-        booleanArray = new boolean[20][20];
-        for (int x = 0; x < 20; x++) {
-            for (int y = 0; y < 20; y++) {
+        booleanArray = new boolean[universeDimension][universeDimension];
+        for (int x = 0; x < universeDimension; x++) {
+            for (int y = 0; y < universeDimension; y++) {
                 booleanArray[x][y] = false;
             }
         }
         numberOfSS = (int) (Math.random() * 50) + 50;
         for (int i = 0; i < numberOfSS; i++) {
-            int x = (int) (Math.random() * 20);
-            int y = (int) (Math.random() * 20);
+            int x = (int) (Math.random() * universeDimension);
+            int y = (int) (Math.random() * universeDimension);
             while (true) {
                 if (booleanArray[x][y]) {
-                    x = (int) (Math.random() * 20);
-                    y = (int) (Math.random() * 20);
+                    x = (int) (Math.random() * universeDimension);
+                    y = (int) (Math.random() * universeDimension);
                 } else {
                     break;
                 }

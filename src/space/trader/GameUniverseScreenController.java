@@ -541,7 +541,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        
+
     }
     /*
         });

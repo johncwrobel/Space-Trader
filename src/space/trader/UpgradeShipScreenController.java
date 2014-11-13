@@ -214,6 +214,27 @@ public class UpgradeShipScreenController implements Initializable {
      * @variable notEnoughCreditsString like is this really necessary?
      */
     private String notEnoughCreditsString = "Not enough credits!";
+
+    /**
+     * @variable falconPrice cost of the falcon
+     */
+    private int falconPrice = 1000;
+
+    /**
+     * @variable enterprisePrice cost of the enterprise
+     */
+    private int enterprisePrice = 2000;
+
+    /**
+     * @variable galacticaPrice cost of the galactica
+     */
+    private int galacticaPrice = 3000;
+
+    /**
+     * @variable daedalusPrice cost of the daedalus
+     */
+    private int daedalusPrice = 4000;
+
     /**
      * Initializes the controller class.
      * @param url the url
@@ -221,7 +242,7 @@ public class UpgradeShipScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        
+
     }
 
 
@@ -239,9 +260,9 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void purchaseFalcon(final ActionEvent e) {
-        if (SpaceTrader.getMainCharacter().canBuy(1000)) {
+        if (SpaceTrader.getMainCharacter().canBuy(falconPrice)) {
             //see if they have enough money
-            SpaceTrader.getMainCharacter().buy(1000);
+            SpaceTrader.getMainCharacter().buy(falconPrice);
             //deduct the money
             SpaceTrader.ship.setShip(Ship.ShipTypes.FALCON);
             //set their new ship type
@@ -259,8 +280,8 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void purchaseEnterprise(final ActionEvent e) {
-        if (SpaceTrader.getMainCharacter().canBuy(2000)) {
-            SpaceTrader.getMainCharacter().buy(2000);
+        if (SpaceTrader.getMainCharacter().canBuy(enterprisePrice)) {
+            SpaceTrader.getMainCharacter().buy(enterprisePrice);
             SpaceTrader.ship.setShip(Ship.ShipTypes.ENTERPRISE);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             updateText();
@@ -274,8 +295,8 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void purchaseGalactica(final ActionEvent e) {
-        if (SpaceTrader.getMainCharacter().canBuy(3000)) {
-            SpaceTrader.getMainCharacter().buy(3000);
+        if (SpaceTrader.getMainCharacter().canBuy(galacticaPrice)) {
+            SpaceTrader.getMainCharacter().buy(galacticaPrice);
             SpaceTrader.ship.setShip(Ship.ShipTypes.GALACTICA);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             updateText();
@@ -289,8 +310,8 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void purchaseDaedalus(final ActionEvent e) {
-        if (SpaceTrader.getMainCharacter().canBuy(4000)) {
-            SpaceTrader.getMainCharacter().buy(4000);
+        if (SpaceTrader.getMainCharacter().canBuy(daedalusPrice)) {
+            SpaceTrader.getMainCharacter().buy(daedalusPrice);
             SpaceTrader.ship.setShip(Ship.ShipTypes.DAEDALUS);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             updateText();
@@ -386,8 +407,9 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void upgradeGadget(final ActionEvent e) {
-        if (SpaceTrader.getMainCharacter().canBuy(500)) {
-            SpaceTrader.getMainCharacter().buy(500);
+        int gadgetSlotPrice = 500;
+        if (SpaceTrader.getMainCharacter().canBuy(gadgetSlotPrice)) {
+            SpaceTrader.getMainCharacter().buy(gadgetSlotPrice);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots()
                     + 1);

@@ -116,11 +116,11 @@ public class Character implements Serializable, CharacterInterface {
         public final void consentSearch() {
             for (int i = 0; i < SpaceTrader.ship.getCargoHold().size(); i++) {
                 if (SpaceTrader.ship.getCargoHold().get(i).isIllegal()) {
-                    if (getCredits() < 1000) {
+                    if (getCredits() < (BRIBE * 2)) {
                         criminal = true;
                         // send to fight scene
                     } else {
-                        setCredits(credits - 1000);
+                        setCredits(credits - (BRIBE * 2));
                     }
                 }
             }
@@ -130,7 +130,7 @@ public class Character implements Serializable, CharacterInterface {
          * deducts bribe amount from player credit.
          */
         public final void payBribe() {
-            setCredits(credits - 500);
+            setCredits(credits - BRIBE);
         }
 
         /**
