@@ -29,9 +29,21 @@ import javafx.util.Duration;
  */
 public class PirateEncounterScreenController implements Initializable {
 
+    /**
+     * twenty.
+     */
     private final int twenty = 20;
+    /**
+     * offset.
+     */
     private final int offset = 10;
+    /**
+     * rectSize.
+     */
     private final int rectSize = 400;
+    /**
+     * price.
+     */
     private final int price = 300;
 
     /**
@@ -57,7 +69,7 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable timer amount of time to play game
      */
-    private final int timer = 3;
+    private int timer = 3;
 
     /**
      * @variable clock the time keeper

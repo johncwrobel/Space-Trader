@@ -8,7 +8,13 @@ import java.io.Serializable;
  */
 public class Planet implements Serializable {
 
+    /**
+     * numtechlevels.
+     */
     private final int numTechLevels = 8;
+    /**
+     * numResources.
+     */
     private final int numResources = 13;
     /**
      * @variable serialVersionUID no clue what this is for

@@ -23,6 +23,9 @@ import javax.swing.JOptionPane;
  * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
+    /**
+     * maxStats.
+     */
     private final int maxStats = 20;
 
     /**

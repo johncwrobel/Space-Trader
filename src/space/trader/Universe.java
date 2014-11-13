@@ -9,7 +9,13 @@ import java.util.ArrayList;
  */
 public class Universe implements Serializable {
 
+    /**
+     * offset.
+     */
     private final int offset = 50;
+    /**
+     * offset2.
+     */
     private final int offset2 = 60;
     /**
      * @variable serialVersionUID no idea what this thing does

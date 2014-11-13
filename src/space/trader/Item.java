@@ -14,6 +14,9 @@ import java.io.Serializable;
  */
 public class Item implements Comparable, Serializable {
 
+    /**
+     * four.
+     */
     private final int four = 4;
     /**
      * @variable serialVersionUID still no idea

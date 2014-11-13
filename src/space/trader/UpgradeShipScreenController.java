@@ -29,8 +29,13 @@ import javafx.scene.image.ImageView;
  * @author John
  */
 public class UpgradeShipScreenController implements Initializable {
-
+    /**
+     * hundo.
+     */
     private final int hundo = 100;
+    /**
+     * plvl5.
+     */
     private final int plvl5 = 5;
 
     /**
