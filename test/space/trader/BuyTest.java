@@ -13,7 +13,7 @@ public class BuyTest {
     private transient Character tester;
     
     /**
-     * The set up
+     * The set up.
      */
     @Before
     public final void setUp() {
@@ -21,7 +21,7 @@ public class BuyTest {
     }
     
     /**
-     * Tests buying a valid priced item
+     * Tests buying a valid priced item.
      */
     @Test
     public final void testBuy500() {
@@ -30,7 +30,7 @@ public class BuyTest {
     }
     
     /**
-     * Tests an attempt to buy something that's too expensive
+     * Tests an attempt to buy something that's too expensive.
      */
     @Test
     public final void testBuy2001() {
@@ -40,7 +40,7 @@ public class BuyTest {
     }
     
     /**
-     * Tests buying a few things
+     * Tests buying a few things.
      */
     @Test
     public final void testBuySeveralItems() {
@@ -51,7 +51,7 @@ public class BuyTest {
     }
     
     /**
-     * Tests buying several things that cost too much
+     * Tests buying several things that cost too much.
      */
     @Test
     public final void testBuySeveralTooExpensive() {

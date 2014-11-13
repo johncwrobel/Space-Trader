@@ -17,7 +17,7 @@ public class Planet implements Serializable{
     private MarketPlace marketplace;
     
     /**
-     * Constructor for Planet class
+     * Constructor for Planet class.
      * @param parent parent solar system
      * @param name name of planet
      */
@@ -30,7 +30,7 @@ public class Planet implements Serializable{
     }
     
     /**
-     * Getter method for getName
+     * Getter method for getName.
      * @return name
      */
     public final String getName() {
@@ -38,7 +38,7 @@ public class Planet implements Serializable{
     }
 
     /**
-     * Getter method for ParentSystem
+     * Getter method for ParentSystem.
      * @return parentSystem
      */
     public final SolarSystem getSolarSystem(){
@@ -46,7 +46,7 @@ public class Planet implements Serializable{
     }
     
     /**
-     * Getter method for Tech Level
+     * Getter method for Tech Level.
      * @return techLevel
      */
     public final int getTechLevel() {
@@ -54,7 +54,7 @@ public class Planet implements Serializable{
     }
 
     /**
-     * Getter method for Resources
+     * Getter method for Resources.
      * @return resources
      */
     public final int getResources() {
@@ -62,7 +62,7 @@ public class Planet implements Serializable{
     }
     
     /**
-     * toString method for the class Planet
+     * toString method for the class Planet.
      * @return string representation of the planet
      */
     @Override
@@ -74,49 +74,49 @@ public class Planet implements Serializable{
     /**
      * @param name the name to set
      */
-    public void setName(final String name) {
+    final public void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    public void setTechLevel(final int techLevel) {
+    final public void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @param resources the resources to set
      */
-    public void setResources(final int resources) {
+    final public void setResources(final int resources) {
         this.resources = resources;
     }
 
     /**
      * @return the parentSystem
      */
-    public SolarSystem getParentSystem() {
+    final public SolarSystem getParentSystem() {
         return parentSystem;
     }
 
     /**
      * @param parentSystem the parentSystem to set
      */
-    public void setParentSystem(final SolarSystem parentSystem) {
+    final public void setParentSystem(final SolarSystem parentSystem) {
         this.parentSystem = parentSystem;
     }
 
     /**
      * @return the marketplace
      */
-    public MarketPlace getMarketplace() {
+    final public MarketPlace getMarketplace() {
         return marketplace;
     }
 
     /**
      * @param marketplace the marketplace to set
      */
-    public void setMarketplace(final MarketPlace marketplace) {
+    final public void setMarketplace(final MarketPlace marketplace) {
         this.marketplace = marketplace;
     }
 }

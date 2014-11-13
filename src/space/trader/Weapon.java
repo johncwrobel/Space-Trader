@@ -19,7 +19,7 @@ public class Weapon {
     private int price;
     
     /**
-     * Constructor for the Weapon
+     * Constructor for the Weapon.
      * @param name weapon name
      * @param weaponLevel the weapon's level
      * @param techLevel the current planet's tech level
@@ -35,56 +35,56 @@ public class Weapon {
     /**
      * @return the name
      */
-    public String getName() {
+    final public String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(final String name) {
+    final public void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the weaponLevel
      */
-    public int getWeaponLevel() {
+    final public int getWeaponLevel() {
         return weaponLevel;
     }
 
     /**
      * @param weaponLevel the weaponLevel to set
      */
-    public void setWeaponLevel(final int weaponLevel) {
+    final public void setWeaponLevel(final int weaponLevel) {
         this.weaponLevel = weaponLevel;
     }
 
     /**
      * @return the techLevel
      */
-    public int getTechLevel() {
+    final public int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    public void setTechLevel(final int techLevel) {
+    final public void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the price
      */
-    public int getPrice() {
+    final public int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    public void setPrice(final int price) {
+    final public void setPrice(final int price) {
         this.price = price;
     }
 }

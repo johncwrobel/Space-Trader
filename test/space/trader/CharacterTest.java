@@ -21,6 +21,9 @@ import org.junit.Test;
  */
 public class CharacterTest {
     
+    /**
+     * Tests the canBuy method of the Character class.
+     */
     @Test
     public final void testCanBuy() {
         final Character char1 = new Character(null, 0, 0, 0, 0, 0);

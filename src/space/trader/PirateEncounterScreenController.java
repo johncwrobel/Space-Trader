@@ -23,7 +23,7 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 /**
- * FXML Controller class
+ * FXML Controller class.
  *
  * @author John
  */
@@ -61,7 +61,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * Draws all of the planets on the canvas
+     * Draws all of the planets on the canvas.
      */
     public final void updateCanvas() {
         final GraphicsContext gc = getCanvas().getGraphicsContext2D();
@@ -78,84 +78,84 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @return the canvas
      */
-    public Canvas getCanvas() {
+    final public Canvas getCanvas() {
         return canvas;
     }
 
     /**
      * @param canvas the canvas to set
      */
-    public void setCanvas(final Canvas canvas) {
+    final public void setCanvas(final Canvas canvas) {
         this.canvas = canvas;
     }
 
     /**
      * @return the time
      */
-    public Label getTime() {
+    final public Label getTime() {
         return time;
     }
 
     /**
      * @param time the time to set
      */
-    public void setTime(final Label time) {
+    final public void setTime(final Label time) {
         this.time = time;
     }
 
     /**
      * @return the start
      */
-    public Button getStart() {
+    final public Button getStart() {
         return start;
     }
 
     /**
      * @param start the start to set
      */
-    public void setStart(final Button start) {
+    final public void setStart(final Button start) {
         this.start = start;
     }
 
     /**
      * @return the timer
      */
-    public int getTimer() {
+    final public int getTimer() {
         return timer;
     }
 
     /**
      * @param timer the timer to set
      */
-    public void setTimer(final int timer) {
+    final public void setTimer(final int timer) {
         this.timer = timer;
     }
 
     /**
      * @return the clock
      */
-    public Timeline getClock() {
+    final public Timeline getClock() {
         return clock;
     }
 
     /**
      * @param clock the clock to set
      */
-    public void setClock(final Timeline clock) {
+    final public void setClock(final Timeline clock) {
         this.clock = clock;
     }
 
     /**
      * @return the target
      */
-    public boolean[][] getTarget() {
+    final public boolean[][] getTarget() {
         return target;
     }
 
     /**
      * @param target the target to set
      */
-    public void setTarget(final boolean[][] target) {
+    final public void setTarget(final boolean[][] target) {
         final boolean[][] assignArray = target;
         this.target = assignArray;
     }
@@ -163,14 +163,14 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @return the playing
      */
-    public boolean isPlaying() {
+    final public boolean isPlaying() {
         return playing;
     }
 
     /**
      * @param playing the playing to set
      */
-    public void setPlaying(final boolean playing) {
+    final public void setPlaying(final boolean playing) {
         this.playing = playing;
     }
     
@@ -179,7 +179,7 @@ public class PirateEncounterScreenController implements Initializable {
         private int counter;
         
         /**
-         * Constructor for the TimeClass
+         * Constructor for the TimeClass.
          * @param count the counter
          */
         public TimeClass(final int count) {
@@ -207,20 +207,20 @@ public class PirateEncounterScreenController implements Initializable {
         /**
          * @return the counter
          */
-        public int getCounter() {
+        final public int getCounter() {
             return counter;
         }
 
         /**
          * @param counter the counter to set
          */
-        public void setCounter(final int counter) {
+        final public void setCounter(final int counter) {
             this.counter = counter;
         }
     }
     
     /**
-     * Clears the rectangle
+     * Clears the rectangle.
      */
     public final void clearRect() {
         for (int i = 0; i < getTarget().length; i++) {
@@ -231,7 +231,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * Handler to start the game
+     * Handler to start the game.
      * @param e the event
      */
     public final void startGame(final ActionEvent e) {
@@ -263,7 +263,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * checks if the player has won
+     * checks if the player has won.
      * @return if they've won
      */
     public final boolean hasWon() {
@@ -280,7 +280,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * Handler for shooting
+     * Handler for shooting.
      * @param e the event
      */
     public final void shoot(final MouseEvent e) {
@@ -300,7 +300,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * Handler to update the canvas
+     * Handler to update the canvas.
      * @param e 
      */
     public final void handle(final MouseEvent e) {
@@ -311,7 +311,7 @@ public class PirateEncounterScreenController implements Initializable {
     }
     
     /**
-     * Handler to draw the mouse
+     * Handler to draw the mouse.
      * @param e the event
      * @param gc the graphics context
      */

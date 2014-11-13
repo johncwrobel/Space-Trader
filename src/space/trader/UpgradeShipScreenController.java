@@ -26,7 +26,7 @@ import javafx.scene.image.ImageView;
 //import javafx.scene.paint.Color;
 
 /**
- * FXML Controller class
+ * FXML Controller class.
  *
  * @author John
  */
@@ -122,7 +122,7 @@ public class UpgradeShipScreenController implements Initializable {
     
     
     /**
-     * Handler to let the player get back to the game
+     * Handler to let the player get back to the game.
      * @param e 
      */
     public final void returnToGame(final ActionEvent e) {
@@ -130,7 +130,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to purchase a new ship
+     * Handler to purchase a new ship.
      * all of these follow the same structure
      * @param e 
      */
@@ -146,7 +146,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to purchase a new ship
+     * Handler to purchase a new ship.
      * @param e 
      */
     public final void purchaseEnterprise(final ActionEvent e) {
@@ -161,7 +161,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to purchase a new ship
+     * Handler to purchase a new ship.
      * @param e 
      */
     public final void purchaseGalactica(final ActionEvent e) {
@@ -176,7 +176,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to purchase a new ship
+     * Handler to purchase a new ship.
      * @param e 
      */
     public final void purchaseDaedalus(final ActionEvent e) {
@@ -191,7 +191,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Enables the buttons to purchase ship upgrades
+     * Enables the buttons to purchase ship upgrades.
      * @param e 
      */
     public final void showShipUpgrade(final ActionEvent e) {
@@ -211,7 +211,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Enables the buttons to purchase new ship
+     * Enables the buttons to purchase new ship.
      * @param e 
      */
     public final void buyNewShip(final ActionEvent e) {
@@ -235,7 +235,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to upgrade Shield
+     * Handler to upgrade Shield.
      * @param e 
      */
     public final void upgradeShield(final ActionEvent e) {
@@ -270,7 +270,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * handler to upgrade Gadge
+     * handler to upgrade Gadget.
      * @param e 
      */
     public final void upgradeGadget(final ActionEvent e) {
@@ -286,7 +286,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Handler to upgrade Weapons
+     * Handler to upgrade Weapons.
      * @param e the event
      */
     public final void upgradeWeapon(final ActionEvent e) {
@@ -321,7 +321,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Displays the list of shield upgrades
+     * Displays the list of shield upgrades.
      * @param e 
      */
     public final void setShieldButton(final ActionEvent e) {
@@ -343,7 +343,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Displays the list of weapon upgrades
+     * Displays the list of weapon upgrades.
      * @param e 
      */
     public final void setWeaponButton(final ActionEvent e) {
@@ -365,7 +365,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Displays the gadget information and previews
+     * Displays the gadget information and previews.
      * @param e 
      */
     public final void viewGadget(final ActionEvent e) {
@@ -440,7 +440,7 @@ public class UpgradeShipScreenController implements Initializable {
     
     
     /**
-     * Updates the credit amount when called
+     * Updates the credit amount when called.
      */
     public final void updateText() {
         final int creditsINT = SpaceTrader.getMainCharacter().getCredits();
@@ -452,7 +452,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Specific text updater just for previews of the upgrades
+     * Specific text updater just for previews of the upgrades.
      * @param weaponLevel level of the weapon
      * @param shieldLevel level of the shield
      */
@@ -466,7 +466,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * specific text updater just when upgrading a gadget
+     * specific text updater just when upgrading a gadget.
      */
     public final void updateTextGadget() {
         final int creditsINT = SpaceTrader.getMainCharacter().getCredits();
@@ -476,7 +476,7 @@ public class UpgradeShipScreenController implements Initializable {
     }
     
     /**
-     * Specific text updater for prices
+     * Specific text updater for prices.
      * @param weaponPrice the weapon price
      * @param shieldPrice the shield price
      */
@@ -489,392 +489,392 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * @return the buyFalcon
      */
-    public Button getBuyFalcon() {
+    final public Button getBuyFalcon() {
         return buyFalcon;
     }
 
     /**
      * @param buyFalcon the buyFalcon to set
      */
-    public void setBuyFalcon(final Button buyFalcon) {
+    final public void setBuyFalcon(final Button buyFalcon) {
         this.buyFalcon = buyFalcon;
     }
 
     /**
      * @return the buyEnterprise
      */
-    public Button getBuyEnterprise() {
+    final public Button getBuyEnterprise() {
         return buyEnterprise;
     }
 
     /**
      * @param buyEnterprise the buyEnterprise to set
      */
-    public void setBuyEnterprise(final Button buyEnterprise) {
+    final public void setBuyEnterprise(final Button buyEnterprise) {
         this.buyEnterprise = buyEnterprise;
     }
 
     /**
      * @return the buyGalactica
      */
-    public Button getBuyGalactica() {
+    final public Button getBuyGalactica() {
         return buyGalactica;
     }
 
     /**
      * @param buyGalactica the buyGalactica to set
      */
-    public void setBuyGalactica(final Button buyGalactica) {
+    final public void setBuyGalactica(final Button buyGalactica) {
         this.buyGalactica = buyGalactica;
     }
 
     /**
      * @return the buyDaedalus
      */
-    public Button getBuyDaedalus() {
+    final public Button getBuyDaedalus() {
         return buyDaedalus;
     }
 
     /**
      * @param buyDaedalus the buyDaedalus to set
      */
-    public void setBuyDaedalus(final Button buyDaedalus) {
+    final public void setBuyDaedalus(final Button buyDaedalus) {
         this.buyDaedalus = buyDaedalus;
     }
 
     /**
      * @return the successLabel
      */
-    public Label getSuccessLabel() {
+    final public Label getSuccessLabel() {
         return successLabel;
     }
 
     /**
      * @param successLabel the successLabel to set
      */
-    public void setSuccessLabel(final Label successLabel) {
+    final public void setSuccessLabel(final Label successLabel) {
         this.successLabel = successLabel;
     }
 
     /**
      * @return the creditLabel
      */
-    public Label getCreditLabel() {
+    final public Label getCreditLabel() {
         return creditLabel;
     }
 
     /**
      * @param creditLabel the creditLabel to set
      */
-    public void setCreditLabel(final Label creditLabel) {
+    final public void setCreditLabel(final Label creditLabel) {
         this.creditLabel = creditLabel;
     }
 
     /**
      * @return the currentSlotsLabel
      */
-    public Label getCurrentSlotsLabel() {
+    final public Label getCurrentSlotsLabel() {
         return currentSlotsLabel;
     }
 
     /**
      * @param currentSlotsLabel the currentSlotsLabel to set
      */
-    public void setCurrentSlotsLabel(final Label currentSlotsLabel) {
+    final public void setCurrentSlotsLabel(final Label currentSlotsLabel) {
         this.currentSlotsLabel = currentSlotsLabel;
     }
 
     /**
      * @return the shieldUpgradeButton
      */
-    public Button getShieldUpgradeButton() {
+    final public Button getShieldUpgradeButton() {
         return shieldUpgradeButton;
     }
 
     /**
      * @param shieldUpgradeButton the shieldUpgradeButton to set
      */
-    public void setShieldUpgradeButton(final Button shieldUpgradeButton) {
+    final public void setShieldUpgradeButton(final Button shieldUpgradeButton) {
         this.shieldUpgradeButton = shieldUpgradeButton;
     }
 
     /**
      * @return the gadgetUpgradeButton
      */
-    public Button getGadgetUpgradeButton() {
+    final public Button getGadgetUpgradeButton() {
         return gadgetUpgradeButton;
     }
 
     /**
      * @param gadgetUpgradeButton the gadgetUpgradeButton to set
      */
-    public void setGadgetUpgradeButton(final Button gadgetUpgradeButton) {
+    final public void setGadgetUpgradeButton(final Button gadgetUpgradeButton) {
         this.gadgetUpgradeButton = gadgetUpgradeButton;
     }
 
     /**
      * @return the weaponUpgradeButton
      */
-    public Button getWeaponUpgradeButton() {
+    final public Button getWeaponUpgradeButton() {
         return weaponUpgradeButton;
     }
 
     /**
      * @param weaponUpgradeButton the weaponUpgradeButton to set
      */
-    public void setWeaponUpgradeButton(final Button weaponUpgradeButton) {
+    final public void setWeaponUpgradeButton(final Button weaponUpgradeButton) {
         this.weaponUpgradeButton = weaponUpgradeButton;
     }
 
     /**
      * @return the showShipUpgradesButton
      */
-    public Button getShowShipUpgradesButton() {
+    final public Button getShowShipUpgradesButton() {
         return showShipUpgradesButton;
     }
 
     /**
      * @param showShipUpgradesButton the showShipUpgradesButton to set
      */
-    public void setShowShipUpgradesButton(final Button showShipUpgradesButton) {
+    final public void setShowShipUpgradesButton(final Button showShipUpgradesButton) {
         this.showShipUpgradesButton = showShipUpgradesButton;
     }
 
     /**
      * @return the newShipButton
      */
-    public Button getNewShipButton() {
+    final public Button getNewShipButton() {
         return newShipButton;
     }
 
     /**
      * @param newShipButton the newShipButton to set
      */
-    public void setNewShipButton(final Button newShipButton) {
+    final public void setNewShipButton(final Button newShipButton) {
         this.newShipButton = newShipButton;
     }
 
     /**
      * @return the currentShipLabel
      */
-    public Label getCurrentShipLabel() {
+    final public Label getCurrentShipLabel() {
         return currentShipLabel;
     }
 
     /**
      * @param currentShipLabel the currentShipLabel to set
      */
-    public void setCurrentShipLabel(final Label currentShipLabel) {
+    final public void setCurrentShipLabel(final Label currentShipLabel) {
         this.currentShipLabel = currentShipLabel;
     }
 
     /**
      * @return the currentShipPowerLabel
      */
-    public Label getCurrentShipPowerLabel() {
+    final public Label getCurrentShipPowerLabel() {
         return currentShipPowerLabel;
     }
 
     /**
      * @param currentShipPowerLabel the currentShipPowerLabel to set
      */
-    public void setCurrentShipPowerLabel(final Label currentShipPowerLabel) {
+    final public void setCurrentShipPowerLabel(final Label currentShipPowerLabel) {
         this.currentShipPowerLabel = currentShipPowerLabel;
     }
 
     /**
      * @return the imageViewMane
      */
-    public ImageView getImageViewMane() {
+    final public ImageView getImageViewMane() {
         return imageViewMane;
     }
 
     /**
      * @param imageViewMane the imageViewMane to set
      */
-    public void setImageViewMane(final ImageView imageViewMane) {
+    final public void setImageViewMane(final ImageView imageViewMane) {
         this.imageViewMane = imageViewMane;
     }
 
     /**
      * @return the gadgetListView
      */
-    public ListView getGadgetListView() {
+    final public ListView getGadgetListView() {
         return gadgetListView;
     }
 
     /**
      * @param gadgetListView the gadgetListView to set
      */
-    public void setGadgetListView(final ListView gadgetListView) {
+    final public void setGadgetListView(final ListView gadgetListView) {
         this.gadgetListView = gadgetListView;
     }
 
     /**
      * @return the viewGadgetButton
      */
-    public Button getViewGadgetButton() {
+    final public Button getViewGadgetButton() {
         return viewGadgetButton;
     }
 
     /**
      * @param viewGadgetButton the viewGadgetButton to set
      */
-    public void setViewGadgetButton(final Button viewGadgetButton) {
+    final public void setViewGadgetButton(final Button viewGadgetButton) {
         this.viewGadgetButton = viewGadgetButton;
     }
 
     /**
      * @return the weaponButton
      */
-    public Button getWeaponButton() {
+    final public Button getWeaponButton() {
         return weaponButton;
     }
 
     /**
      * @param weaponButton the weaponButton to set
      */
-    public void setWeaponButton(final Button weaponButton) {
+    final public void setWeaponButton(final Button weaponButton) {
         this.weaponButton = weaponButton;
     }
 
     /**
      * @return the shieldButton
      */
-    public Button getShieldButton() {
+    final public Button getShieldButton() {
         return shieldButton;
     }
 
     /**
      * @param shieldButton the shieldButton to set
      */
-    public void setShieldButton(final Button shieldButton) {
+    final public void setShieldButton(final Button shieldButton) {
         this.shieldButton = shieldButton;
     }
 
     /**
      * @return the shieldPriceLabel
      */
-    public Label getShieldPriceLabel() {
+    final public Label getShieldPriceLabel() {
         return shieldPriceLabel;
     }
 
     /**
      * @param shieldPriceLabel the shieldPriceLabel to set
      */
-    public void setShieldPriceLabel(final Label shieldPriceLabel) {
+    final public void setShieldPriceLabel(final Label shieldPriceLabel) {
         this.shieldPriceLabel = shieldPriceLabel;
     }
 
     /**
      * @return the weaponPriceLabel
      */
-    public Label getWeaponPriceLabel() {
+    final public Label getWeaponPriceLabel() {
         return weaponPriceLabel;
     }
 
     /**
      * @param weaponPriceLabel the weaponPriceLabel to set
      */
-    public void setWeaponPriceLabel(final Label weaponPriceLabel) {
+    final public void setWeaponPriceLabel(final Label weaponPriceLabel) {
         this.weaponPriceLabel = weaponPriceLabel;
     }
 
     /**
      * @return the techLevel
      */
-    public int getTechLevel() {
+    final public int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    public void setTechLevel(final int techLevel) {
+    final public void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the isShieldButtonPressed
      */
-    public boolean isIsShieldButtonPressed() {
+    final public boolean isIsShieldButtonPressed() {
         return isShieldButtonPressed;
     }
 
     /**
      * @param isShieldButtonPressed the isShieldButtonPressed to set
      */
-    public void setIsShieldButtonPressed(final boolean isShieldButtonPressed) {
+    final public void setIsShieldButtonPressed(final boolean isShieldButtonPressed) {
         this.isShieldButtonPressed = isShieldButtonPressed;
     }
 
     /**
      * @return the isWeaponButtonPressed
      */
-    public boolean isIsWeaponButtonPressed() {
+    final public boolean isIsWeaponButtonPressed() {
         return isWeaponButtonPressed;
     }
 
     /**
      * @param isWeaponButtonPressed the isWeaponButtonPressed to set
      */
-    public void setIsWeaponButtonPressed(final boolean isWeaponButtonPressed) {
+    final public void setIsWeaponButtonPressed(final boolean isWeaponButtonPressed) {
         this.isWeaponButtonPressed = isWeaponButtonPressed;
     }
 
     /**
      * @return the shields
      */
-    public ArrayList<Shield> getShields() {
+    final public ArrayList<Shield> getShields() {
         return shields;
     }
 
     /**
      * @param shields the shields to set
      */
-    public void setShields(final ArrayList<Shield> shields) {
+    final public void setShields(final ArrayList<Shield> shields) {
         this.shields = shields;
     }
 
     /**
      * @return the weapons
      */
-    public ArrayList<Weapon> getWeapons() {
+    final public ArrayList<Weapon> getWeapons() {
         return weapons;
     }
 
     /**
      * @param weapons the weapons to set
      */
-    public void setWeapons(final ArrayList<Weapon> weapons) {
+    final public void setWeapons(final ArrayList<Weapon> weapons) {
         this.weapons = weapons;
     }
 
     /**
      * @return the upgradeSuccessfulString
      */
-    public String getUpgradeSuccessfulString() {
+    final public String getUpgradeSuccessfulString() {
         return upgradeSuccessfulString;
     }
 
     /**
      * @param upgradeSuccessfulString the upgradeSuccessfulString to set
      */
-    public void setUpgradeSuccessfulString(final String upgradeSuccessfulString) {
+    final public void setUpgradeSuccessfulString(final String upgradeSuccessfulString) {
         this.upgradeSuccessfulString = upgradeSuccessfulString;
     }
 
     /**
      * @return the notEnoughCreditsString
      */
-    public String getNotEnoughCreditsString() {
+    final public String getNotEnoughCreditsString() {
         return notEnoughCreditsString;
     }
 
     /**
      * @param notEnoughCreditsString the notEnoughCreditsString to set
      */
-    public void setNotEnoughCreditsString(final String notEnoughCreditsString) {
+    final public void setNotEnoughCreditsString(final String notEnoughCreditsString) {
         this.notEnoughCreditsString = notEnoughCreditsString;
     }
 

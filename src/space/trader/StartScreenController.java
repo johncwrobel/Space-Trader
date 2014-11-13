@@ -26,7 +26,7 @@ public class StartScreenController implements Initializable {
     private Button newGameButton;
     
     /**
-     * sets the creation scene as the main scene when the button is clicked
+     * sets the creation scene as the main scene when the button is clicked.
      * 
      * @param event 
      */
@@ -36,7 +36,7 @@ public class StartScreenController implements Initializable {
     }
     
     /**
-     * Inializes
+     * Initializes.
      * @param url no idea what this does, honestly
      * @param rb 
      */

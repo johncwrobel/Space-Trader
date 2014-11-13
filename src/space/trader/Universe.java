@@ -17,7 +17,7 @@ public class Universe implements Serializable{
     private Planet homePlanet;
     
     /**
-     * Constructor for Universe class
+     * Constructor for Universe class.
      */
     public Universe() {
         booleanArray = new boolean[20][20];
@@ -47,7 +47,7 @@ public class Universe implements Serializable{
     }
     
     /**
-     * toString method for the class
+     * toString method for the class.
      * @return toString
      */
     @Override
@@ -62,7 +62,7 @@ public class Universe implements Serializable{
     }
     
     /**
-     * Getter method for the solar system
+     * Getter method for the solar system.
      * @param x x coordinate
      * @param y y coordinate
      * @return the solar system at the coordinates
@@ -83,42 +83,42 @@ public class Universe implements Serializable{
     /**
      * @return the numberOfSolarSystems
      */
-    public int getNumberOfSolarSystems() {
+    final public int getNumberOfSolarSystems() {
         return numberOfSS;
     }
 
     /**
      * @param numberOfSS the numberOfSolarSystems to set
      */
-    public void setNumberOfSolarSystems(final int numberOfSS) {
+    final public void setNumberOfSolarSystems(final int numberOfSS) {
         this.numberOfSS = numberOfSS;
     }
 
     /**
      * @return the solarSystems
      */
-    public ArrayList<SolarSystem> getSolarSystems() {
+    final public ArrayList<SolarSystem> getSolarSystems() {
         return solarSystems;
     }
 
     /**
      * @param solarSystems the solarSystems to set
      */
-    public void setSolarSystems(final ArrayList<SolarSystem> solarSystems) {
+    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems) {
         this.solarSystems = solarSystems;
     }
 
     /**
      * @return the booleanArray
      */
-    public boolean[][] getBooleanArray() {
+    final public boolean[][] getBooleanArray() {
         return booleanArray;
     }
 
     /**
      * @param booleanArray the booleanArray to set
      */
-    public void setBooleanArray(final boolean[][] booleanArray) {
+    final public void setBooleanArray(final boolean[][] booleanArray) {
         final boolean[][] copy = booleanArray;
         this.booleanArray = copy;
     }
@@ -126,28 +126,28 @@ public class Universe implements Serializable{
     /**
      * @return the homeSolarSystem
      */
-    public SolarSystem getHomeSolarSystem() {
+    final public SolarSystem getHomeSolarSystem() {
         return homeSolarSystem;
     }
 
     /**
      * @param homeSolarSystem the homeSolarSystem to set
      */
-    public void setHomeSolarSystem(final SolarSystem homeSolarSystem) {
+    final public void setHomeSolarSystem(final SolarSystem homeSolarSystem) {
         this.homeSolarSystem = homeSolarSystem;
     }
 
     /**
      * @return the homePlanet
      */
-    public Planet getHomePlanet() {
+    final public Planet getHomePlanet() {
         return homePlanet;
     }
 
     /**
      * @param homePlanet the homePlanet to set
      */
-    public void setHomePlanet(final Planet homePlanet) {
+    final public void setHomePlanet(final Planet homePlanet) {
         this.homePlanet = homePlanet;
     }
         

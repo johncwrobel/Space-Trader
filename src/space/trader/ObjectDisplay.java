@@ -16,7 +16,7 @@ public class ObjectDisplay {
     private int amount;
     
     /**
-     * Constructor for class ObjectDisplay
+     * Constructor for class ObjectDisplay.
      * @param item the item
      * @param price the price
      * @param amount the number of the item
@@ -28,7 +28,7 @@ public class ObjectDisplay {
     }
     
     /**
-     * toString method for the class ObjectDisplay
+     * toString method for the class ObjectDisplay.
      * @return the string version of the object
      */
     @Override
@@ -39,42 +39,42 @@ public class ObjectDisplay {
     /**
      * @return the item
      */
-    public Item getItem() {
+    final public Item getItem() {
         return item;
     }
 
     /**
      * @param item the item to set
      */
-    public void setItem(final Item item) {
+    final public void setItem(final Item item) {
         this.item = item;
     }
 
     /**
      * @return the price
      */
-    public int getPrice() {
+    final public int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    public void setPrice(final int price) {
+    final public void setPrice(final int price) {
         this.price = price;
     }
 
     /**
      * @return the amount
      */
-    public int getAmount() {
+    final public int getAmount() {
         return amount;
     }
 
     /**
      * @param amount the amount to set
      */
-    public void setAmount(final int amount) {
+    final public void setAmount(final int amount) {
         this.amount = amount;
     }
 }

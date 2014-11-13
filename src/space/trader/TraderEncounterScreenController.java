@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 /**
- * FXML Controller class
+ * FXML Controller class.
  *
  * @author John
  */
@@ -76,7 +76,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Method to handle the trade option
+     * Method to handle the trade option.
      * @param event 
      */
     @FXML
@@ -99,7 +99,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * function to buy an item
+     * function to buy an item.
      * @param event 
      */
     @FXML
@@ -120,7 +120,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Function to sell an Item
+     * Function to sell an Item.
      * @param event 
      */
     @FXML
@@ -139,7 +139,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Method to handle the ignore option
+     * Method to handle the ignore option.
      * @param event 
      */
     @FXML
@@ -155,7 +155,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Method to handle the fight option
+     * Method to handle the fight option.
      * @param even 
      */
     @FXML
@@ -171,7 +171,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Method to help update the screen
+     * Method to help update the screen.
      */
     public final void updateScreen() {
         final ArrayList<String> list = getNewPlanet().getMarketplace().getDisplay();
@@ -188,7 +188,7 @@ public class TraderEncounterScreenController implements Initializable {
     }
     
     /**
-     * Method to update the text on the screen
+     * Method to update the text on the screen.
      */
     public final void updateText() {
         final String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
@@ -198,140 +198,140 @@ public class TraderEncounterScreenController implements Initializable {
     /**
      * @return the tradeButton
      */
-    public Button getTradeButton() {
+    final public Button getTradeButton() {
         return tradeButton;
     }
 
     /**
      * @param tradeButton the tradeButton to set
      */
-    public void setTradeButton(final Button tradeButton) {
+    final public void setTradeButton(final Button tradeButton) {
         this.tradeButton = tradeButton;
     }
 
     /**
      * @return the ignoreButton
      */
-    public Button getIgnoreButton() {
+    final public Button getIgnoreButton() {
         return ignoreButton;
     }
 
     /**
      * @param ignoreButton the ignoreButton to set
      */
-    public void setIgnoreButton(final Button ignoreButton) {
+    final public void setIgnoreButton(final Button ignoreButton) {
         this.ignoreButton = ignoreButton;
     }
 
     /**
      * @return the fightButton
      */
-    public Button getFightButton() {
+    final public Button getFightButton() {
         return fightButton;
     }
 
     /**
      * @param fightButton the fightButton to set
      */
-    public void setFightButton(final Button fightButton) {
+    final public void setFightButton(final Button fightButton) {
         this.fightButton = fightButton;
     }
 
     /**
      * @return the buyButton
      */
-    public Button getBuyButton() {
+    final public Button getBuyButton() {
         return buyButton;
     }
 
     /**
      * @param buyButton the buyButton to set
      */
-    public void setBuyButton(final Button buyButton) {
+    final public void setBuyButton(final Button buyButton) {
         this.buyButton = buyButton;
     }
 
     /**
      * @return the sellButton
      */
-    public Button getSellButton() {
+    final public Button getSellButton() {
         return sellButton;
     }
 
     /**
      * @param sellButton the sellButton to set
      */
-    public void setSellButton(final Button sellButton) {
+    final public void setSellButton(final Button sellButton) {
         this.sellButton = sellButton;
     }
 
     /**
      * @return the playerItems
      */
-    public ListView<String> getPlayerItems() {
+    final public ListView<String> getPlayerItems() {
         return playerItems;
     }
 
     /**
      * @param playerItems the playerItems to set
      */
-    public void setPlayerItems(final ListView<String> playerItems) {
+    final public void setPlayerItems(final ListView<String> playerItems) {
         this.playerItems = playerItems;
     }
 
     /**
      * @return the traderItems
      */
-    public ListView<String> getTraderItems() {
+    final public ListView<String> getTraderItems() {
         return traderItems;
     }
 
     /**
      * @param traderItems the traderItems to set
      */
-    public void setTraderItems(final ListView<String> traderItems) {
+    final public void setTraderItems(final ListView<String> traderItems) {
         this.traderItems = traderItems;
     }
 
     /**
      * @return the dialog
      */
-    public TextField getDialog() {
+    final public TextField getDialog() {
         return dialog;
     }
 
     /**
      * @param dialog the dialog to set
      */
-    public void setDialog(final TextField dialog) {
+    final public void setDialog(final TextField dialog) {
         this.dialog = dialog;
     }
 
     /**
      * @return the credits
      */
-    public Text getCredits() {
+    final public Text getCredits() {
         return credits;
     }
 
     /**
      * @param credits the credits to set
      */
-    public void setCredits(final Text credits) {
+    final public void setCredits(final Text credits) {
         this.credits = credits;
     }
 
     /**
      * @return the newPlanet
      */
-    public Planet getNewPlanet() {
+    final public Planet getNewPlanet() {
         return newPlanet;
     }
 
     /**
      * @param newPlanet the newPlanet to set
      */
-    public void setNewPlanet(final Planet newPlanet) {
+    final public void setNewPlanet(final Planet newPlanet) {
         this.newPlanet = newPlanet;
     }
 }

@@ -36,7 +36,7 @@ public class Ship implements Serializable{
     private int shieldLevel;
     private ShipTypes shipType = ShipTypes.SERENITY;
     /**
-     * Constructor for the Ship
+     * Constructor for the Ship.
      */
     public Ship() {
         maxCargo = 10;
@@ -58,236 +58,236 @@ public class Ship implements Serializable{
     /**
      * @return the cargoHold
      */
-    public ArrayList<Item> getCargoHold() {
+    final public ArrayList<Item> getCargoHold() {
         return cargoHold;
     }
 
     /**
      * @param cargoHold the cargoHold to set
      */
-    public void setCargoHold(final ArrayList<Item> cargoHold) {
+    final public void setCargoHold(final ArrayList<Item> cargoHold) {
         this.cargoHold = cargoHold;
     }
 
     /**
      * @return the maxCargo
      */
-    public int getMaxCargo() {
+    final public int getMaxCargo() {
         return maxCargo;
     }
 
     /**
      * @param maxCargo the maxCargo to set
      */
-    public void setMaxCargo(final int maxCargo) {
+    final public void setMaxCargo(final int maxCargo) {
         this.maxCargo = maxCargo;
     }
 
     /**
      * @param fuel the fuel to set
      */
-    public void setFuel(final int fuel) {
+    final public void setFuel(final int fuel) {
         this.fuel = fuel;
     }
 
     /**
      * @param maxFuel the maxFuel to set
      */
-    public void setMaxFuel(final int maxFuel) {
+    final public void setMaxFuel(final int maxFuel) {
         this.maxFuel = maxFuel;
     }
 
     /**
      * @return the xLocation
      */
-    public int getxLocation() {
+    final public int getxLocation() {
         return xLocation;
     }
 
     /**
      * @param xLocation the xLocation to set
      */
-    public void setxLocation(final int xLocation) {
+    final public void setxLocation(final int xLocation) {
         this.xLocation = xLocation;
     }
 
     /**
      * @return the yLocation
      */
-    public int getyLocation() {
+    final public int getyLocation() {
         return yLocation;
     }
 
     /**
      * @param yLocation the yLocation to set
      */
-    public void setyLocation(final int yLocation) {
+    final public void setyLocation(final int yLocation) {
         this.yLocation = yLocation;
     }
 
     /**
      * @return the gadgetslots
      */
-    public int getGadgetslots() {
+    final public int getGadgetslots() {
         return gadgetslots;
     }
 
     /**
      * @param gadgetslots the gadgetslots to set
      */
-    public void setGadgetslots(final int gadgetslots) {
+    final public void setGadgetslots(final int gadgetslots) {
         this.gadgetslots = gadgetslots;
     }
 
     /**
      * @return the gadgets
      */
-    public int getGadgets() {
+    final public int getGadgets() {
         return gadgets;
     }
 
     /**
      * @param gadgets the gadgets to set
      */
-    public void setGadgets(final int gadgets) {
+    final public void setGadgets(final int gadgets) {
         this.gadgets = gadgets;
     }
 
     /**
      * @return the maxCrew
      */
-    public int getMaxCrew() {
+    final public int getMaxCrew() {
         return maxCrew;
     }
 
     /**
      * @param maxCrew the maxCrew to set
      */
-    public void setMaxCrew(final int maxCrew) {
+    final public void setMaxCrew(final int maxCrew) {
         this.maxCrew = maxCrew;
     }
 
     /**
      * @return the techLevel
      */
-    public int getTechLevel() {
+    final public int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    public void setTechLevel(final int techLevel) {
+    final public void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the fuelCost
      */
-    public int getFuelCost() {
+    final public int getFuelCost() {
         return fuelCost;
     }
 
     /**
      * @param fuelCost the fuelCost to set
      */
-    public void setFuelCost(final int fuelCost) {
+    final public void setFuelCost(final int fuelCost) {
         this.fuelCost = fuelCost;
     }
 
     /**
      * @return the bounty
      */
-    public int getBounty() {
+    final public int getBounty() {
         return bounty;
     }
 
     /**
      * @param bounty the bounty to set
      */
-    public void setBounty(final int bounty) {
+    final public void setBounty(final int bounty) {
         this.bounty = bounty;
     }
 
     /**
      * @return the size
      */
-    public int getSize() {
+    final public int getSize() {
         return size;
     }
 
     /**
      * @param size the size to set
      */
-    public void setSize(final int size) {
+    final public void setSize(final int size) {
         this.size = size;
     }
 
     /**
      * @return the hull
      */
-    public int getHull() {
+    final public int getHull() {
         return hull;
     }
 
     /**
      * @param hull the hull to set
      */
-    public void setHull(final int hull) {
+    final public void setHull(final int hull) {
         this.hull = hull;
     }
 
     /**
      * @return the weaponLevel
      */
-    public int getWeaponLevel() {
+    final public int getWeaponLevel() {
         return weaponLevel;
     }
 
     /**
      * @param weaponLevel the weaponLevel to set
      */
-    public void setWeaponLevel(final int weaponLevel) {
+    final public void setWeaponLevel(final int weaponLevel) {
         this.weaponLevel = weaponLevel;
     }
 
     /**
      * @return the shieldLevel
      */
-    public int getShieldLevel() {
+    final public int getShieldLevel() {
         return shieldLevel;
     }
 
     /**
      * @param shieldLevel the shieldLevel to set
      */
-    public void setShieldLevel(final int shieldLevel) {
+    final public void setShieldLevel(final int shieldLevel) {
         this.shieldLevel = shieldLevel;
     }
 
     /**
      * @return the shipType
      */
-    public ShipTypes getShipType() {
+    final public ShipTypes getShipType() {
         return shipType;
     }
 
     /**
      * @param shipType the shipType to set
      */
-    public void setShipType(final ShipTypes shipType) {
+    final public void setShipType(final ShipTypes shipType) {
         this.shipType = shipType;
     }
     
     /**
-     * Enum for the ship types
+     * Enum for the ship types.
      */
     public enum ShipTypes{//enum for the ship types
         SERENITY, FALCON, ENTERPRISE, GALACTICA, DAEDALUS
     }
     
 /**
- * Sets the ship type, and changed any associated private vars
+ * Sets the ship type, and changed any associated private vars.
  * @param aShipType 
  */
     public final void setShip(final ShipTypes aShipType){
@@ -355,7 +355,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Removes an item from the ship's cargo hold
+     * Removes an item from the ship's cargo hold.
      * @param name item name
      * @return if it was removed
      */
@@ -372,7 +372,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Returns the current fuel for the ship
+     * Returns the current fuel for the ship.
      * @return Fuel
      */
     
@@ -381,7 +381,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Returns the maximum amount of fuel the ship can hold
+     * Returns the maximum amount of fuel the ship can hold.
      * @return maxFuel
      */
     
@@ -390,7 +390,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Adds fuel to the ship
+     * Adds fuel to the ship.
      * @param amount the amount of fuel to add
      */
     
@@ -399,7 +399,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Whether nor not the ship has enough fuel to travel to a system
+     * Whether nor not the ship has enough fuel to travel to a system.
      * @param system the system to travel to
      * @return true or false
      */
@@ -413,7 +413,7 @@ public class Ship implements Serializable{
     }
     
        /**
-     * Whether nor not the ship has enough fuel to travel to a planet
+     * Whether nor not the ship has enough fuel to travel to a planet.
      * @param planet the system to travel to
      * @return true or false
      */
@@ -423,7 +423,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Moves the ship from current planet to decided planet
+     * Moves the ship from current planet to decided planet.
      * Sets currentplanet
      * Sets currentsolarysystem
      * Sets X and Y locations
@@ -440,7 +440,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Adds an item to the ship's cargo hold
+     * Adds an item to the ship's cargo hold.
      * @param itemName 
      */
     public final void addItem(final String itemName) {
@@ -456,7 +456,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Checks if there is space in the cargo hold or not
+     * Checks if there is space in the cargo hold or not.
      * @return if there's room
      */
     public final boolean canAdd() {
@@ -471,7 +471,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Getter for the ship's cargo
+     * Getter for the ship's cargo.
      * @return ship's cargo
      */
     public final ArrayList getCargo() {
@@ -479,7 +479,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Check if Ship's cargo is big enough
+     * Check if Ship's cargo is big enough.
      * @return if gadgets can be purchased
      */
     public final boolean checkGadget() {
@@ -487,7 +487,7 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Increases the ship's Weapon Level
+     * Increases the ship's Weapon Level.
      * @param add 
      */
     public final void increaseWeaponLevel(final int add) {
@@ -495,8 +495,8 @@ public class Ship implements Serializable{
     }
     
     /**
-     * Increase the ship's Shield Level
-     * @param add
+     * Increase the ship's Shield Level.
+     * @param add amount to increase by
      */
     public final void increaseShieldLevel(final int add) {
         setShieldLevel(getShieldLevel() + add);

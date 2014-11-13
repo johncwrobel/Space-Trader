@@ -23,7 +23,7 @@ public class Item implements Comparable, Serializable{
     private int var;
     
     /**
-     * Constructor for an Item
+     * Constructor for an Item.
      * @param name name
      * @param mtlp the mtlp
      * @param mtlu the mtlu
@@ -43,7 +43,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Calculates the price of an item
+     * Calculates the price of an item.
      * @param techLevel of the planet
      * @return the price
      */
@@ -52,7 +52,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Helps decide the item's price
+     * Helps decide the item's price.
      * @return the var
      */
     private int calculateVar() {
@@ -67,7 +67,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Getter for MTLP
+     * Getter for MTLP.
      * @return MTLP value
      */
     public final int getMLTP() {
@@ -75,7 +75,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Getter for MTLU
+     * Getter for MTLU.
      * @return MTLU value
      */
     public final int getMTLU() {
@@ -83,7 +83,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Method for comparing items
+     * Method for comparing items.
      * @param o object to compare
      * @return if they are the same or not
      */
@@ -94,7 +94,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * Makes a string from an item
+     * Makes a string from an item.
      * @return the string representation of the item
      */
     @Override
@@ -103,7 +103,7 @@ public class Item implements Comparable, Serializable{
     }
     
     /**
-     * checks if an item is illegal
+     * checks if an item is illegal.
      * @return if it's illegal or not
      */
     public final boolean isIllegal() {
@@ -117,98 +117,98 @@ public class Item implements Comparable, Serializable{
     /**
      * @return the name
      */
-    public String getName() {
+    final public String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(final String name) {
+    final public void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the basePrice
      */
-    public int getBasePrice() {
+    final public int getBasePrice() {
         return basePrice;
     }
 
     /**
      * @param basePrice the basePrice to set
      */
-    public void setBasePrice(final int basePrice) {
+    final public void setBasePrice(final int basePrice) {
         this.basePrice = basePrice;
     }
 
     /**
      * @return the mtlp
      */
-    public int getMtlp() {
+    final public int getMtlp() {
         return mtlp;
     }
 
     /**
      * @param mtlp the mtlp to set
      */
-    public void setMtlp(final int mtlp) {
+    final public void setMtlp(final int mtlp) {
         this.mtlp = mtlp;
     }
 
     /**
      * @return the mtlu
      */
-    public int getMtlu() {
+    final public int getMtlu() {
         return mtlu;
     }
 
     /**
      * @param mtlu the mtlu to set
      */
-    public void setMtlu(final int mtlu) {
+    final public void setMtlu(final int mtlu) {
         this.mtlu = mtlu;
     }
 
     /**
      * @return the ipl
      */
-    public int getIpl() {
+    final public int getIpl() {
         return ipl;
     }
 
     /**
      * @param ipl the ipl to set
      */
-    public void setIpl(final int ipl) {
+    final public void setIpl(final int ipl) {
         this.ipl = ipl;
     }
 
     /**
      * @return the ttp
      */
-    public int getTtp() {
+    final public int getTtp() {
         return ttp;
     }
 
     /**
      * @param ttp the ttp to set
      */
-    public void setTtp(final int ttp) {
+    final public void setTtp(final int ttp) {
         this.ttp = ttp;
     }
 
     /**
      * @return the var
      */
-    public int getVar() {
+    final public int getVar() {
         return var;
     }
 
     /**
      * @param var the var to set
      */
-    public void setVar(final int var) {
+    final public void setVar(final int var) {
         this.var = var;
     }
 }

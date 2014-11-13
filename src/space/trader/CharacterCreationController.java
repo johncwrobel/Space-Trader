@@ -40,10 +40,9 @@ public class CharacterCreationController implements Initializable {
     private Button confirmButton;
     
     /**
-     * Takes the data from the text area, validates it and creates a Character object if valid
+     * Takes the data from the text area, validates it and creates a Character object if valid.
      * 
      * @param event ActionEvent for the listener
-     * @throws Exception exception an exception
      */
     @FXML
     private void confirm(final ActionEvent event) {
@@ -78,7 +77,7 @@ public class CharacterCreationController implements Initializable {
     }
     
     /**
-     * Goes back to title screen
+     * Goes back to title screen.
      * @param event 
      */
     @FXML
@@ -97,7 +96,7 @@ public class CharacterCreationController implements Initializable {
     }
     
     /**
-     * Checks if s is an integer
+     * Checks if s is an integer.
      * 
      * @param s a String
      * @return true if s is an integer, false otherwise
@@ -116,98 +115,98 @@ public class CharacterCreationController implements Initializable {
     /**
      * @return the nameTextArea
      */
-    public TextArea getNameTextArea() {
+    final public TextArea getNameTextArea() {
         return nameTextArea;
     }
 
     /**
      * @param nameTextArea the nameTextArea to set
      */
-    public void setNameTextArea(final TextArea nameTextArea) {
+    final public void setNameTextArea(final TextArea nameTextArea) {
         this.nameTextArea = nameTextArea;
     }
 
     /**
      * @return the pilotTextArea
      */
-    public TextArea getPilotTextArea() {
+    final public TextArea getPilotTextArea() {
         return pilotTextArea;
     }
 
     /**
      * @param pilotTextArea the pilotTextArea to set
      */
-    public void setPilotTextArea(final TextArea pilotTextArea) {
+    final public void setPilotTextArea(final TextArea pilotTextArea) {
         this.pilotTextArea = pilotTextArea;
     }
 
     /**
      * @return the fighterTextArea
      */
-    public TextArea getFighterTextArea() {
+    final public TextArea getFighterTextArea() {
         return fighterTextArea;
     }
 
     /**
      * @param fighterTextArea the fighterTextArea to set
      */
-    public void setFighterTextArea(final TextArea fighterTextArea) {
+    final public void setFighterTextArea(final TextArea fighterTextArea) {
         this.fighterTextArea = fighterTextArea;
     }
 
     /**
      * @return the traderTextArea
      */
-    public TextArea getTraderTextArea() {
+    final public TextArea getTraderTextArea() {
         return traderTextArea;
     }
 
     /**
      * @param traderTextArea the traderTextArea to set
      */
-    public void setTraderTextArea(final TextArea traderTextArea) {
+    final public void setTraderTextArea(final TextArea traderTextArea) {
         this.traderTextArea = traderTextArea;
     }
 
     /**
      * @return the engineerTextArea
      */
-    public TextArea getEngineerTextArea() {
+    final public TextArea getEngineerTextArea() {
         return engineerTextArea;
     }
 
     /**
      * @param engineerTextArea the engineerTextArea to set
      */
-    public void setEngineerTextArea(final TextArea engineerTextArea) {
+    final public void setEngineerTextArea(final TextArea engineerTextArea) {
         this.engineerTextArea = engineerTextArea;
     }
 
     /**
      * @return the investorTextArea
      */
-    public TextArea getInvestorTextArea() {
+    final public TextArea getInvestorTextArea() {
         return investorTextArea;
     }
 
     /**
      * @param investorTextArea the investorTextArea to set
      */
-    public void setInvestorTextArea(final TextArea investorTextArea) {
+    final public void setInvestorTextArea(final TextArea investorTextArea) {
         this.investorTextArea = investorTextArea;
     }
 
     /**
      * @return the confirmButton
      */
-    public Button getConfirmButton() {
+    final public Button getConfirmButton() {
         return confirmButton;
     }
 
     /**
      * @param confirmButton the confirmButton to set
      */
-    public void setConfirmButton(final Button confirmButton) {
+    final public void setConfirmButton(final Button confirmButton) {
         this.confirmButton = confirmButton;
     }
     

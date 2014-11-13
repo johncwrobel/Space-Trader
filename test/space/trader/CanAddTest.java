@@ -15,17 +15,17 @@ import org.junit.Test;
  */
 public class CanAddTest {
     /**
-     * Tests when the cargo is empty
+     * Tests when the cargo is empty.
      */
     @Test
     public final void testCanAdd() {
         Ship ship = new Ship();
         ship.setMaxCargo(10);
         
-        assertEquals(ship.canAdd(), true);
+        assertEquals("Test failed.", ship.canAdd(), true);
     }
     /**
-     * Tests when the cargo has items in it but still with room for more
+     * Tests when the cargo has items in it but still with room for more.
      */
     @Test
     public final void testCanAdd5() {
@@ -43,7 +43,7 @@ public class CanAddTest {
     }
     
     /**
-     * Tests when the cargo is full
+     * Tests when the cargo is full.
      */
     @Test
     public final void testCanAdd10() {

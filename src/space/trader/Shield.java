@@ -17,7 +17,7 @@ public class Shield {
     private int techLevel;
     private int price;
     /**
-     * Constructor for the Shield
+     * Constructor for the Shield.
      * @param name shield name
      * @param shieldLevel level for the shield
      * @param techLevel of the current planet
@@ -33,56 +33,56 @@ public class Shield {
     /**
      * @return the name
      */
-    public String getName() {
+    final public String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(final String name) {
+    final public void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the shieldLevel
      */
-    public int getShieldLevel() {
+    final public int getShieldLevel() {
         return shieldLevel;
     }
 
     /**
      * @param shieldLevel the shieldLevel to set
      */
-    public void setShieldLevel(final int shieldLevel) {
+    final public void setShieldLevel(final int shieldLevel) {
         this.shieldLevel = shieldLevel;
     }
 
     /**
      * @return the techLevel
      */
-    public int getTechLevel() {
+    final public int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    public void setTechLevel(final int techLevel) {
+    final public void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the price
      */
-    public int getPrice() {
+    final public int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    public void setPrice(final int price) {
+    final public void setPrice(final int price) {
         this.price = price;
     }
 }

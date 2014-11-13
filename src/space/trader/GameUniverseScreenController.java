@@ -30,7 +30,7 @@ import javafx.util.Duration;
 
 
 /**
- * FXML Controller class
+ * FXML Controller class.
  *
  * @author John
  */
@@ -97,7 +97,7 @@ public class GameUniverseScreenController implements Initializable {
     private String alertString = "Alert!";
     
     /**
-     * Method that handles buying fuel
+     * Method that handles buying fuel.
      * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
@@ -114,306 +114,305 @@ public class GameUniverseScreenController implements Initializable {
     /**
      * @return the saveButton
      */
-    public Button getSaveButton() {
+    final public Button getSaveButton() {
         return saveButton;
     }
 
     /**
      * @param saveButton the saveButton to set
      */
-    public void setSaveButton(final Button saveButton) {
+    final public void setSaveButton(final Button saveButton) {
         this.saveButton = saveButton;
     }
 
     /**
      * @return the loadButton
      */
-    public Button getLoadButton() {
+    final public Button getLoadButton() {
         return loadButton;
     }
 
     /**
      * @param loadButton the loadButton to set
      */
-    public void setLoadButton(final Button loadButton) {
+    final public void setLoadButton(final Button loadButton) {
         this.loadButton = loadButton;
     }
 
     /**
      * @return the playerCredits
      */
-    public Label getPlayerCredits() {
+    final public Label getPlayerCredits() {
         return playerCredits;
     }
 
     /**
      * @param playerCredits the playerCredits to set
      */
-    public void setPlayerCredits(final Label playerCredits) {
+    final public void setPlayerCredits(final Label playerCredits) {
         this.playerCredits = playerCredits;
     }
 
     /**
      * @return the goods
      */
-    public ListView<String> getGoods() {
+    final public ListView<String> getGoods() {
         return goods;
     }
 
     /**
      * @param goods the goods to set
      */
-    public void setGoods(final ListView<String> goods) {
+    final public void setGoods(final ListView<String> goods) {
         this.goods = goods;
     }
 
     /**
      * @return the selling
      */
-    public ListView<String> getSelling() {
+    final public ListView<String> getSelling() {
         return selling;
     }
 
     /**
      * @param selling the selling to set
      */
-    public void setSelling(final ListView<String> selling) {
+    final public void setSelling(final ListView<String> selling) {
         this.selling = selling;
     }
 
     /**
      * @return the buyButton
      */
-    public Button getBuyButton() {
+    final public Button getBuyButton() {
         return buyButton;
     }
 
     /**
      * @param buyButton the buyButton to set
      */
-    public void setBuyButton(final Button buyButton) {
+    final public void setBuyButton(final Button buyButton) {
         this.buyButton = buyButton;
     }
 
     /**
      * @return the sellButton
      */
-    public Button getSellButton() {
+    final public Button getSellButton() {
         return sellButton;
     }
 
     /**
      * @param sellButton the sellButton to set
      */
-    public void setSellButton(final Button sellButton) {
+    final public void setSellButton(final Button sellButton) {
         this.sellButton = sellButton;
     }
 
     /**
      * @return the cargo
      */
-    public ListView<Item> getCargo() {
+    final public ListView<Item> getCargo() {
         return cargo;
     }
 
     /**
      * @param cargo the cargo to set
      */
-    public void setCargo(final ListView<Item> cargo) {
+    final public void setCargo(final ListView<Item> cargo) {
         this.cargo = cargo;
     }
 
     /**
      * @return the currentSolarSystemLabel
      */
-    public Label getCurrentSolarSystemLabel() {
+    final public Label getCurrentSolarSystemLabel() {
         return currentSolarSystemLabel;
     }
 
     /**
      * @param currentSolarSystemLabel the currentSolarSystemLabel to set
      */
-    public void setCurrentSolarSystemLabel(final Label currentSolarSystemLabel) {
+    final public void setCurrentSolarSystemLabel(final Label currentSolarSystemLabel) {
         this.currentSolarSystemLabel = currentSolarSystemLabel;
     }
 
     /**
      * @return the currentPlanetLabel
      */
-    public Label getCurrentPlanetLabel() {
+    final public Label getCurrentPlanetLabel() {
         return currentPlanetLabel;
     }
 
     /**
      * @param currentPlanetLabel the currentPlanetLabel to set
      */
-    public void setCurrentPlanetLabel(final Label currentPlanetLabel) {
+    final public void setCurrentPlanetLabel(final Label currentPlanetLabel) {
         this.currentPlanetLabel = currentPlanetLabel;
     }
 
     /**
      * @return the fuelLabel
      */
-    public Label getFuelLabel() {
+    final public Label getFuelLabel() {
         return fuelLabel;
     }
 
     /**
      * @param fuelLabel the fuelLabel to set
      */
-    public void setFuelLabel(final Label fuelLabel) {
+    final public void setFuelLabel(final Label fuelLabel) {
         this.fuelLabel = fuelLabel;
     }
 
     /**
      * @return the planetComboBox
      */
-    public ComboBox<String> getPlanetComboBox() {
+    final public ComboBox<String> getPlanetComboBox() {
         return planetComboBox;
     }
 
     /**
      * @param planetComboBox the planetComboBox to set
      */
-    public void setPlanetComboBox(final ComboBox<String> planetComboBox) {
+    final public void setPlanetComboBox(final ComboBox<String> planetComboBox) {
         this.planetComboBox = planetComboBox;
     }
 
     /**
      * @return the universeDisplayCanvas
      */
-    public Canvas getUniverseDisplayCanvas() {
+    final public Canvas getUniverseDisplayCanvas() {
         return universeDisplayCanvas;
     }
 
     /**
      * @param universeDisplayCanvas the universeDisplayCanvas to set
      */
-    public void setUniverseDisplayCanvas(final Canvas universeDisplayCanvas) {
+    final public void setUniverseDisplayCanvas(final Canvas universeDisplayCanvas) {
         this.universeDisplayCanvas = universeDisplayCanvas;
     }
 
     /**
      * @return the selectedSystemLabel
      */
-    public Label getSelectedSystemLabel() {
+    final public Label getSelectedSystemLabel() {
         return selectedSystemLabel;
     }
 
     /**
      * @param selectedSystemLabel the selectedSystemLabel to set
      */
-    public void setSelectedSystemLabel(final Label selectedSystemLabel) {
+    final public void setSelectedSystemLabel(final Label selectedSystemLabel) {
         this.selectedSystemLabel = selectedSystemLabel;
     }
 
     /**
      * @return the travelButton
      */
-    public Button getTravelButton() {
+    final public Button getTravelButton() {
         return travelButton;
     }
 
     /**
      * @param travelButton the travelButton to set
      */
-    public void setTravelButton(final Button travelButton) {
+    final public void setTravelButton(final Button travelButton) {
         this.travelButton = travelButton;
     }
 
     /**
      * @return the jumpButton
      */
-    public Button getJumpButton() {
+    final public Button getJumpButton() {
         return jumpButton;
     }
 
     /**
      * @param jumpButton the jumpButton to set
      */
-    public void setJumpButton(final Button jumpButton) {
+    final public void setJumpButton(final Button jumpButton) {
         this.jumpButton = jumpButton;
     }
 
     /**
      * @return the upgradeShipButton
      */
-    public Button getUpgradeShipButton() {
+    final public Button getUpgradeShipButton() {
         return upgradeShipButton;
     }
 
     /**
      * @param upgradeShipButton the upgradeShipButton to set
      */
-    public void setUpgradeShipButton(final Button upgradeShipButton) {
+    final public void setUpgradeShipButton(final Button upgradeShipButton) {
         this.upgradeShipButton = upgradeShipButton;
     }
 
     /**
      * @return the start
      */
-    public Button getStart() {
+    final public Button getStart() {
         return start;
     }
 
     /**
      * @param start the start to set
      */
-    public void setStart(final Button start) {
+    final public void setStart(final Button start) {
         this.start = start;
     }
 
     /**
      * @return the selectedSystem
      */
-    public SolarSystem getSelectedSystem() {
+    final public SolarSystem getSelectedSystem() {
         return selectedSystem;
     }
 
     /**
      * @param selectedSystem the selectedSystem to set
      */
-    public void setSelectedSystem(final SolarSystem selectedSystem) {
+    final public void setSelectedSystem(final SolarSystem selectedSystem) {
         this.selectedSystem = selectedSystem;
     }
 
     /**
      * @return the clock
      */
-    public Timeline getClock() {
+    final public Timeline getClock() {
         return clock;
     }
 
     /**
      * @param clock the clock to set
      */
-    public void setClock(final Timeline clock) {
+    final public void setClock(final Timeline clock) {
         this.clock = clock;
     }
 
     /**
      * @return the alertString
      */
-    public String getAlertString() {
+    final public String getAlertString() {
         return alertString;
     }
 
     /**
      * @param alertString the alertString to set
      */
-    public void setAlertString(final String alertString) {
+    final public void setAlertString(final String alertString) {
         this.alertString = alertString;
     }
     
     /**
-     * Class to help handle a timer that should help 
-     * update the screen automatically
+     * Class to help handle a timer that should help update the screen automatically.
      */
     public class TimeClass implements EventHandler {
 
  
         /**
-         * Handles the passing of the counter
+         * Handles the passing of the counter.
          * @param event 
          */
         public final void handle(final Event event) {
@@ -423,7 +422,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Method to save the game
+     * Method to save the game.
      * @param event 
      */
     public final void save(final ActionEvent event) {
@@ -432,7 +431,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Method to load the game
+     * Method to load the game.
      * @param event 
      */
     public final void load(final ActionEvent event) {
@@ -454,7 +453,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Handler for traveling
+     * Handler for traveling.
      * @param event the event
      */
     public final void travel(final ActionEvent event) {
@@ -484,7 +483,7 @@ public class GameUniverseScreenController implements Initializable {
     
     
     /**
-     * updates the text
+     * updates the text.
      */
     private void updateText() { 
         final String credits = "Credits: " + SpaceTrader.getMainCharacter().getCredits(); //build everything into strings
@@ -510,7 +509,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * function to buy an item
+     * function to buy an item.
      * @param event 
      */
     @FXML
@@ -530,7 +529,7 @@ public class GameUniverseScreenController implements Initializable {
         updateScreen();
     }
     /**
-     * Moves player between planets in a solar system
+     * Moves player between planets in a solar system.
      * @param event 
      */
     @FXML
@@ -551,7 +550,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Function to sell an Item
+     * Function to sell an Item.
      * @param event 
      */
     @FXML
@@ -568,14 +567,12 @@ public class GameUniverseScreenController implements Initializable {
     };
     
     /**
-     * Function to start the game
+     * Function to start the game.
      * @param event 
      */
     @FXML
     public final void startGame(final ActionEvent event) {
         final ObservableList<String> observable = getPlanets();
-        for (int x = 0; x < observable.size(); x++) {
-        }
         
         updateScreen();
         
@@ -587,7 +584,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Helper method to update the list of planets
+     * Helper method to update the list of planets.
      * @return the list of planets
      */
     public final ObservableList<String> getPlanets() {
@@ -602,7 +599,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Helper method to update the view
+     * Helper method to update the view.
      */
     private void updateScreen() {
         final GraphicsContext gc = getUniverseDisplayCanvas().getGraphicsContext2D();
@@ -629,7 +626,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Handles the user clicking on new systems
+     * Handles the user clicking on new systems.
      * @param e 
      */
     public final void chooseSystem(final MouseEvent e) {
@@ -642,7 +639,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Changes the scene to the upgrade ship screen
+     * Changes the scene to the upgrade ship screen.
      * @param e the event
      */
     public final void upgradeShip(final ActionEvent e) {
@@ -650,7 +647,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     
     /**
-     * Draws the planets
+     * Draws the planets.
      * @param gc 
      */
     private void drawShapes(final GraphicsContext gc){

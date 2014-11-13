@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
- * FXML Controller class
+ * FXML Controller class.
  *
  * @author John
  */
@@ -46,7 +46,7 @@ public class PoliceEncounterScreenController implements Initializable {
     } 
     
     /**
-     * handles the option to bribe the police
+     * handles the option to bribe the police.
      * @param event the event
      */
     @FXML
@@ -56,7 +56,7 @@ public class PoliceEncounterScreenController implements Initializable {
     }
     
     /**
-     * handles the option to search
+     * handles the option to search.
      * @param event the event
      */
     @FXML
@@ -66,7 +66,7 @@ public class PoliceEncounterScreenController implements Initializable {
     }
     
     /**
-     * handles the fight option
+     * handles the fight option.
      * @param event the event
      */
     @FXML
