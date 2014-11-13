@@ -29,6 +29,11 @@ import javafx.util.Duration;
  */
 public class PirateEncounterScreenController implements Initializable {
 
+    private final int twenty = 20;
+    private final int offset = 10;
+    private final int rectSize = 400;
+    private final int price = 300;
+
     /**
      * @variable canvas where the game is displayed
      */
@@ -62,7 +67,7 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable target helps shooting
      */
-    private boolean[][] target = new boolean[20][20];
+    private boolean[][] target = new boolean[twenty][twenty];
 
     /**
      * @variable playing shows if player is playing
@@ -88,11 +93,11 @@ public class PirateEncounterScreenController implements Initializable {
      */
     public final void updateCanvas() {
         final GraphicsContext gc = getCanvas().getGraphicsContext2D();
-        gc.clearRect(0, 0, 400, 400);
+        gc.clearRect(0, 0, rectSize, rectSize);
         for (int i = 0; i < getTarget().length; i++) {
             for (int j = 0; j < getTarget()[0].length; j++) {
                 if (getTarget()[i][j]) {
-                    gc.fillRect(i * 20, j * 20, 20, 20);
+                    gc.fillRect(i * twenty, j * twenty, twenty, twenty);
                 }
             }
         }
@@ -227,7 +232,7 @@ public class PirateEncounterScreenController implements Initializable {
                     getTime().setText("You Win");
                 }
                 setPlaying(false);
-                SpaceTrader.getMainCharacter().buy(300);
+                SpaceTrader.getMainCharacter().buy(price);
                 SpaceTrader.setGameScene();
             }
             setCounter(getCounter() - 1);
@@ -270,11 +275,11 @@ public class PirateEncounterScreenController implements Initializable {
             getTime().setText("TIMER: " + count + " seconds");
             count--;
 
-            setTarget(new boolean[20][20]);
+            setTarget(new boolean[twenty][twenty]);
 
-            for (int i = 0; i < 3; i++) {
-                final int x = (int) (Math.random() * 20);
-                final int y = (int) (Math.random() * 20);
+            for (int i = 0; i < timer; i++) {
+                final int x = (int) (Math.random() * twenty);
+                final int y = (int) (Math.random() * twenty);
                 if (!getTarget()[x][y]) {
                     getTarget()[x][y] = true;
                 } else {
@@ -286,7 +291,7 @@ public class PirateEncounterScreenController implements Initializable {
 
             final TimeClass tc = new TimeClass(count);
             setClock(new Timeline(new KeyFrame(Duration.seconds(1), tc)));
-            getClock().setCycleCount(4);
+            getClock().setCycleCount(timer+1);
             getClock().play();
         }
     }
@@ -313,14 +318,14 @@ public class PirateEncounterScreenController implements Initializable {
      * @param e the event
      */
     public final void shoot(final MouseEvent e) {
-        final int x = (int) (e.getX() / 20);
-        final int y = (int) (e.getY() / 20);
+        final int x = (int) (e.getX() / twenty);
+        final int y = (int) (e.getY() / twenty);
 
         if (getTarget()[x][y] && isPlaying()) {
             getTarget()[x][y] = false;
             if (hasWon()) {
                 setPlaying(false);
-                SpaceTrader.getMainCharacter().sell(300);
+                SpaceTrader.getMainCharacter().sell(price);
                 SpaceTrader.setGameScene();
             }
         }
@@ -348,8 +353,8 @@ public class PirateEncounterScreenController implements Initializable {
         final double x = e.getX();
         final double y = e.getY();
         gc.setStroke(Color.GREEN);
-        gc.strokeLine(x - 10, y, x + 10, y);
-        gc.strokeLine(x, y - 10, x, y + 10);
+        gc.strokeLine(x - offset, y, x + offset, y);
+        gc.strokeLine(x, y - offset, x, y + offset);
     }
 
 }
