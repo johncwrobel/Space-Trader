@@ -7,33 +7,33 @@ import java.util.ArrayList;
  *
  * @author Benjamin Cervantes
  */
-public class Universe implements Serializable{
-                
+public class Universe implements Serializable {
+
     /**
      * @variable serialVersionUID no idea what this thing does
      */
     private static final long serialVersionUID = 42L;
-                    
+
     /**
      * @variable numberOfSS how many solar systems you want
      */
     private int numberOfSS;
-                    
+
     /**
      * @variable solarSystems backing array for the solar systems
      */
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
-                    
+
     /**
      * @variable booleanArray the array that decides system positions
      */
     private boolean[][] booleanArray;
-                    
+
     /**
      * @variable homeSolarSystem starting position
      */
     private SolarSystem homeSolarSystem;
-                    
+
     /**
      * @variable homePlanet starting position
      */
@@ -107,28 +107,28 @@ public class Universe implements Serializable{
     /**
      * @return the numberOfSolarSystems
      */
-    final public int getNumberOfSolarSystems() {
+    public final int getNumberOfSolarSystems() {
         return numberOfSS;
     }
 
     /**
      * @param numberOfSS the numberOfSolarSystems to set
      */
-    final public void setNumberOfSolarSystems(final int numberOfSS) {
+    public final void setNumberOfSolarSystems(final int numberOfSS) {
         this.numberOfSS = numberOfSS;
     }
 
     /**
      * @return the solarSystems
      */
-    final public ArrayList<SolarSystem> getSolarSystems() {
+    public final ArrayList<SolarSystem> getSolarSystems() {
         return solarSystems;
     }
 
     /**
      * @param solarSystems the solarSystems to set
      */
-    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems)
+    public final void setSolarSystems(final ArrayList<SolarSystem> solarSystems)
     {
         this.solarSystems = solarSystems;
     }
@@ -136,14 +136,14 @@ public class Universe implements Serializable{
     /**
      * @return the booleanArray
      */
-    final public boolean[][] getBooleanArray() {
+    public final boolean[][] getBooleanArray() {
         return booleanArray;
     }
 
     /**
      * @param booleanArray the booleanArray to set
      */
-    final public void setBooleanArray(final boolean[][] booleanArray) {
+    public final void setBooleanArray(final boolean[][] booleanArray) {
         final boolean[][] copy = booleanArray;
         this.booleanArray = copy;
     }
@@ -151,28 +151,28 @@ public class Universe implements Serializable{
     /**
      * @return the homeSolarSystem
      */
-    final public SolarSystem getHomeSolarSystem() {
+    public final SolarSystem getHomeSolarSystem() {
         return homeSolarSystem;
     }
 
     /**
      * @param homeSolarSystem the homeSolarSystem to set
      */
-    final public void setHomeSolarSystem(final SolarSystem homeSolarSystem) {
+    public final void setHomeSolarSystem(final SolarSystem homeSolarSystem) {
         this.homeSolarSystem = homeSolarSystem;
     }
 
     /**
      * @return the homePlanet
      */
-    final public Planet getHomePlanet() {
+    public final Planet getHomePlanet() {
         return homePlanet;
     }
 
     /**
      * @param homePlanet the homePlanet to set
      */
-    final public void setHomePlanet(final Planet homePlanet) {
+    public final void setHomePlanet(final Planet homePlanet) {
         this.homePlanet = homePlanet;
     }
 

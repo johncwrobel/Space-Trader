@@ -26,70 +26,70 @@ import javafx.scene.text.Text;
  * @author John
  */
 public class TraderEncounterScreenController implements Initializable {
- 
+
     /**
      * @variable tradeButton button to trade
      */
     @FXML
     private Button tradeButton;
-    
-        
+
+
     /**
      * @variable ignoreButton button to ignore
      */
     @FXML
     private Button ignoreButton;
-    
-        
+
+
     /**
      * @variable fightButton button to fight
      */
     @FXML
     private Button fightButton;
-    
-        
+
+
     /**
      * @variable buyButton button to buy
      */
     @FXML
     private Button buyButton;
-    
-        
+
+
     /**
      * @variable sellButton button to sell
      */
     @FXML
     private Button sellButton;
-    
-        
+
+
     /**
      * @variable playerItems display of the player's items
      */
     @FXML
     private ListView<String> playerItems;
-    
-        
+
+
     /**
      * @variable traderItems display of the trader's items
      */
     @FXML
     private ListView<String> traderItems;
-    
-        
+
+
     /**
      * @variable dialog the dialog box
      */
     @FXML
     private TextField dialog;
-    
-        
+
+
     /**
      * @variable credits the player's credits
      */
     @FXML
     private Text credits;
-    
-        
+
+
     /**
      * @variable newPlanet the next planet
      */
@@ -119,7 +119,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the trade option.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void trade(final ActionEvent event) {
@@ -143,7 +143,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * function to buy an item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void buy(final ActionEvent event) {
@@ -170,7 +170,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Function to sell an Item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void sell(final ActionEvent event) {
@@ -191,7 +191,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the ignore option.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void ignore(final ActionEvent event) {
@@ -207,10 +207,10 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the fight option.
-     * @param even
+     * @param event the event
      */
     @FXML
-    public final void fight(final ActionEvent even) {
+    public final void fight(final ActionEvent event) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
         getDialog().setText(dialogString);
         getTradeButton().setDisable(false);
@@ -253,140 +253,140 @@ public class TraderEncounterScreenController implements Initializable {
     /**
      * @return the tradeButton
      */
-    final public Button getTradeButton() {
+    public final Button getTradeButton() {
         return tradeButton;
     }
 
     /**
      * @param tradeButton the tradeButton to set
      */
-    final public void setTradeButton(final Button tradeButton) {
+    public final void setTradeButton(final Button tradeButton) {
         this.tradeButton = tradeButton;
     }
 
     /**
      * @return the ignoreButton
      */
-    final public Button getIgnoreButton() {
+    public final Button getIgnoreButton() {
         return ignoreButton;
     }
 
     /**
      * @param ignoreButton the ignoreButton to set
      */
-    final public void setIgnoreButton(final Button ignoreButton) {
+    public final void setIgnoreButton(final Button ignoreButton) {
         this.ignoreButton = ignoreButton;
     }
 
     /**
      * @return the fightButton
      */
-    final public Button getFightButton() {
+    public final Button getFightButton() {
         return fightButton;
     }
 
     /**
      * @param fightButton the fightButton to set
      */
-    final public void setFightButton(final Button fightButton) {
+    public final void setFightButton(final Button fightButton) {
         this.fightButton = fightButton;
     }
 
     /**
      * @return the buyButton
      */
-    final public Button getBuyButton() {
+    public final Button getBuyButton() {
         return buyButton;
     }
 
     /**
      * @param buyButton the buyButton to set
      */
-    final public void setBuyButton(final Button buyButton) {
+    public final void setBuyButton(final Button buyButton) {
         this.buyButton = buyButton;
     }
 
     /**
      * @return the sellButton
      */
-    final public Button getSellButton() {
+    public final Button getSellButton() {
         return sellButton;
     }
 
     /**
      * @param sellButton the sellButton to set
      */
-    final public void setSellButton(final Button sellButton) {
+    public final void setSellButton(final Button sellButton) {
         this.sellButton = sellButton;
     }
 
     /**
      * @return the playerItems
      */
-    final public ListView<String> getPlayerItems() {
+    public final ListView<String> getPlayerItems() {
         return playerItems;
     }
 
     /**
      * @param playerItems the playerItems to set
      */
-    final public void setPlayerItems(final ListView<String> playerItems) {
+    public final void setPlayerItems(final ListView<String> playerItems) {
         this.playerItems = playerItems;
     }
 
     /**
      * @return the traderItems
      */
-    final public ListView<String> getTraderItems() {
+    public final ListView<String> getTraderItems() {
         return traderItems;
     }
 
     /**
      * @param traderItems the traderItems to set
      */
-    final public void setTraderItems(final ListView<String> traderItems) {
+    public final void setTraderItems(final ListView<String> traderItems) {
         this.traderItems = traderItems;
     }
 
     /**
      * @return the dialog
      */
-    final public TextField getDialog() {
+    public final TextField getDialog() {
         return dialog;
     }
 
     /**
      * @param dialog the dialog to set
      */
-    final public void setDialog(final TextField dialog) {
+    public final void setDialog(final TextField dialog) {
         this.dialog = dialog;
     }
 
     /**
      * @return the credits
      */
-    final public Text getCredits() {
+    public final Text getCredits() {
         return credits;
     }
 
     /**
      * @param credits the credits to set
      */
-    final public void setCredits(final Text credits) {
+    public final void setCredits(final Text credits) {
         this.credits = credits;
     }
 
     /**
      * @return the newPlanet
      */
-    final public Planet getNewPlanet() {
+    public final Planet getNewPlanet() {
         return newPlanet;
     }
 
     /**
      * @param newPlanet the newPlanet to set
      */
-    final public void setNewPlanet(final Planet newPlanet) {
+    public final void setNewPlanet(final Planet newPlanet) {
         this.newPlanet = newPlanet;
     }
 }

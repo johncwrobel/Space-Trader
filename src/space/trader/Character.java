@@ -12,43 +12,43 @@ public class Character implements Serializable, CharacterInterface {
          * @variable serialVersionUID no idea what this is
          */
         private static final long serialVersionUID = 42L;
-        
+
         /**
          * @variable name the character's name
          */
         private String name;
-        
+
         /**
          * @variablecredits the character's credits
          */
         private int credits;
-        
+
         /**
          * @variable pilot the character's pilot skill level
          */
         private int pilot;
-        
+
         /**
          * @variable fighter the character's fighter skill level
          */
         private int fighter;
-        
-        
+
+
         /**
          * @variable trader the character's trader skill level
          */
         private int trader;
-        
+
         /**
          * @variable engineer the character's engineer skill level
          */
         private int engineer;
-        
+
         /**
          * @variable the character's investor skill level
          */
         private int investor;
-        
+
         /**
          * @variable if the character is a criminal or not
          */
@@ -164,7 +164,7 @@ public class Character implements Serializable, CharacterInterface {
 
         /**
          * Facilitates the selling process.
-         * @param price
+         * @param price the price of the item to be sold
          */
         public final void sell(final int price) {
             setCredits(credits + price);

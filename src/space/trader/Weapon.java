@@ -16,22 +16,22 @@ package space.trader;
  * @author Tommy Lee
  */
 public class Weapon {
- 
+
     /**
      * @variable name weapon's name
      */
     private String name;
-        
+
     /**
      * @variable weaponLevel weapon's level
      */
     private int weaponLevel;
-        
+
     /**
      * @variable techLevel techLevel required for the weapon
      */
     private int techLevel;
-        
+
     /**
      * @variable price weapon;s price
      */

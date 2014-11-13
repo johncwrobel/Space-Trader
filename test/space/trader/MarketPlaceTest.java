@@ -13,12 +13,12 @@ import org.junit.Test;
  *
  * @author tanmay
  */
-public class MarketPlaceTest {      
+public class MarketPlaceTest {
     /**
      * @variable test an instance for the tests
      */
     private transient MarketPlace test;
-                    
+
     /**
      * @variable i an instance for the tests
      */
@@ -28,7 +28,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell0() {
+    public final void testCanSell0() {
         test = new MarketPlace(0);
 
         //test in bounds
@@ -61,7 +61,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell2() {
+    public final void testCanSell2() {
         test = new MarketPlace(2);
 
         //test in bounds
@@ -78,7 +78,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell3() {
+    public final void testCanSell3() {
         test = new MarketPlace(3);
 
         //test in bounds
@@ -95,7 +95,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell4() {
+    public final void testCanSell4() {
         test = new MarketPlace(4);
 
         //test in bounds
@@ -109,7 +109,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell5() {
+    public final void testCanSell5() {
         test = new MarketPlace(5);
 
         //test in bounds

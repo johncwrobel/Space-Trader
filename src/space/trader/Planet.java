@@ -6,33 +6,33 @@ import java.io.Serializable;
  *
  * @author Benjamin Cervantes and John Wrobel
  */
-public class Planet implements Serializable{
-    
+public class Planet implements Serializable {
+
     /**
      * @variable serialVersionUID no clue what this is for
      */
     private static final long serialVersionUID = 42L;
-    
+
     /**
      * @variable name planet's name
      */
     private String name;
-    
+
     /**
      * @variable techLevel planet's techLevel
      */
     private int techLevel;
-        
+
     /**
      * @variable resources planet's resources
      */
     private int resources;
-    
+
     /**
      * @variable parentSystem planet's system
      */
     private SolarSystem parentSystem;
-        
+
     /**
      * @variable marketplace planet's marketplace
      */

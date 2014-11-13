@@ -43,7 +43,7 @@ public interface CharacterInterface {
 
     /**
      * Method to handle any purchase.
-     * @param price
+     * @param price the cost of the item
      */
     void buy(int price);
 
@@ -56,7 +56,7 @@ public interface CharacterInterface {
 
     /**
      * Method to handle sale of an item.
-     * @param price
+     * @param price the cost of the item
      */
     void sell(int price);
 
@@ -92,7 +92,7 @@ public interface CharacterInterface {
 
     /**
      * Sets the player as wanted or not.
-     * @param criminal
+     * @param criminal if they're a criminal
      */
     void setCriminal(boolean criminal);
 
