@@ -57,7 +57,7 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable timer amount of time to play game
      */
-    private int timer = 3;
+    private final int timer = 3;
 
     /**
      * @variable clock the time keeper
