@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 public class Planet implements Serializable {
 
+    private final int numTechLevels = 8;
+    private final int numResources = 13;
     /**
      * @variable serialVersionUID no clue what this is for
      */
@@ -46,8 +48,8 @@ public class Planet implements Serializable {
     public Planet(final SolarSystem parent, final String name) {
         parentSystem = parent;
         this.name = name;
-        techLevel = (int) (Math.random() * 8);
-        resources = (int) (Math.random() * 13);
+        techLevel = (int) (Math.random() * numTechLevels);
+        resources = (int) (Math.random() * numResources);
         marketplace = new MarketPlace(getTechLevel());
     }
 
