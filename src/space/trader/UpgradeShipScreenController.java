@@ -227,6 +227,10 @@ public class UpgradeShipScreenController implements Initializable {
                 addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
                     observable, final String oldValue, final String newValue) {
+<<<<<<< HEAD
+=======
+                //does nothing
+>>>>>>> origin/master
           }
         });
     }
@@ -234,7 +238,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Handler to let the player get back to the game.
-     * @param e
+     * @param e the event
      */
     public final void returnToGame(final ActionEvent e) {
         SpaceTrader.backToMain();
@@ -243,7 +247,7 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * Handler to purchase a new ship.
      * all of these follow the same structure
-     * @param e
+     * @param e the event
      */
     public final void purchaseFalcon(final ActionEvent e) {
         if (SpaceTrader.getMainCharacter().canBuy(1000)) {
@@ -263,7 +267,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Handler to purchase a new ship.
-     * @param e
+     * @param e the event
      */
     public final void purchaseEnterprise(final ActionEvent e) {
         if (SpaceTrader.getMainCharacter().canBuy(2000)) {
@@ -278,7 +282,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Handler to purchase a new ship.
-     * @param e
+     * @param e the event
      */
     public final void purchaseGalactica(final ActionEvent e) {
         if (SpaceTrader.getMainCharacter().canBuy(3000)) {
@@ -293,7 +297,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Handler to purchase a new ship.
-     * @param e
+     * @param e the event
      */
     public final void purchaseDaedalus(final ActionEvent e) {
         if (SpaceTrader.getMainCharacter().canBuy(4000)) {
@@ -308,7 +312,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Enables the buttons to purchase ship upgrades.
-     * @param e
+     * @param e the event
      */
     public final void showShipUpgrade(final ActionEvent e) {
         getWeaponButton().setDisable(false);
@@ -328,7 +332,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Enables the buttons to purchase new ship.
-     * @param e
+     * @param e the event
      */
     public final void buyNewShip(final ActionEvent e) {
         getShieldUpgradeButton().setDisable(true);
@@ -352,7 +356,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Handler to upgrade Shield.
-     * @param e
+     * @param e the event
      */
     public final void upgradeShield(final ActionEvent e) {
         final ObservableList<String> selectedItem = getGadgetListView().
@@ -390,7 +394,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * handler to upgrade Gadget.
-     * @param e
+     * @param e the event
      */
     public final void upgradeGadget(final ActionEvent e) {
         if (SpaceTrader.getMainCharacter().canBuy(500)) {
@@ -445,7 +449,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Displays the list of shield upgrades.
-     * @param e
+     * @param e the event
      */
     public final void setShieldButton(final ActionEvent e) {
         getViewGadgetButton().setDisable(false);
@@ -470,7 +474,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Displays the list of weapon upgrades.
-     * @param e
+     * @param e the event
      */
     public final void setWeaponButton(final ActionEvent e) {
         getViewGadgetButton().setDisable(false);
@@ -495,7 +499,7 @@ public class UpgradeShipScreenController implements Initializable {
 
     /**
      * Displays the gadget information and previews.
-     * @param e
+     * @param e the event
      */
     public final void viewGadget(final ActionEvent e) {
         if (isIsShieldButtonPressed()) {
