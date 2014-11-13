@@ -71,7 +71,7 @@ public class Character implements Serializable, CharacterInterface {
             this.trader = trader;
             this.engineer = engineer;
             this.investor = investor;
-            this.credits = 2000;
+            this.credits = credits;
             this.criminal = criminal;
         }
 
