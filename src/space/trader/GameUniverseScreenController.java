@@ -579,11 +579,6 @@ public class GameUniverseScreenController implements Initializable {
     @FXML
     public final void startGame(final ActionEvent event) {
         final ObservableList<String> observable = getPlanets();
-<<<<<<< HEAD
-=======
-        for (int x = 0; x < observable.size(); x++){
-        }
->>>>>>> origin/master
         
         updateScreen();
         

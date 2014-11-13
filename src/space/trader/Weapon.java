@@ -11,6 +11,10 @@
 
 package space.trader;
 
+/**
+ * Class to represent weapons.
+ * @author Tommy Lee
+ */
 public class Weapon {
     
     private String name;

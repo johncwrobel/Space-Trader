@@ -3,6 +3,10 @@ package space.trader;
 import java.io.Serializable;
 import javax.swing.JOptionPane;
 
+/**
+ * Class to represent the player's character.
+ * @author John
+ */
 public class Character implements Serializable, CharacterInterface {
         private static final long serialVersionUID = 42L;
         private String name;

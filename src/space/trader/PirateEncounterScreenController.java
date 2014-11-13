@@ -174,6 +174,9 @@ public class PirateEncounterScreenController implements Initializable {
         this.playing = playing;
     }
     
+    /**
+     * TimeClass to update screen and keep track of time.
+     */
     public class TimeClass implements EventHandler {
 
         private int counter;
