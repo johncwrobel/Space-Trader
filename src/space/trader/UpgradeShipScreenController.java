@@ -30,6 +30,9 @@ import javafx.scene.image.ImageView;
  */
 public class UpgradeShipScreenController implements Initializable {
 
+    private final int hundo = 100;
+    private final int plvl5 = 5;
+
     /**
      * @variable buyFalcon button to buy Falcon
      */
@@ -218,22 +221,22 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * @variable falconPrice cost of the falcon
      */
-    private int falconPrice = 1000;
+    private final int falconPrice = 1000;
 
     /**
      * @variable enterprisePrice cost of the enterprise
      */
-    private int enterprisePrice = 2000;
+    private final int enterprisePrice = 2000;
 
     /**
      * @variable galacticaPrice cost of the galactica
      */
-    private int galacticaPrice = 3000;
+    private final int galacticaPrice = 3000;
 
     /**
      * @variable daedalusPrice cost of the daedalus
      */
-    private int daedalusPrice = 4000;
+    private final int daedalusPrice = 4000;
 
     /**
      * Initializes the controller class.
@@ -407,7 +410,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e the event
      */
     public final void upgradeGadget(final ActionEvent e) {
-        int gadgetSlotPrice = 500;
+        final int gadgetSlotPrice = 500;
         if (SpaceTrader.getMainCharacter().canBuy(gadgetSlotPrice)) {
             SpaceTrader.getMainCharacter().buy(gadgetSlotPrice);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
@@ -473,7 +476,7 @@ public class UpgradeShipScreenController implements Initializable {
         for (int x = 0; x <= getTechLevel(); x++) {
             getShields().add(new Shield(("Shield Level "
                     + (x + 1)), (2 * (x + 1)),
-                    x, (100 * (x + 1))));
+                    x, (hundo * (x + 1))));
             shieldListString.add(getShields().get(x).getName());
         }
         final ObservableList<String> observable = FXCollections.
@@ -498,7 +501,7 @@ public class UpgradeShipScreenController implements Initializable {
         for (int x = 0; x <= getTechLevel(); x++) {
             getWeapons().add(new Weapon(("Weapon Level "
                     + (x + 1)), (2 * (x + 1)),
-                    x , (100 * (x + 1))));
+                    x , (hundo * (x + 1))));
             weaponListString.add(getWeapons().get(x).getName());
         }
         final ObservableList<String> observable = FXCollections.
@@ -540,7 +543,7 @@ public class UpgradeShipScreenController implements Initializable {
             type = temp[0];
         }
 
-        if ("Shield".equals(type) && (powerLevel == 1 || powerLevel == 5)) {
+        if ("Shield".equals(type) && (powerLevel == 1 || powerLevel == plvl5)) {
             final String img = "weapon" + (powerLevel) + ".jpg";
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.
                     class.getResourceAsStream(img)));
