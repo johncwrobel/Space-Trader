@@ -36,64 +36,148 @@ import javafx.util.Duration;
  */
 public class GameUniverseScreenController implements Initializable {
 
+        
+    /**
+     * @variable saveButton button to save
+     */
     @FXML
     private Button saveButton;
     
+        
+    /**
+     * @variable loadButton button to load
+     */
     @FXML
     private Button loadButton;
     
+        
+    /**
+     * @variable playerCredits the player's credits
+     */
     @FXML
     private Label playerCredits;
     
+        
+    /**
+     * @variable goods the goods, dawg
+     */
     @FXML
     private ListView<String> goods;
     
+        
+    /**
+     * @variable selling what's being sold
+     */
     @FXML
     private ListView<String> selling;
     
+        
+    /**
+     * @variable buyButton button to buy
+     */
     @FXML
     private Button buyButton;
     
+        
+    /**
+     * @variable sellButton button to sell
+     */
     @FXML
     private Button sellButton;
     
+        
+    /**
+     * @variable cargo ship's cargo
+     */
     @FXML
     private ListView<Item> cargo;
     
+        
+    /**
+     * @variable currentSolarSystemLabel name says it all
+     */
     @FXML 
     private Label currentSolarSystemLabel;
     
+        
+    /**
+     * @variable currentPlanetLebel you guessed it!
+     */
     @FXML
     private Label currentPlanetLabel;
     
+        
+    /**
+     * @variable fuelLabel displays current fuel
+     */
     @FXML
     private Label fuelLabel;
     
+        
+    /**
+     * @variable planetComboBox the dropdown for planets
+     */
     @FXML
     private ComboBox<String> planetComboBox;
     
+        
+    /**
+     * @variable universeDisplayCanvas what the universe is displayed on
+     */
     @FXML
     private Canvas universeDisplayCanvas;
     
+        
+    /**
+     * @variable selectedSystemLabel displays selected system
+     */
     @FXML
     private Label selectedSystemLabel;
     
+        
+    /**
+     * @variable travelButton facilitates traveling
+     */
     @FXML
     private Button travelButton;
     
+        
+    /**
+     * @variable jumpButton hop around, hop around
+     */
     @FXML
     private Button jumpButton;
     
+        
+    /**
+     * @variable upgradeShipButton button to upgrade ship
+     */
     @FXML
     private Button upgradeShipButton;
     
+        
+    /**
+     * @variable start StartGame button
+     */
     @FXML
     private Button start;
     
+        
+    /**
+     * @variable selectedSystem currently selected system
+     */
     private SolarSystem selectedSystem = null;
     
+        
+    /**
+     * @variable clock tick tock
+     */
     private Timeline clock;
     
+        
+    /**
+     * @variable hurray for dumb checkstyle fixes!
+     */
     private String alertString = "Alert!";
     
     /**

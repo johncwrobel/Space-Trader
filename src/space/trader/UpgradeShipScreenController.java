@@ -32,80 +32,192 @@ import javafx.scene.image.ImageView;
  */
 public class UpgradeShipScreenController implements Initializable {
     
+        
+    /**
+     * @variable buyFalcon button to buy Falcon
+     */
     @FXML
     private Button buyFalcon;
     
+        
+    /**
+     * @variable buyEnterprise button to buy Enterprise
+     */
     @FXML
     private Button buyEnterprise;
     
+        
+    /**
+     * @variable buyGalactica button to buy Galactica
+     */
     @FXML
     private Button buyGalactica;
     
+        
+    /**
+     * @variable buyDaedalus button to buy Daedalus
+     */
     @FXML
     private Button buyDaedalus;
     
+        
+    /**
+     * @variable successLabel label to display upgrade success
+     */
     @FXML
     private Label successLabel;
     
+        
+    /**
+     * @variable creditLabel label to display credits
+     */
     @FXML
     private Label creditLabel;
     
+        
+    /**
+     * @variable currentSlotsLabel label to display current slots
+     */
     @FXML
     private Label currentSlotsLabel;
-            
+    
+        
+    /**
+     * @variable shieldUpgradeButton button to upgrade shield
+     */
     @FXML
     private Button shieldUpgradeButton;
     
+        
+    /**
+     * @variable gadgetUpgradeButton button to increase gadget slots
+     */
     @FXML
     private Button gadgetUpgradeButton;
     
+        
+    /**
+     * @variable weaponUpgradeButton button to upgrade weapon
+     */
     @FXML
     private Button weaponUpgradeButton;
     
+        
+    /**
+     * @variable showShipUpgradesButton button to show ship upgrades
+     */
     @FXML
     private Button showShipUpgradesButton;
     
+        
+    /**
+     * @variable newShipButton button to show new ship
+     */
     @FXML
     private Button newShipButton;
     
+        
+    /**
+     * @variable currentShipLabel label to show current ship
+     */
     @FXML
     private Label currentShipLabel;
-
+    
+        
+    /**
+     * @variable currentShipPowerLabel label to show current ship power
+     */
     @FXML
     private Label currentShipPowerLabel;
     
+        
+    /**
+     * @variable imageViewMane the ImageView, mane
+     */
     @FXML
     private ImageView imageViewMane;
     
+        
+    /**
+     * @variable gadgetListView the listView for the gadgets
+     */
     @FXML
     private ListView gadgetListView;
     
+        
+    /**
+     * @variable viewGadgetButton the button to view gadgets
+     */
     @FXML
     private Button viewGadgetButton;
     
+        
+    /**
+     * @variable weaponButton button for weapons
+     */
     @FXML
     private Button weaponButton;
     
+        
+    /**
+     * @variable shieldButton button for shields
+     */
     @FXML
     private Button shieldButton;
     
+        
+    /**
+     * @variable shieldPriceLabel label to show shield price
+     */
     @FXML
     private Label shieldPriceLabel;
     
+        
+    /**
+     * @variable weaponPriceLabal label to show weapon price
+     */
     @FXML
     private Label weaponPriceLabel;
     
+        
+    /**
+     * @variable techLevel planet's tech level
+     */
     private int techLevel;
     
+        
+    /**
+     * @variable isShieldButtonPressed boolean to check if a button is pressed
+     */
     private boolean isShieldButtonPressed = false;
+        
+    /**
+     * @variable isWeaponButtonPRessed boolean to check if a button is pressed
+     */
     private boolean isWeaponButtonPressed = false;
     
+        
+    /**
+     * @variable shields ArrayList to hold all the shields
+     */
     private ArrayList<Shield> shields = new ArrayList();
     
+        
+    /**
+     * @variable weapons ArrayList to hold all weapons
+     */
     private ArrayList<Weapon> weapons = new ArrayList();
     
+        
+    /**
+     * @variable upgradeSuccessfulString checkstyles are bothersome
+     */
     private String upgradeSuccessfulString = "Upgrade successful!";
     
+        
+    /**
+     * @variable notEnoughCreditsString like is this really necessary?
+     */
     private String notEnoughCreditsString = "Not enough credits!";
     /**
      * Initializes the controller class.

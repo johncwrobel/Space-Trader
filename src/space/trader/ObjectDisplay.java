@@ -11,8 +11,20 @@ package space.trader;
  * @author tanmay
  */
 public class ObjectDisplay {
+        
+    /**
+     * @variable item thing to be displayed
+     */
     private Item item;
+        
+    /**
+     * @variable price cost of the item
+     */
     private int price;
+        
+    /**
+     * @variable amount quantity of items
+     */
     private int amount;
     
     /**

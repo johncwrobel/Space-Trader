@@ -20,18 +20,38 @@ import javafx.scene.control.Label;
  */
 public class PoliceEncounterScreenController implements Initializable {
 
+        
+    /**
+     * @variable dialogueLabel label holding dialogue info
+     */
     @FXML
     private Label dialogueLabel;
     
+        
+    /**
+     * @variable bribeButton button to bribe
+     */
     @FXML
     private Button bribeButton;
     
+        
+    /**
+     * @variable searchButton button to allow search
+     */
     @FXML
     private Button searchButton;
     
+        
+    /**
+     * @variable fightButton button to fight
+     */
     @FXML
     private Button fightButton;
     
+        
+    /**
+     * @variable bribeAmountLabel label to display bribe price
+     */
     @FXML
     private Label bribeAmountLabel;
     
