@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
  * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
-    private int maxStats = 20;
+    private final int maxStats = 20;
 
     /**
      * @variable nameTextArea area for name input

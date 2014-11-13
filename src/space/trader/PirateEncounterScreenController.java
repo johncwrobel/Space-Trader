@@ -29,9 +29,10 @@ import javafx.util.Duration;
  */
 public class PirateEncounterScreenController implements Initializable {
 
-    private int twenty = 20;
-    private int offset = 10;
-    private int rectSize = 400;
+    private final int twenty = 20;
+    private final int offset = 10;
+    private final int rectSize = 400;
+    private final int price = 300;
 
     /**
      * @variable canvas where the game is displayed
@@ -56,7 +57,7 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable timer amount of time to play game
      */
-    private int timer = 3;
+    private final int timer = 3;
 
     /**
      * @variable clock the time keeper
@@ -231,7 +232,7 @@ public class PirateEncounterScreenController implements Initializable {
                     getTime().setText("You Win");
                 }
                 setPlaying(false);
-                SpaceTrader.getMainCharacter().buy(300);
+                SpaceTrader.getMainCharacter().buy(price);
                 SpaceTrader.setGameScene();
             }
             setCounter(getCounter() - 1);
@@ -324,7 +325,7 @@ public class PirateEncounterScreenController implements Initializable {
             getTarget()[x][y] = false;
             if (hasWon()) {
                 setPlaying(false);
-                SpaceTrader.getMainCharacter().sell(300);
+                SpaceTrader.getMainCharacter().sell(price);
                 SpaceTrader.setGameScene();
             }
         }
