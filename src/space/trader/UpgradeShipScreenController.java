@@ -226,8 +226,8 @@ public class UpgradeShipScreenController implements Initializable {
         getGadgetListView().getSelectionModel().selectedItemProperty().
                 addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
-                    observable, final String oldValue, final String newValue)
-            { //does nothing
+                    observable, final String oldValue, final String newValue) {
+                //does nothing
           }
         });
     }
@@ -382,8 +382,7 @@ public class UpgradeShipScreenController implements Initializable {
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if (!SpaceTrader.getMainCharacter().canBuy(shieldPrice))
-        {
+        } else if (!SpaceTrader.getMainCharacter().canBuy(shieldPrice)) {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {
             getSuccessLabel().setText("Not enough gadget space!");
@@ -438,8 +437,7 @@ public class UpgradeShipScreenController implements Initializable {
                     getWeaponLevel());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if (!SpaceTrader.getMainCharacter().canBuy(weaponPrice))
-        {
+        } else if (!SpaceTrader.getMainCharacter().canBuy(weaponPrice)) {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {
             getSuccessLabel().setText("Not enough gadget space!");
