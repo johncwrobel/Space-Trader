@@ -185,11 +185,14 @@ public class GameUniverseScreenController implements Initializable {
      * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
-        if (((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel())
-                && (SpaceTrader.getMainCharacter().canBuy(100))) {
-            SpaceTrader.ship.addFuel(5);
-            SpaceTrader.getMainCharacter().buy(100);
-        } else if ((SpaceTrader.ship.getFuel() + 5)
+        final int five = 5;
+        final int hundred = 100;
+        if (((SpaceTrader.ship.getFuel() + five)
+                < SpaceTrader.ship.getMaxFuel())
+                && (SpaceTrader.getMainCharacter().canBuy(hundred))) {
+            SpaceTrader.ship.addFuel(five);
+            SpaceTrader.getMainCharacter().buy(hundred);
+        } else if ((SpaceTrader.ship.getFuel() + five)
                 > SpaceTrader.ship.getMaxFuel()) {
             JOptionPane.showMessageDialog(null,
                     "You do not have enough fuel capacity.", getAlertString(),
@@ -616,7 +619,8 @@ public class GameUniverseScreenController implements Initializable {
         getCurrentSolarSystemLabel().setText(currentSystem);
         getCurrentPlanetLabel().setText(planet);
         getFuelLabel().setText(fuel);
-        if (SpaceTrader.currentPlanet.getTechLevel() < 4) {
+        final int four = 4;
+        if (SpaceTrader.currentPlanet.getTechLevel() < four) {
             getUpgradeShipButton().setDisable(true);
         } else {
             getUpgradeShipButton().setDisable(false);
@@ -724,12 +728,20 @@ public class GameUniverseScreenController implements Initializable {
     }
 
     /**
+     * screen length.
+     */
+    private final int screenlen = 400;
+    /**
+     * box length.
+     */
+    private final int boxlen = 20;
+    /**
      * Helper method to update the view.
      */
     private void updateScreen() {
         final GraphicsContext gc = getUniverseDisplayCanvas().
                 getGraphicsContext2D();
-        gc.clearRect(0, 0, 400, 400);
+        gc.clearRect(0, 0, screenlen, screenlen);
         drawShapes(gc);
         updateText();
         final ArrayList<String> list = SpaceTrader.currentPlanet.
@@ -762,8 +774,8 @@ public class GameUniverseScreenController implements Initializable {
     public final void chooseSystem(final MouseEvent e) {
         double xPos = e.getX();
         double yPos = e.getY();
-        xPos = (int) xPos / 20;
-        yPos = (int) yPos / 20;
+        xPos = (int) xPos / boxlen;
+        yPos = (int) yPos / boxlen;
         setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos,
                 (int) yPos));
         updateScreen();
@@ -788,25 +800,25 @@ public class GameUniverseScreenController implements Initializable {
         int sX = 0;
         int sY = 0;
 
-        for (int x = 0; x <= 20; x++) {
-            sX = x * 20;
-            gc.strokeLine(sX, 0, sX, 400);
+        for (int x = 0; x <= boxlen; x++) {
+            sX = x * boxlen;
+            gc.strokeLine(sX, 0, sX, screenlen);
         }
-        for (int y = 0; y <= 20; y++) {
-            sY = y * 20;
-            gc.strokeLine(0, sY, 400, sY);
+        for (int y = 0; y <= boxlen; y++) {
+            sY = y * boxlen;
+            gc.strokeLine(0, sY, screenlen, sY);
         }
 
         for (SolarSystem s : SpaceTrader.universe.getSolarSystems()) {
-            int x = (s.getXLocation() * 20);
-            int y = (s.getYLocation() * 20);
-            int w = 20;
+            int x = (s.getXLocation() * boxlen);
+            int y = (s.getYLocation() * boxlen);
+            int w = boxlen;
             gc.fillOval(x, y, w, w);
 
         }
-        int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
-        int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
-        int w = 20;
+        int x = (SpaceTrader.currentSolarSystem.getXLocation() * boxlen);
+        int y = (SpaceTrader.currentSolarSystem.getYLocation() * boxlen);
+        int w = boxlen;
         gc.setFill(Color.BLUE);
         gc.fillOval(x, y, w, w);
 
