@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author Johnnycakes
  */
-public class Ship implements Serializable{
+public class Ship implements Serializable {
     private static final long serialVersionUID = 42L;
 
     private ArrayList<Item> cargoHold;
@@ -46,11 +46,11 @@ public class Ship implements Serializable{
         maxFuel = 10;
         gadgetslots = 0;
         gadgets = 0;
-        techLevel=4;
-        fuelCost=1;
-        bounty=5;
-        size=0;
-        hull=25;
+        techLevel = 4;
+        fuelCost = 1;
+        bounty = 5;
+        size = 0;
+        hull = 25;
         weaponLevel = 0;
         shieldLevel = 0;
     }
@@ -282,7 +282,7 @@ public class Ship implements Serializable{
     /**
      * Enum for the ship types.
      */
-    public enum ShipTypes{//enum for the ship types
+    public enum ShipTypes { //enum for the ship types
         SERENITY, FALCON, ENTERPRISE, GALACTICA, DAEDALUS
     }
 
@@ -290,12 +290,13 @@ public class Ship implements Serializable{
  * Sets the ship type, and changed any associated private vars.
  * @param aShipType
  */
-    public final void setShip(final ShipTypes aShipType){
-        if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
+    public final void setShip(final ShipTypes aShipType) {
+        if (aShipType == ShipTypes.SERENITY) {
+            //set new attributes based on type
             SpaceTrader.ship.setMaxCargo(10);
             SpaceTrader.ship.setMaxFuel(20);
             SpaceTrader.ship.setGadgetslots(
-                    SpaceTrader.ship.getGadgetslots()+1);
+                    SpaceTrader.ship.getGadgetslots() + 1);
             SpaceTrader.ship.setTechLevel(4);
             SpaceTrader.ship.setFuelCost(1);
             SpaceTrader.ship.setBounty(5);
@@ -304,11 +305,11 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setWeaponLevel(0);
             SpaceTrader.ship.setShieldLevel(0);
         }
-        if (aShipType==ShipTypes.FALCON){
+        if (aShipType == ShipTypes.FALCON) {
             SpaceTrader.ship.setMaxCargo(15);
             SpaceTrader.ship.setMaxFuel(25);
             SpaceTrader.ship.setGadgetslots(
-                    SpaceTrader.ship.getGadgetslots()+1);
+                    SpaceTrader.ship.getGadgetslots() + 1);
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(2);
             SpaceTrader.ship.setBounty(50);
@@ -317,7 +318,7 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setWeaponLevel(1);
             SpaceTrader.ship.setShieldLevel(1);
         }
-        if (aShipType==ShipTypes.ENTERPRISE){
+        if (aShipType == ShipTypes.ENTERPRISE) {
             SpaceTrader.ship.setMaxCargo(20);
             SpaceTrader.ship.setMaxFuel(30);
             SpaceTrader.ship.setGadgetslots(
@@ -330,7 +331,7 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setWeaponLevel(3);
             SpaceTrader.ship.setShieldLevel(3);
         }
-        if (aShipType==ShipTypes.GALACTICA){
+        if (aShipType == ShipTypes.GALACTICA) {
             SpaceTrader.ship.setMaxCargo(25);
             SpaceTrader.ship.setMaxFuel(35);
             SpaceTrader.ship.setGadgetslots(
@@ -343,7 +344,7 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setWeaponLevel(5);
             SpaceTrader.ship.setShieldLevel(5);
         }
-        if (aShipType==ShipTypes.DAEDALUS){
+        if (aShipType == ShipTypes.DAEDALUS) {
             SpaceTrader.ship.setMaxCargo(30);
             SpaceTrader.ship.setMaxFuel(40);
             SpaceTrader.ship.setGadgetslots(
@@ -381,7 +382,7 @@ public class Ship implements Serializable{
      * @return Fuel
      */
 
-    public final int getFuel(){
+    public final int getFuel() {
         return this.fuel; //returns the ship's current Fuel
     }
 
@@ -390,7 +391,7 @@ public class Ship implements Serializable{
      * @return maxFuel
      */
 
-    public final int getMaxFuel(){
+    public final int getMaxFuel() {
         return this.maxFuel; //returns the ship's maximum allowed fuel
     }
 
@@ -399,7 +400,7 @@ public class Ship implements Serializable{
      * @param amount the amount of fuel to add
      */
 
-    public final void addFuel(final int amount){
+    public final void addFuel(final int amount) {
         this.setFuel(this.getFuel() + amount);
 //add a certain amount of fuel to the ship
     }
@@ -410,17 +411,18 @@ public class Ship implements Serializable{
      * @return true or false
      */
 
-    public final boolean canTravelTo(final SolarSystem system){
+    public final boolean canTravelTo(final SolarSystem system) {
         setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation());
         //updates the xLocation of the ship to use later
         setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation());
         //updates the yLocation of the ship to use later
 
         //uses distance formula to calculate if the distance is too far
-        return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation(
-        ))*(getxLocation() - system.getXLocation()) + (getyLocation()
+        return this.getFuelCost() * Math.sqrt((getxLocation()
+                - system.getXLocation(
+        )) * (getxLocation() - system.getXLocation()) + (getyLocation()
                 - system.getYLocation()) * (getyLocation()
-                        - system.getYLocation()))<= getFuel();
+                        - system.getYLocation())) <= getFuel();
     }
        /**
      * Whether nor not the ship has enough fuel to travel to a planet.
@@ -428,7 +430,7 @@ public class Ship implements Serializable{
      * @return true or false
      */
 
-    public final boolean canTravelTo(final Planet planet){
+    public final boolean canTravelTo(final Planet planet) {
         return canTravelTo(planet.getSolarSystem());
         //calls above method, but with planet instead
     }
@@ -441,7 +443,7 @@ public class Ship implements Serializable{
      * @param planet the planet to travel to
      */
 
-    public final void travel(final Planet planet){
+    public final void travel(final Planet planet) {
         //subtracts fuel based on how far we travelled
         setFuel((int) (getFuel() - Math.sqrt((getxLocation()
                 - planet.getSolarSystem().getXLocation()) * (getxLocation()

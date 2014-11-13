@@ -138,7 +138,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e
      */
     public final void purchaseFalcon(final ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(1000)) {
+        if (SpaceTrader.getMainCharacter().canBuy(1000)) {
             //see if they have enough money
             SpaceTrader.getMainCharacter().buy(1000);
             //deduct the money
@@ -158,7 +158,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e
      */
     public final void purchaseEnterprise(final ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(2000)) {
+        if (SpaceTrader.getMainCharacter().canBuy(2000)) {
             SpaceTrader.getMainCharacter().buy(2000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.ENTERPRISE);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
@@ -173,7 +173,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e
      */
     public final void purchaseGalactica(final ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(3000)) {
+        if (SpaceTrader.getMainCharacter().canBuy(3000)) {
             SpaceTrader.getMainCharacter().buy(3000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.GALACTICA);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
@@ -188,7 +188,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e
      */
     public final void purchaseDaedalus(final ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(4000)) {
+        if (SpaceTrader.getMainCharacter().canBuy(4000)) {
             SpaceTrader.getMainCharacter().buy(4000);
             SpaceTrader.ship.setShip(Ship.ShipTypes.DAEDALUS);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
@@ -259,13 +259,13 @@ public class UpgradeShipScreenController implements Initializable {
         }
 
         for (int x = 0; x < getShields().size(); x++) {
-            if (getShields().get(x).getShieldLevel() == (2*powerLevel)) {
+            if (getShields().get(x).getShieldLevel() == (2 * powerLevel)) {
                 gadgetIndex = x;
                 break;
             }
         }
         final int shieldPrice = getShields().get(gadgetIndex).getPrice();
-        if(SpaceTrader.getMainCharacter().canBuy(shieldPrice)
+        if (SpaceTrader.getMainCharacter().canBuy(shieldPrice)
                 && SpaceTrader.ship.checkGadget()) {
             SpaceTrader.getMainCharacter().buy(shieldPrice);
             SpaceTrader.ship.increaseShieldLevel(getShields().get(gadgetIndex)
@@ -273,7 +273,7 @@ public class UpgradeShipScreenController implements Initializable {
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if(SpaceTrader.getMainCharacter().canBuy(shieldPrice) == false)
+        } else if (SpaceTrader.getMainCharacter().canBuy(shieldPrice) == false)
         {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {
@@ -286,7 +286,7 @@ public class UpgradeShipScreenController implements Initializable {
      * @param e
      */
     public final void upgradeGadget(final ActionEvent e) {
-        if(SpaceTrader.getMainCharacter().canBuy(500)) {
+        if (SpaceTrader.getMainCharacter().canBuy(500)) {
             SpaceTrader.getMainCharacter().buy(500);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots()
@@ -315,13 +315,13 @@ public class UpgradeShipScreenController implements Initializable {
         }
 
         for (int x = 0; x < getWeapons().size(); x++) {
-            if (getWeapons().get(x).getWeaponLevel() == (2*powerLevel)) {
+            if (getWeapons().get(x).getWeaponLevel() == (2 * powerLevel)) {
                 gadgetIndex = x;
                 break;
             }
         }
         final int weaponPrice = getWeapons().get(gadgetIndex).getPrice();
-        if(SpaceTrader.getMainCharacter().canBuy(weaponPrice) && SpaceTrader.
+        if (SpaceTrader.getMainCharacter().canBuy(weaponPrice) && SpaceTrader.
                 ship.checkGadget()) {
             SpaceTrader.getMainCharacter().buy(weaponPrice);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
@@ -329,7 +329,8 @@ public class UpgradeShipScreenController implements Initializable {
                     getWeaponLevel());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if(SpaceTrader.getMainCharacter().canBuy(weaponPrice) == false) {
+        } else if (SpaceTrader.getMainCharacter().canBuy(weaponPrice) == false)
+        {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {
             getSuccessLabel().setText("Not enough gadget space!");
@@ -349,8 +350,9 @@ public class UpgradeShipScreenController implements Initializable {
         setShields((ArrayList<Shield>) new ArrayList());
         final ArrayList<String> shieldListString = new ArrayList();
         for (int x = 0; x <= getTechLevel(); x++) {
-            getShields().add(new Shield(("Shield Level " + (x+1)), (2*(x+1)),
-                    x, (100*(x+1))));
+            getShields().add(new Shield(("Shield Level "
+                    + (x + 1)), (2 * (x + 1)),
+                    x, (100 * (x + 1))));
             shieldListString.add(getShields().get(x).getName());
         }
         final ObservableList<String> observable = FXCollections.
@@ -373,8 +375,9 @@ public class UpgradeShipScreenController implements Initializable {
         setWeapons((ArrayList<Weapon>) new ArrayList());
         final ArrayList<String> weaponListString = new ArrayList();
         for (int x = 0; x <= getTechLevel(); x++) {
-            getWeapons().add(new Weapon(("Weapon Level " + (x+1)), (2*(x+1)),
-                    x , (100*(x+1))));
+            getWeapons().add(new Weapon(("Weapon Level "
+                    + (x + 1)), (2 * (x + 1)),
+                    x , (100 * (x + 1))));
             weaponListString.add(getWeapons().get(x).getName());
         }
         final ObservableList<String> observable = FXCollections.
@@ -416,12 +419,12 @@ public class UpgradeShipScreenController implements Initializable {
             type = temp[0];
         }
 
-        if ("Shield".equals(type) &&(powerLevel == 1 || powerLevel == 5)) {
+        if ("Shield".equals(type) && (powerLevel == 1 || powerLevel == 5)) {
             final String img = "weapon" + (powerLevel) + ".jpg";
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.
                     class.getResourceAsStream(img)));
             for (int x = 0; x < getWeapons().size(); x++) {
-                if (getWeapons().get(x).getWeaponLevel() == (2*powerLevel)) {
+                if (getWeapons().get(x).getWeaponLevel() == (2 * powerLevel)) {
                     gadgetIndex = x;
                     weaponPreview = getWeapons().get(x).getWeaponLevel();
                     break;
@@ -433,7 +436,7 @@ public class UpgradeShipScreenController implements Initializable {
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.
                     class.getResourceAsStream(img)));
             for (int x = 0; x < getWeapons().size(); x++) {
-                if (getWeapons().get(x).getWeaponLevel() == (2*powerLevel)) {
+                if (getWeapons().get(x).getWeaponLevel() == (2 * powerLevel)) {
                     gadgetIndex = x;
                     weaponPreview = getWeapons().get(x).getWeaponLevel();
                     break;
@@ -447,7 +450,7 @@ public class UpgradeShipScreenController implements Initializable {
             getImageViewMane().setImage(new Image(UpgradeShipScreenController.
                     class.getResourceAsStream(img)));
             for (int x = 0; x < getShields().size(); x++) {
-                if (getShields().get(x).getShieldLevel() == (2*powerLevel)) {
+                if (getShields().get(x).getShieldLevel() == (2 * powerLevel)) {
                     gadgetIndex = x;
                     shieldPreview = getShields().get(x).getShieldLevel();
                     break;

@@ -8,7 +8,7 @@ import java.io.Serializable;
  *
  * @author Benjamin Cervantes and John Wrobel
  */
-public class Planet implements Serializable{
+public class Planet implements Serializable {
     private static final long serialVersionUID = 42L;
     private String name;
     private int techLevel;
@@ -24,8 +24,8 @@ public class Planet implements Serializable{
     public Planet(final SolarSystem parent, final String name) {
         parentSystem = parent;
         this.name = name;
-        techLevel = (int)(Math.random() * 8);
-        resources = (int)(Math.random() * 13);
+        techLevel = (int) (Math.random() * 8);
+        resources = (int) (Math.random() * 13);
         marketplace = new MarketPlace(getTechLevel());
     }
 
@@ -41,7 +41,7 @@ public class Planet implements Serializable{
      * Getter method for ParentSystem.
      * @return parentSystem
      */
-    public final SolarSystem getSolarSystem(){
+    public final SolarSystem getSolarSystem() {
         return this.getParentSystem();
     }
 

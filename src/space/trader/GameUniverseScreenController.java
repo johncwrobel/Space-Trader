@@ -101,7 +101,7 @@ public class GameUniverseScreenController implements Initializable {
      * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
-        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel())
+        if (((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel())
                 && (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
             SpaceTrader.getMainCharacter().buy(100);
@@ -461,7 +461,7 @@ public class GameUniverseScreenController implements Initializable {
         ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
                     observable, final String oldValue, final String newValue)
-            {//does nothing
+            { //does nothing
           }
         });
     }
@@ -477,7 +477,7 @@ public class GameUniverseScreenController implements Initializable {
             if (SpaceTrader.ship.canTravelTo(getSelectedSystem())) {
                 //fixes bug where encounters occour even when you don't
                 //have enough fuel to travel to selected system
-                final int encounterChance = (int)(Math.random() * 12);
+                final int encounterChance = (int) (Math.random() * 12);
                 if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter()
                         .isCriminal())) { //check for all types of encounters
                     JOptionPane.showMessageDialog(null,
@@ -534,7 +534,7 @@ public class GameUniverseScreenController implements Initializable {
         getCurrentSolarSystemLabel().setText(currentSystem);
         getCurrentPlanetLabel().setText(planet);
         getFuelLabel().setText(fuel);
-        if(SpaceTrader.currentPlanet.getTechLevel() < 4){
+        if (SpaceTrader.currentPlanet.getTechLevel() < 4) {
             getUpgradeShipButton().setDisable(true);
         } else {
             getUpgradeShipButton().setDisable(false);
@@ -555,7 +555,8 @@ public class GameUniverseScreenController implements Initializable {
             final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().
                     canBuy(Integer.parseInt(split[1]))
-                    && SpaceTrader.currentPlanet.getMarketplace().canBuy(split[0]))
+                    && SpaceTrader.currentPlanet.getMarketplace()
+                            .canBuy(split[0]))
             { //check if valid purchase
                 SpaceTrader.currentPlanet.getMarketplace().buy(split[0]);
 //then actually give them the items
@@ -680,8 +681,8 @@ public class GameUniverseScreenController implements Initializable {
     public final void chooseSystem(final MouseEvent e) {
         double xPos = e.getX();
         double yPos = e.getY();
-        xPos = (int) xPos/20;
-        yPos = (int) yPos/20;
+        xPos = (int) xPos / 20;
+        yPos = (int) yPos / 20;
         setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos,
                 (int) yPos));
         updateScreen();
@@ -699,34 +700,34 @@ public class GameUniverseScreenController implements Initializable {
      * Draws the planets.
      * @param gc
      */
-    private void drawShapes(final GraphicsContext gc){
+    private void drawShapes(final GraphicsContext gc) {
         gc.setLineWidth(1);
         gc.setFill(Color.RED);
         gc.setStroke(Color.GREEN);
         int sX = 0;
         int sY = 0;
 
-        for(int x=0; x<=20; x++){
+        for (int x = 0; x <= 20; x++) {
             sX = x * 20;
             gc.strokeLine(sX, 0, sX, 400);
         }
-        for(int y=0; y<=20; y++){
+        for (int y = 0; y <= 20; y++) {
             sY = y * 20;
             gc.strokeLine(0, sY, 400, sY);
         }
 
-        for(SolarSystem s: SpaceTrader.universe.getSolarSystems()){
+        for (SolarSystem s : SpaceTrader.universe.getSolarSystems()) {
             int x = (s.getXLocation() * 20);
             int y = (s.getYLocation() * 20);
             int w = 20;
-            gc.fillOval(x,y,w,w);
+            gc.fillOval(x, y, w, w);
 
         }
         int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
         int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
         int w = 20;
         gc.setFill(Color.BLUE);
-        gc.fillOval(x,y,w,w);
+        gc.fillOval(x, y, w, w);
 
 
     }

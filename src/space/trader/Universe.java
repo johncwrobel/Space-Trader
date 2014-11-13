@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @author Benjamin Cervantes
  */
-public class Universe implements Serializable{
+public class Universe implements Serializable {
     private static final long serialVersionUID = 42L;
 
     private int numberOfSS;
@@ -26,14 +26,14 @@ public class Universe implements Serializable{
                 booleanArray[x][y] = false;
             }
         }
-        numberOfSS = (int)(Math.random() * 50) + 50;
+        numberOfSS = (int) (Math.random() * 50) + 50;
         for (int i = 0; i < numberOfSS; i++) {
-            int x = (int)(Math.random() * 20);
-            int y = (int)(Math.random() * 20);
+            int x = (int) (Math.random() * 20);
+            int y = (int) (Math.random() * 20);
             while (true) {
                 if (booleanArray[x][y]) {
-                    x = (int)(Math.random() * 20);
-                    y = (int)(Math.random() * 20);
+                    x = (int) (Math.random() * 20);
+                    y = (int) (Math.random() * 20);
                 } else {
                     break;
                 }
@@ -53,7 +53,7 @@ public class Universe implements Serializable{
     @Override
     public final String toString() {
         StringBuffer returnString = new StringBuffer(60);
-        for (SolarSystem ss: getSolarSystems()) {
+        for (SolarSystem ss : getSolarSystems()) {
             String toConcatenate = (ss.toString() + "\n");
             returnString.append(toConcatenate);
         }
@@ -70,7 +70,7 @@ public class Universe implements Serializable{
      */
     public final SolarSystem getSystem(final int x, final int y) {
         SolarSystem toReturn = null;
-        for (SolarSystem s: getSolarSystems()) {
+        for (SolarSystem s : getSolarSystems()) {
             final int systemX = s.getXLocation();
             final int systemY = s.getYLocation();
 

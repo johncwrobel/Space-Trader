@@ -68,7 +68,7 @@ public class TraderEncounterScreenController implements Initializable {
                 addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
                     observable, final String oldValue, final String newValue
-            ) {//does nothing
+            ) { //does nothing
           }
         });
         getBuyButton().setDisable(true);
@@ -88,7 +88,7 @@ public class TraderEncounterScreenController implements Initializable {
         getTraderItems().setDisable(false);
         ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.
                 getSolarSystems();
-        int randomNumber = (int)(Math.random() * (solarSystems.size()));
+        int randomNumber = (int) (Math.random() * (solarSystems.size()));
         SolarSystem newSolarSystem = solarSystems.get(randomNumber);
         this.setNewPlanet(newSolarSystem.getPlanet(0));
         String dialogString = "Space Sloth: You tryna trade dare mite?";

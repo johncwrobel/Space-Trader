@@ -119,7 +119,7 @@ public class CharacterCreationController implements Initializable {
         try {
             Integer.parseInt(s);
             toReturn = true;
-        } catch(NumberFormatException e) {
+        } catch (NumberFormatException e) {
             toReturn = false;
         }
         return toReturn;

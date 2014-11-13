@@ -74,13 +74,13 @@ public class Character implements Serializable, CharacterInterface {
         /**
          * Handler for if player consents to the search.
          */
-        public final void consentSearch(){
-            for(int i=0; i < SpaceTrader.ship.getCargoHold().size(); i++){
-                if(SpaceTrader.ship.getCargoHold().get(i).isIllegal()){
-                    if(getCredits() < 1000){
+        public final void consentSearch() {
+            for (int i = 0; i < SpaceTrader.ship.getCargoHold().size(); i++) {
+                if (SpaceTrader.ship.getCargoHold().get(i).isIllegal()) {
+                    if (getCredits() < 1000) {
                         criminal = true;
                         // send to fight scene
-                    }else{
+                    } else {
                         setCredits(credits - 1000);
                     }
                 }
@@ -99,7 +99,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param price amount to be deducted
          */
         public final void buy(final int price) {
-            if (canBuy(price)){
+            if (canBuy(price)) {
                setCredits(credits - price);
             }
         }

@@ -192,7 +192,7 @@ public class PirateEncounterScreenController implements Initializable {
         @Override
         public final void handle(final Event event) {
 
-            if(getCounter() >= 1) {
+            if (getCounter() >= 1) {
                 getTime().setText("TIMER: " + getCounter() + " seconds");
             } else {
                 getClock().stop();
@@ -247,8 +247,8 @@ public class PirateEncounterScreenController implements Initializable {
             setTarget(new boolean[20][20]);
 
             for (int i = 0; i < 3; i++) {
-                final int x = (int)(Math.random() * 20);
-                final int y = (int)(Math.random() * 20);
+                final int x = (int) (Math.random() * 20);
+                final int y = (int) (Math.random() * 20);
                 if (!getTarget()[x][y]) {
                     getTarget()[x][y] = true;
                 } else {
@@ -292,7 +292,7 @@ public class PirateEncounterScreenController implements Initializable {
 
         if (getTarget()[x][y] && isPlaying()) {
             getTarget()[x][y] = false;
-            if(hasWon()) {
+            if (hasWon()) {
                 setPlaying(false);
                 SpaceTrader.getMainCharacter().sell(300);
                 SpaceTrader.setGameScene();
