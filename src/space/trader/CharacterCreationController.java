@@ -103,7 +103,8 @@ public class CharacterCreationController implements Initializable {
                 JOptionPane.showMessageDialog(null,
                         "You have used too many skill points", "Alert!" ,
                         JOptionPane.ERROR_MESSAGE);
-            } else if (pilot + fighter + trader + engineer + investor < maxStats) {
+            } else if (pilot + fighter + trader + engineer + investor
+                    < maxStats) {
                 JOptionPane.showMessageDialog(null,
                         "You have not used all of your skill points, rearrange"
                                 + " the skill points", "Alert!"

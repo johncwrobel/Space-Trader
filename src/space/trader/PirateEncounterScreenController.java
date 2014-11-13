@@ -303,7 +303,7 @@ public class PirateEncounterScreenController implements Initializable {
 
             final TimeClass tc = new TimeClass(count);
             setClock(new Timeline(new KeyFrame(Duration.seconds(1), tc)));
-            getClock().setCycleCount(timer+1);
+            getClock().setCycleCount(timer + 1);
             getClock().play();
         }
     }
