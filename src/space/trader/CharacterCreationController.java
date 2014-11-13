@@ -23,6 +23,7 @@ import javax.swing.JOptionPane;
  * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
+    private int maxStats = 20;
 
     /**
      * @variable nameTextArea area for name input
@@ -95,11 +96,11 @@ public class CharacterCreationController implements Initializable {
             final int engineer = Integer.parseInt(engineerString);
             final int investor = Integer.parseInt(investorString);
 
-            if (pilot + fighter + trader + engineer + investor > 20) {
+            if (pilot + fighter + trader + engineer + investor > maxStats) {
                 JOptionPane.showMessageDialog(null,
                         "You have used too many skill points", "Alert!" ,
                         JOptionPane.ERROR_MESSAGE);
-            } else if (pilot + fighter + trader + engineer + investor < 20) {
+            } else if (pilot + fighter + trader + engineer + investor < maxStats) {
                 JOptionPane.showMessageDialog(null,
                         "You have not used all of your skill points, rearrange"
                                 + " the skill points", "Alert!"
