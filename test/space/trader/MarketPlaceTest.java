@@ -16,7 +16,7 @@ import org.junit.Test;
 public class MarketPlaceTest {
     
     private transient MarketPlace test;
-    Item i;
+    private Item i;
     
 
     // TODO add test methods here.

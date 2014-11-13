@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 public class Character implements Serializable, CharacterInterface {
-        static final long serialVersionUID = 42L;
+        private static final long serialVersionUID = 42L;
         private String name;
         private int credits;
         private int pilot;

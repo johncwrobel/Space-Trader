@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Johnnycakes
  */
 public class Ship implements Serializable{
-    static final long serialVersionUID = 42L;
+    private static final long serialVersionUID = 42L;
     
     private ArrayList<Item> cargoHold;
     private int maxCargo;
