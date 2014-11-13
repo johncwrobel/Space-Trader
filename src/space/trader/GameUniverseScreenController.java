@@ -543,9 +543,8 @@ public class GameUniverseScreenController implements Initializable {
         getGoods().getSelectionModel().selectedItemProperty().addListener(new
         ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
-                    observable, final String oldValue, final String newValue)
-            { //does nothing
-          }
+                    observable, final String oldValue, final String newValue) {
+            }
         });
     }
 
@@ -639,8 +638,7 @@ public class GameUniverseScreenController implements Initializable {
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().
                     canBuy(Integer.parseInt(split[1]))
                     && SpaceTrader.currentPlanet.getMarketplace()
-                            .canBuy(split[0]))
-            { //check if valid purchase
+                            .canBuy(split[0])) { //check if valid purchase
                 SpaceTrader.currentPlanet.getMarketplace().buy(split[0]);
 //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);

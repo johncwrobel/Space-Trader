@@ -51,42 +51,42 @@ public class ObjectDisplay {
     /**
      * @return the item
      */
-    final public Item getItem() {
+    public final Item getItem() {
         return item;
     }
 
     /**
      * @param item the item to set
      */
-    final public void setItem(final Item item) {
+    public final void setItem(final Item item) {
         this.item = item;
     }
 
     /**
      * @return the price
      */
-    final public int getPrice() {
+    public final int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    final public void setPrice(final int price) {
+    public final void setPrice(final int price) {
         this.price = price;
     }
 
     /**
      * @return the amount
      */
-    final public int getAmount() {
+    public final int getAmount() {
         return amount;
     }
 
     /**
      * @param amount the amount to set
      */
-    final public void setAmount(final int amount) {
+    public final void setAmount(final int amount) {
         this.amount = amount;
     }
 }

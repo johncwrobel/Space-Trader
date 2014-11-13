@@ -53,6 +53,8 @@ public class Character implements Serializable, CharacterInterface {
          * @variable if the character is a criminal or not
          */
         private boolean criminal;
+        
+        private final int CREDITS = 2000;
 
         /**
          * Constructor for Character Class.
@@ -71,7 +73,7 @@ public class Character implements Serializable, CharacterInterface {
             this.trader = trader;
             this.engineer = engineer;
             this.investor = investor;
-            this.credits = 2000;
+            this.credits = CREDITS;
             this.criminal = criminal;
         }
 
@@ -98,13 +100,16 @@ public class Character implements Serializable, CharacterInterface {
         public final boolean isCriminal() {
             return this.criminal;
         }
-
+        /**
+         * bribe amount.
+         */
+        private static final int BRIBE = 500;
         /**
          * create bribe amount (100-500 credits) and reduce from credits.
          * @return cost of the bribe
          */
         public final int policeBribe() {
-            return 500;
+            return BRIBE;
         }
 
         /**

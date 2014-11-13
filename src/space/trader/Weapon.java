@@ -55,56 +55,56 @@ public class Weapon {
     /**
      * @return the name
      */
-    final public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    final public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the weaponLevel
      */
-    final public int getWeaponLevel() {
+    public final int getWeaponLevel() {
         return weaponLevel;
     }
 
     /**
      * @param weaponLevel the weaponLevel to set
      */
-    final public void setWeaponLevel(final int weaponLevel) {
+    public final void setWeaponLevel(final int weaponLevel) {
         this.weaponLevel = weaponLevel;
     }
 
     /**
      * @return the techLevel
      */
-    final public int getTechLevel() {
+    public final int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    final public void setTechLevel(final int techLevel) {
+    public final void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the price
      */
-    final public int getPrice() {
+    public final int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    final public void setPrice(final int price) {
+    public final void setPrice(final int price) {
         this.price = price;
     }
 }

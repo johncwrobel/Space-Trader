@@ -150,21 +150,21 @@ public class Item implements Comparable, Serializable{
     /**
      * @return the name
      */
-    final public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    final public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the basePrice
      */
-    final public int getBasePrice() {
+    public final int getBasePrice() {
         return basePrice;
     }
 
