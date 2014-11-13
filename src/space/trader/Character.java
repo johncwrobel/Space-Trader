@@ -94,8 +94,7 @@ public class Character implements Serializable, CharacterInterface {
          * @param price amount to be deducted
          */
         public final void buy(final int price) {
-            if (canBuy(price))
-            {
+            if (canBuy(price)){
                setCredits(credits - price); 
             }
         }

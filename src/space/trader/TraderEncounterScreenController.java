@@ -80,7 +80,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void trade (final ActionEvent event) {
+    public final void trade(final ActionEvent event) {
         getPlayerItems().setDisable(false);
         getTraderItems().setDisable(false);
         ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.getSolarSystems();
@@ -103,7 +103,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void buy (final ActionEvent event) {
+    public final void buy(final ActionEvent event) {
         final ObservableList<String> selectedItem = getTraderItems().getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
@@ -124,7 +124,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void sell (final ActionEvent event) {
+    public final void sell(final ActionEvent event) {
         final ObservableList<String> selectedItem = getPlayerItems().getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             final String[] temp = selectedItem.get(i).split(" ");
@@ -143,7 +143,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param event 
      */
     @FXML
-    public final void ignore (final ActionEvent event) {
+    public final void ignore(final ActionEvent event) {
         getTradeButton().setDisable(false);
         getIgnoreButton().setDisable(false);
         getFightButton().setDisable(false);
@@ -159,7 +159,7 @@ public class TraderEncounterScreenController implements Initializable {
      * @param even 
      */
     @FXML
-    public final void fight (final ActionEvent even) {
+    public final void fight(final ActionEvent even) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
         getDialog().setText(dialogString);
         getTradeButton().setDisable(false);
