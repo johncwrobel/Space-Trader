@@ -12,11 +12,15 @@ import java.io.Serializable;
  *
  * @author tanmay (Seantannah)
  */
+<<<<<<< HEAD
 public class Item implements Comparable, Serializable{
         
     /**
      * @variable serialVersionUID still no idea
      */
+=======
+public class Item implements Comparable, Serializable {
+>>>>>>> origin/master
     private static final long serialVersionUID = 42L;
             
     /**
@@ -53,7 +57,6 @@ public class Item implements Comparable, Serializable{
      * @variable var variable for price calculations
      */
     private int var;
-    
     /**
      * Constructor for an Item.
      * @param name name
@@ -64,7 +67,8 @@ public class Item implements Comparable, Serializable{
      * @param ipl the ipl
      * @param var the variance
      */
-    public Item(final String name, final int mtlp, final int  mtlu, final int ttp, final int basePrice, final int ipl, final int var) {
+    public Item(final String name, final int mtlp, final int  mtlu,
+            final int ttp, final int basePrice, final int ipl, final int var) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
@@ -73,16 +77,17 @@ public class Item implements Comparable, Serializable{
         this.basePrice = basePrice;
         this.ipl = ipl;
     }
-    
+
     /**
      * Calculates the price of an item.
      * @param techLevel of the planet
      * @return the price
      */
     public final int getPrice(final int techLevel) {
-        return getBasePrice() + (getIpl() * (techLevel - getMtlp())) + (getVar() * calculateVar());
+        return getBasePrice() + (getIpl() * (techLevel - getMtlp())) + (getVar()
+                * calculateVar());
     }
-    
+
     /**
      * Helps decide the item's price.
      * @return the var
@@ -97,7 +102,7 @@ public class Item implements Comparable, Serializable{
         }
         return toReturn;
     }
-    
+
     /**
      * Getter for MTLP.
      * @return MTLP value
@@ -105,7 +110,7 @@ public class Item implements Comparable, Serializable{
     public final int getMLTP() {
         return getMtlp();
     }
-    
+
     /**
      * Getter for MTLU.
      * @return MTLU value
@@ -113,7 +118,7 @@ public class Item implements Comparable, Serializable{
     public final int getMTLU() {
         return getMtlu();
     }
-    
+
     /**
      * Method for comparing items.
      * @param o object to compare
@@ -124,7 +129,7 @@ public class Item implements Comparable, Serializable{
         final Item i = (Item) o;
         return this.getName().compareTo(i.getName());
     }
-    
+
     /**
      * Makes a string from an item.
      * @return the string representation of the item
@@ -133,7 +138,7 @@ public class Item implements Comparable, Serializable{
     public final String toString() {
         return getName();
     }
-    
+
     /**
      * checks if an item is illegal.
      * @return if it's illegal or not

@@ -6,11 +6,15 @@ import java.io.Serializable;
  *
  * @author Benjamin Cervantes and John Wrobel
  */
+<<<<<<< HEAD
 public class Planet implements Serializable{
     
     /**
      * @variable serialVersionUID no clue what this is for
      */
+=======
+public class Planet implements Serializable {
+>>>>>>> origin/master
     private static final long serialVersionUID = 42L;
     
     /**
@@ -37,7 +41,7 @@ public class Planet implements Serializable{
      * @variable marketplace planet's marketplace
      */
     private MarketPlace marketplace;
-    
+
     /**
      * Constructor for Planet class.
      * @param parent parent solar system
@@ -46,11 +50,11 @@ public class Planet implements Serializable{
     public Planet(final SolarSystem parent, final String name) {
         parentSystem = parent;
         this.name = name;
-        techLevel = (int)(Math.random() * 8);
-        resources = (int)(Math.random() * 13);
+        techLevel = (int) (Math.random() * 8);
+        resources = (int) (Math.random() * 13);
         marketplace = new MarketPlace(getTechLevel());
     }
-    
+
     /**
      * Getter method for getName.
      * @return name
@@ -63,10 +67,10 @@ public class Planet implements Serializable{
      * Getter method for ParentSystem.
      * @return parentSystem
      */
-    public final SolarSystem getSolarSystem(){
+    public final SolarSystem getSolarSystem() {
         return this.getParentSystem();
     }
-    
+
     /**
      * Getter method for Tech Level.
      * @return techLevel
@@ -82,7 +86,7 @@ public class Planet implements Serializable{
     public final int getResources() {
         return resources;
     }
-    
+
     /**
      * toString method for the class Planet.
      * @return string representation of the planet
@@ -90,7 +94,8 @@ public class Planet implements Serializable{
     @Override
     public final String toString() {
         // (Planet name: name, Tech Level: x, Resource Type: x)
-        return ("(Planet name: " + getName() + ", Tech Level: " + getTechLevel() + ", Resource Type: " + getResources() + ")"); 
+        return ("(Planet name: " + getName() + ", Tech Level: " + getTechLevel()
+                + ", Resource Type: " + getResources() + ")");
     }
 
     /**

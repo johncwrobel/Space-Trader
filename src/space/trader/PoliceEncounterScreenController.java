@@ -26,6 +26,7 @@ public class PoliceEncounterScreenController implements Initializable {
      */
     @FXML
     private Label dialogueLabel;
+<<<<<<< HEAD
     
         
     /**
@@ -52,9 +53,21 @@ public class PoliceEncounterScreenController implements Initializable {
     /**
      * @variable bribeAmountLabel label to display bribe price
      */
+=======
+
+    @FXML
+    private Button bribeButton;
+
+    @FXML
+    private Button searchButton;
+
+    @FXML
+    private Button fightButton;
+
+>>>>>>> origin/master
     @FXML
     private Label bribeAmountLabel;
-    
+
     /**
      * Initializes the controller class.
      * @param url the url
@@ -63,8 +76,8 @@ public class PoliceEncounterScreenController implements Initializable {
     @Override
     public void initialize(final URL url, final ResourceBundle rb) {
         //does nothing
-    } 
-    
+    }
+
     /**
      * handles the option to bribe the police.
      * @param event the event
@@ -74,7 +87,7 @@ public class PoliceEncounterScreenController implements Initializable {
         SpaceTrader.getMainCharacter().payBribe();
         SpaceTrader.setGameScene();
     }
-    
+
     /**
      * handles the option to search.
      * @param event the event
@@ -84,7 +97,7 @@ public class PoliceEncounterScreenController implements Initializable {
         SpaceTrader.getMainCharacter().consentSearch();
         SpaceTrader.setGameScene();
     }
-    
+
     /**
      * handles the fight option.
      * @param event the event
@@ -94,5 +107,5 @@ public class PoliceEncounterScreenController implements Initializable {
         SpaceTrader.getMainCharacter().setCriminal(true);
         SpaceTrader.setPirateEncounterScene();
     }
-    
+
 }

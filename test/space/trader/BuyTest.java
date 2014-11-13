@@ -9,13 +9,17 @@ import static org.junit.Assert.assertEquals;
  * @author John
  */
 public class BuyTest {
+<<<<<<< HEAD
     
                     
     /**
      * @variable tester an instance for the tests
      */
+=======
+
+>>>>>>> origin/master
     private transient Character tester;
-    
+
     /**
      * The set up.
      */
@@ -23,7 +27,7 @@ public class BuyTest {
     public final void setUp() {
         tester = new Character(null, 0, 0, 0, 0, 0);
     }
-    
+
     /**
      * Tests buying a valid priced item.
      */
@@ -32,7 +36,7 @@ public class BuyTest {
         tester.buy(500);
         assertEquals("Thinks 2000 - 500 != 1500.", 1500, tester.getCredits());
     }
-    
+
     /**
      * Tests an attempt to buy something that's too expensive.
      */
@@ -40,9 +44,10 @@ public class BuyTest {
     public final void testBuy2001() {
         tester.buy(2001);
         //dialogue should pop up
-        assertEquals("Subtracted credits when it shouldn't.", 2000, tester.getCredits());
+        assertEquals("Subtracted credits when it shouldn't.", 2000, tester.
+                getCredits());
     }
-    
+
     /**
      * Tests buying a few things.
      */
@@ -51,9 +56,10 @@ public class BuyTest {
         tester.buy(100);
         tester.buy(300);
         tester.buy(100);
-        assertEquals("Thinks 100 + 300 + 100 != 500.", 1500, tester.getCredits());
+        assertEquals("Thinks 100 + 300 + 100 != 500.", 1500, tester.
+                getCredits());
     }
-    
+
     /**
      * Tests buying several things that cost too much.
      */

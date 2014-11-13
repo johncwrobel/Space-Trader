@@ -16,10 +16,14 @@ package space.trader;
  * @author Tommy Lee
  */
 public class Weapon {
+<<<<<<< HEAD
         
     /**
      * @variable name weapon's name
      */
+=======
+
+>>>>>>> origin/master
     private String name;
         
     /**
@@ -36,7 +40,7 @@ public class Weapon {
      * @variable price weapon;s price
      */
     private int price;
-    
+
     /**
      * Constructor for the Weapon.
      * @param name weapon name
@@ -44,7 +48,8 @@ public class Weapon {
      * @param techLevel the current planet's tech level
      * @param price cost of weapon
      */
-    public Weapon(final String name, final int weaponLevel, final int techLevel, final int price) {
+    public Weapon(final String name, final int weaponLevel, final int techLevel,
+            final int price) {
         this.name = name;
         this.weaponLevel = weaponLevel;
         this.techLevel = techLevel;

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  *
  * @author Benjamin Cervantes
  */
+<<<<<<< HEAD
 public class Universe implements Serializable{
                 
     /**
@@ -17,6 +18,11 @@ public class Universe implements Serializable{
     /**
      * @variable numberOfSS how many solar systems you want
      */
+=======
+public class Universe implements Serializable {
+    private static final long serialVersionUID = 42L;
+
+>>>>>>> origin/master
     private int numberOfSS;
                     
     /**
@@ -38,7 +44,7 @@ public class Universe implements Serializable{
      * @variable homePlanet starting position
      */
     private Planet homePlanet;
-    
+
     /**
      * Constructor for Universe class.
      */
@@ -49,14 +55,14 @@ public class Universe implements Serializable{
                 booleanArray[x][y] = false;
             }
         }
-        numberOfSS = (int)(Math.random() * 50) + 50;
+        numberOfSS = (int) (Math.random() * 50) + 50;
         for (int i = 0; i < numberOfSS; i++) {
-            int x = (int)(Math.random() * 20);
-            int y = (int)(Math.random() * 20);
+            int x = (int) (Math.random() * 20);
+            int y = (int) (Math.random() * 20);
             while (true) {
                 if (booleanArray[x][y]) {
-                    x = (int)(Math.random() * 20);
-                    y = (int)(Math.random() * 20);
+                    x = (int) (Math.random() * 20);
+                    y = (int) (Math.random() * 20);
                 } else {
                     break;
                 }
@@ -64,11 +70,11 @@ public class Universe implements Serializable{
             solarSystems.add(new SolarSystem(x, y));
             booleanArray[x][y] = true;
         }
-        
+
         homeSolarSystem = solarSystems.get(0);
         homePlanet = homeSolarSystem.getPlanet(0);
     }
-    
+
     /**
      * toString method for the class.
      * @return toString
@@ -76,14 +82,15 @@ public class Universe implements Serializable{
     @Override
     public final String toString() {
         StringBuffer returnString = new StringBuffer(60);
-        for (SolarSystem ss: getSolarSystems()) {
+        for (SolarSystem ss : getSolarSystems()) {
             String toConcatenate = (ss.toString() + "\n");
             returnString.append(toConcatenate);
         }
-        returnString.append("\nNumber of Solar Systems in Universe:" + getNumberOfSolarSystems() + "\n");
+        returnString.append("\nNumber of Solar Systems in Universe:"
+                + getNumberOfSolarSystems() + "\n");
         return returnString.toString();
     }
-    
+
     /**
      * Getter method for the solar system.
      * @param x x coordinate
@@ -92,10 +99,10 @@ public class Universe implements Serializable{
      */
     public final SolarSystem getSystem(final int x, final int y) {
         SolarSystem toReturn = null;
-        for (SolarSystem s: getSolarSystems()) {
+        for (SolarSystem s : getSolarSystems()) {
             final int systemX = s.getXLocation();
             final int systemY = s.getYLocation();
-            
+
             if (x == systemX && y == systemY) {
                 toReturn = s;
             }
@@ -127,7 +134,8 @@ public class Universe implements Serializable{
     /**
      * @param solarSystems the solarSystems to set
      */
-    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems) {
+    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems)
+    {
         this.solarSystems = solarSystems;
     }
 
@@ -173,6 +181,6 @@ public class Universe implements Serializable{
     final public void setHomePlanet(final Planet homePlanet) {
         this.homePlanet = homePlanet;
     }
-        
+
 }
 
