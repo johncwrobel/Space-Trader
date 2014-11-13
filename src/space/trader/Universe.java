@@ -9,6 +9,8 @@ import java.util.ArrayList;
  */
 public class Universe implements Serializable {
 
+    private final int offset = 50;
+    private final int offset2 = 60;
     /**
      * @variable serialVersionUID no idea what this thing does
      */
@@ -42,7 +44,7 @@ public class Universe implements Serializable {
     /**
      * @variable universeDimension size of the universe
      */
-    private int universeDimension = 20;
+    private final int universeDimension = 20;
 
     /**
      * Constructor for Universe class.
@@ -54,7 +56,7 @@ public class Universe implements Serializable {
                 booleanArray[x][y] = false;
             }
         }
-        numberOfSS = (int) (Math.random() * 50) + 50;
+        numberOfSS = (int) (Math.random() * offset) + offset;
         for (int i = 0; i < numberOfSS; i++) {
             int x = (int) (Math.random() * universeDimension);
             int y = (int) (Math.random() * universeDimension);
@@ -80,7 +82,7 @@ public class Universe implements Serializable {
      */
     @Override
     public final String toString() {
-        StringBuffer returnString = new StringBuffer(60);
+        StringBuffer returnString = new StringBuffer(offset2);
         for (SolarSystem ss : getSolarSystems()) {
             String toConcatenate = (ss.toString() + "\n");
             returnString.append(toConcatenate);
