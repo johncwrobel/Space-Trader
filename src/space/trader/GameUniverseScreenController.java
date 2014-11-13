@@ -101,12 +101,12 @@ public class GameUniverseScreenController implements Initializable {
      * @param e action event parameter
      */
     public final void buyFuel(final ActionEvent e) {
-        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel()) &&
-                (SpaceTrader.getMainCharacter().canBuy(100))) {
+        if(((SpaceTrader.ship.getFuel() + 5) < SpaceTrader.ship.getMaxFuel())
+                && (SpaceTrader.getMainCharacter().canBuy(100))) {
             SpaceTrader.ship.addFuel(5);
             SpaceTrader.getMainCharacter().buy(100);
-        } else if ((SpaceTrader.ship.getFuel() + 5) > 
-                SpaceTrader.ship.getMaxFuel()) {
+        } else if ((SpaceTrader.ship.getFuel() + 5)
+                > SpaceTrader.ship.getMaxFuel()) {
             JOptionPane.showMessageDialog(null, 
                     "You do not have enough fuel capacity.", getAlertString(),
                     JOptionPane.WARNING_MESSAGE);
@@ -554,8 +554,8 @@ public class GameUniverseScreenController implements Initializable {
             //iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().
-                    canBuy(Integer.parseInt(split[1])) &&
-                    SpaceTrader.currentPlanet.getMarketplace().canBuy(split[0]))
+                    canBuy(Integer.parseInt(split[1]))
+                    && SpaceTrader.currentPlanet.getMarketplace().canBuy(split[0]))
             { //check if valid purchase
                 SpaceTrader.currentPlanet.getMarketplace().buy(split[0]);
 //then actually give them the items

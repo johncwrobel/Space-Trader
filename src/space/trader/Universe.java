@@ -57,8 +57,8 @@ public class Universe implements Serializable{
             String toConcatenate = (ss.toString() + "\n");
             returnString.append(toConcatenate);
         }
-        returnString.append("\nNumber of Solar Systems in Universe:" + 
-                getNumberOfSolarSystems() + "\n");
+        returnString.append("\nNumber of Solar Systems in Universe:"
+                + getNumberOfSolarSystems() + "\n");
         return returnString.toString();
     }
     

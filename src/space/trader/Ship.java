@@ -419,8 +419,8 @@ public class Ship implements Serializable{
         //uses distance formula to calculate if the distance is too far
         return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation(
         ))*(getxLocation() - system.getXLocation()) + (getyLocation()
-                - system.getYLocation()) * (getyLocation() - 
-                        system.getYLocation()))<= getFuel();
+                - system.getYLocation()) * (getyLocation()
+                        - system.getYLocation()))<= getFuel();
     }
        /**
      * Whether nor not the ship has enough fuel to travel to a planet.

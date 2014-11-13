@@ -114,8 +114,8 @@ public class TraderEncounterScreenController implements Initializable {
 //iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
             if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().
-                    canBuy(Integer.parseInt(split[1])) &&
-                    getNewPlanet().getMarketplace().canBuy(split[0])) {
+                    canBuy(Integer.parseInt(split[1]))
+                    && getNewPlanet().getMarketplace().canBuy(split[0])) {
 //check if valid purchase
                 getNewPlanet().getMarketplace().buy(split[0]);
                 //then actually give them the items

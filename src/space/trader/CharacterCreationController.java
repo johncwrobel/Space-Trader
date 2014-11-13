@@ -54,9 +54,9 @@ public class CharacterCreationController implements Initializable {
         final String investorString = getInvestorTextArea().getText().trim();
         final String name = getNameTextArea().getText().trim();
         
-        if (!isInteger(pilotString) || !isInteger(fighterString) ||
-                !isInteger(traderString) || !isInteger(engineerString) ||
-                !isInteger(investorString)) {
+        if (!isInteger(pilotString) || !isInteger(fighterString) 
+                || !isInteger(traderString) || !isInteger(engineerString)
+                || !isInteger(investorString)) {
             JOptionPane.showMessageDialog(null,
                     "One of your inputs is not an integer", "Alert!" ,
                     JOptionPane.ERROR_MESSAGE);

@@ -175,10 +175,10 @@ public class Character implements Serializable, CharacterInterface {
          */
         @Override
         public final String toString() {
-            return name + ": " + pilot + " pilot points, " + fighter +
-                    " fighter points, " + trader + " trader points, " +
-                    engineer + " engineer points, " + investor +
-                    " investor points";
+            return name + ": " + pilot + " pilot points, " + fighter
+                    + " fighter points, " + trader + " trader points, "
+                    + engineer + " engineer points, " + investor
+                    + " investor points";
         }
 
         /**

@@ -265,8 +265,8 @@ public class UpgradeShipScreenController implements Initializable {
             }
         }
         final int shieldPrice = getShields().get(gadgetIndex).getPrice();
-        if(SpaceTrader.getMainCharacter().canBuy(shieldPrice) &&
-                SpaceTrader.ship.checkGadget()) {
+        if(SpaceTrader.getMainCharacter().canBuy(shieldPrice) 
+                && SpaceTrader.ship.checkGadget()) {
             SpaceTrader.getMainCharacter().buy(shieldPrice);
             SpaceTrader.ship.increaseShieldLevel(getShields().get(gadgetIndex)
                     .getShieldLevel());
@@ -289,8 +289,8 @@ public class UpgradeShipScreenController implements Initializable {
         if(SpaceTrader.getMainCharacter().canBuy(500)) {
             SpaceTrader.getMainCharacter().buy(500);
             getSuccessLabel().setText(getUpgradeSuccessfulString());
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() +
-                    1);
+            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() 
+                    + 1);
             updateTextGadget();
         } else {
             getSuccessLabel().setText(getNotEnoughCreditsString());
@@ -472,11 +472,11 @@ public class UpgradeShipScreenController implements Initializable {
         getCurrentSlotsLabel().setText("Current Gadget Slots: " + SpaceTrader.
                 ship.getGadgetslots());
         getCurrentShipLabel().setText("Current Ship: " + SpaceTrader.ship.
-                getShipType() + " | Available Gadget Slots: " +
-                (SpaceTrader.ship.getGadgetslots() - SpaceTrader.ship.
+                getShipType() + " | Available Gadget Slots: "
+                + (SpaceTrader.ship.getGadgetslots() - SpaceTrader.ship.
                         getGadgets()));
-        getCurrentShipPowerLabel().setText("Current Levels: " + "Weapon: " +
-                SpaceTrader.ship.getWeaponLevel() + " Shield: " + SpaceTrader.
+        getCurrentShipPowerLabel().setText("Current Levels: " + "Weapon: "
+                + SpaceTrader.ship.getWeaponLevel() + " Shield: " + SpaceTrader.
                         ship.getShieldLevel());
         
     }
@@ -490,13 +490,13 @@ public class UpgradeShipScreenController implements Initializable {
             final int shieldLevel) {
         if (weaponLevel != 0) {
             getCurrentShipPowerLabel().setText("Current Levels: " + "Weapon: "
-                    + SpaceTrader.ship.getWeaponLevel() + "(+" + weaponLevel +
-                    ")" + " Shield: " + SpaceTrader.ship.getShieldLevel());
+                    + SpaceTrader.ship.getWeaponLevel() + "(+" + weaponLevel
+                    + ")" + " Shield: " + SpaceTrader.ship.getShieldLevel());
         } else {
             getCurrentShipPowerLabel().setText("Current Levels: " + "Weapon: "
-                    + SpaceTrader.ship.getWeaponLevel() + " Shield: " +
-                    SpaceTrader.ship.getShieldLevel() + "(+" + shieldLevel +
-                    ")");
+                    + SpaceTrader.ship.getWeaponLevel() + " Shield: " 
+                    + SpaceTrader.ship.getShieldLevel() + "(+" + shieldLevel
+                    + ")");
         }
         
     }
@@ -510,9 +510,9 @@ public class UpgradeShipScreenController implements Initializable {
         getCurrentSlotsLabel().setText("Current Gadget Slots: " + SpaceTrader.
                 ship.getGadgetslots());
         getCurrentShipLabel().setText("Current Ship: " + SpaceTrader.ship.
-                getShipType() + " | Available Gadget Slots: " +
-                (SpaceTrader.ship.getGadgetslots() -
-                        SpaceTrader.ship.getGadgets()));
+                getShipType() + " | Available Gadget Slots: "
+                + (SpaceTrader.ship.getGadgetslots()
+                        - SpaceTrader.ship.getGadgets()));
     }
     
     /**
