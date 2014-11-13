@@ -26,70 +26,70 @@ import javafx.scene.text.Text;
  * @author John
  */
 public class TraderEncounterScreenController implements Initializable {
- 
+
     /**
      * @variable tradeButton button to trade
      */
     @FXML
     private Button tradeButton;
-    
-        
+
+
     /**
      * @variable ignoreButton button to ignore
      */
     @FXML
     private Button ignoreButton;
-    
-        
+
+
     /**
      * @variable fightButton button to fight
      */
     @FXML
     private Button fightButton;
-    
-        
+
+
     /**
      * @variable buyButton button to buy
      */
     @FXML
     private Button buyButton;
-    
-        
+
+
     /**
      * @variable sellButton button to sell
      */
     @FXML
     private Button sellButton;
-    
-        
+
+
     /**
      * @variable playerItems display of the player's items
      */
     @FXML
     private ListView<String> playerItems;
-    
-        
+
+
     /**
      * @variable traderItems display of the trader's items
      */
     @FXML
     private ListView<String> traderItems;
-    
-        
+
+
     /**
      * @variable dialog the dialog box
      */
     @FXML
     private TextField dialog;
-    
-        
+
+
     /**
      * @variable credits the player's credits
      */
     @FXML
     private Text credits;
-    
-        
+
+
     /**
      * @variable newPlanet the next planet
      */
@@ -119,7 +119,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the trade option.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void trade(final ActionEvent event) {
@@ -143,7 +143,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * function to buy an item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void buy(final ActionEvent event) {
@@ -170,7 +170,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Function to sell an Item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void sell(final ActionEvent event) {
@@ -191,7 +191,7 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the ignore option.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void ignore(final ActionEvent event) {
@@ -207,10 +207,10 @@ public class TraderEncounterScreenController implements Initializable {
 
     /**
      * Method to handle the fight option.
-     * @param even
+     * @param event the event
      */
     @FXML
-    public final void fight(final ActionEvent even) {
+    public final void fight(final ActionEvent event) {
         String dialogString = "Space Sloth: You tryna start a fight mite?";
         getDialog().setText(dialogString);
         getTradeButton().setDisable(false);

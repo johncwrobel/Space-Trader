@@ -24,8 +24,8 @@ public class StartScreenController implements Initializable {
      */
     @FXML
     private Label title;
-    
-        
+
+
     /**
      * @variable newGameButton button to start new game
      */
@@ -35,7 +35,7 @@ public class StartScreenController implements Initializable {
     /**
      * sets the creation scene as the main scene when the button is clicked.
      *
-     * @param event
+     * @param event the event
      */
     @FXML
     private void handleButtonAction(final ActionEvent event) {
@@ -45,7 +45,7 @@ public class StartScreenController implements Initializable {
     /**
      * Initializes.
      * @param url no idea what this does, honestly
-     * @param rb
+     * @param rb the resource bundle
      */
     @Override
     public void initialize(final URL url, final ResourceBundle rb) {

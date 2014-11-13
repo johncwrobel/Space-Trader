@@ -36,7 +36,7 @@ import javafx.util.Duration;
  */
 public class GameUniverseScreenController implements Initializable {
 
-        
+
     /**
      * @variable saveButton button to save
      */
@@ -48,132 +48,132 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     private Button loadButton;
-    
-        
+
+
     /**
      * @variable playerCredits the player's credits
      */
     @FXML
     private Label playerCredits;
-    
-        
+
+
     /**
      * @variable goods the goods, dawg
      */
     @FXML
     private ListView<String> goods;
-    
-        
+
+
     /**
      * @variable selling what's being sold
      */
     @FXML
     private ListView<String> selling;
-    
-        
+
+
     /**
      * @variable buyButton button to buy
      */
     @FXML
     private Button buyButton;
-    
-        
+
+
     /**
      * @variable sellButton button to sell
      */
     @FXML
     private Button sellButton;
-    
-        
+
+
     /**
      * @variable cargo ship's cargo
      */
     @FXML
     private ListView<Item> cargo;
-    
-        
+
+
     /**
      * @variable currentSolarSystemLabel name says it all
      */
-    @FXML 
+    @FXML
     private Label currentSolarSystemLabel;
-    
-        
+
+
     /**
      * @variable currentPlanetLebel you guessed it!
      */
     @FXML
     private Label currentPlanetLabel;
-    
-        
+
+
     /**
      * @variable fuelLabel displays current fuel
      */
     @FXML
     private Label fuelLabel;
-    
-        
+
+
     /**
      * @variable planetComboBox the dropdown for planets
      */
     @FXML
     private ComboBox<String> planetComboBox;
-    
-        
+
+
     /**
      * @variable universeDisplayCanvas what the universe is displayed on
      */
     @FXML
     private Canvas universeDisplayCanvas;
-    
-        
+
+
     /**
      * @variable selectedSystemLabel displays selected system
      */
     @FXML
     private Label selectedSystemLabel;
-    
-        
+
+
     /**
      * @variable travelButton facilitates traveling
      */
     @FXML
     private Button travelButton;
-    
-        
+
+
     /**
      * @variable jumpButton hop around, hop around
      */
     @FXML
     private Button jumpButton;
-    
-        
+
+
     /**
      * @variable upgradeShipButton button to upgrade ship
      */
     @FXML
     private Button upgradeShipButton;
-    
-        
+
+
     /**
      * @variable start StartGame button
      */
     @FXML
     private Button start;
-    
-        
+
+
     /**
      * @variable selectedSystem currently selected system
      */
     private SolarSystem selectedSystem = null;
-    
-        
+
+
     /**
      * @variable clock tick tock
      */
     private Timeline clock;
-    
-        
+
+
     /**
      * @variable alertString hurray for dumb checkstyle fixes!
      */
@@ -505,7 +505,7 @@ public class GameUniverseScreenController implements Initializable {
 
         /**
          * Handles the passing of the counter.
-         * @param event
+         * @param event the event
          */
         public final void handle(final Event event) {
 
@@ -515,7 +515,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Method to save the game.
-     * @param event
+     * @param event the event
      */
     public final void save(final ActionEvent event) {
         SpaceTrader.save();
@@ -526,7 +526,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Method to load the game.
-     * @param event
+     * @param event the event
      */
     public final void load(final ActionEvent event) {
         SpaceTrader.load();
@@ -626,7 +626,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * function to buy an item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void buy(final ActionEvent event) {
@@ -652,7 +652,7 @@ public class GameUniverseScreenController implements Initializable {
     }
     /**
      * Moves player between planets in a solar system.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void jump(final ActionEvent event) {
@@ -676,7 +676,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Function to sell an Item.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void sell(final ActionEvent event) {
@@ -694,7 +694,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Function to start the game.
-     * @param event
+     * @param event the event
      */
     @FXML
     public final void startGame(final ActionEvent event) {
@@ -759,7 +759,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Handles the user clicking on new systems.
-     * @param e
+     * @param e the event
      */
     public final void chooseSystem(final MouseEvent e) {
         double xPos = e.getX();
@@ -781,7 +781,7 @@ public class GameUniverseScreenController implements Initializable {
 
     /**
      * Draws the planets.
-     * @param gc
+     * @param gc the graphicsContext
      */
     private void drawShapes(final GraphicsContext gc) {
         gc.setLineWidth(1);

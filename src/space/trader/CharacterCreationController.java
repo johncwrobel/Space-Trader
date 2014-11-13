@@ -29,38 +29,38 @@ public class CharacterCreationController implements Initializable {
      */
     @FXML
     private TextArea nameTextArea;
-        
+
     /**
      * @variable pilotTextArea area to allocate pilot skill points
      */
     @FXML
     private TextArea pilotTextArea;
-        
+
     /**
      * @variable fighterTextArea area to allocate fighter skill points
      */
     @FXML
     private TextArea fighterTextArea;
-        
+
     /**
      * @variable traderTextArea area to allocate trader skill points
      */
     @FXML
     private TextArea traderTextArea;
-        
+
     /**
      * @variable engineerTextArea area to allocate engineer skill points
      */
     @FXML
     private TextArea engineerTextArea;
-    
-        
+
+
     /**
      * @variable investorTextArea area to allocate investor skill points
      */
     @FXML
     private TextArea investorTextArea;
-        
+
     /**
      * @variable confirmButton button to confirm name and skill points
      */
@@ -117,7 +117,7 @@ public class CharacterCreationController implements Initializable {
 
     /**
      * Goes back to title screen.
-     * @param event
+     * @param event the event
      */
     @FXML
     private void cancel(final ActionEvent event) {
@@ -126,7 +126,7 @@ public class CharacterCreationController implements Initializable {
 
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-//all of this sets up and plays the music
+            //all of this sets up and plays the music
             final URL resource = getClass().getResource("backgroundMusic.mp3");
             //change the string to change the music file used
             final Media music = new Media(resource.toString());

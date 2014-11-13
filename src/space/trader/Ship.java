@@ -16,94 +16,94 @@ import javax.swing.JOptionPane;
  * @author Johnnycakes
  */
 public class Ship implements Serializable{
-        
+
     /**
      * @variable serialVersionUID still no idea what this does
      */
     private static final long serialVersionUID = 42L;
-        
+
     /**
      * @variable cargoHold the ship's cargo
      */
     private ArrayList<Item> cargoHold;
-        
+
     /**
      * @variable maxCargo the max amount of cargo you can carry
      */
     private int maxCargo;
-        
+
     /**
      * @variable fuel ship's current fuel
      */
     private int fuel;
-        
+
     /**
      * @variable maxFuel total possible fuel holdable
      */
     private int maxFuel;
-        
+
     /**
      * @variable xLocation ship's x-coordinate
      */
     private int xLocation;
-        
+
     /**
      * @variable yLocation ship's yLocation
      */
     private int yLocation;
-    
-        
+
+
     /**
      * @variable gadgetSlots how many gadgets the ship can have
      */
     private int gadgetslots;
-    
-        
+
+
     /**
      * @variable gadgets how many gadgets the ship has
      */
     private int gadgets;
-        
+
     /**
      * @variable maxCrew max crew members ship can hold
      */
     private int maxCrew;
-        
+
     /**
      * @variable techLevel ship's techLevel
      */
     private int techLevel;
-        
+
     /**
      * @variable fuelCost the cost of fuel
      */
     private int fuelCost;
-        
+
     /**
      * @variable bounty the ship's bounty
      */
     private int bounty;
-        
+
     /**
      * @variable size ship's size
      */
     private int size;
-        
+
     /**
      * @variable hull ship's hull strength
      */
     private int hull;
-        
+
     /**
      * @variable weaponLevel level of the ship's weapons
      */
     private int weaponLevel;
-        
+
     /**
      * @variable shieldLevel level of the ship's shield
      */
     private int shieldLevel;
-        
+
     /**
      * @variable shipType the type of ship
      */
@@ -356,27 +356,27 @@ public class Ship implements Serializable{
      * Enum for the ship types.
      */
     public enum ShipTypes{//enum for the ship types
-            
+
     /**
      * @variable SERENITY a ship type
      */
         SERENITY,
-            
+
     /**
      * @variable FALCON a ship type
      */
         FALCON,
-            
+
     /**
      * @variable ENTERPRISE a ship type
      */
         ENTERPRISE,
-            
+
     /**
      * @variable GALACTICA a ship type
      */
         GALACTICA,
-            
+
     /**
      * @variable DAEDALUS a ship type
      */
@@ -385,7 +385,7 @@ public class Ship implements Serializable{
 
 /**
  * Sets the ship type, and changed any associated private vars.
- * @param aShipType
+ * @param aShipType the ship type
  */
     public final void setShip(final ShipTypes aShipType) {
         if (aShipType == ShipTypes.SERENITY) {
@@ -559,7 +559,7 @@ public class Ship implements Serializable{
 
     /**
      * Adds an item to the ship's cargo hold.
-     * @param itemName
+     * @param itemName the item's name
      */
     public final void addItem(final String itemName) {
         final ArrayList<Item> itemList =
@@ -608,7 +608,7 @@ public class Ship implements Serializable{
 
     /**
      * Increases the ship's Weapon Level.
-     * @param add
+     * @param add how much to increase by
      */
     public final void increaseWeaponLevel(final int add) {
         setWeaponLevel(getWeaponLevel() + add);
