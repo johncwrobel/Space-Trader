@@ -12,43 +12,43 @@ import java.io.Serializable;
  *
  * @author tanmay (Seantannah)
  */
-public class Item implements Comparable, Serializable{
-        
+public class Item implements Comparable, Serializable {
+
     /**
      * @variable serialVersionUID still no idea
      */
     private static final long serialVersionUID = 42L;
-            
+
     /**
      * @variable name item name
      */
     private String name;
-            
+
     /**
      * @variable basePrice the base price
      */
     private int basePrice;
-            
+
     /**
      * @variable mtlp variable for price calculations
      */
     private int mtlp;
-                
+
     /**
      * @variable mtlu variable for price calculations
      */
     private int mtlu;
-                
+
     /**
      * @variable ipl variable for price calculations
      */
     private int ipl;
-                
+
     /**
      * @variable ttp variable for price calculations
      */
     private int ttp;
-                
+
     /**
      * @variable var variable for price calculations
      */
@@ -150,98 +150,98 @@ public class Item implements Comparable, Serializable{
     /**
      * @return the name
      */
-    final public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    final public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the basePrice
      */
-    final public int getBasePrice() {
+    public final int getBasePrice() {
         return basePrice;
     }
 
     /**
      * @param basePrice the basePrice to set
      */
-    final public void setBasePrice(final int basePrice) {
+    public final void setBasePrice(final int basePrice) {
         this.basePrice = basePrice;
     }
 
     /**
      * @return the mtlp
      */
-    final public int getMtlp() {
+    public final int getMtlp() {
         return mtlp;
     }
 
     /**
      * @param mtlp the mtlp to set
      */
-    final public void setMtlp(final int mtlp) {
+    public final void setMtlp(final int mtlp) {
         this.mtlp = mtlp;
     }
 
     /**
      * @return the mtlu
      */
-    final public int getMtlu() {
+    public final int getMtlu() {
         return mtlu;
     }
 
     /**
      * @param mtlu the mtlu to set
      */
-    final public void setMtlu(final int mtlu) {
+    public final void setMtlu(final int mtlu) {
         this.mtlu = mtlu;
     }
 
     /**
      * @return the ipl
      */
-    final public int getIpl() {
+    public final int getIpl() {
         return ipl;
     }
 
     /**
      * @param ipl the ipl to set
      */
-    final public void setIpl(final int ipl) {
+    public final void setIpl(final int ipl) {
         this.ipl = ipl;
     }
 
     /**
      * @return the ttp
      */
-    final public int getTtp() {
+    public final int getTtp() {
         return ttp;
     }
 
     /**
      * @param ttp the ttp to set
      */
-    final public void setTtp(final int ttp) {
+    public final void setTtp(final int ttp) {
         this.ttp = ttp;
     }
 
     /**
      * @return the var
      */
-    final public int getVar() {
+    public final int getVar() {
         return var;
     }
 
     /**
      * @param var the var to set
      */
-    final public void setVar(final int var) {
+    public final void setVar(final int var) {
         this.var = var;
     }
 }
