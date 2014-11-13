@@ -13,9 +13,15 @@ import org.junit.Test;
  *
  * @author tanmay
  */
-public class MarketPlaceTest {
-
+public class MarketPlaceTest {      
+    /**
+     * @variable test an instance for the tests
+     */
     private transient MarketPlace test;
+                    
+    /**
+     * @variable i an instance for the tests
+     */
     private Item i;
 
     /**

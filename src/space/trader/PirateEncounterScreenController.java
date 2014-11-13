@@ -29,21 +29,44 @@ import javafx.util.Duration;
  */
 public class PirateEncounterScreenController implements Initializable {
 
+    /**
+     * @variable canvas where the game is displayed
+     */
     @FXML
     private Canvas canvas;
-
+ 
+    /**
+     * @variable time label to show the time
+     */
     @FXML
     private Label time;
-
+    
+        
+    /**
+     * @variable start button to start game
+     */
     @FXML
     private Button start;
-
+    
+        
+    /**
+     * @variable timer amount of time to play game
+     */
     private int timer = 3;
-
+        
+    /**
+     * @variable clock the time keeper
+     */
     private Timeline clock;
-
+        
+    /**
+     * @variable target helps shooting
+     */
     private boolean[][] target = new boolean[20][20];
-
+        
+    /**
+     * @variable playing shows if player is playing
+     */
     private boolean playing = false;
 
 
@@ -178,7 +201,10 @@ public class PirateEncounterScreenController implements Initializable {
      * TimeClass to update screen and keep track of time.
      */
     public class TimeClass implements EventHandler {
-
+    
+        /**
+         * @variable counter the counter for the clock
+         */
         private int counter;
 
         /**

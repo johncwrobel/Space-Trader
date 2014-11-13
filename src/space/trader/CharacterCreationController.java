@@ -24,18 +24,46 @@ import javafx.scene.media.MediaPlayer;
  */
 public class CharacterCreationController implements Initializable {
 
+    /**
+     * @variable nameTextArea area for name input
+     */
     @FXML
     private TextArea nameTextArea;
+        
+    /**
+     * @variable pilotTextArea area to allocate pilot skill points
+     */
     @FXML
     private TextArea pilotTextArea;
+        
+    /**
+     * @variable fighterTextArea area to allocate fighter skill points
+     */
     @FXML
     private TextArea fighterTextArea;
+        
+    /**
+     * @variable traderTextArea area to allocate trader skill points
+     */
     @FXML
     private TextArea traderTextArea;
+        
+    /**
+     * @variable engineerTextArea area to allocate engineer skill points
+     */
     @FXML
     private TextArea engineerTextArea;
+    
+        
+    /**
+     * @variable investorTextArea area to allocate investor skill points
+     */
     @FXML
     private TextArea investorTextArea;
+        
+    /**
+     * @variable confirmButton button to confirm name and skill points
+     */
     @FXML
     private Button confirmButton;
 

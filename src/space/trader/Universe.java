@@ -7,13 +7,36 @@ import java.util.ArrayList;
  *
  * @author Benjamin Cervantes
  */
-public class Universe implements Serializable {
+public class Universe implements Serializable{
+                
+    /**
+     * @variable serialVersionUID no idea what this thing does
+     */
     private static final long serialVersionUID = 42L;
-
+                    
+    /**
+     * @variable numberOfSS how many solar systems you want
+     */
     private int numberOfSS;
+                    
+    /**
+     * @variable solarSystems backing array for the solar systems
+     */
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
+                    
+    /**
+     * @variable booleanArray the array that decides system positions
+     */
     private boolean[][] booleanArray;
+                    
+    /**
+     * @variable homeSolarSystem starting position
+     */
     private SolarSystem homeSolarSystem;
+                    
+    /**
+     * @variable homePlanet starting position
+     */
     private Planet homePlanet;
 
     /**

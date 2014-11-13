@@ -8,8 +8,10 @@ import static org.junit.Assert.assertEquals;
  *
  * @author John
  */
-public class BuyTest {
-
+public class BuyTest {            
+    /**
+     * @variable tester an instance for the tests
+     */
     private transient Character tester;
 
     /**

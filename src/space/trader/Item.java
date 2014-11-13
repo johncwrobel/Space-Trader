@@ -12,14 +12,46 @@ import java.io.Serializable;
  *
  * @author tanmay (Seantannah)
  */
-public class Item implements Comparable, Serializable {
+public class Item implements Comparable, Serializable{
+        
+    /**
+     * @variable serialVersionUID still no idea
+     */
     private static final long serialVersionUID = 42L;
+            
+    /**
+     * @variable name item name
+     */
     private String name;
+            
+    /**
+     * @variable basePrice the base price
+     */
     private int basePrice;
+            
+    /**
+     * @variable mtlp variable for price calculations
+     */
     private int mtlp;
+                
+    /**
+     * @variable mtlu variable for price calculations
+     */
     private int mtlu;
+                
+    /**
+     * @variable ipl variable for price calculations
+     */
     private int ipl;
+                
+    /**
+     * @variable ttp variable for price calculations
+     */
     private int ttp;
+                
+    /**
+     * @variable var variable for price calculations
+     */
     private int var;
     /**
      * Constructor for an Item.
