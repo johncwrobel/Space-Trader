@@ -16,14 +16,10 @@ package space.trader;
  * @author Tommy Lee
  */
 public class Weapon {
-<<<<<<< HEAD
-        
+ 
     /**
      * @variable name weapon's name
      */
-=======
-
->>>>>>> origin/master
     private String name;
         
     /**

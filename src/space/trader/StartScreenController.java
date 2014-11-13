@@ -18,8 +18,7 @@ import javafx.scene.control.*;
  * @author John
  */
 public class StartScreenController implements Initializable {
-<<<<<<< HEAD
-    
+
     /**
      * @variable title game title
      */
@@ -30,12 +29,6 @@ public class StartScreenController implements Initializable {
     /**
      * @variable newGameButton button to start new game
      */
-=======
-
-    @FXML
-    private Label title;
-
->>>>>>> origin/master
     @FXML
     private Button newGameButton;
 

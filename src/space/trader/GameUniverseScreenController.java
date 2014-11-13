@@ -42,9 +42,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     @FXML
     private Button saveButton;
-<<<<<<< HEAD
-    
-        
+
     /**
      * @variable loadButton button to load
      */
@@ -177,66 +175,8 @@ public class GameUniverseScreenController implements Initializable {
     
         
     /**
-     * @variable hurray for dumb checkstyle fixes!
+     * @variable alertString hurray for dumb checkstyle fixes!
      */
-=======
-
-    @FXML
-    private Button loadButton;
-
-    @FXML
-    private Label playerCredits;
-
-    @FXML
-    private ListView<String> goods;
-
-    @FXML
-    private ListView<String> selling;
-
-    @FXML
-    private Button buyButton;
-
-    @FXML
-    private Button sellButton;
-
-    @FXML
-    private ListView<Item> cargo;
-
-    @FXML
-    private Label currentSolarSystemLabel;
-
-    @FXML
-    private Label currentPlanetLabel;
-
-    @FXML
-    private Label fuelLabel;
-
-    @FXML
-    private ComboBox<String> planetComboBox;
-
-    @FXML
-    private Canvas universeDisplayCanvas;
-
-    @FXML
-    private Label selectedSystemLabel;
-
-    @FXML
-    private Button travelButton;
-
-    @FXML
-    private Button jumpButton;
-
-    @FXML
-    private Button upgradeShipButton;
-
-    @FXML
-    private Button start;
-
-    private SolarSystem selectedSystem = null;
-
-    private Timeline clock;
-
->>>>>>> origin/master
     private String alertString = "Alert!";
 
     /**

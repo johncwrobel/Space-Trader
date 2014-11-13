@@ -34,9 +34,7 @@ public class PirateEncounterScreenController implements Initializable {
      */
     @FXML
     private Canvas canvas;
-<<<<<<< HEAD
-    
-        
+ 
     /**
      * @variable time label to show the time
      */
@@ -69,21 +67,6 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable playing shows if player is playing
      */
-=======
-
-    @FXML
-    private Label time;
-
-    @FXML
-    private Button start;
-
-    private int timer = 3;
-
-    private Timeline clock;
-
-    private boolean[][] target = new boolean[20][20];
-
->>>>>>> origin/master
     private boolean playing = false;
 
 

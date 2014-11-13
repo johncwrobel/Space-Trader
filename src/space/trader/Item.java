@@ -12,15 +12,11 @@ import java.io.Serializable;
  *
  * @author tanmay (Seantannah)
  */
-<<<<<<< HEAD
 public class Item implements Comparable, Serializable{
         
     /**
      * @variable serialVersionUID still no idea
      */
-=======
-public class Item implements Comparable, Serializable {
->>>>>>> origin/master
     private static final long serialVersionUID = 42L;
             
     /**

@@ -26,9 +26,7 @@ public class PoliceEncounterScreenController implements Initializable {
      */
     @FXML
     private Label dialogueLabel;
-<<<<<<< HEAD
-    
-        
+ 
     /**
      * @variable bribeButton button to bribe
      */
@@ -53,18 +51,6 @@ public class PoliceEncounterScreenController implements Initializable {
     /**
      * @variable bribeAmountLabel label to display bribe price
      */
-=======
-
-    @FXML
-    private Button bribeButton;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
-    private Button fightButton;
-
->>>>>>> origin/master
     @FXML
     private Label bribeAmountLabel;
 

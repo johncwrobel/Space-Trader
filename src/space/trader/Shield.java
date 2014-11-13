@@ -11,14 +11,10 @@ package space.trader;
  */
 
 public class Shield {
-<<<<<<< HEAD
-        
+   
     /**
      * @variable name shield's name
      */
-=======
-
->>>>>>> origin/master
     private String name;
         
     /**

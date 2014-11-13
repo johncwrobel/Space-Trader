@@ -26,9 +26,7 @@ import javafx.scene.text.Text;
  * @author John
  */
 public class TraderEncounterScreenController implements Initializable {
-<<<<<<< HEAD
-    
-        
+ 
     /**
      * @variable tradeButton button to trade
      */
@@ -95,36 +93,6 @@ public class TraderEncounterScreenController implements Initializable {
     /**
      * @variable newPlanet the next planet
      */
-=======
-
-    @FXML
-    private Button tradeButton;
-
-    @FXML
-    private Button ignoreButton;
-
-    @FXML
-    private Button fightButton;
-
-    @FXML
-    private Button buyButton;
-
-    @FXML
-    private Button sellButton;
-
-    @FXML
-    private ListView<String> playerItems;
-
-    @FXML
-    private ListView<String> traderItems;
-
-    @FXML
-    private TextField dialog;
-
-    @FXML
-    private Text credits;
-
->>>>>>> origin/master
     @FXML
     private Planet newPlanet;
 

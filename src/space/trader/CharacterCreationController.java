@@ -23,15 +23,10 @@ import javafx.scene.media.MediaPlayer;
  * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
-<<<<<<< HEAD
-    
-        
+
     /**
      * @variable nameTextArea area for name input
      */
-=======
-
->>>>>>> origin/master
     @FXML
     private TextArea nameTextArea;
         

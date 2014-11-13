@@ -31,9 +31,7 @@ import javafx.scene.image.ImageView;
  * @author John
  */
 public class UpgradeShipScreenController implements Initializable {
-<<<<<<< HEAD
-    
-        
+
     /**
      * @variable buyFalcon button to buy Falcon
      */
@@ -121,45 +119,6 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * @variable currentShipLabel label to show current ship
      */
-=======
-
-    @FXML
-    private Button buyFalcon;
-
-    @FXML
-    private Button buyEnterprise;
-
-    @FXML
-    private Button buyGalactica;
-
-    @FXML
-    private Button buyDaedalus;
-
-    @FXML
-    private Label successLabel;
-
-    @FXML
-    private Label creditLabel;
-
-    @FXML
-    private Label currentSlotsLabel;
-
-    @FXML
-    private Button shieldUpgradeButton;
-
-    @FXML
-    private Button gadgetUpgradeButton;
-
-    @FXML
-    private Button weaponUpgradeButton;
-
-    @FXML
-    private Button showShipUpgradesButton;
-
-    @FXML
-    private Button newShipButton;
-
->>>>>>> origin/master
     @FXML
     private Label currentShipLabel;
     
@@ -169,9 +128,7 @@ public class UpgradeShipScreenController implements Initializable {
      */
     @FXML
     private Label currentShipPowerLabel;
-<<<<<<< HEAD
-    
-        
+   
     /**
      * @variable imageViewMane the ImageView, mane
      */
@@ -230,41 +187,13 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * @variable isShieldButtonPressed boolean to check if a button is pressed
      */
-=======
-
-    @FXML
-    private ImageView imageViewMane;
-
-    @FXML
-    private ListView gadgetListView;
-
-    @FXML
-    private Button viewGadgetButton;
-
-    @FXML
-    private Button weaponButton;
-
-    @FXML
-    private Button shieldButton;
-
-    @FXML
-    private Label shieldPriceLabel;
-
-    @FXML
-    private Label weaponPriceLabel;
-
-    private int techLevel;
-
->>>>>>> origin/master
     private boolean isShieldButtonPressed = false;
         
     /**
      * @variable isWeaponButtonPRessed boolean to check if a button is pressed
      */
     private boolean isWeaponButtonPressed = false;
-<<<<<<< HEAD
-    
-        
+ 
     /**
      * @variable shields ArrayList to hold all the shields
      */
@@ -286,15 +215,6 @@ public class UpgradeShipScreenController implements Initializable {
     /**
      * @variable notEnoughCreditsString like is this really necessary?
      */
-=======
-
-    private ArrayList<Shield> shields = new ArrayList();
-
-    private ArrayList<Weapon> weapons = new ArrayList();
-
-    private String upgradeSuccessfulString = "Upgrade successful!";
-
->>>>>>> origin/master
     private String notEnoughCreditsString = "Not enough credits!";
     /**
      * Initializes the controller class.

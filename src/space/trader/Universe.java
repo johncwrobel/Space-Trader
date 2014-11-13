@@ -7,7 +7,6 @@ import java.util.ArrayList;
  *
  * @author Benjamin Cervantes
  */
-<<<<<<< HEAD
 public class Universe implements Serializable{
                 
     /**
@@ -18,11 +17,6 @@ public class Universe implements Serializable{
     /**
      * @variable numberOfSS how many solar systems you want
      */
-=======
-public class Universe implements Serializable {
-    private static final long serialVersionUID = 42L;
-
->>>>>>> origin/master
     private int numberOfSS;
                     
     /**

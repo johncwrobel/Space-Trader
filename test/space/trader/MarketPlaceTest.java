@@ -13,16 +13,10 @@ import org.junit.Test;
  *
  * @author tanmay
  */
-public class MarketPlaceTest {
-<<<<<<< HEAD
-    
-                    
+public class MarketPlaceTest {      
     /**
      * @variable test an instance for the tests
      */
-=======
-
->>>>>>> origin/master
     private transient MarketPlace test;
                     
     /**

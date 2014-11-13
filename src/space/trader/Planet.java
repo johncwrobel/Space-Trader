@@ -6,15 +6,11 @@ import java.io.Serializable;
  *
  * @author Benjamin Cervantes and John Wrobel
  */
-<<<<<<< HEAD
 public class Planet implements Serializable{
     
     /**
      * @variable serialVersionUID no clue what this is for
      */
-=======
-public class Planet implements Serializable {
->>>>>>> origin/master
     private static final long serialVersionUID = 42L;
     
     /**

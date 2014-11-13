@@ -15,7 +15,6 @@ import javax.swing.JOptionPane;
  *
  * @author Johnnycakes
  */
-<<<<<<< HEAD
 public class Ship implements Serializable{
         
     /**
@@ -26,11 +25,6 @@ public class Ship implements Serializable{
     /**
      * @variable cargoHold the ship's cargo
      */
-=======
-public class Ship implements Serializable {
-    private static final long serialVersionUID = 42L;
-
->>>>>>> origin/master
     private ArrayList<Item> cargoHold;
         
     /**
@@ -361,7 +355,6 @@ public class Ship implements Serializable {
     /**
      * Enum for the ship types.
      */
-<<<<<<< HEAD
     public enum ShipTypes{//enum for the ship types
             
     /**
@@ -388,10 +381,6 @@ public class Ship implements Serializable {
      * @variable DAEDALUS a ship type
      */
         DAEDALUS
-=======
-    public enum ShipTypes { //enum for the ship types
-        SERENITY, FALCON, ENTERPRISE, GALACTICA, DAEDALUS
->>>>>>> origin/master
     }
 
 /**
