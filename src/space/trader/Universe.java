@@ -9,13 +9,13 @@ import java.util.ArrayList;
  */
 public class Universe implements Serializable{
     private static final long serialVersionUID = 42L;
-    
+
     private int numberOfSS;
     private ArrayList<SolarSystem> solarSystems = new ArrayList<SolarSystem>();
     private boolean[][] booleanArray;
     private SolarSystem homeSolarSystem;
     private Planet homePlanet;
-    
+
     /**
      * Constructor for Universe class.
      */
@@ -41,11 +41,11 @@ public class Universe implements Serializable{
             solarSystems.add(new SolarSystem(x, y));
             booleanArray[x][y] = true;
         }
-        
+
         homeSolarSystem = solarSystems.get(0);
         homePlanet = homeSolarSystem.getPlanet(0);
     }
-    
+
     /**
      * toString method for the class.
      * @return toString
@@ -61,7 +61,7 @@ public class Universe implements Serializable{
                 + getNumberOfSolarSystems() + "\n");
         return returnString.toString();
     }
-    
+
     /**
      * Getter method for the solar system.
      * @param x x coordinate
@@ -73,7 +73,7 @@ public class Universe implements Serializable{
         for (SolarSystem s: getSolarSystems()) {
             final int systemX = s.getXLocation();
             final int systemY = s.getYLocation();
-            
+
             if (x == systemX && y == systemY) {
                 toReturn = s;
             }
@@ -152,6 +152,6 @@ public class Universe implements Serializable{
     final public void setHomePlanet(final Planet homePlanet) {
         this.homePlanet = homePlanet;
     }
-        
+
 }
 

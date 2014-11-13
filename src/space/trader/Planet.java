@@ -15,7 +15,7 @@ public class Planet implements Serializable{
     private int resources;
     private SolarSystem parentSystem;
     private MarketPlace marketplace;
-    
+
     /**
      * Constructor for Planet class.
      * @param parent parent solar system
@@ -28,7 +28,7 @@ public class Planet implements Serializable{
         resources = (int)(Math.random() * 13);
         marketplace = new MarketPlace(getTechLevel());
     }
-    
+
     /**
      * Getter method for getName.
      * @return name
@@ -44,7 +44,7 @@ public class Planet implements Serializable{
     public final SolarSystem getSolarSystem(){
         return this.getParentSystem();
     }
-    
+
     /**
      * Getter method for Tech Level.
      * @return techLevel

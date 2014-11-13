@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Ship implements Serializable{
     private static final long serialVersionUID = 42L;
-    
+
     private ArrayList<Item> cargoHold;
     private int maxCargo;
     private int fuel;
@@ -278,17 +278,17 @@ public class Ship implements Serializable{
     final public void setShipType(final ShipTypes shipType) {
         this.shipType = shipType;
     }
-    
+
     /**
      * Enum for the ship types.
      */
     public enum ShipTypes{//enum for the ship types
         SERENITY, FALCON, ENTERPRISE, GALACTICA, DAEDALUS
     }
-    
+
 /**
  * Sets the ship type, and changed any associated private vars.
- * @param aShipType 
+ * @param aShipType
  */
     public final void setShip(final ShipTypes aShipType){
         if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
@@ -312,11 +312,11 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(2);
             SpaceTrader.ship.setBounty(50);
-            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setSize(1);
             SpaceTrader.ship.setHull(100);
             SpaceTrader.ship.setWeaponLevel(1);
             SpaceTrader.ship.setShieldLevel(1);
-        }       
+        }
         if (aShipType==ShipTypes.ENTERPRISE){
             SpaceTrader.ship.setMaxCargo(20);
             SpaceTrader.ship.setMaxFuel(30);
@@ -325,7 +325,7 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(3);
             SpaceTrader.ship.setBounty(75);
-            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setSize(1);
             SpaceTrader.ship.setHull(100);
             SpaceTrader.ship.setWeaponLevel(3);
             SpaceTrader.ship.setShieldLevel(3);
@@ -338,11 +338,11 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(5);
             SpaceTrader.ship.setBounty(100);
-            SpaceTrader.ship.setSize(1); 
+            SpaceTrader.ship.setSize(1);
             SpaceTrader.ship.setHull(100);
             SpaceTrader.ship.setWeaponLevel(5);
             SpaceTrader.ship.setShieldLevel(5);
-        }        
+        }
         if (aShipType==ShipTypes.DAEDALUS){
             SpaceTrader.ship.setMaxCargo(30);
             SpaceTrader.ship.setMaxFuel(40);
@@ -351,14 +351,14 @@ public class Ship implements Serializable{
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(7);
             SpaceTrader.ship.setBounty(125);
-            SpaceTrader.ship.setSize(2); 
+            SpaceTrader.ship.setSize(2);
             SpaceTrader.ship.setHull(100);
             SpaceTrader.ship.setWeaponLevel(7);
             SpaceTrader.ship.setShieldLevel(7);
-        }        
+        }
         setShipType(aShipType);
     }
-    
+
     /**
      * Removes an item from the ship's cargo hold.
      * @param name item name
@@ -375,47 +375,47 @@ public class Ship implements Serializable{
         }
         return toReturn;
     }
-    
+
     /**
      * Returns the current fuel for the ship.
      * @return Fuel
      */
-    
+
     public final int getFuel(){
         return this.fuel; //returns the ship's current Fuel
     }
-    
+
     /**
      * Returns the maximum amount of fuel the ship can hold.
      * @return maxFuel
      */
-    
+
     public final int getMaxFuel(){
         return this.maxFuel; //returns the ship's maximum allowed fuel
     }
-    
+
     /**
      * Adds fuel to the ship.
      * @param amount the amount of fuel to add
      */
-    
+
     public final void addFuel(final int amount){
-        this.setFuel(this.getFuel() + amount); 
+        this.setFuel(this.getFuel() + amount);
 //add a certain amount of fuel to the ship
     }
-    
+
     /**
      * Whether nor not the ship has enough fuel to travel to a system.
      * @param system the system to travel to
      * @return true or false
      */
-    
+
     public final boolean canTravelTo(final SolarSystem system){
         setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation());
         //updates the xLocation of the ship to use later
         setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation());
         //updates the yLocation of the ship to use later
-        
+
         //uses distance formula to calculate if the distance is too far
         return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation(
         ))*(getxLocation() - system.getXLocation()) + (getyLocation()
@@ -427,12 +427,12 @@ public class Ship implements Serializable{
      * @param planet the system to travel to
      * @return true or false
      */
-    
+
     public final boolean canTravelTo(final Planet planet){
         return canTravelTo(planet.getSolarSystem());
         //calls above method, but with planet instead
     }
-    
+
     /**
      * Moves the ship from current planet to decided planet.
      * Sets currentplanet
@@ -440,7 +440,7 @@ public class Ship implements Serializable{
      * Sets X and Y locations
      * @param planet the planet to travel to
      */
-    
+
     public final void travel(final Planet planet){
         //subtracts fuel based on how far we travelled
         setFuel((int) (getFuel() - Math.sqrt((getxLocation()
@@ -457,10 +457,10 @@ public class Ship implements Serializable{
         setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation());
         //updates yLocation of ship
     }
-    
+
     /**
      * Adds an item to the ship's cargo hold.
-     * @param itemName 
+     * @param itemName
      */
     public final void addItem(final String itemName) {
         final ArrayList<Item> itemList =
@@ -474,7 +474,7 @@ public class Ship implements Serializable{
         }
         //cargoHold.add(itemList.get(index))
     }
-    
+
     /**
      * Checks if there is space in the cargo hold or not.
      * @return if there's room
@@ -490,7 +490,7 @@ public class Ship implements Serializable{
         }
         return toReturn;
     }
-    
+
     /**
      * Getter for the ship's cargo.
      * @return ship's cargo
@@ -498,7 +498,7 @@ public class Ship implements Serializable{
     public final ArrayList getCargo() {
         return getCargoHold();
     }
-    
+
     /**
      * Check if Ship's cargo is big enough.
      * @return if gadgets can be purchased
@@ -506,15 +506,15 @@ public class Ship implements Serializable{
     public final boolean checkGadget() {
         return getGadgetslots() > getGadgets();
     }
-    
+
     /**
      * Increases the ship's Weapon Level.
-     * @param add 
+     * @param add
      */
     public final void increaseWeaponLevel(final int add) {
         setWeaponLevel(getWeaponLevel() + add);
     }
-    
+
     /**
      * Increase the ship's Shield Level.
      * @param add amount to increase by

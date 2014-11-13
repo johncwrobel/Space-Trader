@@ -20,7 +20,7 @@ import org.junit.Test;
  * @author Caleb
  */
 public class ShipTest {
-   
+
     /**
      * Test of setShip method, of class Ship.
      */
@@ -28,27 +28,27 @@ public class ShipTest {
     public final void testSetShip() {
         final Ship instance = new Ship();
         instance.setShip(Ship.ShipTypes.SERENITY);
-        
+
         Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.SERENITY);
         Assert.assertEquals(10, instance.getMaxCargo());
-        
+
         instance.setShip(Ship.ShipTypes.ENTERPRISE);
-        
+
         Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.ENTERPRISE);
         Assert.assertEquals(15, instance.getMaxCargo());
-        
+
         instance.setShip(Ship.ShipTypes.DAEDALUS);
-        
+
         Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.DAEDALUS);
         Assert.assertEquals(20, instance.getMaxCargo());
-          
+
         instance.setShip(Ship.ShipTypes.FALCON);
-        
+
         Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.FALCON);
         Assert.assertEquals(25, instance.getMaxCargo());
-        
+
         instance.setShip(Ship.ShipTypes.GALACTICA);
-        
+
         Assert.assertEquals(instance.getShipType(), Ship.ShipTypes.GALACTICA);
         Assert.assertEquals(30, instance.getMaxCargo());
     }
@@ -62,10 +62,10 @@ public class ShipTest {
         Ship instance = new Ship();
         instance.addFuel(amount);
         Assert.assertEquals(10, instance.getFuel());
-        
+
         instance.addFuel(100);
         Assert.assertEquals(110, instance.getFuel());
-        
+
         instance.addFuel(1000);
         Assert.assertEquals(1110, instance.getFuel());
     }

@@ -23,7 +23,7 @@ import javafx.scene.media.MediaPlayer;
  * @author Tanmay/Ben/John/Thomas
  */
 public class CharacterCreationController implements Initializable {
-    
+
     @FXML
     private TextArea nameTextArea;
     @FXML
@@ -38,9 +38,9 @@ public class CharacterCreationController implements Initializable {
     private TextArea investorTextArea;
     @FXML
     private Button confirmButton;
-    
+
     /**
-     * Takes the data from the text area, 
+     * Takes the data from the text area,
      * validates it and creates a Character object if valid.
      *
      * @param event ActionEvent for the listener
@@ -53,8 +53,8 @@ public class CharacterCreationController implements Initializable {
         final String engineerString = getEngineerTextArea().getText().trim();
         final String investorString = getInvestorTextArea().getText().trim();
         final String name = getNameTextArea().getText().trim();
-        
-        if (!isInteger(pilotString) || !isInteger(fighterString) 
+
+        if (!isInteger(pilotString) || !isInteger(fighterString)
                 || !isInteger(traderString) || !isInteger(engineerString)
                 || !isInteger(investorString)) {
             JOptionPane.showMessageDialog(null,
@@ -66,7 +66,7 @@ public class CharacterCreationController implements Initializable {
             final int trader = Integer.parseInt(traderString);
             final int engineer = Integer.parseInt(engineerString);
             final int investor = Integer.parseInt(investorString);
-            
+
             if (pilot + fighter + trader + engineer + investor > 20) {
                 JOptionPane.showMessageDialog(null,
                         "You have used too many skill points", "Alert!" ,
@@ -74,7 +74,7 @@ public class CharacterCreationController implements Initializable {
             } else if (pilot + fighter + trader + engineer + investor < 20) {
                 JOptionPane.showMessageDialog(null,
                         "You have not used all of your skill points, rearrange"
-                                + " the skill points", "Alert!" 
+                                + " the skill points", "Alert!"
                         , JOptionPane.ERROR_MESSAGE);
             } else {
                 final Character myCharacter = new Character(name, pilot,
@@ -86,16 +86,16 @@ public class CharacterCreationController implements Initializable {
             }
         }
     }
-    
+
     /**
      * Goes back to title screen.
-     * @param event 
+     * @param event
      */
     @FXML
     private void cancel(final ActionEvent event) {
         SpaceTrader.setTitleScene();
     }
-    
+
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
 //all of this sets up and plays the music
@@ -107,20 +107,20 @@ public class CharacterCreationController implements Initializable {
             //this is the line that loops the mp3 indefinitely
             mediaPlayer.play();
     }
-    
+
     /**
      * Checks if s is an integer.
-     * 
+     *
      * @param s a String
      * @return true if s is an integer, false otherwise
      */
     private static boolean isInteger(final String s) {
         boolean toReturn;
-        try { 
+        try {
             Integer.parseInt(s);
             toReturn = true;
-        } catch(NumberFormatException e) { 
-            toReturn = false; 
+        } catch(NumberFormatException e) {
+            toReturn = false;
         }
         return toReturn;
     }
@@ -222,5 +222,5 @@ public class CharacterCreationController implements Initializable {
     final public void setConfirmButton(final Button confirmButton) {
         this.confirmButton = confirmButton;
     }
-    
+
 }

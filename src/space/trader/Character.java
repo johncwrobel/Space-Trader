@@ -17,7 +17,7 @@ public class Character implements Serializable, CharacterInterface {
         private int engineer;
         private int investor;
         private boolean criminal;
-        
+
         /**
          * Constructor for Character Class.
          * @param name character name
@@ -38,7 +38,7 @@ public class Character implements Serializable, CharacterInterface {
             this.credits = 2000;
             this.criminal = criminal;
         }
-        
+
         /**
          * Getter method for character's credits.
          * @return how many credits the character has
@@ -46,7 +46,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getCredits() {
             return this.credits;
         }
-        
+
         /**
          * Getter method for character name.
          * @return the name
@@ -54,7 +54,7 @@ public class Character implements Serializable, CharacterInterface {
         public final String getName() {
             return this.name;
         }
-        
+
         /**
          * Getter method for character reputation.
          * @return if the character is a criminal or not
@@ -62,15 +62,15 @@ public class Character implements Serializable, CharacterInterface {
         public final boolean isCriminal() {
             return this.criminal;
         }
-        
+
         /**
          * create bribe amount (100-500 credits) and reduce from credits.
          * @return cost of the bribe
          */
-        public final int policeBribe() {            
+        public final int policeBribe() {
             return 500;
         }
-        
+
         /**
          * Handler for if player consents to the search.
          */
@@ -86,24 +86,24 @@ public class Character implements Serializable, CharacterInterface {
                 }
             }
         }
-        
+
         /**
          * deducts bribe amount from player credit.
          */
         public final void payBribe() {
             setCredits(credits - 500);
         }
-           
+
         /**
          * Facilitates the buying process.
          * @param price amount to be deducted
          */
         public final void buy(final int price) {
             if (canBuy(price)){
-               setCredits(credits - price); 
+               setCredits(credits - price);
             }
         }
-        
+
         /**
          * Checker method to make sure the character can buy something.
          * @param price cost to buy
@@ -120,15 +120,15 @@ public class Character implements Serializable, CharacterInterface {
             }
             return toReturn;
         }
-        
+
         /**
          * Facilitates the selling process.
-         * @param price 
+         * @param price
          */
         public final void sell(final int price) {
             setCredits(credits + price);
         }
-        
+
         /**
          * Getter method for Pilot.
          * @return pilot
@@ -136,7 +136,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getPilot() {
             return this.pilot;
         }
-        
+
         /**
          * Getter method for Fighter.
          * @return fighter
@@ -144,7 +144,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getFighter() {
             return this.fighter;
         }
-        
+
         /**
          * Getter method for Trader.
          * @return trader
@@ -152,7 +152,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getTrader() {
             return this.trader;
         }
-        
+
         /**
          * Getter method for Engineer.
          * @return engineer skill level
@@ -160,7 +160,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getEngineer() {
             return this.engineer;
         }
-        
+
         /**
          * Getter method for Investor.
          * @return investor skill level
@@ -168,7 +168,7 @@ public class Character implements Serializable, CharacterInterface {
         public final int getInvestor() {
             return this.investor;
         }
-        
+
         /**
          * toString for the character.
          * @return String representation for the character
@@ -196,7 +196,7 @@ public class Character implements Serializable, CharacterInterface {
         public final void setCredits(final int credits) {
             this.credits = credits;
         }
-        
+
         /**
          * Setter method for name.
          * @param name to be set
@@ -204,7 +204,7 @@ public class Character implements Serializable, CharacterInterface {
         public final void setName(final String name) {
             this.name = name;
         }
-        
+
         /**
          * Setter method for pilot.
          * @param level to be set
@@ -212,7 +212,7 @@ public class Character implements Serializable, CharacterInterface {
         public final void setPilot(final int level) {
             this.pilot = level;
         }
-        
+
         /**
          * Setter method for fighter.
          * @param level to be set
@@ -220,7 +220,7 @@ public class Character implements Serializable, CharacterInterface {
         public final void setFighter(final int level) {
             this.fighter = level;
         }
-        
+
         /**
          * Setter method for trader.
          * @param level to be set
@@ -228,8 +228,8 @@ public class Character implements Serializable, CharacterInterface {
         public final void setTrader(final int level) {
             this.trader = level;
         }
-        
-        
+
+
         /**
          * Setter method for engineer.
          * @param level to be set
@@ -237,7 +237,7 @@ public class Character implements Serializable, CharacterInterface {
         public final void setEngineer(final int level) {
             this.engineer = level;
         }
-        
+
         /**
          * Setter method for investor.
          * @param level to be set

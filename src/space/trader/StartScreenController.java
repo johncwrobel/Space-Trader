@@ -18,31 +18,31 @@ import javafx.scene.control.*;
  * @author John
  */
 public class StartScreenController implements Initializable {
-    
+
     @FXML
     private Label title;
-    
+
     @FXML
     private Button newGameButton;
-    
+
     /**
      * sets the creation scene as the main scene when the button is clicked.
-     * 
-     * @param event 
+     *
+     * @param event
      */
     @FXML
     private void handleButtonAction(final ActionEvent event) {
         SpaceTrader.setCreationScene();
     }
-    
+
     /**
      * Initializes.
      * @param url no idea what this does, honestly
-     * @param rb 
+     * @param rb
      */
     @Override
     public void initialize(final URL url, final ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }

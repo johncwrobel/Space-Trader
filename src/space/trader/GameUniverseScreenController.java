@@ -38,64 +38,64 @@ public class GameUniverseScreenController implements Initializable {
 
     @FXML
     private Button saveButton;
-    
+
     @FXML
     private Button loadButton;
-    
+
     @FXML
     private Label playerCredits;
-    
+
     @FXML
     private ListView<String> goods;
-    
+
     @FXML
     private ListView<String> selling;
-    
+
     @FXML
     private Button buyButton;
-    
+
     @FXML
     private Button sellButton;
-    
+
     @FXML
     private ListView<Item> cargo;
-    
-    @FXML 
+
+    @FXML
     private Label currentSolarSystemLabel;
-    
+
     @FXML
     private Label currentPlanetLabel;
-    
+
     @FXML
     private Label fuelLabel;
-    
+
     @FXML
     private ComboBox<String> planetComboBox;
-    
+
     @FXML
     private Canvas universeDisplayCanvas;
-    
+
     @FXML
     private Label selectedSystemLabel;
-    
+
     @FXML
     private Button travelButton;
-    
+
     @FXML
     private Button jumpButton;
-    
+
     @FXML
     private Button upgradeShipButton;
-    
+
     @FXML
     private Button start;
-    
+
     private SolarSystem selectedSystem = null;
-    
+
     private Timeline clock;
-    
+
     private String alertString = "Alert!";
-    
+
     /**
      * Method that handles buying fuel.
      * @param e action event parameter
@@ -107,7 +107,7 @@ public class GameUniverseScreenController implements Initializable {
             SpaceTrader.getMainCharacter().buy(100);
         } else if ((SpaceTrader.ship.getFuel() + 5)
                 > SpaceTrader.ship.getMaxFuel()) {
-            JOptionPane.showMessageDialog(null, 
+            JOptionPane.showMessageDialog(null,
                     "You do not have enough fuel capacity.", getAlertString(),
                     JOptionPane.WARNING_MESSAGE);
         } else {
@@ -412,44 +412,44 @@ public class GameUniverseScreenController implements Initializable {
     final public void setAlertString(final String alertString) {
         this.alertString = alertString;
     }
-    
+
     /**
      * Class to help handle a timer that should help
      * update the screen automatically.
      */
     public class TimeClass implements EventHandler {
 
- 
+
         /**
          * Handles the passing of the counter.
-         * @param event 
+         * @param event
          */
         public final void handle(final Event event) {
-            
+
             updateScreen();
         }
     }
-    
+
     /**
      * Method to save the game.
-     * @param event 
+     * @param event
      */
     public final void save(final ActionEvent event) {
         SpaceTrader.save();
-        JOptionPane.showMessageDialog(null, 
+        JOptionPane.showMessageDialog(null,
                 "You have saved the game, overriding all previous save data",
                 getAlertString(), JOptionPane.WARNING_MESSAGE);
     }
-    
+
     /**
      * Method to load the game.
-     * @param event 
+     * @param event
      */
     public final void load(final ActionEvent event) {
         SpaceTrader.load();
         updateScreen();
     }
-    
+
     /**
      * Initializes the controller class.
      * @param url the url
@@ -457,7 +457,7 @@ public class GameUniverseScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        getGoods().getSelectionModel().selectedItemProperty().addListener(new 
+        getGoods().getSelectionModel().selectedItemProperty().addListener(new
         ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String>
                     observable, final String oldValue, final String newValue)
@@ -465,7 +465,7 @@ public class GameUniverseScreenController implements Initializable {
           }
         });
     }
-    
+
     /**
      * Handler for traveling.
      * @param event the event
@@ -475,28 +475,28 @@ public class GameUniverseScreenController implements Initializable {
             //make sure they actually selected a planet
             SpaceTrader.travelSolarSystem(getSelectedSystem());
             if (SpaceTrader.ship.canTravelTo(getSelectedSystem())) {
-                //fixes bug where encounters occour even when you don't 
+                //fixes bug where encounters occour even when you don't
                 //have enough fuel to travel to selected system
                 final int encounterChance = (int)(Math.random() * 12);
                 if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter()
                         .isCriminal())) { //check for all types of encounters
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "You have encountered the police!", getAlertString()
                             , JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPoliceEncounterScene();
                 } else if ((encounterChance == 0) && (SpaceTrader.
                         getMainCharacter().isCriminal())) {
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "You have encountered the police and are wanted!",
                             getAlertString(), JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPirateEncounterScene();
                 } else if (encounterChance == 1) {
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "You have encountered a pirate!", getAlertString(),
                             JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setPirateEncounterScene();
                 } else if (encounterChance == 2) {
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "You have encountered a trader!", getAlertString(),
                             JOptionPane.WARNING_MESSAGE);
                     SpaceTrader.setTraderEncounterScene();
@@ -508,12 +508,12 @@ public class GameUniverseScreenController implements Initializable {
         }
         updateScreen(); //update the screen after they've traveled
     }
-    
-    
+
+
     /**
      * updates the text.
      */
-    private void updateText() { 
+    private void updateText() {
         final String credits = "Credits: " + SpaceTrader.getMainCharacter().
                 getCredits(); //build everything into strings
         StringBuffer selected = new StringBuffer("Selected Solar System");
@@ -540,16 +540,16 @@ public class GameUniverseScreenController implements Initializable {
             getUpgradeShipButton().setDisable(false);
         }
     }
-    
+
     /**
      * function to buy an item.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void buy(final ActionEvent event) {
         final ObservableList<String> selectedItem = getGoods().
                 getSelectionModel().getSelectedItems();
-        
+
         for (int i = 0; i < selectedItem.size(); i++) {
             //iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
@@ -562,13 +562,13 @@ public class GameUniverseScreenController implements Initializable {
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
             }
-            
+
         }
         updateScreen();
     }
     /**
      * Moves player between planets in a solar system.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void jump(final ActionEvent event) {
@@ -589,10 +589,10 @@ public class GameUniverseScreenController implements Initializable {
         }
         updateScreen();
     }
-    
+
     /**
      * Function to sell an Item.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void sell(final ActionEvent event) {
@@ -604,27 +604,27 @@ public class GameUniverseScreenController implements Initializable {
             final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
         }
-        
+
         updateScreen();
     };
-    
+
     /**
      * Function to start the game.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void startGame(final ActionEvent event) {
         final ObservableList<String> observable = getPlanets();
-        
+
         updateScreen();
-        
+
         final TimeClass tc = new TimeClass();
         setClock(new Timeline(new KeyFrame(Duration.seconds(1), tc)));
         getClock().setCycleCount(Timeline.INDEFINITE);
         getClock().play();
         getStart().setVisible(false);
     }
-    
+
     /**
      * Helper method to update the list of planets.
      * @return the list of planets
@@ -640,7 +640,7 @@ public class GameUniverseScreenController implements Initializable {
         return FXCollections.observableArrayList(planetString);
         //return observable;
     }
-    
+
     /**
      * Helper method to update the view.
      */
@@ -656,37 +656,37 @@ public class GameUniverseScreenController implements Initializable {
                 observableArrayList(list);
         getGoods().setItems(null);
         getGoods().setItems(observable);
-        
+
         final ArrayList<String> list2 = SpaceTrader.getCargo();
         final ObservableList<String> observable2 = FXCollections.
                 observableArrayList(list2);
         getSelling().setItems(null);
         getSelling().setItems(observable2);
-        
+
         final ArrayList<Item> list3 = SpaceTrader.ship.getCargoHold();
         final ObservableList<Item> observable3 = FXCollections.
                 observableArrayList(list3);
         getCargo().setItems(null);
         getCargo().setItems(observable3);
-        
+
         getPlanetComboBox().setItems(null);
         getPlanetComboBox().setItems(getPlanets());
     }
-    
+
     /**
      * Handles the user clicking on new systems.
-     * @param e 
+     * @param e
      */
     public final void chooseSystem(final MouseEvent e) {
         double xPos = e.getX();
         double yPos = e.getY();
         xPos = (int) xPos/20;
         yPos = (int) yPos/20;
-        setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos, 
+        setSelectedSystem(SpaceTrader.getSystemFromCoordinate((int) xPos,
                 (int) yPos));
         updateScreen();
     }
-    
+
     /**
      * Changes the scene to the upgrade ship screen.
      * @param e the event
@@ -694,10 +694,10 @@ public class GameUniverseScreenController implements Initializable {
     public final void upgradeShip(final ActionEvent e) {
         SpaceTrader.setUpgradeShipScene();
     }
-    
+
     /**
      * Draws the planets.
-     * @param gc 
+     * @param gc
      */
     private void drawShapes(final GraphicsContext gc){
         gc.setLineWidth(1);
@@ -705,30 +705,30 @@ public class GameUniverseScreenController implements Initializable {
         gc.setStroke(Color.GREEN);
         int sX = 0;
         int sY = 0;
-        
+
         for(int x=0; x<=20; x++){
             sX = x * 20;
             gc.strokeLine(sX, 0, sX, 400);
         }
         for(int y=0; y<=20; y++){
-            sY = y * 20;               
+            sY = y * 20;
             gc.strokeLine(0, sY, 400, sY);
         }
-        
+
         for(SolarSystem s: SpaceTrader.universe.getSolarSystems()){
             int x = (s.getXLocation() * 20);
             int y = (s.getYLocation() * 20);
             int w = 20;
             gc.fillOval(x,y,w,w);
-            
+
         }
         int x = (SpaceTrader.currentSolarSystem.getXLocation() * 20);
         int y = (SpaceTrader.currentSolarSystem.getYLocation() * 20);
         int w = 20;
         gc.setFill(Color.BLUE);
         gc.fillOval(x,y,w,w);
-        
-        
+
+
     }
-    
+
 }

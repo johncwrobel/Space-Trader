@@ -21,7 +21,6 @@ public class Item implements Comparable, Serializable{
     private int ipl;
     private int ttp;
     private int var;
-    
     /**
      * Constructor for an Item.
      * @param name name
@@ -42,7 +41,7 @@ public class Item implements Comparable, Serializable{
         this.basePrice = basePrice;
         this.ipl = ipl;
     }
-    
+
     /**
      * Calculates the price of an item.
      * @param techLevel of the planet
@@ -52,7 +51,7 @@ public class Item implements Comparable, Serializable{
         return getBasePrice() + (getIpl() * (techLevel - getMtlp())) + (getVar()
                 * calculateVar());
     }
-    
+
     /**
      * Helps decide the item's price.
      * @return the var
@@ -67,7 +66,7 @@ public class Item implements Comparable, Serializable{
         }
         return toReturn;
     }
-    
+
     /**
      * Getter for MTLP.
      * @return MTLP value
@@ -75,7 +74,7 @@ public class Item implements Comparable, Serializable{
     public final int getMLTP() {
         return getMtlp();
     }
-    
+
     /**
      * Getter for MTLU.
      * @return MTLU value
@@ -83,7 +82,7 @@ public class Item implements Comparable, Serializable{
     public final int getMTLU() {
         return getMtlu();
     }
-    
+
     /**
      * Method for comparing items.
      * @param o object to compare
@@ -94,7 +93,7 @@ public class Item implements Comparable, Serializable{
         final Item i = (Item) o;
         return this.getName().compareTo(i.getName());
     }
-    
+
     /**
      * Makes a string from an item.
      * @return the string representation of the item
@@ -103,7 +102,7 @@ public class Item implements Comparable, Serializable{
     public final String toString() {
         return getName();
     }
-    
+
     /**
      * checks if an item is illegal.
      * @return if it's illegal or not

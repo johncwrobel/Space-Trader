@@ -9,9 +9,9 @@ import static org.junit.Assert.assertEquals;
  * @author John
  */
 public class BuyTest {
-    
+
     private transient Character tester;
-    
+
     /**
      * The set up.
      */
@@ -19,7 +19,7 @@ public class BuyTest {
     public final void setUp() {
         tester = new Character(null, 0, 0, 0, 0, 0);
     }
-    
+
     /**
      * Tests buying a valid priced item.
      */
@@ -28,7 +28,7 @@ public class BuyTest {
         tester.buy(500);
         assertEquals("Thinks 2000 - 500 != 1500.", 1500, tester.getCredits());
     }
-    
+
     /**
      * Tests an attempt to buy something that's too expensive.
      */
@@ -39,7 +39,7 @@ public class BuyTest {
         assertEquals("Subtracted credits when it shouldn't.", 2000, tester.
                 getCredits());
     }
-    
+
     /**
      * Tests buying a few things.
      */
@@ -51,7 +51,7 @@ public class BuyTest {
         assertEquals("Thinks 100 + 300 + 100 != 500.", 1500, tester.
                 getCredits());
     }
-    
+
     /**
      * Tests buying several things that cost too much.
      */

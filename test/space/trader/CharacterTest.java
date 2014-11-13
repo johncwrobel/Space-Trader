@@ -20,7 +20,7 @@ import org.junit.Test;
  * @author Benjamin Cervantes
  */
 public class CharacterTest {
-    
+
     /**
      * Tests the canBuy method of the Character class.
      */

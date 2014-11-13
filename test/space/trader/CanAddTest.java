@@ -21,7 +21,7 @@ public class CanAddTest {
     public final void testCanAdd() {
         Ship ship = new Ship();
         ship.setMaxCargo(10);
-        
+
         assertEquals("Test failed.", ship.canAdd(), true);
     }
     /**
@@ -32,16 +32,16 @@ public class CanAddTest {
         ArrayList<Item> cargoHold = new ArrayList();
         Ship ship = new Ship();
         ship.setMaxCargo(10);
-        
+
         for (int x = 0; x < 5; x++) {
             cargoHold.add(new Item("Test" + x, 0, 0, 0, 0, 0, 0));
         }
-        
+
         ship.setCargoHold(cargoHold);
-        
+
         assertEquals(ship.canAdd(), true);
     }
-    
+
     /**
      * Tests when the cargo is full.
      */
@@ -50,15 +50,15 @@ public class CanAddTest {
         ArrayList<Item> cargoHold = new ArrayList();
         Ship ship = new Ship();
         ship.setMaxCargo(10);
-        
+
         for (int x = 0; x < 10; x++) {
             cargoHold.add(new Item("Test" + x, 0, 0, 0, 0, 0, 0));
         }
-        
+
         ship.setCargoHold(cargoHold);
-        
+
         assertEquals(ship.canAdd(), false);
     }
-    
-    
+
+
 }

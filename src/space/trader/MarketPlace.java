@@ -15,10 +15,10 @@ public class MarketPlace implements Serializable{
     private final ArrayList<Item> canSell = new ArrayList<>();
     private final ArrayList<Integer> sellingPrices = new ArrayList<>();
     private int techLevel;
-    
+
     /**
      * Constructs the MarketPlace based on a bunch of variables
-     * @param planetTechLevel 
+     * @param planetTechLevel
      */
     public MarketPlace(int planetTechLevel) {
         this.techLevel = planetTechLevel;
@@ -46,7 +46,7 @@ public class MarketPlace implements Serializable{
                 }
             }
         }
-        
+
         if (techLevel >= 0) {
             canSell.add(new Item("Water", 0, 0, 2, 30, 3, 4));
             canSell.add(new Item("Furs", 0, 0, 0, 250, 10, 10));
@@ -67,17 +67,17 @@ public class MarketPlace implements Serializable{
                 }
             }
         }
-        
+
         for (Item i: items) {
             prices.add(i.getPrice(techLevel));
             amount.add((int) (Math.random() * 10) + 1);
         }
-        
+
         for (Item i: canSell) {
             sellingPrices.add(i.getPrice(techLevel));
         }
     }
-    
+
     /**
      * Creates the MarketPlace display
      * @return the display for the MarketPlace
@@ -87,10 +87,10 @@ public class MarketPlace implements Serializable{
         for (int i = 0; i < items.size(); i++) {
             display.add(items.get(i).toString() +": " +prices.get(i)+" credits ( " + amount.get(i)+" )");
         }
-        
+
         return display;
     }
-    
+
     /**
      * Checks if the item can be sold
      * @param i
@@ -102,13 +102,13 @@ public class MarketPlace implements Serializable{
                 return true;
             }
         }
-        
+
         return false;
     }
-    
+
     /**
      * Facilitates the buying process
-     * @param name 
+     * @param name
      */
     public void buy(String name) {
         int index = 0;
@@ -121,7 +121,7 @@ public class MarketPlace implements Serializable{
         }
         amount.set(index, amount.get(index) - 1);
     }
-    
+
     /**
      * Removes items from traders
      */
@@ -136,7 +136,7 @@ public class MarketPlace implements Serializable{
         }
         amount.set(index, amount.get(index) + 1);
     }
-    
+
     /**
      * Checks if the item can be bought
      * @param name
@@ -158,7 +158,7 @@ public class MarketPlace implements Serializable{
             return true;
         }
     }
-    
+
     /**
      * Determines the selling price of an item
      * @param i

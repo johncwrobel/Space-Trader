@@ -14,7 +14,7 @@ public class ObjectDisplay {
     private Item item;
     private int price;
     private int amount;
-    
+
     /**
      * Constructor for class ObjectDisplay.
      * @param item the item
@@ -26,7 +26,7 @@ public class ObjectDisplay {
         this.price = price;
         this.amount = amount;
     }
-    
+
     /**
      * toString method for the class ObjectDisplay.
      * @return the string version of the object

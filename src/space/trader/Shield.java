@@ -11,7 +11,7 @@ package space.trader;
  */
 
 public class Shield {
-    
+
     private String name;
     private int shieldLevel;
     private int techLevel;

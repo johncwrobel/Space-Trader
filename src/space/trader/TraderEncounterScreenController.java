@@ -26,37 +26,37 @@ import javafx.scene.text.Text;
  * @author John
  */
 public class TraderEncounterScreenController implements Initializable {
-    
+
     @FXML
     private Button tradeButton;
-    
+
     @FXML
     private Button ignoreButton;
-    
+
     @FXML
     private Button fightButton;
-    
+
     @FXML
     private Button buyButton;
-    
+
     @FXML
     private Button sellButton;
-    
+
     @FXML
     private ListView<String> playerItems;
-            
+
     @FXML
     private ListView<String> traderItems;
-    
+
     @FXML
     private TextField dialog;
-    
+
     @FXML
     private Text credits;
-    
+
     @FXML
     private Planet newPlanet;
-    
+
     /**
      * Initializes the controller class.
      * @param url yessir
@@ -77,10 +77,10 @@ public class TraderEncounterScreenController implements Initializable {
         getIgnoreButton().setDisable(false);
         getFightButton().setDisable(false);
     }
-    
+
     /**
      * Method to handle the trade option.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void trade(final ActionEvent event) {
@@ -101,10 +101,10 @@ public class TraderEncounterScreenController implements Initializable {
         getIgnoreButton().setText("Go Back");
         updateScreen();
     }
-    
+
     /**
      * function to buy an item.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void buy(final ActionEvent event) {
@@ -121,17 +121,17 @@ public class TraderEncounterScreenController implements Initializable {
                 //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
-                String dialogString = 
+                String dialogString =
                         "Space Sloth: Thats a good trade there mite";
                 getDialog().setText(dialogString);
             }
         }
         updateScreen();
     }
-    
+
     /**
      * Function to sell an Item.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void sell(final ActionEvent event) {
@@ -143,16 +143,16 @@ public class TraderEncounterScreenController implements Initializable {
             final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
             getNewPlanet().getMarketplace().sell(temp[0]);
-            String dialogString = 
+            String dialogString =
                     "Space Sloth: Oh ye, I definitely wonted that";
             getDialog().setText(dialogString);
         }
         updateScreen();
     }
-    
+
     /**
      * Method to handle the ignore option.
-     * @param event 
+     * @param event
      */
     @FXML
     public final void ignore(final ActionEvent event) {
@@ -165,10 +165,10 @@ public class TraderEncounterScreenController implements Initializable {
         getTraderItems().setDisable(true);
         SpaceTrader.backToMain();
     }
-    
+
     /**
      * Method to handle the fight option.
-     * @param even 
+     * @param even
      */
     @FXML
     public final void fight(final ActionEvent even) {
@@ -181,7 +181,7 @@ public class TraderEncounterScreenController implements Initializable {
         getSellButton().setDisable(true);
         SpaceTrader.backToMain();
     }
-    
+
     /**
      * Method to help update the screen.
      */
@@ -192,16 +192,16 @@ public class TraderEncounterScreenController implements Initializable {
                 observableArrayList(list);
         getTraderItems().setItems(null);
         getTraderItems().setItems(observable);
-        
+
         final ArrayList<String> list2 = SpaceTrader.getCargo();
         final ObservableList<String> observable2 = FXCollections.
                 observableArrayList(list2);
         getPlayerItems().setItems(null);
         getPlayerItems().setItems(observable2);
-        
+
         updateText();
     }
-    
+
     /**
      * Method to update the text on the screen.
      */

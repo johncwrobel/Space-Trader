@@ -19,7 +19,7 @@ public class SolarSystem implements Serializable{
     private int numberOfPlanets;
     public ArrayList<Planet> planets = new ArrayList<Planet>();
     private static ArrayList<String> systemNames = new ArrayList<String>();
-   
+
     static {
         try(BufferedReader br = new BufferedReader(new FileReader("ass.dat"))) {
             String line = br.readLine();
@@ -28,13 +28,13 @@ public class SolarSystem implements Serializable{
                 systemNames.add(line);
                 line = br.readLine();
             }
-            
-            
+
+
         }   catch (Exception ex) {
             Logger.getLogger(SolarSystem.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     @Override
     // toString format:    name(x,y): planet1 planet2 planet3
     public String toString() {
@@ -45,11 +45,11 @@ public class SolarSystem implements Serializable{
         }
         return returnVal;
     }
-    
+
     /**
      * Constructor for SolarSystem
      * @param x
-     * @param y 
+     * @param y
      */
     public SolarSystem(int x, int y) {
         Random r1 = new Random();
@@ -63,7 +63,7 @@ public class SolarSystem implements Serializable{
             planets.add(new Planet(this, this.name+" "+(i + 1)));
         }
     }
-    
+
     /**
      * Getter methode for getName
      * @return name
@@ -71,7 +71,7 @@ public class SolarSystem implements Serializable{
     public String getName() {
         return this.name;
     }
-    
+
     /**
      * Getter method for X-Location
      * @return xLocation
@@ -79,7 +79,7 @@ public class SolarSystem implements Serializable{
     public int getXLocation() {
         return this.xLocation;
     }
-    
+
     /**
      * Getter method for Y-Location
      * @return yLocation
@@ -87,7 +87,7 @@ public class SolarSystem implements Serializable{
     public int getYLocation() {
         return this.yLocation;
     }
-    
+
     /**
      * Getter method for Number of Planets
      * @return numbeerOfPlanets
@@ -95,7 +95,7 @@ public class SolarSystem implements Serializable{
     public int getNumberOfPlanets() {
         return this.numberOfPlanets;
     }
-    
+
     public Planet getPlanet(int n) {
         if (n >= planets.size()) {
             return planets.get(planets.size() - 1);
