@@ -14,6 +14,7 @@ import java.io.Serializable;
  */
 public class Item implements Comparable, Serializable {
 
+    private final int four = 4;
     /**
      * @variable serialVersionUID still no idea
      */
@@ -91,7 +92,7 @@ public class Item implements Comparable, Serializable {
     private int calculateVar() {
         int toReturn;
         final int temp = (int) (Math.random() * 8);
-        if (temp < 4) {
+        if (temp < four) {
             toReturn = -1;
         } else {
             toReturn = 1;
