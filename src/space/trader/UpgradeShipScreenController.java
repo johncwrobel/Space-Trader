@@ -223,16 +223,7 @@ public class UpgradeShipScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        getGadgetListView().getSelectionModel().selectedItemProperty().
-                addListener(new ChangeListener<String>() {
-            public void changed(final ObservableValue<? extends String>
-                    observable, final String oldValue, final String newValue) {
-<<<<<<< HEAD
-=======
-                //does nothing
->>>>>>> origin/master
-          }
-        });
+        
     }
 
 
