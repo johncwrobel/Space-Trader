@@ -34,56 +34,56 @@ public class Shield {
     /**
      * @return the name
      */
-    final public String getName() {
+    public final String getName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    final public void setName(final String name) {
+    public final void setName(final String name) {
         this.name = name;
     }
 
     /**
      * @return the shieldLevel
      */
-    final public int getShieldLevel() {
+    public final int getShieldLevel() {
         return shieldLevel;
     }
 
     /**
      * @param shieldLevel the shieldLevel to set
      */
-    final public void setShieldLevel(final int shieldLevel) {
+    public final void setShieldLevel(final int shieldLevel) {
         this.shieldLevel = shieldLevel;
     }
 
     /**
      * @return the techLevel
      */
-    final public int getTechLevel() {
+    public final int getTechLevel() {
         return techLevel;
     }
 
     /**
      * @param techLevel the techLevel to set
      */
-    final public void setTechLevel(final int techLevel) {
+    public final void setTechLevel(final int techLevel) {
         this.techLevel = techLevel;
     }
 
     /**
      * @return the price
      */
-    final public int getPrice() {
+    public final int getPrice() {
         return price;
     }
 
     /**
      * @param price the price to set
      */
-    final public void setPrice(final int price) {
+    public final void setPrice(final int price) {
         this.price = price;
     }
 }

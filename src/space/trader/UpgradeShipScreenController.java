@@ -273,7 +273,7 @@ public class UpgradeShipScreenController implements Initializable {
             getSuccessLabel().setText(getUpgradeSuccessfulString());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if (SpaceTrader.getMainCharacter().canBuy(shieldPrice) == false)
+        } else if (!SpaceTrader.getMainCharacter().canBuy(shieldPrice))
         {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {
@@ -329,7 +329,7 @@ public class UpgradeShipScreenController implements Initializable {
                     getWeaponLevel());
             SpaceTrader.ship.setGadgets(SpaceTrader.ship.getGadgets() + 1);
             updateText();
-        } else if (SpaceTrader.getMainCharacter().canBuy(weaponPrice) == false)
+        } else if (!SpaceTrader.getMainCharacter().canBuy(weaponPrice))
         {
             getSuccessLabel().setText(getNotEnoughCreditsString());
         } else {

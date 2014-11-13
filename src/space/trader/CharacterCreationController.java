@@ -128,98 +128,98 @@ public class CharacterCreationController implements Initializable {
     /**
      * @return the nameTextArea
      */
-    final public TextArea getNameTextArea() {
+    public final TextArea getNameTextArea() {
         return nameTextArea;
     }
 
     /**
      * @param nameTextArea the nameTextArea to set
      */
-    final public void setNameTextArea(final TextArea nameTextArea) {
+    public final void setNameTextArea(final TextArea nameTextArea) {
         this.nameTextArea = nameTextArea;
     }
 
     /**
      * @return the pilotTextArea
      */
-    final public TextArea getPilotTextArea() {
+    public final TextArea getPilotTextArea() {
         return pilotTextArea;
     }
 
     /**
      * @param pilotTextArea the pilotTextArea to set
      */
-    final public void setPilotTextArea(final TextArea pilotTextArea) {
+    public final void setPilotTextArea(final TextArea pilotTextArea) {
         this.pilotTextArea = pilotTextArea;
     }
 
     /**
      * @return the fighterTextArea
      */
-    final public TextArea getFighterTextArea() {
+    public final TextArea getFighterTextArea() {
         return fighterTextArea;
     }
 
     /**
      * @param fighterTextArea the fighterTextArea to set
      */
-    final public void setFighterTextArea(final TextArea fighterTextArea) {
+    public final void setFighterTextArea(final TextArea fighterTextArea) {
         this.fighterTextArea = fighterTextArea;
     }
 
     /**
      * @return the traderTextArea
      */
-    final public TextArea getTraderTextArea() {
+    public final TextArea getTraderTextArea() {
         return traderTextArea;
     }
 
     /**
      * @param traderTextArea the traderTextArea to set
      */
-    final public void setTraderTextArea(final TextArea traderTextArea) {
+    public final void setTraderTextArea(final TextArea traderTextArea) {
         this.traderTextArea = traderTextArea;
     }
 
     /**
      * @return the engineerTextArea
      */
-    final public TextArea getEngineerTextArea() {
+    public final TextArea getEngineerTextArea() {
         return engineerTextArea;
     }
 
     /**
      * @param engineerTextArea the engineerTextArea to set
      */
-    final public void setEngineerTextArea(final TextArea engineerTextArea) {
+    public final void setEngineerTextArea(final TextArea engineerTextArea) {
         this.engineerTextArea = engineerTextArea;
     }
 
     /**
      * @return the investorTextArea
      */
-    final public TextArea getInvestorTextArea() {
+    public final TextArea getInvestorTextArea() {
         return investorTextArea;
     }
 
     /**
      * @param investorTextArea the investorTextArea to set
      */
-    final public void setInvestorTextArea(final TextArea investorTextArea) {
+    public final void setInvestorTextArea(final TextArea investorTextArea) {
         this.investorTextArea = investorTextArea;
     }
 
     /**
      * @return the confirmButton
      */
-    final public Button getConfirmButton() {
+    public final Button getConfirmButton() {
         return confirmButton;
     }
 
     /**
      * @param confirmButton the confirmButton to set
      */
-    final public void setConfirmButton(final Button confirmButton) {
+    public final void setConfirmButton(final Button confirmButton) {
         this.confirmButton = confirmButton;
     }
 

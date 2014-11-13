@@ -38,7 +38,7 @@ public class MarketPlaceTest {
      * Tests the canSell method.
      */
     @Test
-    final public void testCanSell1() {
+    public final void testCanSell1() {
         test = new MarketPlace(1);
 
         //test in bounds

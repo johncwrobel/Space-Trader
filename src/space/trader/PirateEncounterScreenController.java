@@ -78,84 +78,84 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @return the canvas
      */
-    final public Canvas getCanvas() {
+    public final Canvas getCanvas() {
         return canvas;
     }
 
     /**
      * @param canvas the canvas to set
      */
-    final public void setCanvas(final Canvas canvas) {
+    public final void setCanvas(final Canvas canvas) {
         this.canvas = canvas;
     }
 
     /**
      * @return the time
      */
-    final public Label getTime() {
+    public final Label getTime() {
         return time;
     }
 
     /**
      * @param time the time to set
      */
-    final public void setTime(final Label time) {
+    public final void setTime(final Label time) {
         this.time = time;
     }
 
     /**
      * @return the start
      */
-    final public Button getStart() {
+    public final Button getStart() {
         return start;
     }
 
     /**
      * @param start the start to set
      */
-    final public void setStart(final Button start) {
+    public final void setStart(final Button start) {
         this.start = start;
     }
 
     /**
      * @return the timer
      */
-    final public int getTimer() {
+    public final int getTimer() {
         return timer;
     }
 
     /**
      * @param timer the timer to set
      */
-    final public void setTimer(final int timer) {
+    public final void setTimer(final int timer) {
         this.timer = timer;
     }
 
     /**
      * @return the clock
      */
-    final public Timeline getClock() {
+    public final Timeline getClock() {
         return clock;
     }
 
     /**
      * @param clock the clock to set
      */
-    final public void setClock(final Timeline clock) {
+    public final void setClock(final Timeline clock) {
         this.clock = clock;
     }
 
     /**
      * @return the target
      */
-    final public boolean[][] getTarget() {
+    public final boolean[][] getTarget() {
         return target;
     }
 
     /**
      * @param target the target to set
      */
-    final public void setTarget(final boolean[][] target) {
+    public final void setTarget(final boolean[][] target) {
         final boolean[][] assignArray = target;
         this.target = assignArray;
     }
@@ -163,14 +163,14 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @return the playing
      */
-    final public boolean isPlaying() {
+    public final boolean isPlaying() {
         return playing;
     }
 
     /**
      * @param playing the playing to set
      */
-    final public void setPlaying(final boolean playing) {
+    public final void setPlaying(final boolean playing) {
         this.playing = playing;
     }
 
@@ -210,14 +210,14 @@ public class PirateEncounterScreenController implements Initializable {
         /**
          * @return the counter
          */
-        final public int getCounter() {
+        public final int getCounter() {
             return counter;
         }
 
         /**
          * @param counter the counter to set
          */
-        final public void setCounter(final int counter) {
+        public final void setCounter(final int counter) {
             this.counter = counter;
         }
     }
