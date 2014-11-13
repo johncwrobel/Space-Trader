@@ -23,7 +23,8 @@ public class Shield {
      * @param techLevel of the current planet
      * @param price price of the item
      */
-    public Shield(final String name, final int shieldLevel, final int techLevel, final int price) {
+    public Shield(final String name, final int shieldLevel, final int techLevel,
+            final int price) {
         this.name = name;
         this.shieldLevel = shieldLevel;
         this.techLevel = techLevel;

@@ -32,7 +32,8 @@ public class Item implements Comparable, Serializable{
      * @param ipl the ipl
      * @param var the variance
      */
-    public Item(final String name, final int mtlp, final int  mtlu, final int ttp, final int basePrice, final int ipl, final int var) {
+    public Item(final String name, final int mtlp, final int  mtlu,
+            final int ttp, final int basePrice, final int ipl, final int var) {
         this.name = name;
         this.mtlp = mtlp;
         this.mtlu = mtlu;
@@ -48,7 +49,8 @@ public class Item implements Comparable, Serializable{
      * @return the price
      */
     public final int getPrice(final int techLevel) {
-        return getBasePrice() + (getIpl() * (techLevel - getMtlp())) + (getVar() * calculateVar());
+        return getBasePrice() + (getIpl() * (techLevel - getMtlp())) + (getVar()
+                * calculateVar());
     }
     
     /**

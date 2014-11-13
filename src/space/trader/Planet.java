@@ -60,7 +60,7 @@ public class Planet implements Serializable{
     public final int getResources() {
         return resources;
     }
-    
+
     /**
      * toString method for the class Planet.
      * @return string representation of the planet
@@ -68,7 +68,8 @@ public class Planet implements Serializable{
     @Override
     public final String toString() {
         // (Planet name: name, Tech Level: x, Resource Type: x)
-        return ("(Planet name: " + getName() + ", Tech Level: " + getTechLevel() + ", Resource Type: " + getResources() + ")"); 
+        return ("(Planet name: " + getName() + ", Tech Level: " + getTechLevel()
+                + ", Resource Type: " + getResources() + ")");
     }
 
     /**

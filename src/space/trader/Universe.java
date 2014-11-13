@@ -57,7 +57,8 @@ public class Universe implements Serializable{
             String toConcatenate = (ss.toString() + "\n");
             returnString.append(toConcatenate);
         }
-        returnString.append("\nNumber of Solar Systems in Universe:" + getNumberOfSolarSystems() + "\n");
+        returnString.append("\nNumber of Solar Systems in Universe:" + 
+                getNumberOfSolarSystems() + "\n");
         return returnString.toString();
     }
     
@@ -104,7 +105,8 @@ public class Universe implements Serializable{
     /**
      * @param solarSystems the solarSystems to set
      */
-    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems) {
+    final public void setSolarSystems(final ArrayList<SolarSystem> solarSystems)
+    {
         this.solarSystems = solarSystems;
     }
 

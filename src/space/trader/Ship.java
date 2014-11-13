@@ -294,7 +294,8 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.SERENITY){ //set new attributes based on type
             SpaceTrader.ship.setMaxCargo(10);
             SpaceTrader.ship.setMaxFuel(20);
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setGadgetslots(
+                    SpaceTrader.ship.getGadgetslots()+1);
             SpaceTrader.ship.setTechLevel(4);
             SpaceTrader.ship.setFuelCost(1);
             SpaceTrader.ship.setBounty(5);
@@ -306,7 +307,8 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.FALCON){
             SpaceTrader.ship.setMaxCargo(15);
             SpaceTrader.ship.setMaxFuel(25);
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setGadgetslots(
+                    SpaceTrader.ship.getGadgetslots()+1);
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(2);
             SpaceTrader.ship.setBounty(50);
@@ -318,7 +320,8 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.ENTERPRISE){
             SpaceTrader.ship.setMaxCargo(20);
             SpaceTrader.ship.setMaxFuel(30);
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setGadgetslots(
+                    SpaceTrader.ship.getGadgetslots() + 1);
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(3);
             SpaceTrader.ship.setBounty(75);
@@ -330,7 +333,8 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.GALACTICA){
             SpaceTrader.ship.setMaxCargo(25);
             SpaceTrader.ship.setMaxFuel(35);
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setGadgetslots(
+                    SpaceTrader.ship.getGadgetslots() + 1);
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(5);
             SpaceTrader.ship.setBounty(100);
@@ -342,7 +346,8 @@ public class Ship implements Serializable{
         if (aShipType==ShipTypes.DAEDALUS){
             SpaceTrader.ship.setMaxCargo(30);
             SpaceTrader.ship.setMaxFuel(40);
-            SpaceTrader.ship.setGadgetslots(SpaceTrader.ship.getGadgetslots() + 1);
+            SpaceTrader.ship.setGadgetslots(
+                    SpaceTrader.ship.getGadgetslots() + 1);
             SpaceTrader.ship.setTechLevel(5);
             SpaceTrader.ship.setFuelCost(7);
             SpaceTrader.ship.setBounty(125);
@@ -395,7 +400,8 @@ public class Ship implements Serializable{
      */
     
     public final void addFuel(final int amount){
-        this.setFuel(this.getFuel() + amount); //add a certain amount of fuel to the ship
+        this.setFuel(this.getFuel() + amount); 
+//add a certain amount of fuel to the ship
     }
     
     /**
@@ -405,13 +411,17 @@ public class Ship implements Serializable{
      */
     
     public final boolean canTravelTo(final SolarSystem system){
-        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation()); //updates the xLocation of the ship to use later
-        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation()); //updates the yLocation of the ship to use later
+        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation());
+        //updates the xLocation of the ship to use later
+        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation());
+        //updates the yLocation of the ship to use later
         
         //uses distance formula to calculate if the distance is too far
-        return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation())*(getxLocation()-system.getXLocation()) + (getyLocation()-system.getYLocation())*(getyLocation()-system.getYLocation())) <= getFuel();
+        return this.getFuelCost()*Math.sqrt((getxLocation()-system.getXLocation(
+        ))*(getxLocation() - system.getXLocation()) + (getyLocation()
+                - system.getYLocation()) * (getyLocation() - 
+                        system.getYLocation()))<= getFuel();
     }
-    
        /**
      * Whether nor not the ship has enough fuel to travel to a planet.
      * @param planet the system to travel to
@@ -419,7 +429,8 @@ public class Ship implements Serializable{
      */
     
     public final boolean canTravelTo(final Planet planet){
-        return canTravelTo(planet.getSolarSystem()); //calls above method, but with planet instead
+        return canTravelTo(planet.getSolarSystem());
+        //calls above method, but with planet instead
     }
     
     /**
@@ -432,11 +443,19 @@ public class Ship implements Serializable{
     
     public final void travel(final Planet planet){
         //subtracts fuel based on how far we travelled
-        setFuel((int) (getFuel() - Math.sqrt((getxLocation() - planet.getSolarSystem().getXLocation()) * (getxLocation() - planet.getSolarSystem().getXLocation()) + (getyLocation() - planet.getSolarSystem().getYLocation()) * (getyLocation() - planet.getSolarSystem().getYLocation()))));
+        setFuel((int) (getFuel() - Math.sqrt((getxLocation()
+                - planet.getSolarSystem().getXLocation()) * (getxLocation()
+                        - planet.getSolarSystem().getXLocation())
+                + (getyLocation() - planet.getSolarSystem().getYLocation())
+                        * (getyLocation()
+                                - planet.getSolarSystem().getYLocation()))));
         SpaceTrader.currentPlanet = planet; //sets currentPlanet
-        SpaceTrader.currentSolarSystem = planet.getSolarSystem(); //sets currentSolarSystem
-        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation()); //updates xLocation of ship
-        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation()); //updates yLocation of ship
+        SpaceTrader.currentSolarSystem = planet.getSolarSystem();
+        //sets currentSolarSystem
+        setxLocation(SpaceTrader.currentPlanet.getSolarSystem().getXLocation());
+        //updates xLocation of ship
+        setyLocation(SpaceTrader.currentPlanet.getSolarSystem().getYLocation());
+        //updates yLocation of ship
     }
     
     /**
@@ -444,7 +463,8 @@ public class Ship implements Serializable{
      * @param itemName 
      */
     public final void addItem(final String itemName) {
-        final ArrayList<Item> itemList = SpaceTrader.currentPlanet.getMarketplace().items;
+        final ArrayList<Item> itemList =
+                SpaceTrader.currentPlanet.getMarketplace().items;
         for (int i = 0; i < itemList.size(); i++) {
             final String compareString = itemList.get(i).getName() + ":";
             if (compareString.equals(itemName)) {
@@ -464,7 +484,8 @@ public class Ship implements Serializable{
         if (getCargoHold().size() < getMaxCargo()) {
             toReturn = true;
         } else {
-            JOptionPane.showMessageDialog(null, "Not enough storage in the ship", "Alert" , JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Not enough storage in the ship"
+                    , "Alert" , JOptionPane.ERROR_MESSAGE);
             toReturn = false;
         }
         return toReturn;

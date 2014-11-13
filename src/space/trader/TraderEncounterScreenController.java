@@ -64,8 +64,11 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
-        getTraderItems().getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {//does nothing
+        getTraderItems().getSelectionModel().selectedItemProperty().
+                addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String>
+                    observable, final String oldValue, final String newValue
+            ) {//does nothing
           }
         });
         getBuyButton().setDisable(true);
@@ -83,7 +86,8 @@ public class TraderEncounterScreenController implements Initializable {
     public final void trade(final ActionEvent event) {
         getPlayerItems().setDisable(false);
         getTraderItems().setDisable(false);
-        ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.getSolarSystems();
+        ArrayList<SolarSystem> solarSystems = SpaceTrader.universe.
+                getSolarSystems();
         int randomNumber = (int)(Math.random() * (solarSystems.size()));
         SolarSystem newSolarSystem = solarSystems.get(randomNumber);
         this.setNewPlanet(newSolarSystem.getPlanet(0));
@@ -104,15 +108,21 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void buy(final ActionEvent event) {
-        final ObservableList<String> selectedItem = getTraderItems().getSelectionModel().getSelectedItems();
-        for (int i = 0; i < selectedItem.size(); i++) { //iterate through the selected items
+        final ObservableList<String> selectedItem = getTraderItems().
+                getSelectionModel().getSelectedItems();
+        for (int i = 0; i < selectedItem.size(); i++) {
+//iterate through the selected items
             final String[] split = selectedItem.get(i).split(" ");
-            if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().canBuy(Integer.parseInt(split[1])) &&
-                    getNewPlanet().getMarketplace().canBuy(split[0])) { //check if valid purchase
-                getNewPlanet().getMarketplace().buy(split[0]); //then actually give them the items
+            if (SpaceTrader.ship.canAdd() && SpaceTrader.getMainCharacter().
+                    canBuy(Integer.parseInt(split[1])) &&
+                    getNewPlanet().getMarketplace().canBuy(split[0])) {
+//check if valid purchase
+                getNewPlanet().getMarketplace().buy(split[0]);
+                //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
-                String dialogString = "Space Sloth: Thats a good trade there mite";
+                String dialogString = 
+                        "Space Sloth: Thats a good trade there mite";
                 getDialog().setText(dialogString);
             }
         }
@@ -125,14 +135,16 @@ public class TraderEncounterScreenController implements Initializable {
      */
     @FXML
     public final void sell(final ActionEvent event) {
-        final ObservableList<String> selectedItem = getPlayerItems().getSelectionModel().getSelectedItems();
+        final ObservableList<String> selectedItem = getPlayerItems().
+                getSelectionModel().getSelectedItems();
         for (int i = 0; i < selectedItem.size(); i++) {
             final String[] temp = selectedItem.get(i).split(" ");
             SpaceTrader.ship.removeItem(temp[0]);
             final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
             getNewPlanet().getMarketplace().sell(temp[0]);
-            String dialogString = "Space Sloth: Oh ye, I definitely wonted that";
+            String dialogString = 
+                    "Space Sloth: Oh ye, I definitely wonted that";
             getDialog().setText(dialogString);
         }
         updateScreen();
@@ -174,13 +186,16 @@ public class TraderEncounterScreenController implements Initializable {
      * Method to help update the screen.
      */
     public final void updateScreen() {
-        final ArrayList<String> list = getNewPlanet().getMarketplace().getDisplay();
-        final ObservableList<String> observable = FXCollections.observableArrayList(list);
+        final ArrayList<String> list = getNewPlanet().getMarketplace().
+                getDisplay();
+        final ObservableList<String> observable = FXCollections.
+                observableArrayList(list);
         getTraderItems().setItems(null);
         getTraderItems().setItems(observable);
         
         final ArrayList<String> list2 = SpaceTrader.getCargo();
-        final ObservableList<String> observable2 = FXCollections.observableArrayList(list2);
+        final ObservableList<String> observable2 = FXCollections.
+                observableArrayList(list2);
         getPlayerItems().setItems(null);
         getPlayerItems().setItems(observable2);
         
@@ -191,7 +206,8 @@ public class TraderEncounterScreenController implements Initializable {
      * Method to update the text on the screen.
      */
     public final void updateText() {
-        final String creditString = "Credits: " + SpaceTrader.getMainCharacter().getCredits();
+        final String creditString = "Credits: " + SpaceTrader.getMainCharacter()
+                .getCredits();
         getCredits().setText(creditString);
     }
 

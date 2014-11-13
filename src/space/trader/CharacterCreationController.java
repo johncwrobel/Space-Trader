@@ -40,8 +40,9 @@ public class CharacterCreationController implements Initializable {
     private Button confirmButton;
     
     /**
-     * Takes the data from the text area, validates it and creates a Character object if valid.
-     * 
+     * Takes the data from the text area, 
+     * validates it and creates a Character object if valid.
+     *
      * @param event ActionEvent for the listener
      */
     @FXML
@@ -53,8 +54,12 @@ public class CharacterCreationController implements Initializable {
         final String investorString = getInvestorTextArea().getText().trim();
         final String name = getNameTextArea().getText().trim();
         
-        if (!isInteger(pilotString) || !isInteger(fighterString) || !isInteger(traderString) || !isInteger(engineerString) || !isInteger(investorString)) {
-            JOptionPane.showMessageDialog(null, "One of your inputs is not an integer", "Alert!" , JOptionPane.ERROR_MESSAGE);
+        if (!isInteger(pilotString) || !isInteger(fighterString) ||
+                !isInteger(traderString) || !isInteger(engineerString) ||
+                !isInteger(investorString)) {
+            JOptionPane.showMessageDialog(null,
+                    "One of your inputs is not an integer", "Alert!" ,
+                    JOptionPane.ERROR_MESSAGE);
         } else {
             final int pilot = Integer.parseInt(pilotString);
             final int fighter = Integer.parseInt(fighterString);
@@ -63,11 +68,17 @@ public class CharacterCreationController implements Initializable {
             final int investor = Integer.parseInt(investorString);
             
             if (pilot + fighter + trader + engineer + investor > 20) {
-                JOptionPane.showMessageDialog(null, "You have used too many skill points", "Alert!" , JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,
+                        "You have used too many skill points", "Alert!" ,
+                        JOptionPane.ERROR_MESSAGE);
             } else if (pilot + fighter + trader + engineer + investor < 20) {
-                JOptionPane.showMessageDialog(null, "You have not used all of your skill points, rearrange the skill points", "Alert!" , JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,
+                        "You have not used all of your skill points, rearrange"
+                                + " the skill points", "Alert!" 
+                        , JOptionPane.ERROR_MESSAGE);
             } else {
-                final Character myCharacter = new Character(name, pilot, fighter, trader, engineer, investor);
+                final Character myCharacter = new Character(name, pilot,
+                        fighter, trader, engineer, investor);
                 SpaceTrader.createCharacter(myCharacter);
           //      SpaceTrader.createNewUniverse();
                 SpaceTrader.setGameScene();
@@ -88,10 +99,12 @@ public class CharacterCreationController implements Initializable {
     @Override
     public final void initialize(final URL url, final ResourceBundle rb) {
 //all of this sets up and plays the music
-            final URL resource = getClass().getResource("backgroundMusic.mp3"); //change the string to change the music file used
+            final URL resource = getClass().getResource("backgroundMusic.mp3");
+            //change the string to change the music file used
             final Media music = new Media(resource.toString());
             final MediaPlayer mediaPlayer = new MediaPlayer(music);
-            mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE); //this is the line that loops the mp3 indefinitely
+            mediaPlayer.setCycleCount(mediaPlayer.INDEFINITE);
+            //this is the line that loops the mp3 indefinitely
             mediaPlayer.play();
     }
     

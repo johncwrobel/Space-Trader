@@ -36,7 +36,8 @@ public class BuyTest {
     public final void testBuy2001() {
         tester.buy(2001);
         //dialogue should pop up
-        assertEquals("Subtracted credits when it shouldn't.", 2000, tester.getCredits());
+        assertEquals("Subtracted credits when it shouldn't.", 2000, tester.
+                getCredits());
     }
     
     /**
@@ -47,7 +48,8 @@ public class BuyTest {
         tester.buy(100);
         tester.buy(300);
         tester.buy(100);
-        assertEquals("Thinks 100 + 300 + 100 != 500.", 1500, tester.getCredits());
+        assertEquals("Thinks 100 + 300 + 100 != 500.", 1500, tester.
+                getCredits());
     }
     
     /**

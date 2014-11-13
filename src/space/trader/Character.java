@@ -27,7 +27,8 @@ public class Character implements Serializable, CharacterInterface {
          * @param engineer engineer skill level
          * @param investor investor skill level
          */
-        public Character(final String name, final int pilot, final int fighter, final int trader, final int engineer, final int investor) {
+        public Character(final String name, final int pilot, final int fighter,
+                final int trader, final int engineer, final int investor) {
             this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
@@ -113,7 +114,8 @@ public class Character implements Serializable, CharacterInterface {
             if ((credits - price) >= 0) {
                 toReturn = true;
             } else {
-                JOptionPane.showMessageDialog(null, "Not enough credits", "Alert" , JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Not enough credits",
+                        "Alert" , JOptionPane.ERROR_MESSAGE);
                 toReturn = false;
             }
             return toReturn;
@@ -175,7 +177,8 @@ public class Character implements Serializable, CharacterInterface {
         public final String toString() {
             return name + ": " + pilot + " pilot points, " + fighter +
                     " fighter points, " + trader + " trader points, " +
-                    engineer + " engineer points, " + investor + " investor points";
+                    engineer + " engineer points, " + investor +
+                    " investor points";
         }
 
         /**
