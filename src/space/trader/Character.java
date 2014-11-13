@@ -54,6 +54,7 @@ public class Character implements Serializable, CharacterInterface {
          */
         private boolean criminal;
 
+
         /**
          * Constructor for Character Class.
          * @param name character name
@@ -65,13 +66,14 @@ public class Character implements Serializable, CharacterInterface {
          */
         public Character(final String name, final int pilot, final int fighter,
                 final int trader, final int engineer, final int investor) {
+            final int startCreds = 2000;
             this.name = name;
             this.pilot = pilot;
             this.fighter = fighter;
             this.trader = trader;
             this.engineer = engineer;
             this.investor = investor;
-            this.credits = 2000;
+            this.credits = startCreds;
             this.criminal = criminal;
         }
 

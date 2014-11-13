@@ -23,7 +23,6 @@ public class SolarSystem implements Serializable{
     static {
         try(BufferedReader br = new BufferedReader(new FileReader("ass.dat"))) {
             String line = br.readLine();
-
             while (line != null) {
                 systemNames.add(line);
                 line = br.readLine();
