@@ -24,6 +24,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
@@ -562,6 +563,13 @@ public class GameUniverseScreenController implements Initializable {
             if (SpaceTrader.ship.canTravelTo(getSelectedSystem())) {
                 //fixes bug where encounters occour even when you don't
                 //have enough fuel to travel to selected system
+                
+                //unsupported
+                //final URL resource = getClass().getResource("Swoosh.wav");
+                //AudioClip swoosh = new AudioClip(resource.toString());
+                //swoosh.play();
+                
+                
                 final int encounterChance = (int) (Math.random() * 12);
                 if ((encounterChance == 0) && !(SpaceTrader.getMainCharacter()
                         .isCriminal())) { //check for all types of encounters
@@ -647,6 +655,10 @@ public class GameUniverseScreenController implements Initializable {
 //then actually give them the items
                 SpaceTrader.ship.addItem(split[0]);
                 SpaceTrader.getMainCharacter().buy(Integer.parseInt(split[1]));
+                //play sound
+                final URL resource = getClass().getResource("Cha-ching.wav");
+                AudioClip money = new AudioClip(resource.toString());
+                money.play();
             }
 
         }
@@ -689,6 +701,9 @@ public class GameUniverseScreenController implements Initializable {
             SpaceTrader.ship.removeItem(temp[0]);
             final int add = Integer.parseInt(temp[1]);
             SpaceTrader.getMainCharacter().sell(add);
+            final URL resource = getClass().getResource("Cha-ching.wav");
+            AudioClip money = new AudioClip(resource.toString());
+            money.play();
         }
 
         updateScreen();
