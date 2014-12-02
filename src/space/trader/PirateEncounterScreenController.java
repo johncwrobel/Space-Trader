@@ -19,6 +19,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -335,6 +336,9 @@ public class PirateEncounterScreenController implements Initializable {
 
         if (getTarget()[x][y] && isPlaying()) {
             getTarget()[x][y] = false;
+            final URL resource = getClass().getResource("Explosion.wav");
+            AudioClip explosion = new AudioClip(resource.toString());
+            explosion.play();
             if (hasWon()) {
                 setPlaying(false);
                 SpaceTrader.getMainCharacter().sell(price);
