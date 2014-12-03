@@ -18,6 +18,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
@@ -80,12 +81,14 @@ public class PirateEncounterScreenController implements Initializable {
     /**
      * @variable target helps shooting
      */
-    private boolean[][] target = new boolean[twenty][twenty];
+    private boolean[][] target = new boolean[7][10];
 
     /**
      * @variable playing shows if player is playing
      */
     private boolean playing = false;
+    
+    private Image pirateCat = new Image(getClass().getResource("piratecat.jpg").toString());
 
 
 
@@ -106,11 +109,11 @@ public class PirateEncounterScreenController implements Initializable {
      */
     public final void updateCanvas() {
         final GraphicsContext gc = getCanvas().getGraphicsContext2D();
-        gc.clearRect(0, 0, rectSize, rectSize);
-        for (int i = 0; i < getTarget().length; i++) {
-            for (int j = 0; j < getTarget()[0].length; j++) {
+        gc.clearRect(0, 0, 420, 480);
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 10; j++) {
                 if (getTarget()[i][j]) {
-                    gc.fillRect(i * twenty, j * twenty, twenty, twenty);
+                    gc.drawImage(pirateCat, i * 420/7, j * 480/10);
                 }
             }
         }
@@ -288,11 +291,11 @@ public class PirateEncounterScreenController implements Initializable {
             getTime().setText("TIMER: " + count + " seconds");
             count--;
 
-            setTarget(new boolean[twenty][twenty]);
+            setTarget(new boolean[7][10]);
 
             for (int i = 0; i < timer; i++) {
-                final int x = (int) (Math.random() * twenty);
-                final int y = (int) (Math.random() * twenty);
+                final int x = (int) (Math.random() * 7);
+                final int y = (int) (Math.random() * 10);
                 if (!getTarget()[x][y]) {
                     getTarget()[x][y] = true;
                 } else {
@@ -331,8 +334,8 @@ public class PirateEncounterScreenController implements Initializable {
      * @param e the event
      */
     public final void shoot(final MouseEvent e) {
-        final int x = (int) (e.getX() / twenty);
-        final int y = (int) (e.getY() / twenty);
+        final int x = (int) (e.getX() / 60);
+        final int y = (int) (e.getY() / 48);
 
         if (getTarget()[x][y] && isPlaying()) {
             getTarget()[x][y] = false;

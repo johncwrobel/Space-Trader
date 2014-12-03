@@ -10,7 +10,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="space.trader.PirateEncounterScreenController">
    <children>
-      <Canvas fx:id="canvas" height="400.0" layoutX="233.0" layoutY="100.0" onMouseClicked="#shoot" onMouseEntered="#handle" onMouseExited="#handle" onMouseMoved="#handle" width="400.0" />
+      <Canvas fx:id="canvas" height="480.0" layoutX="234.0" layoutY="82.0" onMouseClicked="#shoot" onMouseEntered="#handle" onMouseExited="#handle" onMouseMoved="#handle" width="420.0" />
       <Label fx:id="time" layoutX="281.0" layoutY="40.0" prefHeight="42.0" prefWidth="397.0" text="TIMER: ">
          <font>
             <Font name="Arial" size="27.0" />

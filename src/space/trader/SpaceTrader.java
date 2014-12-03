@@ -62,12 +62,12 @@ public class SpaceTrader extends Application {
         Parent pirateEncounter = FXMLLoader.load(getClass().getResource("PirateEncounterScreen.fxml"));
         Parent upgradeShipStore = FXMLLoader.load(getClass().getResource("UpgradeShipScreen.fxml"));
 
-        main = new Scene(root);
+        main = new Scene(pirateEncounter);
         gameScreen = new Scene(game);
         characterCreationScene = new Scene(character);
         policeEncounterScene = new Scene(policeEncounter); //making the Scenes for encounters
         traderEncounterScene = new Scene(traderEncounter);
-        pirateEncounterScene = new Scene(pirateEncounter);
+        pirateEncounterScene = new Scene(root);
         upgradeShipScene = new Scene(upgradeShipStore);
         PrimaryStage = stage;
         PrimaryStage.setScene(main);
