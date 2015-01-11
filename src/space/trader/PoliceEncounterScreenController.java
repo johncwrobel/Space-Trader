@@ -94,4 +94,5 @@ public class PoliceEncounterScreenController implements Initializable {
         SpaceTrader.setPirateEncounterScene();
     }
 
+    //yay an unnecessary comment
 }
